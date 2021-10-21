@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zstandard;
 using Zstandard.Net;
+using Hack.io.MSBT;
 
 namespace ACNHLab.Classes
 {
@@ -45,6 +46,7 @@ namespace ACNHLab.Classes
         {
             List.Clear();
             string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
+            
             // Decompress SARC
             using (var ms = new MemoryStream(File.ReadAllBytes(Path.Combine(dir, "Message\\String_USen.sarc.zs"))))
             using (var compressionStream = new ZstandardStream(ms, CompressionMode.Decompress))
@@ -55,50 +57,56 @@ namespace ACNHLab.Classes
                 File.WriteAllBytes(Path.Combine(dir, "Message\\String_USen.sarc"), output);
             }
             
-            // Decode SARC
-            //Yaz0.Decode(Path.Combine(dir, "Message\\String_USen.sarc.zs"), Path.Combine(dir, "Message\\String_USen.sarc"));
             // Unpack SARC
             using (Tools.WaitForFile(Path.Combine(dir, "Message\\String_USen.sarc"), FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
             SARC.Extract(Path.Combine(dir, "Message\\String_USen.sarc"), Path.Combine(dir, "Message\\String_USen"), true, true);
-            // Serialize species list from MSBT
-            var str_Race = new MSBT(Path.Combine(dir, "Message\\String_USen\\STR_Race.msbt"));
-            foreach (var section in str_Race.SectionOrder)
-            {
-                MessageBox.Show(section);
-            }
-            // Serialize villager names from MSBT
+            
+            // TODO: Serialize species list from MSBT
+            MSBT str_Race = new MSBT(Path.Combine(dir, "Message\\String_USen\\STR_Race.msbt"));
+            
+            // TODO: Serialize villager names from MSBT
+            // TODO: Get catchphrase from MSBT
+            // TODO: Get room data from SARC extracted BYML
 
-            // Serialize villager data from BCSV
+            // TODO: Serialize villager data to object
             VillagerData villager = new VillagerData();
             Bcsv.Read(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
             foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
             {
-                for (int i = 0; i < row.Cells.Count - 1; i++)
+                try
                 {
-                    switch (i)
+                    for (int i = 0; i < row.Cells.Count - 1; i++)
                     {
-                        case 5:
-                            villager.Hobby = Hobby.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 6:
-                            villager.Personality = Personality.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 31:
-                            string name = Classes.Bcsv.Hex.FromHexToString(row.Cells[i].Value.ToString()).Substring(0,5);
-                            string species = name.Substring(0, 3);
-                            string id = name.Substring(3, 2);
-                            villager.Species = Species.First(x => x.Item1.Equals(species)).Item2;
-                            villager.ID = Convert.ToInt32(id);
-                            break;
-                        default:
-                            break;
+                        switch (i)
+                        {
+                            case 5: // Hobby
+                                if (row.Cells[i].Value != null && Hobby.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.Hobby = Hobby.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                break;
+                            case 6: // Personality
+                                if (row.Cells[i].Value != null && Personality.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.Personality = Personality.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                break;
+                            case 31: // Species & ID
+                                if (row.Cells[i].Value != null)
+                                {
+                                    string name = Classes.Bcsv.Hex.FromHexToString(row.Cells[i].Value.ToString()).Substring(0, 5);
+                                    string species = name.Substring(0, 3);
+                                    string id = name.Substring(3, 2);
+                                    //villager.Species = Species.First(x => x.Item1.Equals(species)).Item2;
+                                    villager.ID = Convert.ToInt32(id);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
                     }
+                    List.Add(villager);
                 }
-                List.Add(villager);
+                catch { }
             }
 
-            // Get room data from SARC extracted BCSV
-            // Get catchphrase from SARC extracted BCSV
+            // TODO: Update form with villager data
         }
     }
 
@@ -125,7 +133,7 @@ namespace ACNHLab.Classes
 
     public class Amiibo
     {
-        //public List<String> List { get; set; } = new List<string>();
+
     }
 
     public class Interior
@@ -135,6 +143,6 @@ namespace ACNHLab.Classes
 
     public class Exterior
     {
-        public int FloorType { get; set; } = 54; // 0 or 54
+
     }
 }

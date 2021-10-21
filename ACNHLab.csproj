@@ -46,10 +46,6 @@
     <Reference Include="AmicitiaLibrary">
       <HintPath>..\..\Amicitia\Build\Debug\netstandard2.0\AmicitiaLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="GFDLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\GFD-Studio\GFDStudio\bin\Debug\netcoreapp5.0-windows\GFDLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="MetroSet UI, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MetroSet_UI.2.0.0\lib\net45\MetroSet UI.dll</HintPath>
     </Reference>
@@ -109,6 +105,11 @@
   <ItemGroup>
     <Compile Include="Classes\Bcsv.cs" />
     <Compile Include="Classes\BinaryTools.cs" />
+    <Compile Include="Classes\Hack.io.BCSV\BCSV.cs" />
+    <Compile Include="Classes\Hack.io.MSBT\MSBT.cs" />
+    <Compile Include="Classes\Hack.io\Hack.io.cs" />
+    <Compile Include="Classes\Hack.io\Int24.cs" />
+    <Compile Include="Classes\Hack.io\Util.cs" />
     <Compile Include="Classes\MSBT.cs" />
     <Compile Include="Classes\SARC.cs" />
     <Compile Include="Classes\Villagers.cs" />

@@ -2,8 +2,6 @@
 using AmicitiaLibrary.Graphics.SPD;
 using AmicitiaLibrary.Graphics.SPR;
 using AmicitiaLibrary.Graphics.TMX;
-using GFDLibrary;
-using GFDLibrary.Textures;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
