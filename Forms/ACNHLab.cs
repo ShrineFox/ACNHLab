@@ -39,9 +39,7 @@ namespace ACNHLab
             metroSetTabControl_Workspace.SelectedIndex = 0;
             ToolStripManager.Renderer = r;
             menuStrip_Main.Renderer = r;
-            treeView_Game.ImageList = Treeview.treeViewImageList;
             treeView_Project.ImageList = Treeview.treeViewImageList;
-            assetPanelHandle = panel_Villagers.Handle;
             scriptingPanelHandle = panel_Scripting.Handle;
             collapsed = false;
         }
@@ -54,7 +52,6 @@ namespace ACNHLab
             saveProjectToolStripMenuItem.Enabled = false;
             SettingsForm.settings = new SettingsForm.Settings();
             OpenSettingsForm();
-            metroSetTabControl_GameProject.SelectedIndex = 0;
         }
 
         private void Settings_Click(object sender, EventArgs e)
@@ -89,7 +86,6 @@ namespace ACNHLab
                 SettingsForm.settings = deserializer.Deserialize<SettingsForm.Settings>(File.ReadAllText(dialog.FileName));
                 LoadProject();
             }
-            metroSetTabControl_GameProject.SelectedIndex = 1;
         }
 
         private void LoadProject()
@@ -98,7 +94,6 @@ namespace ACNHLab
             {
                 this.Text = $"ACNHLab v0.1 - {SettingsForm.settings.ProjectName}";
                 Treeview_Project();
-                Treeview_Game();
                 saveProjectToolStripMenuItem.Enabled = true;
             }
         }
@@ -148,50 +143,7 @@ namespace ACNHLab
             treeView_Project.Nodes.SetExpansionState(projectExpansionState);
         }
 
-        private void Treeview_Game()
-        {
-            var gameExpansionState = treeView_Game.Nodes.GetExpansionState();
-            treeView_Game.Nodes.Clear();
-            if (Directory.Exists(SettingsForm.settings.ExtractedPath))
-                Treeview.BuildTree(new DirectoryInfo(SettingsForm.settings.ExtractedPath), treeView_Game.Nodes);
-            treeView_Game.Nodes.SetExpansionState(gameExpansionState);
-        }
-
         /* Treeview Events */
-        private void AddToProject_Click(object sender, EventArgs e)
-        {
-            if (treeView_Game.SelectedNode != null)
-            {
-                string file = treeView_Game.SelectedNode.Name;
-                if (Directory.Exists(file))
-                    Unpacker.CopyEntireDirectory(new DirectoryInfo(file), new DirectoryInfo(file.Replace(SettingsForm.settings.ExtractedPath, Path.GetDirectoryName(Path.GetFullPath(SettingsForm.settings.ProjectPath)))));
-                else if (File.Exists(file))
-                {
-                    string copiedFile = file.Replace(SettingsForm.settings.ExtractedPath, Path.GetDirectoryName(Path.GetFullPath(SettingsForm.settings.ProjectPath)));
-                    Directory.CreateDirectory(Path.GetDirectoryName(copiedFile));
-                    File.Copy(file, copiedFile);
-                }
-                else
-                {
-                    Program.status.Update($"[ERROR] Failed to copy {Path.GetFileName(file)} to project.");
-                    return;
-                }
-                Program.status.Update($"[INFO] Copied {Path.GetFileName(file)} to project.");
-                Treeview_Project();
-            }
-            HideContextMenus();
-        }
-
-        private void OpenLocationGame_Click(object sender, EventArgs e)
-        {
-            if (treeView_Game.SelectedNode != null)
-            {
-                string file = treeView_Game.SelectedNode.Name;
-                Treeview.OpenLocation(file);
-            }
-            HideContextMenus();
-        }
-
         private void OpenLocationProject_Click(object sender, EventArgs e)
         {
             if (treeView_Project.SelectedNode != null)
@@ -296,30 +248,6 @@ namespace ACNHLab
         }
 
         /* Open/close right click treeview node context menus */
-        private void GameNode_MouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                ToolStripMenuItem_Add.Visible = true;
-                ToolStripMenuItem_ExpandGame.Visible = true;
-                ToolStripMenuItem_CollapseGame.Visible = true;
-
-                treeView_Game.SelectedNode = e.Node;
-
-                // Prevent deleting entire project or project settings file
-                if (treeView_Game.SelectedNode.Parent == null || treeView_Game.SelectedNode.Parent.Parent == null)
-                    ToolStripMenuItem_Add.Visible = false;
-                // Hide expand/collapse if not folder
-                if (treeView_Game.SelectedNode.ImageIndex != 18)
-                {
-                    ToolStripMenuItem_ExpandGame.Visible = false;
-                    ToolStripMenuItem_CollapseGame.Visible = false;
-                }
-
-                contextMenuStrip_Game.Show(Cursor.Position);
-            }
-
-        }
         private void ProjectNode_MouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -389,7 +317,6 @@ namespace ACNHLab
         private void HideContextMenus()
         {
             contextMenuStrip_Project.Hide();
-            contextMenuStrip_Game.Hide();
         }
         #endregion
 

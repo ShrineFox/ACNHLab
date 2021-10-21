@@ -84,6 +84,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\SARC.cs" />
+    <Compile Include="Classes\Villagers.cs" />
+    <Compile Include="Classes\Yaz0.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\ACNHLab.cs">

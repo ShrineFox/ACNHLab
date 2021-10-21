@@ -20,6 +20,29 @@ namespace ACNHLab
 {
     public static class Unpacker
     {
+        // Files to auto-copy to project when created
+        public static void GetFiles()
+        {
+            foreach (var file in new string[] { 
+                "Bcsv\\AmiiboData.bcsv", "Bcsv\\NmlNpcParam.bcsv",
+                "Message\\String_USen.sarc.zs", 
+                "Pack\\StaticParam.pack" })
+            {
+                string inputFile = Path.Combine(SettingsForm.settings.ExtractedPath, file);
+                string outputFile = Path.Combine(Path.GetDirectoryName(SettingsForm.settings.ProjectPath), file);
+                if (File.Exists(outputFile))
+                    Program.status.Update($"[INFO] Skipped copying \"{Path.GetFileName(inputFile)}\" to Project, file already exists.");
+                else if (File.Exists(inputFile))
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(outputFile));
+                    File.Copy(inputFile, outputFile, false);
+                    Program.status.Update($"[INFO] Copied \"{Path.GetFileName(inputFile)}\" to Project.");
+                }
+                else
+                    Program.status.Update($"[INFO] Failed to copy \"{Path.GetFileName(inputFile)}\" to Project, file not found.");
+            }
+        }
+
         public static void CopyEntireDirectory(DirectoryInfo source, DirectoryInfo target, bool overwiteFiles = true)
         {
             if (!source.Exists) return;

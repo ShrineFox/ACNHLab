@@ -53,9 +53,14 @@ namespace ACNHLab
             if (settings.ProjectName != "" && Regex.IsMatch(settings.ProjectName, "^[a-zA-Z0-9-_ .]*$"))
             {
                 // Save project YML file
+                settings.ProjectPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), $"Projects\\{settings.ProjectName}\\{settings.ProjectName}.yml");
+                Directory.CreateDirectory(Path.GetDirectoryName(settings.ProjectPath));
                 SaveSettings();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+                // Copy initial files to project
+                Unpacker.GetFiles();
+                // Populate villager editor
             }
             else
             {
@@ -124,18 +129,8 @@ namespace ACNHLab
             using (Tools.WaitForFile(settings.ProjectPath, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
             File.WriteAllText(settings.ProjectPath, yaml);
 
-            MessageBox.Show(new SettingsForm(), $"Saved project as \"{settings.ProjectName}\"!", "Project Saved",
+            MessageBox.Show($"Saved project as \"{settings.ProjectName}\"!", "Project Saved",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public string ExtractArchive()
-        {
-            string game = metroSetComboBox_Version.SelectedItem.ToString();
-            string unpackedDir = "";
-            
-            // TODO: Unpack files
-
-            return unpackedDir;
         }
 
         private void LoadSettings()
