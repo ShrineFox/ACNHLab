@@ -33,7 +33,6 @@ namespace ACNHLab
         public ACNHLab()
         {
             InitializeComponent();
-            Tools.CloseAll(); Tools.OpenAll(); Tools.CloseAll();
             Program.status = new Status(this.richTextBox_Status);
             Program.status.Update("Create a new project or load an existing one to get started.");
             metroSetTabControl_Workspace.SelectedIndex = 0;
@@ -42,6 +41,9 @@ namespace ACNHLab
             treeView_Project.ImageList = Treeview.treeViewImageList;
             scriptingPanelHandle = panel_Scripting.Handle;
             collapsed = false;
+            #if DEBUG
+            metroSetTabControl_Workspace.Controls.Add(new TabPage(Text = "Debug"));
+            #endif
         }
 
         #region ToolstripOptions
@@ -95,6 +97,7 @@ namespace ACNHLab
                 this.Text = $"ACNHLab v0.1 - {SettingsForm.settings.ProjectName}";
                 Treeview_Project();
                 saveProjectToolStripMenuItem.Enabled = true;
+                Classes.Villagers.Load();
             }
         }
 
@@ -337,6 +340,16 @@ namespace ACNHLab
             }
         }
         #endregion
+
+        private void Workspace_SelectedTabChanged(object sender, EventArgs e)
+        {
+            if (metroSetTabControl_Workspace.SelectedTab.Text.Equals("Debug"))
+            {
+                metroSetTabControl_Workspace.SelectedTab.Controls.Clear();
+                metroSetTabControl_Workspace.SelectedTab.Controls.Add(Classes.Bcsv.dataGridView1);
+            }
+                
+        }
     }
 
     /* Append to Status Text from other classes and forms */

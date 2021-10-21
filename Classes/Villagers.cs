@@ -14,6 +14,7 @@ namespace ACNHLab.Classes
         {
             string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
             // Serialize villager data from BCSV
+            Bcsv.Read(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
             // Load name from .msbt
             // Load amiibo ID from .mbst (match to list or add new)
             

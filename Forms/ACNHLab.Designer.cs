@@ -48,9 +48,11 @@ namespace ACNHLab
             this.metroSetComboBox_Villagers = new MetroSet_UI.Controls.MetroSetComboBox();
             this.panel_VillagerImg = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_VillagerAddRemove = new System.Windows.Forms.TableLayoutPanel();
+            this.button_VillagerHouse = new System.Windows.Forms.Button();
             this.btn_RemoveVillager = new System.Windows.Forms.Button();
             this.btn_AddVillager = new System.Windows.Forms.Button();
             this.tableLayoutPanel_VillagerParams = new System.Windows.Forms.TableLayoutPanel();
+            this.metroSetLabel_Catchphrase = new MetroSet_UI.Controls.MetroSetLabel();
             this.tableLayoutPanel_Amiibo = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.metroSetComboBox_Amiibo = new MetroSet_UI.Controls.MetroSetComboBox();
@@ -75,6 +77,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerGender = new System.Windows.Forms.TableLayoutPanel();
             this.metroSetRadioButton_GenderFemale = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.metroSetRadioButton_GenderMale = new MetroSet_UI.Controls.MetroSetRadioButton();
+            this.metroSetTextBox_Catchphrase = new MetroSet_UI.Controls.MetroSetTextBox();
             this.tabPage_Furniture = new System.Windows.Forms.TabPage();
             this.panel_Scripting = new System.Windows.Forms.Panel();
             this.richTextBox_Status = new System.Windows.Forms.RichTextBox();
@@ -105,9 +108,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Rename = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_ExpandProj = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_CollapseProj = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_VillagerHouse = new System.Windows.Forms.Button();
-            this.metroSetLabel_Catchphrase = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetTextBox_Catchphrase = new MetroSet_UI.Controls.MetroSetTextBox();
             this.tableLayoutPanel_Container.SuspendLayout();
             this.tableLayoutPanel_Main.SuspendLayout();
             this.metroSetTabControl_GameProject.SuspendLayout();
@@ -274,7 +274,7 @@ namespace ACNHLab
             this.metroSetTabControl_Workspace.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.metroSetTabControl_Workspace.Controls.Add(this.tabPage_Villagers);
             this.metroSetTabControl_Workspace.Controls.Add(this.tabPage_Furniture);
-            this.metroSetTabControl_Workspace.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroSetTabControl_Workspace.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroSetTabControl_Workspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroSetTabControl_Workspace.HotTrack = true;
             this.metroSetTabControl_Workspace.IsDerivedStyle = true;
@@ -289,10 +289,12 @@ namespace ACNHLab
             this.metroSetTabControl_Workspace.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetTabControl_Workspace.StyleManager = null;
             this.metroSetTabControl_Workspace.TabIndex = 1;
+            this.metroSetTabControl_Workspace.TabStyle = MetroSet_UI.Enums.TabStyle.Style2;
             this.metroSetTabControl_Workspace.ThemeAuthor = "Narwin";
             this.metroSetTabControl_Workspace.ThemeName = "MetroDark";
             this.metroSetTabControl_Workspace.UnselectedTextColor = System.Drawing.Color.Gray;
             this.metroSetTabControl_Workspace.UseAnimation = false;
+            this.metroSetTabControl_Workspace.SelectedIndexChanged += new System.EventHandler(this.Workspace_SelectedTabChanged);
             // 
             // tabPage_Villagers
             // 
@@ -322,7 +324,7 @@ namespace ACNHLab
             this.tableLayoutPanel_Villagers.Name = "tableLayoutPanel_Villagers";
             this.tableLayoutPanel_Villagers.RowCount = 1;
             this.tableLayoutPanel_Villagers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_Villagers.Size = new System.Drawing.Size(641, 332);
+            this.tableLayoutPanel_Villagers.Size = new System.Drawing.Size(640, 332);
             this.tableLayoutPanel_Villagers.TabIndex = 0;
             // 
             // tableLayoutPanel_VillagerList
@@ -399,6 +401,23 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerAddRemove.Size = new System.Drawing.Size(244, 30);
             this.tableLayoutPanel_VillagerAddRemove.TabIndex = 2;
             // 
+            // button_VillagerHouse
+            // 
+            this.button_VillagerHouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button_VillagerHouse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_VillagerHouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_VillagerHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button_VillagerHouse.ForeColor = System.Drawing.Color.Silver;
+            this.button_VillagerHouse.Image = global::ACNHLab.Properties.Resources.house;
+            this.button_VillagerHouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_VillagerHouse.Location = new System.Drawing.Point(84, 3);
+            this.button_VillagerHouse.Name = "button_VillagerHouse";
+            this.button_VillagerHouse.Size = new System.Drawing.Size(75, 24);
+            this.button_VillagerHouse.TabIndex = 48;
+            this.button_VillagerHouse.Text = "Home";
+            this.button_VillagerHouse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_VillagerHouse.UseVisualStyleBackColor = false;
+            // 
             // btn_RemoveVillager
             // 
             this.btn_RemoveVillager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -471,8 +490,24 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_VillagerParams.Size = new System.Drawing.Size(379, 326);
+            this.tableLayoutPanel_VillagerParams.Size = new System.Drawing.Size(378, 326);
             this.tableLayoutPanel_VillagerParams.TabIndex = 1;
+            // 
+            // metroSetLabel_Catchphrase
+            // 
+            this.metroSetLabel_Catchphrase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetLabel_Catchphrase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetLabel_Catchphrase.IsDerivedStyle = true;
+            this.metroSetLabel_Catchphrase.Location = new System.Drawing.Point(3, 288);
+            this.metroSetLabel_Catchphrase.Name = "metroSetLabel_Catchphrase";
+            this.metroSetLabel_Catchphrase.Size = new System.Drawing.Size(107, 38);
+            this.metroSetLabel_Catchphrase.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel_Catchphrase.StyleManager = null;
+            this.metroSetLabel_Catchphrase.TabIndex = 46;
+            this.metroSetLabel_Catchphrase.Text = "Phrase:";
+            this.metroSetLabel_Catchphrase.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel_Catchphrase.ThemeAuthor = "Narwin";
+            this.metroSetLabel_Catchphrase.ThemeName = "MetroDark";
             // 
             // tableLayoutPanel_Amiibo
             // 
@@ -486,7 +521,7 @@ namespace ACNHLab
             this.tableLayoutPanel_Amiibo.Name = "tableLayoutPanel_Amiibo";
             this.tableLayoutPanel_Amiibo.RowCount = 1;
             this.tableLayoutPanel_Amiibo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_Amiibo.Size = new System.Drawing.Size(260, 30);
+            this.tableLayoutPanel_Amiibo.Size = new System.Drawing.Size(259, 30);
             this.tableLayoutPanel_Amiibo.TabIndex = 45;
             // 
             // button1
@@ -497,7 +532,7 @@ namespace ACNHLab
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button1.ForeColor = System.Drawing.Color.Silver;
             this.button1.Image = global::ACNHLab.Properties.Resources.cog;
-            this.button1.Location = new System.Drawing.Point(193, 3);
+            this.button1.Location = new System.Drawing.Point(192, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 24);
             this.button1.TabIndex = 34;
@@ -525,7 +560,7 @@ namespace ACNHLab
             this.metroSetComboBox_Amiibo.Name = "metroSetComboBox_Amiibo";
             this.metroSetComboBox_Amiibo.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Amiibo.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Amiibo.Size = new System.Drawing.Size(184, 26);
+            this.metroSetComboBox_Amiibo.Size = new System.Drawing.Size(183, 26);
             this.metroSetComboBox_Amiibo.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Amiibo.StyleManager = null;
             this.metroSetComboBox_Amiibo.TabIndex = 33;
@@ -560,7 +595,7 @@ namespace ACNHLab
             this.tableLayoutPanel_Birthday.Name = "tableLayoutPanel_Birthday";
             this.tableLayoutPanel_Birthday.RowCount = 1;
             this.tableLayoutPanel_Birthday.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_Birthday.Size = new System.Drawing.Size(260, 30);
+            this.tableLayoutPanel_Birthday.Size = new System.Drawing.Size(259, 30);
             this.tableLayoutPanel_Birthday.TabIndex = 43;
             // 
             // metroSetNumeric_Day
@@ -573,7 +608,7 @@ namespace ACNHLab
             this.metroSetNumeric_Day.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroSetNumeric_Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.metroSetNumeric_Day.IsDerivedStyle = true;
-            this.metroSetNumeric_Day.Location = new System.Drawing.Point(133, 3);
+            this.metroSetNumeric_Day.Location = new System.Drawing.Point(132, 3);
             this.metroSetNumeric_Day.Maximum = 31;
             this.metroSetNumeric_Day.Minimum = 1;
             this.metroSetNumeric_Day.Name = "metroSetNumeric_Day";
@@ -600,7 +635,7 @@ namespace ACNHLab
             this.metroSetNumeric_Month.Maximum = 12;
             this.metroSetNumeric_Month.Minimum = 1;
             this.metroSetNumeric_Month.Name = "metroSetNumeric_Month";
-            this.metroSetNumeric_Month.Size = new System.Drawing.Size(124, 26);
+            this.metroSetNumeric_Month.Size = new System.Drawing.Size(123, 26);
             this.metroSetNumeric_Month.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetNumeric_Month.StyleManager = null;
             this.metroSetNumeric_Month.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
@@ -646,7 +681,7 @@ namespace ACNHLab
             this.metroSetComboBox_Hobby.Name = "metroSetComboBox_Hobby";
             this.metroSetComboBox_Hobby.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Hobby.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Hobby.Size = new System.Drawing.Size(260, 26);
+            this.metroSetComboBox_Hobby.Size = new System.Drawing.Size(259, 26);
             this.metroSetComboBox_Hobby.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Hobby.StyleManager = null;
             this.metroSetComboBox_Hobby.TabIndex = 41;
@@ -720,7 +755,7 @@ namespace ACNHLab
             this.metroSetTextBox_Name.Multiline = false;
             this.metroSetTextBox_Name.Name = "metroSetTextBox_Name";
             this.metroSetTextBox_Name.ReadOnly = false;
-            this.metroSetTextBox_Name.Size = new System.Drawing.Size(260, 30);
+            this.metroSetTextBox_Name.Size = new System.Drawing.Size(259, 30);
             this.metroSetTextBox_Name.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetTextBox_Name.StyleManager = null;
             this.metroSetTextBox_Name.TabIndex = 0;
@@ -759,7 +794,7 @@ namespace ACNHLab
             this.metroSetNumeric_VillagerID.Maximum = 99;
             this.metroSetNumeric_VillagerID.Minimum = 0;
             this.metroSetNumeric_VillagerID.Name = "metroSetNumeric_VillagerID";
-            this.metroSetNumeric_VillagerID.Size = new System.Drawing.Size(260, 26);
+            this.metroSetNumeric_VillagerID.Size = new System.Drawing.Size(259, 26);
             this.metroSetNumeric_VillagerID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetNumeric_VillagerID.StyleManager = null;
             this.metroSetNumeric_VillagerID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
@@ -780,7 +815,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerSpeciesAdd.Name = "tableLayoutPanel_VillagerSpeciesAdd";
             this.tableLayoutPanel_VillagerSpeciesAdd.RowCount = 1;
             this.tableLayoutPanel_VillagerSpeciesAdd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_VillagerSpeciesAdd.Size = new System.Drawing.Size(260, 30);
+            this.tableLayoutPanel_VillagerSpeciesAdd.Size = new System.Drawing.Size(259, 30);
             this.tableLayoutPanel_VillagerSpeciesAdd.TabIndex = 34;
             // 
             // button_AddSpecies
@@ -791,7 +826,7 @@ namespace ACNHLab
             this.button_AddSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button_AddSpecies.ForeColor = System.Drawing.Color.Silver;
             this.button_AddSpecies.Image = global::ACNHLab.Properties.Resources.cog;
-            this.button_AddSpecies.Location = new System.Drawing.Point(193, 3);
+            this.button_AddSpecies.Location = new System.Drawing.Point(192, 3);
             this.button_AddSpecies.Name = "button_AddSpecies";
             this.button_AddSpecies.Size = new System.Drawing.Size(64, 24);
             this.button_AddSpecies.TabIndex = 34;
@@ -819,7 +854,7 @@ namespace ACNHLab
             this.metroSetComboBox_VillagerSpecies.Name = "metroSetComboBox_VillagerSpecies";
             this.metroSetComboBox_VillagerSpecies.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_VillagerSpecies.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_VillagerSpecies.Size = new System.Drawing.Size(184, 26);
+            this.metroSetComboBox_VillagerSpecies.Size = new System.Drawing.Size(183, 26);
             this.metroSetComboBox_VillagerSpecies.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_VillagerSpecies.StyleManager = null;
             this.metroSetComboBox_VillagerSpecies.TabIndex = 33;
@@ -878,7 +913,7 @@ namespace ACNHLab
             this.metroSetComboBox_Personality.Name = "metroSetComboBox_Personality";
             this.metroSetComboBox_Personality.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Personality.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Personality.Size = new System.Drawing.Size(260, 26);
+            this.metroSetComboBox_Personality.Size = new System.Drawing.Size(259, 26);
             this.metroSetComboBox_Personality.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Personality.StyleManager = null;
             this.metroSetComboBox_Personality.TabIndex = 38;
@@ -898,7 +933,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerGender.RowCount = 1;
             this.tableLayoutPanel_VillagerGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_VillagerGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel_VillagerGender.Size = new System.Drawing.Size(260, 30);
+            this.tableLayoutPanel_VillagerGender.Size = new System.Drawing.Size(259, 30);
             this.tableLayoutPanel_VillagerGender.TabIndex = 39;
             // 
             // metroSetRadioButton_GenderFemale
@@ -913,7 +948,7 @@ namespace ACNHLab
             this.metroSetRadioButton_GenderFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.metroSetRadioButton_GenderFemale.Group = 0;
             this.metroSetRadioButton_GenderFemale.IsDerivedStyle = true;
-            this.metroSetRadioButton_GenderFemale.Location = new System.Drawing.Point(133, 3);
+            this.metroSetRadioButton_GenderFemale.Location = new System.Drawing.Point(132, 3);
             this.metroSetRadioButton_GenderFemale.Name = "metroSetRadioButton_GenderFemale";
             this.metroSetRadioButton_GenderFemale.Size = new System.Drawing.Size(124, 17);
             this.metroSetRadioButton_GenderFemale.Style = MetroSet_UI.Enums.Style.Dark;
@@ -937,13 +972,43 @@ namespace ACNHLab
             this.metroSetRadioButton_GenderMale.IsDerivedStyle = true;
             this.metroSetRadioButton_GenderMale.Location = new System.Drawing.Point(3, 3);
             this.metroSetRadioButton_GenderMale.Name = "metroSetRadioButton_GenderMale";
-            this.metroSetRadioButton_GenderMale.Size = new System.Drawing.Size(124, 17);
+            this.metroSetRadioButton_GenderMale.Size = new System.Drawing.Size(123, 17);
             this.metroSetRadioButton_GenderMale.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetRadioButton_GenderMale.StyleManager = null;
             this.metroSetRadioButton_GenderMale.TabIndex = 0;
             this.metroSetRadioButton_GenderMale.Text = "Male";
             this.metroSetRadioButton_GenderMale.ThemeAuthor = "Narwin";
             this.metroSetRadioButton_GenderMale.ThemeName = "MetroDark";
+            // 
+            // metroSetTextBox_Catchphrase
+            // 
+            this.metroSetTextBox_Catchphrase.AutoCompleteCustomSource = null;
+            this.metroSetTextBox_Catchphrase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.metroSetTextBox_Catchphrase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.metroSetTextBox_Catchphrase.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.metroSetTextBox_Catchphrase.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.metroSetTextBox_Catchphrase.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetTextBox_Catchphrase.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetTextBox_Catchphrase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetTextBox_Catchphrase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetTextBox_Catchphrase.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.metroSetTextBox_Catchphrase.Image = null;
+            this.metroSetTextBox_Catchphrase.IsDerivedStyle = true;
+            this.metroSetTextBox_Catchphrase.Lines = null;
+            this.metroSetTextBox_Catchphrase.Location = new System.Drawing.Point(116, 291);
+            this.metroSetTextBox_Catchphrase.MaxLength = 32767;
+            this.metroSetTextBox_Catchphrase.Multiline = false;
+            this.metroSetTextBox_Catchphrase.Name = "metroSetTextBox_Catchphrase";
+            this.metroSetTextBox_Catchphrase.ReadOnly = false;
+            this.metroSetTextBox_Catchphrase.Size = new System.Drawing.Size(259, 32);
+            this.metroSetTextBox_Catchphrase.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetTextBox_Catchphrase.StyleManager = null;
+            this.metroSetTextBox_Catchphrase.TabIndex = 50;
+            this.metroSetTextBox_Catchphrase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.metroSetTextBox_Catchphrase.ThemeAuthor = "Narwin";
+            this.metroSetTextBox_Catchphrase.ThemeName = "MetroDark";
+            this.metroSetTextBox_Catchphrase.UseSystemPasswordChar = false;
+            this.metroSetTextBox_Catchphrase.WatermarkText = "";
             // 
             // tabPage_Furniture
             // 
@@ -1313,69 +1378,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_CollapseProj.Name = "ToolStripMenuItem_CollapseProj";
             this.ToolStripMenuItem_CollapseProj.Size = new System.Drawing.Size(160, 30);
             this.ToolStripMenuItem_CollapseProj.Text = "Collapse All";
-            // 
-            // button_VillagerHouse
-            // 
-            this.button_VillagerHouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button_VillagerHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_VillagerHouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_VillagerHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button_VillagerHouse.ForeColor = System.Drawing.Color.Silver;
-            this.button_VillagerHouse.Image = global::ACNHLab.Properties.Resources.house;
-            this.button_VillagerHouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_VillagerHouse.Location = new System.Drawing.Point(84, 3);
-            this.button_VillagerHouse.Name = "button_VillagerHouse";
-            this.button_VillagerHouse.Size = new System.Drawing.Size(75, 24);
-            this.button_VillagerHouse.TabIndex = 48;
-            this.button_VillagerHouse.Text = "Home";
-            this.button_VillagerHouse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_VillagerHouse.UseVisualStyleBackColor = false;
-            // 
-            // metroSetLabel_Catchphrase
-            // 
-            this.metroSetLabel_Catchphrase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetLabel_Catchphrase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetLabel_Catchphrase.IsDerivedStyle = true;
-            this.metroSetLabel_Catchphrase.Location = new System.Drawing.Point(3, 288);
-            this.metroSetLabel_Catchphrase.Name = "metroSetLabel_Catchphrase";
-            this.metroSetLabel_Catchphrase.Size = new System.Drawing.Size(107, 38);
-            this.metroSetLabel_Catchphrase.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetLabel_Catchphrase.StyleManager = null;
-            this.metroSetLabel_Catchphrase.TabIndex = 46;
-            this.metroSetLabel_Catchphrase.Text = "Phrase:";
-            this.metroSetLabel_Catchphrase.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroSetLabel_Catchphrase.ThemeAuthor = "Narwin";
-            this.metroSetLabel_Catchphrase.ThemeName = "MetroDark";
-            // 
-            // metroSetTextBox_Catchphrase
-            // 
-            this.metroSetTextBox_Catchphrase.AutoCompleteCustomSource = null;
-            this.metroSetTextBox_Catchphrase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.metroSetTextBox_Catchphrase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.metroSetTextBox_Catchphrase.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetTextBox_Catchphrase.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetTextBox_Catchphrase.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetTextBox_Catchphrase.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetTextBox_Catchphrase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetTextBox_Catchphrase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetTextBox_Catchphrase.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetTextBox_Catchphrase.Image = null;
-            this.metroSetTextBox_Catchphrase.IsDerivedStyle = true;
-            this.metroSetTextBox_Catchphrase.Lines = null;
-            this.metroSetTextBox_Catchphrase.Location = new System.Drawing.Point(116, 291);
-            this.metroSetTextBox_Catchphrase.MaxLength = 32767;
-            this.metroSetTextBox_Catchphrase.Multiline = false;
-            this.metroSetTextBox_Catchphrase.Name = "metroSetTextBox_Catchphrase";
-            this.metroSetTextBox_Catchphrase.ReadOnly = false;
-            this.metroSetTextBox_Catchphrase.Size = new System.Drawing.Size(260, 32);
-            this.metroSetTextBox_Catchphrase.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetTextBox_Catchphrase.StyleManager = null;
-            this.metroSetTextBox_Catchphrase.TabIndex = 50;
-            this.metroSetTextBox_Catchphrase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.metroSetTextBox_Catchphrase.ThemeAuthor = "Narwin";
-            this.metroSetTextBox_Catchphrase.ThemeName = "MetroDark";
-            this.metroSetTextBox_Catchphrase.UseSystemPasswordChar = false;
-            this.metroSetTextBox_Catchphrase.WatermarkText = "";
             // 
             // ACNHLab
             // 

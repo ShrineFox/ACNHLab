@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Bcsv.cs" />
     <Compile Include="Classes\SARC.cs" />
     <Compile Include="Classes\Villagers.cs" />
     <Compile Include="Classes\Yaz0.cs" />
@@ -145,9 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bob.ico" />
-    <Content Include="license.txt" />
-    <Content Include="pstudio.ico" />
-    <Content Include="Windows Logo.png" />
     <None Include="Resources\application_double.ico" />
     <None Include="Resources\application_edit.ico" />
     <None Include="Resources\application_error.ico" />
