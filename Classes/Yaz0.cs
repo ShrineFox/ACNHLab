@@ -40,7 +40,7 @@ namespace ACNHLab.Classes
             return num.ToString("X");
         }
 
-        static private int HexToInt(String hex)
+        static private int HexToInt(string hex)
         {
             return int.Parse(hex, System.Globalization.NumberStyles.HexNumber);
         }

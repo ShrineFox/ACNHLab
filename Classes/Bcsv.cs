@@ -41,6 +41,8 @@ namespace ACNHLab.Classes
 
 		public static void Read(string FilePath)
 		{
+			dataGridView1.Dock = DockStyle.Fill;
+			dataGridView1.ForeColor = Color.Black;
 			EntryNbr = string.Empty;
 			int_EntryNbr = 0;
 			EntrySize = string.Empty;
@@ -110,7 +112,7 @@ namespace ACNHLab.Classes
 						num3 = 28;
 					}
 					int[] array = new int[int_ColumnNbr];
-					for (int num4 = 0; num4 <= int_ColumnNbr; num4++)
+					for (int num4 = 0; num4 <= int_ColumnNbr - 1; num4++)
 					{
 						string text4 = string.Empty;
 						for (int num5 = num3 + num2; num5 >= num3; num5--)
@@ -125,6 +127,11 @@ namespace ACNHLab.Classes
 							text5 += binaryReader.ReadByte().ToString("x2");
 						}
 						dataGridView1.Columns[num4].Name = text4;
+						if (text4 == "54706054")
+						{
+							dataGridView1.Columns[num4].DefaultCellStyle.BackColor = Color.LightGray;
+							dataGridView1.Columns[num4].DefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+						}
 						list_ColumnHeader.Add(text4);
 						list_ColumnLength.Add(int.Parse(text5, NumberStyles.HexNumber));
 						array[num4] = int.Parse(text5, NumberStyles.HexNumber);
@@ -260,6 +267,8 @@ namespace ACNHLab.Classes
 								goto IL_AC4;
 						}
 					IL_ACB:
+						if (dataGridView2.Columns.Count == 0)
+							dataGridView2.Columns.Add("","");
 						dataGridView2.Rows.Add(new object[]
 						{
 							list_ColumnHeader[num13],
@@ -473,7 +482,7 @@ namespace ACNHLab.Classes
 			private readonly uint Polynomial = 3988292384U;
 		}
 
-		internal class Hex
+		public class Hex
 		{
 			public static string StringToHex(string text_value)
 			{
