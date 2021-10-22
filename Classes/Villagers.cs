@@ -46,35 +46,11 @@ namespace ACNHLab.Classes
             List.Clear();
             string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
 
-            // Decompress SARC
-            if (!File.Exists(Path.Combine(dir, "Message\\String_USen.sarc")))
-            {
-                using (var ms = new MemoryStream(File.ReadAllBytes(Path.Combine(dir, "Message\\String_USen.sarc.zs"))))
-                using (var compressionStream = new ZstandardStream(ms, CompressionMode.Decompress))
-                using (var temp = new MemoryStream())
-                {
-                    compressionStream.CopyTo(temp);
-                    byte[] output = temp.ToArray();
-                    File.WriteAllBytes(Path.Combine(dir, "Message\\String_USen.sarc"), output);
-                }
-                Program.status.Update("[INFO] Decompressed \"Message\\String_USen.sarc\".");
-            }
-            else
-                Program.status.Update("[INFO] \"Message\\String_USen.sarc\" already exists, skipping decompression.");
-            
-            
             /*
-             *  Unpack SARC with villager related strings
+             *  Decompress and extract SARC with villager related strings
              */
-            using (Tools.WaitForFile(Path.Combine(dir, "Message\\String_USen.sarc"), FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
-            
-            if (!Directory.Exists(Path.Combine(dir, "Message\\String_USen")))
-            {
-                SARC.Extract(Path.Combine(dir, "Message\\String_USen.sarc"), Path.Combine(dir, "Message\\String_USen"), true, true);
-                Program.status.Update("[INFO] Extracted files from \"Message\\String_USen.sarc\".");
-            }
-            else
-                Program.status.Update("[INFO] \"Message\\String_USen.sarc\" already extracted, skipping extraction.");
+            SARC.Decompress(Path.Combine(dir, "Message\\String_USen.sarc.zs"), Path.Combine(dir, "Message\\String_USen.sarc"));
+            SARC.ExtractToDir(Path.Combine(dir, "Message\\String_USen.sarc"), Path.Combine(dir, "Message\\String_USen"));
 
             /*
              *  Get species list, names and catchphrases from MSBT

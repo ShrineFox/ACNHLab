@@ -130,6 +130,39 @@ namespace ACNHLab
             }
         }
 
+        private void UpdateIcon()
+        {
+            // Check in icon folder for icon texture
+            string temp = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), $"Temp\\Icons\\{metroSetComboBox_Villagers.SelectedItem}.png");
+            Directory.CreateDirectory(Path.GetDirectoryName(temp));
+            if (!File.Exists(temp))
+            {
+                string species = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(0, 3);
+                string ID = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(3, 2);
+                string sarcName = $"Model\\Layout_NpcIcon_{species}{ID}.Nin_NX_NVN.zs";
+                // Check project directory
+                string iconProject = Path.Combine(Path.GetDirectoryName(SettingsForm.settings.ProjectName), sarcName);
+                string iconRomfs = Path.Combine(Path.GetDirectoryName(SettingsForm.settings.ExtractedPath), sarcName);
+                string iconOutput = Path.Combine(Path.GetDirectoryName(temp), metroSetComboBox_Villagers.SelectedItem.ToString() + ".zs");
+                if (File.Exists(iconProject))
+                    File.Copy(iconProject, iconOutput);
+                else if (File.Exists(iconRomfs))
+                    File.Copy(iconRomfs, iconOutput);
+                else
+                    return;
+                // Wait for file to be copied to temp location
+                using (Tools.WaitForFile(iconOutput, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
+                // Decompress and extract SARC
+                SARC.Decompress(iconOutput, Path.Combine(Path.GetDirectoryName(temp), sarcName.Replace(".zs","")));
+                SARC.ExtractToDir(sarcName.Replace(".zs", ""), Path.GetDirectoryName(temp));
+                // Extract texture
+                Syroot.NintenTools.Bfres.Model bfres = new Syroot.NintenTools.Bfres.Model("");
+                
+            }
+            if (File.Exists(temp))
+                panel_VillagerImg.BackgroundImage = Image.FromFile(temp);
+        }
+
         private void SaveProjectAs_Click(object sender, EventArgs e)
         {
             if (SettingsForm.IsValid())

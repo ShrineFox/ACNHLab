@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zstandard.Net;
 
 namespace ACNHLab.Classes
 {
@@ -69,6 +71,36 @@ namespace ACNHLab.Classes
                 endPos = inEndPos;
                 padding = 0; //blank 
             }
+        }
+
+        internal static void Decompress(string input, string output)
+        {
+            if (!File.Exists(output))
+            {
+                using (var ms = new MemoryStream(File.ReadAllBytes(input)))
+                using (var compressionStream = new ZstandardStream(ms, CompressionMode.Decompress))
+                using (var temp = new MemoryStream())
+                {
+                    compressionStream.CopyTo(temp);
+                    byte[] outputBytes = temp.ToArray();
+                    File.WriteAllBytes(output, outputBytes);
+                }
+                Program.status.Update($"[INFO] Decompressed \"{Path.GetFileName(input)}\".");
+            }
+            else
+                Program.status.Update($"[INFO] \"{Path.GetFileName(output)}\" already exists, skipping decompression.");
+        }
+
+        internal static void ExtractToDir(string input, string output)
+        {
+            using (Tools.WaitForFile(input, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
+            if (!Directory.Exists(output))
+            {
+                SARC.Extract(input, output, true, true);
+                Program.status.Update($"[INFO] Extracted files from \"{Path.GetFileName(input)}\".");
+            }
+            else
+                Program.status.Update($"[INFO] \"{Path.GetFileName(output)}\" already extracted, skipping extraction.");
         }
         #endregion
 
