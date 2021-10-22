@@ -133,34 +133,48 @@ namespace ACNHLab
         private void UpdateIcon()
         {
             // Check in icon folder for icon texture
-            string temp = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), $"Temp\\Icons\\{metroSetComboBox_Villagers.SelectedItem}.png");
+            string temp = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), $"Temp\\Model\\{metroSetComboBox_Villagers.SelectedItem}.dds");
             Directory.CreateDirectory(Path.GetDirectoryName(temp));
             if (!File.Exists(temp))
             {
                 string species = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(0, 3);
                 string ID = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(3, 2);
-                string sarcName = $"Model\\Layout_NpcIcon_{species}{ID}.Nin_NX_NVN.zs";
+                string sarcName = $"Layout_NpcIcon_{species}{ID}.Nin_NX_NVN.zs";
                 // Check project directory
                 string iconProject = Path.Combine(Path.GetDirectoryName(SettingsForm.settings.ProjectName), sarcName);
-                string iconRomfs = Path.Combine(Path.GetDirectoryName(SettingsForm.settings.ExtractedPath), sarcName);
+                string iconRomfs = Path.Combine(SettingsForm.settings.ExtractedPath, "Model\\" + sarcName);
                 string iconOutput = Path.Combine(Path.GetDirectoryName(temp), metroSetComboBox_Villagers.SelectedItem.ToString() + ".zs");
                 if (File.Exists(iconProject))
-                    File.Copy(iconProject, iconOutput);
+                    File.Copy(iconProject, iconOutput, true);
                 else if (File.Exists(iconRomfs))
-                    File.Copy(iconRomfs, iconOutput);
+                    File.Copy(iconRomfs, iconOutput, true);
                 else
                     return;
                 // Wait for file to be copied to temp location
                 using (Tools.WaitForFile(iconOutput, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
                 // Decompress and extract SARC
                 SARC.Decompress(iconOutput, Path.Combine(Path.GetDirectoryName(temp), sarcName.Replace(".zs","")));
-                SARC.ExtractToDir(sarcName.Replace(".zs", ""), Path.GetDirectoryName(temp));
+                string modelOutputDir = Path.Combine(Path.GetDirectoryName(temp), sarcName.Replace(".Nin_NX_NVN.zs", ""));
+                SARC.ExtractToDir(sarcName.Replace(".zs", ""), modelOutputDir);
+                Program.status.Update($"[INFO] Extracted files from \"{sarcName.Replace(".zs", "")}\" to Temp files.");
                 // Extract texture
-                Syroot.NintenTools.Bfres.Model bfres = new Syroot.NintenTools.Bfres.Model("");
-                
+                string modelFile = $"{modelOutputDir}\\output.bfres";
+                using (Tools.WaitForFile(modelFile, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
+                Syroot.NintenTools.Bfres.ResFile bfres = new Syroot.NintenTools.Bfres.ResFile(modelFile);
+                foreach (var texture in bfres.Textures)
+                    File.WriteAllBytes(temp.Replace(".dds",".bftex"), texture.Value.Data);
+                Program.status.Update($"[INFO] Extracted texture \"{temp.Replace(".dds", ".bftex")}\" to Temp files.");
+                // Convert to dds with quickbms
+                if (File.Exists(temp.Replace(".dds", ".bftex")))
+                    Tools.QuickBMS(temp.Replace(".dds", ".bftex"));
             }
             if (File.Exists(temp))
+            {
                 panel_VillagerImg.BackgroundImage = Image.FromFile(temp);
+                Program.status.Update($"[INFO] Loaded villager icon: \"{Path.GetFileName(temp)}\"");
+            }
+            else
+                Program.status.Update($"[INFO] Failed to load villager icon: \"{Path.GetFileName(temp)}\" file not found.");
         }
 
         private void SaveProjectAs_Click(object sender, EventArgs e)
@@ -451,8 +465,9 @@ namespace ACNHLab
             metroSetTextBox_Catchphrase.Text = villager.Catchphrase;
 
             Program.status.Update($"[INFO] Loaded Villager Data: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})");
-            
-            // TODO: Show villager icon
+
+            // Show villager icon
+            UpdateIcon();
         }
     }
 
