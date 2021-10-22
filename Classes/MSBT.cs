@@ -1006,5 +1006,24 @@ namespace ACNHLab.Classes
 
 			return result;
 		}
-	}
+
+        internal static List<Tuple<int, string, string>> Deserialize(string path)
+        {
+			List<Tuple<int, string, string>> entries = new List<Tuple<int, string, string>>();
+			MSBT mstb = new MSBT(path);
+
+			if (mstb.HasLabels)
+				for (int i = 0; i < mstb.TXT2.NumberOfStrings; i++)
+				{
+					Label label = (Label)mstb.LBL1.Labels[i];
+					byte[] valueBytes = label.String.Value.Skip(12).ToArray();
+					string value = Encoding.Unicode.GetString(valueBytes, 0, valueBytes.Length);
+					entries.Add(new Tuple<int, string, string>(Convert.ToInt32(label.Index), label.Name, value));
+				}
+			entries.Sort((x, y) => y.Item1.CompareTo(x.Item1));
+			entries.Reverse();
+
+			return entries;
+		}
+    }
 }

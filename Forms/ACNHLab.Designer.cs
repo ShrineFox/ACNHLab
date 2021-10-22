@@ -54,6 +54,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams = new System.Windows.Forms.TableLayoutPanel();
             this.metroSetLabel_Catchphrase = new MetroSet_UI.Controls.MetroSetLabel();
             this.tableLayoutPanel_Amiibo = new System.Windows.Forms.TableLayoutPanel();
+            this.metroSetComboBox_AmiiboSeries = new MetroSet_UI.Controls.MetroSetComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.metroSetComboBox_Amiibo = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_Amiibo = new MetroSet_UI.Controls.MetroSetLabel();
@@ -511,18 +512,50 @@ namespace ACNHLab
             // 
             // tableLayoutPanel_Amiibo
             // 
-            this.tableLayoutPanel_Amiibo.ColumnCount = 2;
-            this.tableLayoutPanel_Amiibo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.18008F));
-            this.tableLayoutPanel_Amiibo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.81992F));
-            this.tableLayoutPanel_Amiibo.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel_Amiibo.Controls.Add(this.metroSetComboBox_Amiibo, 0, 0);
+            this.tableLayoutPanel_Amiibo.ColumnCount = 3;
+            this.tableLayoutPanel_Amiibo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_Amiibo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel_Amiibo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel_Amiibo.Controls.Add(this.metroSetComboBox_AmiiboSeries, 0, 0);
+            this.tableLayoutPanel_Amiibo.Controls.Add(this.button1, 2, 0);
+            this.tableLayoutPanel_Amiibo.Controls.Add(this.metroSetComboBox_Amiibo, 1, 0);
             this.tableLayoutPanel_Amiibo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_Amiibo.Location = new System.Drawing.Point(116, 255);
             this.tableLayoutPanel_Amiibo.Name = "tableLayoutPanel_Amiibo";
             this.tableLayoutPanel_Amiibo.RowCount = 1;
-            this.tableLayoutPanel_Amiibo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_Amiibo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_Amiibo.Size = new System.Drawing.Size(259, 30);
             this.tableLayoutPanel_Amiibo.TabIndex = 45;
+            // 
+            // metroSetComboBox_AmiiboSeries
+            // 
+            this.metroSetComboBox_AmiiboSeries.AllowDrop = true;
+            this.metroSetComboBox_AmiiboSeries.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.metroSetComboBox_AmiiboSeries.BackColor = System.Drawing.Color.Transparent;
+            this.metroSetComboBox_AmiiboSeries.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.metroSetComboBox_AmiiboSeries.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.metroSetComboBox_AmiiboSeries.CausesValidation = false;
+            this.metroSetComboBox_AmiiboSeries.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.metroSetComboBox_AmiiboSeries.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetComboBox_AmiiboSeries.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetComboBox_AmiiboSeries.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetComboBox_AmiiboSeries.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.metroSetComboBox_AmiiboSeries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.metroSetComboBox_AmiiboSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.metroSetComboBox_AmiiboSeries.FormattingEnabled = true;
+            this.metroSetComboBox_AmiiboSeries.IsDerivedStyle = true;
+            this.metroSetComboBox_AmiiboSeries.ItemHeight = 20;
+            this.metroSetComboBox_AmiiboSeries.Location = new System.Drawing.Point(3, 3);
+            this.metroSetComboBox_AmiiboSeries.Name = "metroSetComboBox_AmiiboSeries";
+            this.metroSetComboBox_AmiiboSeries.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.metroSetComboBox_AmiiboSeries.SelectedItemForeColor = System.Drawing.Color.White;
+            this.metroSetComboBox_AmiiboSeries.Size = new System.Drawing.Size(58, 26);
+            this.metroSetComboBox_AmiiboSeries.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetComboBox_AmiiboSeries.StyleManager = null;
+            this.metroSetComboBox_AmiiboSeries.TabIndex = 35;
+            this.metroSetComboBox_AmiiboSeries.ThemeAuthor = "Narwin";
+            this.metroSetComboBox_AmiiboSeries.ThemeName = "MetroDark";
+            this.metroSetComboBox_AmiiboSeries.SelectedIndexChanged += new System.EventHandler(this.AmiiboSeries_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -532,9 +565,9 @@ namespace ACNHLab
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button1.ForeColor = System.Drawing.Color.Silver;
             this.button1.Image = global::ACNHLab.Properties.Resources.cog;
-            this.button1.Location = new System.Drawing.Point(192, 3);
+            this.button1.Location = new System.Drawing.Point(235, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 24);
+            this.button1.Size = new System.Drawing.Size(21, 24);
             this.button1.TabIndex = 34;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -549,18 +582,17 @@ namespace ACNHLab
             this.metroSetComboBox_Amiibo.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.metroSetComboBox_Amiibo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroSetComboBox_Amiibo.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetComboBox_Amiibo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroSetComboBox_Amiibo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.metroSetComboBox_Amiibo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.metroSetComboBox_Amiibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.metroSetComboBox_Amiibo.FormattingEnabled = true;
             this.metroSetComboBox_Amiibo.IsDerivedStyle = true;
             this.metroSetComboBox_Amiibo.ItemHeight = 20;
-            this.metroSetComboBox_Amiibo.Location = new System.Drawing.Point(3, 3);
+            this.metroSetComboBox_Amiibo.Location = new System.Drawing.Point(67, 3);
             this.metroSetComboBox_Amiibo.Name = "metroSetComboBox_Amiibo";
             this.metroSetComboBox_Amiibo.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Amiibo.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Amiibo.Size = new System.Drawing.Size(183, 26);
+            this.metroSetComboBox_Amiibo.Size = new System.Drawing.Size(162, 26);
             this.metroSetComboBox_Amiibo.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Amiibo.StyleManager = null;
             this.metroSetComboBox_Amiibo.TabIndex = 33;
@@ -1505,5 +1537,6 @@ namespace ACNHLab
         private System.Windows.Forms.Button button_VillagerHouse;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Catchphrase;
         private MetroSet_UI.Controls.MetroSetTextBox metroSetTextBox_Catchphrase;
+        private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_AmiiboSeries;
     }
 }

@@ -1,4 +1,5 @@
-﻿using MetroSet_UI.Controls;
+﻿using ACNHLab.Classes;
+using MetroSet_UI.Controls;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections;
@@ -17,18 +18,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using Newtonsoft.Json;
+using static ACNHLab.Classes.Amiibo;
 
 namespace ACNHLab
 {
     public partial class ACNHLab : MetroSet_UI.Forms.MetroSetForm
     {
-        public static IntPtr assetPanelHandle;
-        public static IntPtr assetEditorHandle;
-        public static IntPtr scriptingPanelHandle;
-        public static IntPtr scriptEditorHandle;
-        public static int formWidth;
-        public static int formHeight;
-        public static string assetEditor = "";
+        AmiiboJson amiiboJson = new AmiiboJson();
+        List<Tuple<string, string, string>> Amiibos = new List<Tuple<string, string, string>>();
         public static bool collapsed;
         public ACNHLab()
         {
@@ -39,7 +37,6 @@ namespace ACNHLab
             ToolStripManager.Renderer = r;
             menuStrip_Main.Renderer = r;
             treeView_Project.ImageList = Treeview.treeViewImageList;
-            scriptingPanelHandle = panel_Scripting.Handle;
             collapsed = false;
             #if DEBUG
             metroSetTabControl_Workspace.Controls.Add(new TabPage(Text = "Debug"));
@@ -97,7 +94,66 @@ namespace ACNHLab
                 this.Text = $"ACNHLab v0.1 - {SettingsForm.settings.ProjectName}";
                 Treeview_Project();
                 saveProjectToolStripMenuItem.Enabled = true;
+                // Load villager data from files
                 Classes.Villagers.Load();
+                // Update villager dropdown
+                metroSetComboBox_Villagers.Items.Clear();
+                foreach (var villager in Villagers.List)
+                    metroSetComboBox_Villagers.Items.Add($"{villager.Name}{villager.ID.ToString("00")}");
+                // Update species dropdown
+                metroSetComboBox_VillagerSpecies.Items.Clear();
+                foreach (var species in Villagers.Species)
+                    metroSetComboBox_VillagerSpecies.Items.Add(species);
+                metroSetComboBox_VillagerSpecies.SelectedIndex = 0;
+                // Update amiibo (and series) dropdowns
+                metroSetComboBox_Amiibo.Items.Clear();
+                metroSetComboBox_AmiiboSeries.Items.Clear();
+                AmiiboJson amiiboJson = JsonConvert.DeserializeObject<AmiiboJson>(Properties.Resources.Amiibo);
+                foreach (var amiibo in amiiboJson.List)
+                    Amiibos.Add(new Tuple<string,string,string>(amiibo.Head, amiibo.AmiiboSeries, amiibo.Character));
+                foreach (var amiibo in Amiibos)
+                {
+                    if (!metroSetComboBox_AmiiboSeries.Items.Contains(amiibo.Item2))
+                        metroSetComboBox_AmiiboSeries.Items.Add(amiibo.Item2);
+                }
+                metroSetComboBox_AmiiboSeries.SelectedIndex = 0;
+                // Show selected villager's data in form
+                UpdateForm();
+            }
+        }
+
+        private void UpdateForm()
+        {
+            // Villager data
+            for (int i = 0; i < Villagers.List.Count; i++)
+            {
+                // Name
+                metroSetTextBox_Name.Text = Villagers.List[i].Name;
+                // Species
+                metroSetComboBox_VillagerSpecies.SelectedIndex = metroSetComboBox_VillagerSpecies.Items.IndexOf(Villagers.List[i].Species);
+                // ID
+                metroSetNumeric_VillagerID.Value = Villagers.List[i].ID;
+                // Gender
+                if (Villagers.List[i].Gender.Equals("Male"))
+                    metroSetRadioButton_GenderMale.Checked = true; 
+                else
+                    metroSetRadioButton_GenderFemale.Checked = true;
+                // Personality
+                metroSetComboBox_Personality.SelectedIndex = metroSetComboBox_Personality.Items.IndexOf(Villagers.List[i].Personality);
+                // Hobby
+                metroSetComboBox_Hobby.SelectedIndex = metroSetComboBox_Hobby.Items.IndexOf(Villagers.List[i].Hobby);
+                // Birth Month
+                metroSetNumeric_Month.Value = Villagers.List[i].BirthMonth;
+                // Birth Day
+                metroSetNumeric_Day.Value = Villagers.List[i].BirthDay;
+                // Amiibo
+                string amiiboHead = Villagers.List[i].Amiibo;
+                metroSetComboBox_AmiiboSeries.SelectedIndex = metroSetComboBox_AmiiboSeries.Items.IndexOf(Amiibos.First(x => x.Item1.Equals(amiiboHead)).Item2);
+                metroSetComboBox_Amiibo.SelectedIndex = metroSetComboBox_Amiibo.Items.IndexOf(Amiibos.First(x => x.Item1.Equals(amiiboHead)).Item3);
+                // Catchphrase
+                metroSetTextBox_Catchphrase.Text = Villagers.List[i].Catchphrase;
+
+                // TODO: Show villager icon
             }
         }
 
@@ -349,6 +405,14 @@ namespace ACNHLab
                 metroSetTabControl_Workspace.SelectedTab.Controls.Add(Classes.Bcsv.dataGridView1);
             }
                 
+        }
+
+        private void AmiiboSeries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            metroSetComboBox_Amiibo.Items.Clear();
+            foreach (var amiibo in Amiibos.Where(x => x.Item2.Equals(metroSetComboBox_AmiiboSeries.SelectedItem.ToString())))
+                metroSetComboBox_Amiibo.Items.Add(amiibo.Item3);
+            metroSetComboBox_Amiibo.SelectedIndex = 0;
         }
     }
 

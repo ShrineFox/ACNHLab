@@ -111,6 +111,30 @@ namespace ACNHLab.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;amiibo&quot;: [
+        ///        {
+        ///            &quot;amiiboSeries&quot;: &quot;Super Smash Bros.&quot;,
+        ///            &quot;character&quot;: &quot;Mario&quot;,
+        ///            &quot;gameSeries&quot;: &quot;Super Mario&quot;,
+        ///            &quot;gamesSwitch&quot;: [
+        ///                {
+        ///                    &quot;amiiboUsage&quot;: [
+        ///                        {
+        ///                            &quot;Usage&quot;: &quot;Unlock an amiibo-exclusive weapon for the character and their Rabbid counterpart&quot;,
+        ///                            &quot;write&quot;: false
+        ///                        }
+        ///                    ],
+        ///                    &quot;gameID&quot;: [
+        ///      [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Amiibo {
+            get {
+                return ResourceManager.GetString("Amiibo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon anchor {
