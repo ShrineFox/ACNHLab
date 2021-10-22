@@ -33,10 +33,10 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("A5CD9C84","Girl_normal"),
             new Tuple<string, string>("70706744","Girl_big_sis"),
         };
-        public static List<Tuple<string, string>> Gender = new List<Tuple<string, string>>()
+        public static List<Tuple<string, string>> TalkType = new List<Tuple<string, string>>()
         {
-            new Tuple<string, string>("0","Male"),
-            new Tuple<string, string>("1","Female"),
+            new Tuple<string, string>("0","Type 1"),
+            new Tuple<string, string>("1","Type 2"),
         };
         public static List<Tuple<int, string, string>> Species = new List<Tuple<int, string, string>>();
 
@@ -79,12 +79,19 @@ namespace ACNHLab.Classes
             /*
              *  Get species list, names and catchphrases from MSBT
              */
-            Species = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\STR_Race.msbt"));
+            List<Tuple<int, string, string>> speciesMSBT = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\STR_Race.msbt"), 12);
+            // Remove gender from species list
+            foreach (var species in speciesMSBT)
+                if (!Species.Any(x => x.Item2.Substring(0, 3).Equals(species.Item2.Substring(0, 3))))
+                    Species.Add(new Tuple<int, string, string>(species.Item1, species.Item2.Substring(0, 3).Replace("\0", ""), species.Item3.Replace("\0", "")));
             Program.status.Update("[INFO] Loaded villager species from \"Message\\String_USen\\STR_Race.msbt\".");
+            
             List<Tuple<int, string, string>> names = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcName.msbt"));
             Program.status.Update("[INFO] Loaded villager names from \"Message\\String_USen\\Npc\\STR_NNpcName.msbt\".");
+            
             List<Tuple<int, string, string>> phrases = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt"));
             Program.status.Update("[INFO] Loaded villager catchphrases from \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
+            
             /*
              *  Get NPC data from BCSV
              */
@@ -104,21 +111,29 @@ namespace ACNHLab.Classes
                             if (row.Cells[i].Value != null && Personality.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
                                 villager.Personality = Personality.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
                             break;
+                        case 23: // Birth Day
+                            if (row.Cells[i].Value != null)
+                                villager.BirthDay = Convert.ToInt32(row.Cells[i].Value.ToString().Replace("\0", ""));
+                            break;
+                        case 24: // Birth Month
+                            if (row.Cells[i].Value != null)
+                                villager.BirthMonth = Convert.ToInt32(row.Cells[i].Value.ToString().Replace("\0", ""));
+                            break;
                         case 31: // Species & ID (also used to add name/phrase)
                             if (row.Cells[i].Value != null)
                             {
                                 string name = Classes.Bcsv.Hex.FromHexToString(row.Cells[i].Value.ToString()).Substring(0, 5);
                                 string species = name.Substring(0, 3);
                                 string id = name.Substring(3, 2);
-                                villager.Species = Species.First(x => x.Item1.Equals(species)).Item2;
-                                villager.ID = Convert.ToInt32(id);
-                                villager.Name = names.First(x => x.Item2.Equals(name)).Item3;
-                                villager.Catchphrase = phrases.First(x => x.Item2.Equals(name)).Item3;
+                                villager.Species = Species.First(x => x.Item2.StartsWith(species)).Item3.Replace("\0","");
+                                villager.ID = Convert.ToInt32(id.Replace("\0", ""));
+                                villager.Name = names.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
+                                villager.Catchphrase = phrases.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
                             }
                             break;
-                        case 33: // Gender
+                        case 33: // Talk Type
                             if (row.Cells[i].Value != null)
-                                villager.Gender = Gender.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                villager.TalkType = TalkType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
                             break;
                         default:
                             break;
@@ -126,16 +141,18 @@ namespace ACNHLab.Classes
                 }
                 List.Add(villager);
             }
+            Program.status.Update("[INFO] Serialized villager data to object list.");
+
             /*
              *  Get amiibo data from BCSV
              */
             Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
             foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
-            {
-                foreach (var villager in List)
-                    if (Classes.Bcsv.Hex.FromHexToString(row.Cells[4].Value.ToString()).Equals(villager.Name))
-                        villager.Amiibo = row.Cells[0].Value.ToString();
-            }
+                if (row.Cells[4].Value != null)
+                    foreach (var villager in List)
+                        if (Classes.Bcsv.Hex.FromHexToString(row.Cells[4].Value.ToString()).Equals(villager.Name))
+                            villager.Amiibo = row.Cells[0].Value.ToString();
+            Program.status.Update("[INFO] Added amiibo data to villager entries.");
 
             // TODO: Get room/house data from BYML
         }
@@ -146,7 +163,7 @@ namespace ACNHLab.Classes
         public string Name { get; set; } = "";
         public string Species { get; set; } = "";
         public int ID { get; set; } = 0;
-        public string Gender { get; set; } = "Male";
+        public string TalkType { get; set; } = "Type 1";
         public string Personality { get; set; } = "Normal (Boy)";
         public string Hobby { get; set; } = "Play";
         public int BirthMonth { get; set; } = 12;

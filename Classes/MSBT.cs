@@ -1007,7 +1007,7 @@ namespace ACNHLab.Classes
 			return result;
 		}
 
-        internal static List<Tuple<int, string, string>> Deserialize(string path)
+        internal static List<Tuple<int, string, string>> Deserialize(string path, int skip = 0)
         {
 			List<Tuple<int, string, string>> entries = new List<Tuple<int, string, string>>();
 			MSBT mstb = new MSBT(path);
@@ -1016,7 +1016,7 @@ namespace ACNHLab.Classes
 				for (int i = 0; i < mstb.TXT2.NumberOfStrings; i++)
 				{
 					Label label = (Label)mstb.LBL1.Labels[i];
-					byte[] valueBytes = label.String.Value.Skip(12).ToArray();
+					byte[] valueBytes = label.String.Value.Skip(skip).ToArray();
 					string value = Encoding.Unicode.GetString(valueBytes, 0, valueBytes.Length);
 					entries.Add(new Tuple<int, string, string>(Convert.ToInt32(label.Index), label.Name, value));
 				}

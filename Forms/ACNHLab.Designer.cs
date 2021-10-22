@@ -76,8 +76,8 @@ namespace ACNHLab
             this.metroSetLabel_Personality = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_Personality = new MetroSet_UI.Controls.MetroSetComboBox();
             this.tableLayoutPanel_VillagerGender = new System.Windows.Forms.TableLayoutPanel();
-            this.metroSetRadioButton_GenderFemale = new MetroSet_UI.Controls.MetroSetRadioButton();
-            this.metroSetRadioButton_GenderMale = new MetroSet_UI.Controls.MetroSetRadioButton();
+            this.metroSetRadioButton_TalkType2 = new MetroSet_UI.Controls.MetroSetRadioButton();
+            this.metroSetRadioButton_TalkType1 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.metroSetTextBox_Catchphrase = new MetroSet_UI.Controls.MetroSetTextBox();
             this.tabPage_Furniture = new System.Windows.Forms.TabPage();
             this.panel_Scripting = new System.Windows.Forms.Panel();
@@ -376,6 +376,7 @@ namespace ACNHLab
             this.metroSetComboBox_Villagers.TabIndex = 0;
             this.metroSetComboBox_Villagers.ThemeAuthor = "Narwin";
             this.metroSetComboBox_Villagers.ThemeName = "MetroDark";
+            this.metroSetComboBox_Villagers.SelectedIndexChanged += new System.EventHandler(this.Villager_SelectedIndexChanged);
             // 
             // panel_VillagerImg
             // 
@@ -903,7 +904,7 @@ namespace ACNHLab
             this.metroSetLabel_VillagerGender.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_VillagerGender.StyleManager = null;
             this.metroSetLabel_VillagerGender.TabIndex = 35;
-            this.metroSetLabel_VillagerGender.Text = "Gender:";
+            this.metroSetLabel_VillagerGender.Text = "Talk Style:";
             this.metroSetLabel_VillagerGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.metroSetLabel_VillagerGender.ThemeAuthor = "Narwin";
             this.metroSetLabel_VillagerGender.ThemeName = "MetroDark";
@@ -957,8 +958,8 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerGender.ColumnCount = 2;
             this.tableLayoutPanel_VillagerGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_VillagerGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_VillagerGender.Controls.Add(this.metroSetRadioButton_GenderFemale, 1, 0);
-            this.tableLayoutPanel_VillagerGender.Controls.Add(this.metroSetRadioButton_GenderMale, 0, 0);
+            this.tableLayoutPanel_VillagerGender.Controls.Add(this.metroSetRadioButton_TalkType2, 1, 0);
+            this.tableLayoutPanel_VillagerGender.Controls.Add(this.metroSetRadioButton_TalkType1, 0, 0);
             this.tableLayoutPanel_VillagerGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_VillagerGender.Location = new System.Drawing.Point(116, 111);
             this.tableLayoutPanel_VillagerGender.Name = "tableLayoutPanel_VillagerGender";
@@ -968,49 +969,49 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerGender.Size = new System.Drawing.Size(259, 30);
             this.tableLayoutPanel_VillagerGender.TabIndex = 39;
             // 
-            // metroSetRadioButton_GenderFemale
+            // metroSetRadioButton_TalkType2
             // 
-            this.metroSetRadioButton_GenderFemale.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.metroSetRadioButton_GenderFemale.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.metroSetRadioButton_GenderFemale.Checked = false;
-            this.metroSetRadioButton_GenderFemale.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetRadioButton_GenderFemale.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
-            this.metroSetRadioButton_GenderFemale.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.metroSetRadioButton_GenderFemale.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetRadioButton_GenderFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetRadioButton_GenderFemale.Group = 0;
-            this.metroSetRadioButton_GenderFemale.IsDerivedStyle = true;
-            this.metroSetRadioButton_GenderFemale.Location = new System.Drawing.Point(132, 3);
-            this.metroSetRadioButton_GenderFemale.Name = "metroSetRadioButton_GenderFemale";
-            this.metroSetRadioButton_GenderFemale.Size = new System.Drawing.Size(124, 17);
-            this.metroSetRadioButton_GenderFemale.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetRadioButton_GenderFemale.StyleManager = null;
-            this.metroSetRadioButton_GenderFemale.TabIndex = 1;
-            this.metroSetRadioButton_GenderFemale.Text = "Female";
-            this.metroSetRadioButton_GenderFemale.ThemeAuthor = "Narwin";
-            this.metroSetRadioButton_GenderFemale.ThemeName = "MetroDark";
+            this.metroSetRadioButton_TalkType2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.metroSetRadioButton_TalkType2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.metroSetRadioButton_TalkType2.Checked = false;
+            this.metroSetRadioButton_TalkType2.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.metroSetRadioButton_TalkType2.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.metroSetRadioButton_TalkType2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.metroSetRadioButton_TalkType2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetRadioButton_TalkType2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetRadioButton_TalkType2.Group = 0;
+            this.metroSetRadioButton_TalkType2.IsDerivedStyle = true;
+            this.metroSetRadioButton_TalkType2.Location = new System.Drawing.Point(132, 3);
+            this.metroSetRadioButton_TalkType2.Name = "metroSetRadioButton_TalkType2";
+            this.metroSetRadioButton_TalkType2.Size = new System.Drawing.Size(124, 17);
+            this.metroSetRadioButton_TalkType2.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetRadioButton_TalkType2.StyleManager = null;
+            this.metroSetRadioButton_TalkType2.TabIndex = 1;
+            this.metroSetRadioButton_TalkType2.Text = "Type 2";
+            this.metroSetRadioButton_TalkType2.ThemeAuthor = "Narwin";
+            this.metroSetRadioButton_TalkType2.ThemeName = "MetroDark";
             // 
-            // metroSetRadioButton_GenderMale
+            // metroSetRadioButton_TalkType1
             // 
-            this.metroSetRadioButton_GenderMale.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.metroSetRadioButton_GenderMale.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.metroSetRadioButton_GenderMale.Checked = true;
-            this.metroSetRadioButton_GenderMale.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.metroSetRadioButton_GenderMale.CheckState = MetroSet_UI.Enums.CheckState.Checked;
-            this.metroSetRadioButton_GenderMale.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.metroSetRadioButton_GenderMale.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetRadioButton_GenderMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetRadioButton_GenderMale.Group = 0;
-            this.metroSetRadioButton_GenderMale.IsDerivedStyle = true;
-            this.metroSetRadioButton_GenderMale.Location = new System.Drawing.Point(3, 3);
-            this.metroSetRadioButton_GenderMale.Name = "metroSetRadioButton_GenderMale";
-            this.metroSetRadioButton_GenderMale.Size = new System.Drawing.Size(123, 17);
-            this.metroSetRadioButton_GenderMale.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetRadioButton_GenderMale.StyleManager = null;
-            this.metroSetRadioButton_GenderMale.TabIndex = 0;
-            this.metroSetRadioButton_GenderMale.Text = "Male";
-            this.metroSetRadioButton_GenderMale.ThemeAuthor = "Narwin";
-            this.metroSetRadioButton_GenderMale.ThemeName = "MetroDark";
+            this.metroSetRadioButton_TalkType1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.metroSetRadioButton_TalkType1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.metroSetRadioButton_TalkType1.Checked = true;
+            this.metroSetRadioButton_TalkType1.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.metroSetRadioButton_TalkType1.CheckState = MetroSet_UI.Enums.CheckState.Checked;
+            this.metroSetRadioButton_TalkType1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.metroSetRadioButton_TalkType1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetRadioButton_TalkType1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetRadioButton_TalkType1.Group = 0;
+            this.metroSetRadioButton_TalkType1.IsDerivedStyle = true;
+            this.metroSetRadioButton_TalkType1.Location = new System.Drawing.Point(3, 3);
+            this.metroSetRadioButton_TalkType1.Name = "metroSetRadioButton_TalkType1";
+            this.metroSetRadioButton_TalkType1.Size = new System.Drawing.Size(123, 17);
+            this.metroSetRadioButton_TalkType1.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetRadioButton_TalkType1.StyleManager = null;
+            this.metroSetRadioButton_TalkType1.TabIndex = 0;
+            this.metroSetRadioButton_TalkType1.Text = "Type 1";
+            this.metroSetRadioButton_TalkType1.ThemeAuthor = "Narwin";
+            this.metroSetRadioButton_TalkType1.ThemeName = "MetroDark";
             // 
             // metroSetTextBox_Catchphrase
             // 
@@ -1522,8 +1523,8 @@ namespace ACNHLab
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Personality;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Personality;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_VillagerGender;
-        private MetroSet_UI.Controls.MetroSetRadioButton metroSetRadioButton_GenderMale;
-        private MetroSet_UI.Controls.MetroSetRadioButton metroSetRadioButton_GenderFemale;
+        private MetroSet_UI.Controls.MetroSetRadioButton metroSetRadioButton_TalkType1;
+        private MetroSet_UI.Controls.MetroSetRadioButton metroSetRadioButton_TalkType2;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Hobby;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Hobby;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Birthday;
