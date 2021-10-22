@@ -1,18 +1,6 @@
-﻿using AmicitiaLibrary.Graphics.RenderWare;
-using AmicitiaLibrary.Graphics.SPD;
-using AmicitiaLibrary.Graphics.SPR;
-using AmicitiaLibrary.Graphics.TMX;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Forms;
-using System.Windows.Input;
 
 namespace ACNHLab
 {
