@@ -1,24 +1,15 @@
 ﻿using ACNHLab.Classes;
-using MetroSet_UI.Controls;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
-using Newtonsoft.Json;
+using ZstdNet;
 using static ACNHLab.Classes.Amiibo;
 
 namespace ACNHLab
@@ -132,49 +123,40 @@ namespace ACNHLab
 
         private void UpdateIcon()
         {
-            // Check in icon folder for icon texture
-            string temp = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), $"Temp\\Model\\{metroSetComboBox_Villagers.SelectedItem}.dds");
-            Directory.CreateDirectory(Path.GetDirectoryName(temp));
-            if (!File.Exists(temp))
+            string temp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Temp");
+
+            string species = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(0, 3);
+            string ID = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(3, 2);
+
+            string sarcName = $"Layout_NpcIcon_{species}{ID}.Nin_NX_NVN.zs";
+            string newLocation = Path.Combine(temp, sarcName);
+            string iconRomfs = Path.Combine(SettingsForm.settings.ExtractedPath, "Model", sarcName);
+            string textureName = Path.Combine(temp, Path.GetFileNameWithoutExtension(sarcName) + ".bftex");
+
+            if (!Directory.Exists(temp))
             {
-                string species = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(0, 3);
-                string ID = metroSetComboBox_Villagers.SelectedItem.ToString().Substring(3, 2);
-                string sarcName = $"Layout_NpcIcon_{species}{ID}.Nin_NX_NVN.zs";
-                // Check project directory
-                string iconProject = Path.Combine(Path.GetDirectoryName(SettingsForm.settings.ProjectName), sarcName);
-                string iconRomfs = Path.Combine(SettingsForm.settings.ExtractedPath, "Model\\" + sarcName);
-                string iconOutput = Path.Combine(Path.GetDirectoryName(temp), metroSetComboBox_Villagers.SelectedItem.ToString() + ".zs");
-                if (File.Exists(iconProject))
-                    File.Copy(iconProject, iconOutput, true);
-                else if (File.Exists(iconRomfs))
-                    File.Copy(iconRomfs, iconOutput, true);
-                else
-                    return;
-                // Wait for file to be copied to temp location
-                using (Tools.WaitForFile(iconOutput, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
-                // Decompress and extract SARC
-                SARC.Decompress(iconOutput, Path.Combine(Path.GetDirectoryName(temp), sarcName.Replace(".zs","")));
-                string modelOutputDir = Path.Combine(Path.GetDirectoryName(temp), sarcName.Replace(".Nin_NX_NVN.zs", ""));
-                SARC.ExtractToDir(sarcName.Replace(".zs", ""), modelOutputDir);
-                Program.status.Update($"[INFO] Extracted files from \"{sarcName.Replace(".zs", "")}\" to Temp files.");
-                // Extract texture
-                string modelFile = $"{modelOutputDir}\\output.bfres";
-                using (Tools.WaitForFile(modelFile, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
-                Syroot.NintenTools.Bfres.ResFile bfres = new Syroot.NintenTools.Bfres.ResFile(modelFile);
-                foreach (var texture in bfres.Textures)
-                    File.WriteAllBytes(temp.Replace(".dds",".bftex"), texture.Value.Data);
-                Program.status.Update($"[INFO] Extracted texture \"{temp.Replace(".dds", ".bftex")}\" to Temp files.");
-                // Convert to dds with quickbms
-                if (File.Exists(temp.Replace(".dds", ".bftex")))
-                    Tools.QuickBMS(temp.Replace(".dds", ".bftex"));
+                Directory.CreateDirectory(temp);
             }
-            if (File.Exists(temp))
+
+            File.Copy(iconRomfs, newLocation, true);
+
+            string modelOutputDir = Path.Combine(temp, Path.GetFileNameWithoutExtension(sarcName));
+
+            Decompressor decomp = new Decompressor();
+            File.WriteAllBytes(newLocation, decomp.Unwrap(File.ReadAllBytes(newLocation)));
+
+            SARC.ExtractToDir(newLocation, modelOutputDir);
+
+            string modelFile = $"{modelOutputDir}\\output.bfres";
+
+            BfresLibrary.ResFile bfres = new BfresLibrary.ResFile(modelFile);
+
+            foreach (var texture in bfres.Textures)
             {
-                panel_VillagerImg.BackgroundImage = Image.FromFile(temp);
-                Program.status.Update($"[INFO] Loaded villager icon: \"{Path.GetFileName(temp)}\"");
+                texture.Value.Export(textureName, bfres);
             }
-            else
-                Program.status.Update($"[INFO] Failed to load villager icon: \"{Path.GetFileName(temp)}\" file not found.");
+
+            panel_VillagerImg.BackgroundImage = Image.FromFile(textureName);
         }
 
         private void SaveProjectAs_Click(object sender, EventArgs e)

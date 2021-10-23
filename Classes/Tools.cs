@@ -71,20 +71,5 @@ namespace ACNHLab
             }
             return null;
         }
-
-        internal static void QuickBMS(string path)
-        {
-            string bmsFolder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Dependencies\\Quickbms");
-            Process process = new Process();
-            process.StartInfo.FileName = Path.Combine(bmsFolder, "quickbms.exe");
-            process.StartInfo.Arguments = $"-a \"{path}\" \"{Path.Combine(bmsFolder, "Switch_BNTX.bms")}\"";
-            // Add initial input file
-            process.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            process.WaitForInputIdle();
-            process.Close();
-            Program.status.Update($"[INFO] Converted texture \"{Path.GetFileName(path)}\" to DDS with quickbms.exe");
-        }
     }
 }
