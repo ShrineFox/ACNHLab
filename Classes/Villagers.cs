@@ -13,6 +13,29 @@ namespace ACNHLab.Classes
 {
     class Villagers
     {
+        public static List<Tuple<string, string>> PreferredClothes = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("00000009","None"),
+            new Tuple<string, string>("00000004","Chinese"),
+            new Tuple<string, string>("0000000A","Japanese")
+        };
+        // Preferred Clothes 2
+        public static List<Tuple<string, string>> PreferredStyle = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("00000001","1"),
+            new Tuple<string, string>("00000002","2"),
+            new Tuple<string, string>("00000003","3"),
+            new Tuple<string, string>("00000004","4"),
+            new Tuple<string, string>("00000005","5"),
+            new Tuple<string, string>("00000006","6")
+        };
+        // Preferred Style 2
+        public static List<Tuple<string, string>> Unknown1 = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("26296DD2","Normal"),
+            new Tuple<string, string>("D87D25AA","Prefer"),
+            new Tuple<string, string>("508E8016","Avoid")
+        };
         public static List<Tuple<string, string>> Hobby = new List<Tuple<string, string>>() 
         {
             new Tuple<string, string>("59FBDC71","Education"),
@@ -33,12 +56,93 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("A5CD9C84","Girl_normal"),
             new Tuple<string, string>("70706744","Girl_big_sis"),
         };
+        // Unknown 2 (Always 00000000)
+        public static List<Tuple<string, string>> SocialType = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("51374B6B","High"),
+            new Tuple<string, string>("26296DD2","Normal"),
+            new Tuple<string, string>("AAC53E41","Low")
+        };
+        public static List<Tuple<string, string>> SingPauseType = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("1D131A47","Tie"),
+            new Tuple<string, string>("1964B988","Stop")
+        };
+        public static List<Tuple<string, string>> SingRhythmType = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("26296DD2","Normal"),
+            new Tuple<string, string>("1197DFE3","Random"),
+            new Tuple<string, string>("FC4360ED","Shuffle")
+        };
+        // Accent Wall (Always 0)
+        // Photo Item ID
+        // Floor Type (0 - 54)
+        // Poster Item ID
+        // Rain Hat ID
+        // Rain Wear ID
+        // SmartphoneRemakeCommonPattern (Always 65535)
+        // SmartphoneRemakePattern (0 - 7)
+        // Default Shirt ID
+        // Default Umbrella ID
+        // Unique ID (incremental)
+        // Wall Type (Always 0)
+        // Birth Month
+        // Birth Day
+        public static List<Tuple<string, string>> Color = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("0","None"),
+            new Tuple<string, string>("1","Red"),
+            new Tuple<string, string>("2","Green"),
+            new Tuple<string, string>("3","Blue"),
+            new Tuple<string, string>("4","Yellow"),
+            new Tuple<string, string>("5","Orange"),
+            new Tuple<string, string>("6","Pink"),
+            new Tuple<string, string>("7","Purple"),
+            new Tuple<string, string>("8","Light Blue"),
+            new Tuple<string, string>("9","Beige"),
+            new Tuple<string, string>("10","Brown"),
+            new Tuple<string, string>("11","Gray"),
+            new Tuple<string, string>("12","White"),
+            new Tuple<string, string>("13","Black"),
+            new Tuple<string, string>("14","Colorful"),
+        };
+        // Favorite Color 2
+        // Havok Res Name (NpcNmlClothDog)
+        // Helper Bone Res Name (NpcNmlHelperBoneDog)
+        // Init Live - Always 1
+        // Init Remake Id (0 to 6)
+        // Label (dog69)
+        // NPC Color
         public static List<Tuple<string, string>> TalkType = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("0","Type 1"),
             new Tuple<string, string>("1","Type 2"),
         };
-        public static List<Tuple<int, string, string>> Species = new List<Tuple<int, string, string>>();
+        public static List<Tuple<int, string, string>> Species = new List<Tuple<int, string, string>>(); // Res Name (NpcNmlDog69)
+        // Special ELink (Always 0)
+        // Special SLink (Always 0)
+        // Village Melody Note Length (3 - 6)
+        public static List<Tuple<string, string>> VillageMelody = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("1","1"),
+            new Tuple<string, string>("2","2"),
+            new Tuple<string, string>("3","3"),
+            new Tuple<string, string>("6","6"),
+            new Tuple<string, string>("8","8"),
+            new Tuple<string, string>("10","10"),
+            new Tuple<string, string>("12","12"),
+            new Tuple<string, string>("14","14"),
+            new Tuple<string, string>("18","18")
+        };
+        public static List<Tuple<string, string>> VillageMelody2 = new List<Tuple<string, string>>()
+        {
+            new Tuple<string, string>("00000001","1"),
+            new Tuple<string, string>("00000002","2"),
+            new Tuple<string, string>("00000003","3"),
+            new Tuple<string, string>("00000004","4"),
+            new Tuple<string, string>("00000005","5"),
+            new Tuple<string, string>("00000006","6")
+        };
 
         public static List<VillagerData> List { get; set; } = new List<VillagerData>();
         public static void Load()
