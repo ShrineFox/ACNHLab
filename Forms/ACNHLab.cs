@@ -146,15 +146,14 @@ namespace ACNHLab
             File.WriteAllBytes(newLocation, decomp.Unwrap(File.ReadAllBytes(newLocation)));
 
             SARC.ExtractToDir(newLocation, modelOutputDir);
-
             string modelFile = $"{modelOutputDir}\\output.bfres";
 
-            BfresLibrary.ResFile bfres = new BfresLibrary.ResFile(modelFile);
-
+            /* 
+             * BfresLibrary.ResFile bfres = new BfresLibrary.ResFile(modelFile);
             foreach (var texture in bfres.Textures)
             {
                 texture.Value.Export(textureName, bfres);
-            }
+            } */
 
             panel_VillagerImg.BackgroundImage = Image.FromFile(textureName);
         }
@@ -448,8 +447,8 @@ namespace ACNHLab
 
             Program.status.Update($"[INFO] Loaded Villager Data: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})");
 
-            // Show villager icon
-            UpdateIcon();
+            // TODO: Show villager icon
+            //UpdateIcon();
         }
     }
 
