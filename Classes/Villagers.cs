@@ -183,6 +183,22 @@ namespace ACNHLab.Classes
                 {
                     switch (i)
                     {
+                        case 0: // Preferred Clothes
+                            if (row.Cells[i].Value != null && PreferredClothes.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.ClothesType = PreferredClothes.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 2: // Preferred Style 1
+                            if (row.Cells[i].Value != null && PreferredStyle.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.Style = PreferredStyle.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 3: // Preferred Style 2
+                            if (row.Cells[i].Value != null && PreferredStyle.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.Style2 = PreferredStyle.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 4: // Unknown
+                            if (row.Cells[i].Value != null && Unknown1.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.Unknown = Unknown1.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
                         case 5: // Hobby
                             if (row.Cells[i].Value != null && Hobby.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
                                 villager.Hobby = Hobby.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
@@ -191,13 +207,69 @@ namespace ACNHLab.Classes
                             if (row.Cells[i].Value != null && Personality.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
                                 villager.Personality = Personality.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
                             break;
+                        case 8: // Social Type
+                            if (row.Cells[i].Value != null && SocialType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.SocialType = SocialType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 9: // Sing Pause Type
+                            if (row.Cells[i].Value != null && SingPauseType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.SingPauseType = SingPauseType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 10: // Sing Rhythm Type
+                            if (row.Cells[i].Value != null && SingRhythmType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.SingRhythmType = SingRhythmType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 12: // Photo Item ID
+                            if (row.Cells[i].Value != null)
+                                villager.PhotoItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 13: // Floor Type
+                            if (row.Cells[i].Value != null)
+                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 14: // Poster Item ID
+                            if (row.Cells[i].Value != null)
+                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 15: // Rain Hat
+                            if (row.Cells[i].Value != null)
+                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 16: // Rain Wear
+                            if (row.Cells[i].Value != null)
+                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 18: // Phone Pattern
+                            if (row.Cells[i].Value != null)
+                                villager.PhonePattern = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 19: // Default Shirt ID
+                            if (row.Cells[i].Value != null)
+                                villager.ShirtItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 20: // Umbrella ID
+                            if (row.Cells[i].Value != null)
+                                villager.UmbrellaItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
                         case 23: // Birth Day
                             if (row.Cells[i].Value != null)
-                                villager.BirthDay = Convert.ToInt32(row.Cells[i].Value.ToString().Replace("\0", ""));
+                                villager.BirthDay = Convert.ToInt32(row.Cells[i].Value.ToString());
                             break;
                         case 24: // Birth Month
                             if (row.Cells[i].Value != null)
-                                villager.BirthMonth = Convert.ToInt32(row.Cells[i].Value.ToString().Replace("\0", ""));
+                                villager.BirthMonth = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 25: // Fave Color
+                            if (row.Cells[i].Value != null && Color.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.FaveColor = Color.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 26: // Fave Color 2
+                            if (row.Cells[i].Value != null && Color.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.FaveColor2 = Color.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 30: // Remake ID
+                            if (row.Cells[i].Value != null)
+                                villager.RemakeID = Convert.ToInt32(row.Cells[i].Value.ToString());
                             break;
                         case 31: // Species & ID (also used to add name/phrase)
                             if (row.Cells[i].Value != null)
@@ -211,14 +283,33 @@ namespace ACNHLab.Classes
                                 villager.Catchphrase = phrases.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
                             }
                             break;
-                        case 33: // Talk Type
+                        case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
                             if (row.Cells[i].Value != null)
+                                villager.NPCColor = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 33: // Talk Type
+                            if (row.Cells[i].Value != null && TalkType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
                                 villager.TalkType = TalkType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 37: // Note Length
+                            if (row.Cells[i].Value != null)
+                                villager.NoteLength = Convert.ToInt32(row.Cells[i].Value.ToString());
+                            break;
+                        case 38: // Village Melody
+                            if (row.Cells[i].Value != null && VillageMelody.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.VillageMelody = VillageMelody.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                            break;
+                        case 39: // Village Melody 2
+                            if (row.Cells[i].Value != null && VillageMelody2.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                villager.VillageMelody2 = VillageMelody2.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
                             break;
                         default:
                             break;
                     }
                 }
+                #if DEBUG
+                    Program.status.Update($"[DEBUG] Loaded {villager.Species}{villager.ID} data");
+                #endif
                 List.Add(villager);
             }
             Program.status.Update("[INFO] Serialized villager data to object list.");
@@ -252,6 +343,28 @@ namespace ACNHLab.Classes
         public string Catchphrase { get; set; } = "";
         public Interior Interior { get; set; } = new Interior();
         public Exterior Exterior { get; set; } = new Exterior();
+        public string ClothesType { get; set; } = "None";
+        public string Style { get; set; } = "6";
+        public string Style2 { get; set; } = "6";
+        public string Unknown { get; set; } = "Normal";
+        public string SocialType { get; set; } = "Normal";
+        public string SingPauseType { get; set; } = "Tie";
+        public string SingRhythmType { get; set; } = "Normal";
+        public int PhotoItemID { get; set; } = 6745;
+        public int FloorType { get; set; } = 0;
+        public int PosterItemID { get; set; } = 10797;
+        public int RainHatItemID { get; set; } = 7394;
+        public int RainWearItemID { get; set; } = 3170;
+        public int PhonePattern { get; set; } = 3;
+        public int ShirtItemID { get; set; } = 8205;
+        public int UmbrellaItemID { get; set; } = 9955;
+        public string FaveColor { get; set; } = "Black";
+        public string FaveColor2 { get; set; } = "Red";
+        public int RemakeID { get; set; } = 1;
+        public int NoteLength { get; set; } = 5;
+        public string VillageMelody { get; set; } = "1";
+        public string VillageMelody2 { get; set; } = "4";
+        public int NPCColor { get; set; } = 72;
     }
 
     public class Interior

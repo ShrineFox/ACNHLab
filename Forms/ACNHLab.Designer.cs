@@ -41,32 +41,6 @@ namespace ACNHLab
             this.tabPage_Project = new System.Windows.Forms.TabPage();
             this.treeView_Project = new System.Windows.Forms.TreeView();
             this.metroSetButton_ShowHide = new MetroSet_UI.Controls.MetroSetButton();
-            this.menuStrip_Main = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip_Project = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItem_New = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_NewFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_NewFlow = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_NewMsg = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_NewTxt = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Decompile = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Compile = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Unpack = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_RepackAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_RepackPAC = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_RepackAFS = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_RepackAWB = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Replace = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Remove = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_OpenAt2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Copy = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_Rename = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_ExpandProj = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_CollapseProj = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Workspace = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_Workspace = new System.Windows.Forms.TableLayoutPanel();
             this.richTextBox_Status = new System.Windows.Forms.RichTextBox();
@@ -81,10 +55,12 @@ namespace ACNHLab
             this.button_VillagerHouse = new System.Windows.Forms.Button();
             this.btn_RemoveVillager = new System.Windows.Forms.Button();
             this.btn_AddVillager = new System.Windows.Forms.Button();
-            this.tabPage_Furniture = new System.Windows.Forms.TabPage();
-            this.panel_Scripting = new System.Windows.Forms.Panel();
             this.panel_VillagerParams = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_VillagerParams = new System.Windows.Forms.TableLayoutPanel();
+            this.metroSetLabel_NPCColor = new MetroSet_UI.Controls.MetroSetLabel();
+            this.metroSetLabel_Melody2 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.metroSetLabel_ShirtID = new MetroSet_UI.Controls.MetroSetLabel();
+            this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_Catchphrase = new MetroSet_UI.Controls.MetroSetLabel();
             this.tableLayoutPanel_Amiibo = new System.Windows.Forms.TableLayoutPanel();
             this.metroSetComboBox_AmiiboSeries = new MetroSet_UI.Controls.MetroSetComboBox();
@@ -114,7 +90,6 @@ namespace ACNHLab
             this.metroSetTextBox_Catchphrase = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetLabel_ClothesType = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_ClothesType = new MetroSet_UI.Controls.MetroSetComboBox();
-            this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_Style = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_Style2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_Style2 = new MetroSet_UI.Controls.MetroSetComboBox();
@@ -122,8 +97,8 @@ namespace ACNHLab
             this.metroSetComboBox_Unknown1 = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_SocialType = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_SocialType = new MetroSet_UI.Controls.MetroSetComboBox();
-            this.metroSetLabel_SingPause = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_SingPause = new MetroSet_UI.Controls.MetroSetComboBox();
+            this.metroSetLabel_SingPause = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_SingRhythm = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_SingRhythm = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_PhotoID = new MetroSet_UI.Controls.MetroSetLabel();
@@ -138,14 +113,13 @@ namespace ACNHLab
             this.metroSetNumeric_RainWearID = new MetroSet_UI.Controls.MetroSetNumeric();
             this.metroSetLabel_PhonePattern = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetNumeric_PhonePattern = new MetroSet_UI.Controls.MetroSetNumeric();
-            this.metroSetLabel_ShirtID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric1 = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.metroSetNumeric_ShirtID = new MetroSet_UI.Controls.MetroSetNumeric();
             this.metroSetLabel_UmbrellaID = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetNumeric_UmbrellaID = new MetroSet_UI.Controls.MetroSetNumeric();
-            this.metroSetLabel_FaveColor = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_FaveColor = new MetroSet_UI.Controls.MetroSetComboBox();
-            this.metroSetLabel_FaveColor2 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.metroSetLabel_FaveColor = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_FaveColor2 = new MetroSet_UI.Controls.MetroSetComboBox();
+            this.metroSetLabel_FaveColor2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_RemakeID = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetNumeric_RemakeID = new MetroSet_UI.Controls.MetroSetNumeric();
             this.metroSetLabel_NoteLength = new MetroSet_UI.Controls.MetroSetLabel();
@@ -153,13 +127,39 @@ namespace ACNHLab
             this.metroSetComboBox_Melody = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_Melody = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_Melody2 = new MetroSet_UI.Controls.MetroSetComboBox();
-            this.metroSetLabel_Melody2 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.tabPage_Furniture = new System.Windows.Forms.TabPage();
+            this.panel_Scripting = new System.Windows.Forms.Panel();
+            this.menuStrip_Main = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip_Project = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItem_New = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_NewFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_NewFlow = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_NewMsg = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_NewTxt = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Decompile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Compile = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Unpack = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_RepackAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_RepackPAC = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_RepackAFS = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_RepackAWB = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Replace = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Remove = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_OpenAt2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Copy = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Rename = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_ExpandProj = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_CollapseProj = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroSetNumeric_NPCColor = new MetroSet_UI.Controls.MetroSetNumeric();
             this.tableLayoutPanel_Container.SuspendLayout();
             this.tableLayoutPanel_Main.SuspendLayout();
             this.metroSetTabControl_GameProject.SuspendLayout();
             this.tabPage_Project.SuspendLayout();
-            this.menuStrip_Main.SuspendLayout();
-            this.contextMenuStrip_Project.SuspendLayout();
             this.panel_Workspace.SuspendLayout();
             this.tableLayoutPanel_Workspace.SuspendLayout();
             this.panel_WorkspaceTabs.SuspendLayout();
@@ -168,13 +168,15 @@ namespace ACNHLab
             this.tableLayoutPanel_Villagers.SuspendLayout();
             this.tableLayoutPanel_VillagerList.SuspendLayout();
             this.tableLayoutPanel_VillagerAddRemove.SuspendLayout();
-            this.tabPage_Furniture.SuspendLayout();
             this.panel_VillagerParams.SuspendLayout();
             this.tableLayoutPanel_VillagerParams.SuspendLayout();
             this.tableLayoutPanel_Amiibo.SuspendLayout();
             this.tableLayoutPanel_Birthday.SuspendLayout();
             this.tableLayoutPanel_VillagerSpeciesAdd.SuspendLayout();
             this.tableLayoutPanel_VillagerGender.SuspendLayout();
+            this.tabPage_Furniture.SuspendLayout();
+            this.menuStrip_Main.SuspendLayout();
+            this.contextMenuStrip_Project.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel_Container
@@ -327,317 +329,6 @@ namespace ACNHLab
             this.metroSetButton_ShowHide.ThemeName = "MetroDark";
             this.metroSetButton_ShowHide.Click += new System.EventHandler(this.ShowHide_Click);
             // 
-            // menuStrip_Main
-            // 
-            this.menuStrip_Main.AutoSize = false;
-            this.menuStrip_Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.menuStrip_Main.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip_Main.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.menuStrip_Main.Location = new System.Drawing.Point(2, 0);
-            this.menuStrip_Main.Name = "menuStrip_Main";
-            this.menuStrip_Main.Size = new System.Drawing.Size(938, 28);
-            this.menuStrip_Main.TabIndex = 2;
-            this.menuStrip_Main.Text = "menuStrip_Main";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newProjectToolStripMenuItem,
-            this.loadProjectToolStripMenuItem,
-            this.saveProjectToolStripMenuItem,
-            this.settingsToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.fileToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.disk;
-            this.fileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // newProjectToolStripMenuItem
-            // 
-            this.newProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.newProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.asterisk_yellow;
-            this.newProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.newProjectToolStripMenuItem.Text = "New Project";
-            this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProject_Click);
-            // 
-            // loadProjectToolStripMenuItem
-            // 
-            this.loadProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.loadProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.loadProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.folder_page;
-            this.loadProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
-            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.loadProjectToolStripMenuItem.Text = "Load Project";
-            this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.LoadProject_Click);
-            // 
-            // saveProjectToolStripMenuItem
-            // 
-            this.saveProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.saveProjectToolStripMenuItem.Enabled = false;
-            this.saveProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.saveProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.disk_multiple;
-            this.saveProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.saveProjectToolStripMenuItem.Name = "saveProjectToolStripMenuItem";
-            this.saveProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.saveProjectToolStripMenuItem.Text = "Save Project As...";
-            this.saveProjectToolStripMenuItem.Click += new System.EventHandler(this.SaveProjectAs_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.settingsToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.table_gear;
-            this.settingsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.Settings_Click);
-            // 
-            // contextMenuStrip_Project
-            // 
-            this.contextMenuStrip_Project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.contextMenuStrip_Project.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip_Project.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_New,
-            this.ToolStripMenuItem_Decompile,
-            this.ToolStripMenuItem_Compile,
-            this.ToolStripMenuItem_Unpack,
-            this.ToolStripMenuItem_RepackAs,
-            this.ToolStripMenuItem_Replace,
-            this.ToolStripMenuItem_Remove,
-            this.ToolStripMenuItem_OpenAt2,
-            this.ToolStripMenuItem_Copy,
-            this.ToolStripMenuItem_Rename,
-            this.ToolStripMenuItem_ExpandProj,
-            this.ToolStripMenuItem_CollapseProj});
-            this.contextMenuStrip_Project.Name = "contextMenuStrip_Game";
-            this.contextMenuStrip_Project.Size = new System.Drawing.Size(161, 364);
-            // 
-            // ToolStripMenuItem_New
-            // 
-            this.ToolStripMenuItem_New.AutoSize = false;
-            this.ToolStripMenuItem_New.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_New.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_NewFolder,
-            this.ToolStripMenuItem_NewFlow,
-            this.ToolStripMenuItem_NewMsg,
-            this.ToolStripMenuItem_NewTxt});
-            this.ToolStripMenuItem_New.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_New.Image = global::ACNHLab.Properties.Resources.asterisk_yellow;
-            this.ToolStripMenuItem_New.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_New.Name = "ToolStripMenuItem_New";
-            this.ToolStripMenuItem_New.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_New.Text = "New...";
-            // 
-            // ToolStripMenuItem_NewFolder
-            // 
-            this.ToolStripMenuItem_NewFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_NewFolder.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewFolder.Image = global::ACNHLab.Properties.Resources.folder_add;
-            this.ToolStripMenuItem_NewFolder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_NewFolder.Name = "ToolStripMenuItem_NewFolder";
-            this.ToolStripMenuItem_NewFolder.Size = new System.Drawing.Size(188, 26);
-            this.ToolStripMenuItem_NewFolder.Text = "Folder";
-            // 
-            // ToolStripMenuItem_NewFlow
-            // 
-            this.ToolStripMenuItem_NewFlow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_NewFlow.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewFlow.Image = global::ACNHLab.Properties.Resources.script_add;
-            this.ToolStripMenuItem_NewFlow.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_NewFlow.Name = "ToolStripMenuItem_NewFlow";
-            this.ToolStripMenuItem_NewFlow.Size = new System.Drawing.Size(188, 26);
-            this.ToolStripMenuItem_NewFlow.Text = "FlowScript";
-            // 
-            // ToolStripMenuItem_NewMsg
-            // 
-            this.ToolStripMenuItem_NewMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_NewMsg.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewMsg.Image = global::ACNHLab.Properties.Resources.page_add;
-            this.ToolStripMenuItem_NewMsg.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_NewMsg.Name = "ToolStripMenuItem_NewMsg";
-            this.ToolStripMenuItem_NewMsg.Size = new System.Drawing.Size(188, 26);
-            this.ToolStripMenuItem_NewMsg.Text = "MessageScript";
-            // 
-            // ToolStripMenuItem_NewTxt
-            // 
-            this.ToolStripMenuItem_NewTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_NewTxt.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewTxt.Image = global::ACNHLab.Properties.Resources.page_white_add;
-            this.ToolStripMenuItem_NewTxt.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_NewTxt.Name = "ToolStripMenuItem_NewTxt";
-            this.ToolStripMenuItem_NewTxt.Size = new System.Drawing.Size(188, 26);
-            this.ToolStripMenuItem_NewTxt.Text = "Text File";
-            // 
-            // ToolStripMenuItem_Decompile
-            // 
-            this.ToolStripMenuItem_Decompile.AutoSize = false;
-            this.ToolStripMenuItem_Decompile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_Decompile.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Decompile.Image = global::ACNHLab.Properties.Resources.application_xp_terminal;
-            this.ToolStripMenuItem_Decompile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_Decompile.Name = "ToolStripMenuItem_Decompile";
-            this.ToolStripMenuItem_Decompile.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_Decompile.Text = "Decompile";
-            // 
-            // ToolStripMenuItem_Compile
-            // 
-            this.ToolStripMenuItem_Compile.AutoSize = false;
-            this.ToolStripMenuItem_Compile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_Compile.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Compile.Image = global::ACNHLab.Properties.Resources.application_go;
-            this.ToolStripMenuItem_Compile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_Compile.Name = "ToolStripMenuItem_Compile";
-            this.ToolStripMenuItem_Compile.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_Compile.Text = "Compile";
-            // 
-            // ToolStripMenuItem_Unpack
-            // 
-            this.ToolStripMenuItem_Unpack.AutoSize = false;
-            this.ToolStripMenuItem_Unpack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_Unpack.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Unpack.Image = global::ACNHLab.Properties.Resources.folder_go;
-            this.ToolStripMenuItem_Unpack.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_Unpack.Name = "ToolStripMenuItem_Unpack";
-            this.ToolStripMenuItem_Unpack.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_Unpack.Text = "Unpack";
-            // 
-            // ToolStripMenuItem_RepackAs
-            // 
-            this.ToolStripMenuItem_RepackAs.AutoSize = false;
-            this.ToolStripMenuItem_RepackAs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_RepackAs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_RepackPAC,
-            this.ToolStripMenuItem_RepackAFS,
-            this.ToolStripMenuItem_RepackAWB});
-            this.ToolStripMenuItem_RepackAs.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackAs.Image = global::ACNHLab.Properties.Resources.package_go;
-            this.ToolStripMenuItem_RepackAs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_RepackAs.Name = "ToolStripMenuItem_RepackAs";
-            this.ToolStripMenuItem_RepackAs.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_RepackAs.Text = "Repack As...";
-            // 
-            // ToolStripMenuItem_RepackPAC
-            // 
-            this.ToolStripMenuItem_RepackPAC.AutoSize = false;
-            this.ToolStripMenuItem_RepackPAC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_RepackPAC.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackPAC.Image = global::ACNHLab.Properties.Resources.package1;
-            this.ToolStripMenuItem_RepackPAC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_RepackPAC.Name = "ToolStripMenuItem_RepackPAC";
-            this.ToolStripMenuItem_RepackPAC.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_RepackPAC.Text = "PAC";
-            // 
-            // ToolStripMenuItem_RepackAFS
-            // 
-            this.ToolStripMenuItem_RepackAFS.AutoSize = false;
-            this.ToolStripMenuItem_RepackAFS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_RepackAFS.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackAFS.Image = global::ACNHLab.Properties.Resources.music;
-            this.ToolStripMenuItem_RepackAFS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_RepackAFS.Name = "ToolStripMenuItem_RepackAFS";
-            this.ToolStripMenuItem_RepackAFS.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_RepackAFS.Text = "AFS";
-            // 
-            // ToolStripMenuItem_RepackAWB
-            // 
-            this.ToolStripMenuItem_RepackAWB.AutoSize = false;
-            this.ToolStripMenuItem_RepackAWB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_RepackAWB.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackAWB.Image = global::ACNHLab.Properties.Resources.music;
-            this.ToolStripMenuItem_RepackAWB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_RepackAWB.Name = "ToolStripMenuItem_RepackAWB";
-            this.ToolStripMenuItem_RepackAWB.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_RepackAWB.Text = "AWB";
-            // 
-            // ToolStripMenuItem_Replace
-            // 
-            this.ToolStripMenuItem_Replace.AutoSize = false;
-            this.ToolStripMenuItem_Replace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_Replace.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Replace.Image = global::ACNHLab.Properties.Resources.note_go;
-            this.ToolStripMenuItem_Replace.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_Replace.Name = "ToolStripMenuItem_Replace";
-            this.ToolStripMenuItem_Replace.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_Replace.Text = "Replace";
-            // 
-            // ToolStripMenuItem_Remove
-            // 
-            this.ToolStripMenuItem_Remove.AutoSize = false;
-            this.ToolStripMenuItem_Remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_Remove.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Remove.Image = global::ACNHLab.Properties.Resources.delete;
-            this.ToolStripMenuItem_Remove.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_Remove.Name = "ToolStripMenuItem_Remove";
-            this.ToolStripMenuItem_Remove.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_Remove.Text = "Remove";
-            this.ToolStripMenuItem_Remove.Click += new System.EventHandler(this.RemoveFromProject_Click);
-            // 
-            // ToolStripMenuItem_OpenAt2
-            // 
-            this.ToolStripMenuItem_OpenAt2.AutoSize = false;
-            this.ToolStripMenuItem_OpenAt2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_OpenAt2.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_OpenAt2.Image = global::ACNHLab.Properties.Resources.folder_explore;
-            this.ToolStripMenuItem_OpenAt2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_OpenAt2.Name = "ToolStripMenuItem_OpenAt2";
-            this.ToolStripMenuItem_OpenAt2.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_OpenAt2.Text = "Show Folder";
-            this.ToolStripMenuItem_OpenAt2.Click += new System.EventHandler(this.OpenLocationProject_Click);
-            // 
-            // ToolStripMenuItem_Copy
-            // 
-            this.ToolStripMenuItem_Copy.AutoSize = false;
-            this.ToolStripMenuItem_Copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_Copy.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Copy.Image = global::ACNHLab.Properties.Resources.page_copy;
-            this.ToolStripMenuItem_Copy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_Copy.Name = "ToolStripMenuItem_Copy";
-            this.ToolStripMenuItem_Copy.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_Copy.Text = "Copy";
-            this.ToolStripMenuItem_Copy.Click += new System.EventHandler(this.Copy_Click);
-            // 
-            // ToolStripMenuItem_Rename
-            // 
-            this.ToolStripMenuItem_Rename.AutoSize = false;
-            this.ToolStripMenuItem_Rename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_Rename.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Rename.Image = global::ACNHLab.Properties.Resources.textfield_rename;
-            this.ToolStripMenuItem_Rename.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_Rename.Name = "ToolStripMenuItem_Rename";
-            this.ToolStripMenuItem_Rename.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_Rename.Text = "Rename";
-            this.ToolStripMenuItem_Rename.Click += new System.EventHandler(this.Rename_Click);
-            // 
-            // ToolStripMenuItem_ExpandProj
-            // 
-            this.ToolStripMenuItem_ExpandProj.AutoSize = false;
-            this.ToolStripMenuItem_ExpandProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_ExpandProj.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_ExpandProj.Image = global::ACNHLab.Properties.Resources.chart_organisation;
-            this.ToolStripMenuItem_ExpandProj.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_ExpandProj.Name = "ToolStripMenuItem_ExpandProj";
-            this.ToolStripMenuItem_ExpandProj.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_ExpandProj.Text = "Expand All";
-            // 
-            // ToolStripMenuItem_CollapseProj
-            // 
-            this.ToolStripMenuItem_CollapseProj.AutoSize = false;
-            this.ToolStripMenuItem_CollapseProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ToolStripMenuItem_CollapseProj.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_CollapseProj.Image = global::ACNHLab.Properties.Resources.arrow_join;
-            this.ToolStripMenuItem_CollapseProj.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ToolStripMenuItem_CollapseProj.Name = "ToolStripMenuItem_CollapseProj";
-            this.ToolStripMenuItem_CollapseProj.Size = new System.Drawing.Size(160, 30);
-            this.ToolStripMenuItem_CollapseProj.Text = "Collapse All";
-            // 
             // panel_Workspace
             // 
             this.panel_Workspace.Controls.Add(this.tableLayoutPanel_Workspace);
@@ -756,8 +447,8 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerList.Name = "tableLayoutPanel_VillagerList";
             this.tableLayoutPanel_VillagerList.RowCount = 3;
             this.tableLayoutPanel_VillagerList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.72727F));
-            this.tableLayoutPanel_VillagerList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.36364F));
-            this.tableLayoutPanel_VillagerList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.90909F));
+            this.tableLayoutPanel_VillagerList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.57669F));
+            this.tableLayoutPanel_VillagerList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.72393F));
             this.tableLayoutPanel_VillagerList.Size = new System.Drawing.Size(251, 326);
             this.tableLayoutPanel_VillagerList.TabIndex = 0;
             // 
@@ -791,6 +482,7 @@ namespace ACNHLab
             this.metroSetComboBox_Villagers.TabIndex = 0;
             this.metroSetComboBox_Villagers.ThemeAuthor = "Narwin";
             this.metroSetComboBox_Villagers.ThemeName = "MetroDark";
+            this.metroSetComboBox_Villagers.SelectedIndexChanged += new System.EventHandler(this.Villager_SelectedIndexChanged);
             // 
             // panel_VillagerImg
             // 
@@ -810,17 +502,18 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerAddRemove.Controls.Add(this.btn_RemoveVillager, 1, 0);
             this.tableLayoutPanel_VillagerAddRemove.Controls.Add(this.btn_AddVillager, 0, 0);
             this.tableLayoutPanel_VillagerAddRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_VillagerAddRemove.Location = new System.Drawing.Point(3, 293);
+            this.tableLayoutPanel_VillagerAddRemove.Location = new System.Drawing.Point(3, 280);
             this.tableLayoutPanel_VillagerAddRemove.Name = "tableLayoutPanel_VillagerAddRemove";
             this.tableLayoutPanel_VillagerAddRemove.RowCount = 1;
             this.tableLayoutPanel_VillagerAddRemove.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_VillagerAddRemove.Size = new System.Drawing.Size(245, 30);
+            this.tableLayoutPanel_VillagerAddRemove.Size = new System.Drawing.Size(245, 43);
             this.tableLayoutPanel_VillagerAddRemove.TabIndex = 2;
             // 
             // button_VillagerHouse
             // 
             this.button_VillagerHouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.button_VillagerHouse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_VillagerHouse.Enabled = false;
             this.button_VillagerHouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_VillagerHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button_VillagerHouse.ForeColor = System.Drawing.Color.Silver;
@@ -828,7 +521,7 @@ namespace ACNHLab
             this.button_VillagerHouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_VillagerHouse.Location = new System.Drawing.Point(84, 3);
             this.button_VillagerHouse.Name = "button_VillagerHouse";
-            this.button_VillagerHouse.Size = new System.Drawing.Size(75, 24);
+            this.button_VillagerHouse.Size = new System.Drawing.Size(75, 37);
             this.button_VillagerHouse.TabIndex = 48;
             this.button_VillagerHouse.Text = "Home";
             this.button_VillagerHouse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -845,7 +538,7 @@ namespace ACNHLab
             this.btn_RemoveVillager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_RemoveVillager.Location = new System.Drawing.Point(165, 3);
             this.btn_RemoveVillager.Name = "btn_RemoveVillager";
-            this.btn_RemoveVillager.Size = new System.Drawing.Size(77, 24);
+            this.btn_RemoveVillager.Size = new System.Drawing.Size(77, 37);
             this.btn_RemoveVillager.TabIndex = 1;
             this.btn_RemoveVillager.Text = "Delete";
             this.btn_RemoveVillager.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -862,29 +555,11 @@ namespace ACNHLab
             this.btn_AddVillager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_AddVillager.Location = new System.Drawing.Point(3, 3);
             this.btn_AddVillager.Name = "btn_AddVillager";
-            this.btn_AddVillager.Size = new System.Drawing.Size(75, 24);
+            this.btn_AddVillager.Size = new System.Drawing.Size(75, 37);
             this.btn_AddVillager.TabIndex = 0;
             this.btn_AddVillager.Text = "Add  ";
             this.btn_AddVillager.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_AddVillager.UseVisualStyleBackColor = false;
-            // 
-            // tabPage_Furniture
-            // 
-            this.tabPage_Furniture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.tabPage_Furniture.Controls.Add(this.panel_Scripting);
-            this.tabPage_Furniture.Location = new System.Drawing.Point(4, 42);
-            this.tabPage_Furniture.Name = "tabPage_Furniture";
-            this.tabPage_Furniture.Size = new System.Drawing.Size(644, 332);
-            this.tabPage_Furniture.TabIndex = 1;
-            this.tabPage_Furniture.Text = "Furniture";
-            // 
-            // panel_Scripting
-            // 
-            this.panel_Scripting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Scripting.Location = new System.Drawing.Point(0, 0);
-            this.panel_Scripting.Name = "panel_Scripting";
-            this.panel_Scripting.Size = new System.Drawing.Size(644, 332);
-            this.panel_Scripting.TabIndex = 3;
             // 
             // panel_VillagerParams
             // 
@@ -903,6 +578,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.ColumnCount = 2;
             this.tableLayoutPanel_VillagerParams.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel_VillagerParams.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_NPCColor, 0, 30);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_Melody2, 0, 29);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_ShirtID, 0, 22);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel1, 0, 10);
@@ -949,7 +625,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_RainWearID, 1, 20);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_PhonePattern, 0, 21);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_PhonePattern, 1, 21);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric1, 1, 22);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_ShirtID, 1, 22);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_UmbrellaID, 0, 23);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_UmbrellaID, 1, 23);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_FaveColor, 1, 24);
@@ -963,10 +639,11 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_Melody, 1, 28);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_Melody, 0, 28);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_Melody2, 1, 29);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_NPCColor, 1, 30);
             this.tableLayoutPanel_VillagerParams.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel_VillagerParams.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_VillagerParams.Name = "tableLayoutPanel_VillagerParams";
-            this.tableLayoutPanel_VillagerParams.RowCount = 30;
+            this.tableLayoutPanel_VillagerParams.RowCount = 31;
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -997,8 +674,74 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel_VillagerParams.Size = new System.Drawing.Size(360, 1200);
+            this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_VillagerParams.Size = new System.Drawing.Size(360, 1220);
             this.tableLayoutPanel_VillagerParams.TabIndex = 2;
+            // 
+            // metroSetLabel_NPCColor
+            // 
+            this.metroSetLabel_NPCColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetLabel_NPCColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.metroSetLabel_NPCColor.IsDerivedStyle = true;
+            this.metroSetLabel_NPCColor.Location = new System.Drawing.Point(3, 1200);
+            this.metroSetLabel_NPCColor.Name = "metroSetLabel_NPCColor";
+            this.metroSetLabel_NPCColor.Size = new System.Drawing.Size(102, 20);
+            this.metroSetLabel_NPCColor.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel_NPCColor.StyleManager = null;
+            this.metroSetLabel_NPCColor.TabIndex = 93;
+            this.metroSetLabel_NPCColor.Text = "NPC Color:";
+            this.metroSetLabel_NPCColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel_NPCColor.ThemeAuthor = "Narwin";
+            this.metroSetLabel_NPCColor.ThemeName = "MetroDark";
+            // 
+            // metroSetLabel_Melody2
+            // 
+            this.metroSetLabel_Melody2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetLabel_Melody2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.metroSetLabel_Melody2.IsDerivedStyle = true;
+            this.metroSetLabel_Melody2.Location = new System.Drawing.Point(3, 1160);
+            this.metroSetLabel_Melody2.Name = "metroSetLabel_Melody2";
+            this.metroSetLabel_Melody2.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Melody2.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel_Melody2.StyleManager = null;
+            this.metroSetLabel_Melody2.TabIndex = 92;
+            this.metroSetLabel_Melody2.Text = "Melody 2:";
+            this.metroSetLabel_Melody2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel_Melody2.ThemeAuthor = "Narwin";
+            this.metroSetLabel_Melody2.ThemeName = "MetroDark";
+            // 
+            // metroSetLabel_ShirtID
+            // 
+            this.metroSetLabel_ShirtID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetLabel_ShirtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetLabel_ShirtID.IsDerivedStyle = true;
+            this.metroSetLabel_ShirtID.Location = new System.Drawing.Point(3, 880);
+            this.metroSetLabel_ShirtID.Name = "metroSetLabel_ShirtID";
+            this.metroSetLabel_ShirtID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_ShirtID.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel_ShirtID.StyleManager = null;
+            this.metroSetLabel_ShirtID.TabIndex = 77;
+            this.metroSetLabel_ShirtID.Text = "Shirt ID:";
+            this.metroSetLabel_ShirtID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel_ShirtID.ThemeAuthor = "Narwin";
+            this.metroSetLabel_ShirtID.ThemeName = "MetroDark";
+            // 
+            // metroSetLabel1
+            // 
+            this.metroSetLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroSetLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetLabel1.IsDerivedStyle = true;
+            this.metroSetLabel1.Location = new System.Drawing.Point(3, 400);
+            this.metroSetLabel1.Name = "metroSetLabel1";
+            this.metroSetLabel1.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel1.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel1.StyleManager = null;
+            this.metroSetLabel1.TabIndex = 53;
+            this.metroSetLabel1.Text = "Style:";
+            this.metroSetLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel1.ThemeAuthor = "Narwin";
+            this.metroSetLabel1.ThemeName = "MetroDark";
             // 
             // metroSetLabel_Catchphrase
             // 
@@ -1483,7 +1226,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerGender.Name = "tableLayoutPanel_VillagerGender";
             this.tableLayoutPanel_VillagerGender.RowCount = 1;
             this.tableLayoutPanel_VillagerGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_VillagerGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel_VillagerGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel_VillagerGender.Size = new System.Drawing.Size(246, 34);
             this.tableLayoutPanel_VillagerGender.TabIndex = 39;
             // 
@@ -1606,23 +1349,6 @@ namespace ACNHLab
             this.metroSetComboBox_ClothesType.TabIndex = 52;
             this.metroSetComboBox_ClothesType.ThemeAuthor = "Narwin";
             this.metroSetComboBox_ClothesType.ThemeName = "MetroDark";
-            // 
-            // metroSetLabel1
-            // 
-            this.metroSetLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroSetLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetLabel1.IsDerivedStyle = true;
-            this.metroSetLabel1.Location = new System.Drawing.Point(3, 400);
-            this.metroSetLabel1.Name = "metroSetLabel1";
-            this.metroSetLabel1.Size = new System.Drawing.Size(102, 40);
-            this.metroSetLabel1.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetLabel1.StyleManager = null;
-            this.metroSetLabel1.TabIndex = 53;
-            this.metroSetLabel1.Text = "Style:";
-            this.metroSetLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroSetLabel1.ThemeAuthor = "Narwin";
-            this.metroSetLabel1.ThemeName = "MetroDark";
             // 
             // metroSetComboBox_Style
             // 
@@ -1791,23 +1517,6 @@ namespace ACNHLab
             this.metroSetComboBox_SocialType.ThemeAuthor = "Narwin";
             this.metroSetComboBox_SocialType.ThemeName = "MetroDark";
             // 
-            // metroSetLabel_SingPause
-            // 
-            this.metroSetLabel_SingPause.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroSetLabel_SingPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.metroSetLabel_SingPause.IsDerivedStyle = true;
-            this.metroSetLabel_SingPause.Location = new System.Drawing.Point(3, 560);
-            this.metroSetLabel_SingPause.Name = "metroSetLabel_SingPause";
-            this.metroSetLabel_SingPause.Size = new System.Drawing.Size(102, 40);
-            this.metroSetLabel_SingPause.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetLabel_SingPause.StyleManager = null;
-            this.metroSetLabel_SingPause.TabIndex = 61;
-            this.metroSetLabel_SingPause.Text = "Sing Pause:";
-            this.metroSetLabel_SingPause.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroSetLabel_SingPause.ThemeAuthor = "Narwin";
-            this.metroSetLabel_SingPause.ThemeName = "MetroDark";
-            // 
             // metroSetComboBox_SingPause
             // 
             this.metroSetComboBox_SingPause.AllowDrop = true;
@@ -1836,6 +1545,23 @@ namespace ACNHLab
             this.metroSetComboBox_SingPause.TabIndex = 62;
             this.metroSetComboBox_SingPause.ThemeAuthor = "Narwin";
             this.metroSetComboBox_SingPause.ThemeName = "MetroDark";
+            // 
+            // metroSetLabel_SingPause
+            // 
+            this.metroSetLabel_SingPause.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroSetLabel_SingPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.metroSetLabel_SingPause.IsDerivedStyle = true;
+            this.metroSetLabel_SingPause.Location = new System.Drawing.Point(3, 560);
+            this.metroSetLabel_SingPause.Name = "metroSetLabel_SingPause";
+            this.metroSetLabel_SingPause.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_SingPause.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel_SingPause.StyleManager = null;
+            this.metroSetLabel_SingPause.TabIndex = 61;
+            this.metroSetLabel_SingPause.Text = "Sing Pause:";
+            this.metroSetLabel_SingPause.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel_SingPause.ThemeAuthor = "Narwin";
+            this.metroSetLabel_SingPause.ThemeName = "MetroDark";
             // 
             // metroSetComboBox_SingRhythm
             // 
@@ -2123,45 +1849,29 @@ namespace ACNHLab
             this.metroSetNumeric_PhonePattern.ThemeName = "MetroDark";
             this.metroSetNumeric_PhonePattern.Value = 0;
             // 
-            // metroSetLabel_ShirtID
+            // metroSetNumeric_ShirtID
             // 
-            this.metroSetLabel_ShirtID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetLabel_ShirtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetLabel_ShirtID.IsDerivedStyle = true;
-            this.metroSetLabel_ShirtID.Location = new System.Drawing.Point(3, 880);
-            this.metroSetLabel_ShirtID.Name = "metroSetLabel_ShirtID";
-            this.metroSetLabel_ShirtID.Size = new System.Drawing.Size(102, 40);
-            this.metroSetLabel_ShirtID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetLabel_ShirtID.StyleManager = null;
-            this.metroSetLabel_ShirtID.TabIndex = 77;
-            this.metroSetLabel_ShirtID.Text = "Shirt ID:";
-            this.metroSetLabel_ShirtID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroSetLabel_ShirtID.ThemeAuthor = "Narwin";
-            this.metroSetLabel_ShirtID.ThemeName = "MetroDark";
-            // 
-            // metroSetNumeric1
-            // 
-            this.metroSetNumeric1.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric1.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric1.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric1.IsDerivedStyle = true;
-            this.metroSetNumeric1.Location = new System.Drawing.Point(111, 883);
-            this.metroSetNumeric1.Maximum = 9999;
-            this.metroSetNumeric1.Minimum = 0;
-            this.metroSetNumeric1.Name = "metroSetNumeric1";
-            this.metroSetNumeric1.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric1.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric1.StyleManager = null;
-            this.metroSetNumeric1.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric1.TabIndex = 78;
-            this.metroSetNumeric1.ThemeAuthor = "Narwin";
-            this.metroSetNumeric1.ThemeName = "MetroDark";
-            this.metroSetNumeric1.Value = 0;
+            this.metroSetNumeric_ShirtID.BackColor = System.Drawing.Color.Transparent;
+            this.metroSetNumeric_ShirtID.BackgroundColor = System.Drawing.Color.Empty;
+            this.metroSetNumeric_ShirtID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.metroSetNumeric_ShirtID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.metroSetNumeric_ShirtID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetNumeric_ShirtID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetNumeric_ShirtID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetNumeric_ShirtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetNumeric_ShirtID.IsDerivedStyle = true;
+            this.metroSetNumeric_ShirtID.Location = new System.Drawing.Point(111, 883);
+            this.metroSetNumeric_ShirtID.Maximum = 9999;
+            this.metroSetNumeric_ShirtID.Minimum = 0;
+            this.metroSetNumeric_ShirtID.Name = "metroSetNumeric_ShirtID";
+            this.metroSetNumeric_ShirtID.Size = new System.Drawing.Size(246, 26);
+            this.metroSetNumeric_ShirtID.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetNumeric_ShirtID.StyleManager = null;
+            this.metroSetNumeric_ShirtID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.metroSetNumeric_ShirtID.TabIndex = 78;
+            this.metroSetNumeric_ShirtID.ThemeAuthor = "Narwin";
+            this.metroSetNumeric_ShirtID.ThemeName = "MetroDark";
+            this.metroSetNumeric_ShirtID.Value = 0;
             // 
             // metroSetLabel_UmbrellaID
             // 
@@ -2203,22 +1913,6 @@ namespace ACNHLab
             this.metroSetNumeric_UmbrellaID.ThemeName = "MetroDark";
             this.metroSetNumeric_UmbrellaID.Value = 0;
             // 
-            // metroSetLabel_FaveColor
-            // 
-            this.metroSetLabel_FaveColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetLabel_FaveColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetLabel_FaveColor.IsDerivedStyle = true;
-            this.metroSetLabel_FaveColor.Location = new System.Drawing.Point(3, 960);
-            this.metroSetLabel_FaveColor.Name = "metroSetLabel_FaveColor";
-            this.metroSetLabel_FaveColor.Size = new System.Drawing.Size(102, 40);
-            this.metroSetLabel_FaveColor.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetLabel_FaveColor.StyleManager = null;
-            this.metroSetLabel_FaveColor.TabIndex = 81;
-            this.metroSetLabel_FaveColor.Text = "Fave Color:";
-            this.metroSetLabel_FaveColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroSetLabel_FaveColor.ThemeAuthor = "Narwin";
-            this.metroSetLabel_FaveColor.ThemeName = "MetroDark";
-            // 
             // metroSetComboBox_FaveColor
             // 
             this.metroSetComboBox_FaveColor.AllowDrop = true;
@@ -2248,21 +1942,21 @@ namespace ACNHLab
             this.metroSetComboBox_FaveColor.ThemeAuthor = "Narwin";
             this.metroSetComboBox_FaveColor.ThemeName = "MetroDark";
             // 
-            // metroSetLabel_FaveColor2
+            // metroSetLabel_FaveColor
             // 
-            this.metroSetLabel_FaveColor2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetLabel_FaveColor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.metroSetLabel_FaveColor2.IsDerivedStyle = true;
-            this.metroSetLabel_FaveColor2.Location = new System.Drawing.Point(3, 1000);
-            this.metroSetLabel_FaveColor2.Name = "metroSetLabel_FaveColor2";
-            this.metroSetLabel_FaveColor2.Size = new System.Drawing.Size(102, 40);
-            this.metroSetLabel_FaveColor2.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetLabel_FaveColor2.StyleManager = null;
-            this.metroSetLabel_FaveColor2.TabIndex = 83;
-            this.metroSetLabel_FaveColor2.Text = "Fave Color 2:";
-            this.metroSetLabel_FaveColor2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroSetLabel_FaveColor2.ThemeAuthor = "Narwin";
-            this.metroSetLabel_FaveColor2.ThemeName = "MetroDark";
+            this.metroSetLabel_FaveColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetLabel_FaveColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetLabel_FaveColor.IsDerivedStyle = true;
+            this.metroSetLabel_FaveColor.Location = new System.Drawing.Point(3, 960);
+            this.metroSetLabel_FaveColor.Name = "metroSetLabel_FaveColor";
+            this.metroSetLabel_FaveColor.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_FaveColor.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel_FaveColor.StyleManager = null;
+            this.metroSetLabel_FaveColor.TabIndex = 81;
+            this.metroSetLabel_FaveColor.Text = "Fave Color:";
+            this.metroSetLabel_FaveColor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel_FaveColor.ThemeAuthor = "Narwin";
+            this.metroSetLabel_FaveColor.ThemeName = "MetroDark";
             // 
             // metroSetComboBox_FaveColor2
             // 
@@ -2292,6 +1986,22 @@ namespace ACNHLab
             this.metroSetComboBox_FaveColor2.TabIndex = 84;
             this.metroSetComboBox_FaveColor2.ThemeAuthor = "Narwin";
             this.metroSetComboBox_FaveColor2.ThemeName = "MetroDark";
+            // 
+            // metroSetLabel_FaveColor2
+            // 
+            this.metroSetLabel_FaveColor2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetLabel_FaveColor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.metroSetLabel_FaveColor2.IsDerivedStyle = true;
+            this.metroSetLabel_FaveColor2.Location = new System.Drawing.Point(3, 1000);
+            this.metroSetLabel_FaveColor2.Name = "metroSetLabel_FaveColor2";
+            this.metroSetLabel_FaveColor2.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_FaveColor2.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetLabel_FaveColor2.StyleManager = null;
+            this.metroSetLabel_FaveColor2.TabIndex = 83;
+            this.metroSetLabel_FaveColor2.Text = "Fave Color 2:";
+            this.metroSetLabel_FaveColor2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel_FaveColor2.ThemeAuthor = "Narwin";
+            this.metroSetLabel_FaveColor2.ThemeName = "MetroDark";
             // 
             // metroSetLabel_RemakeID
             // 
@@ -2447,21 +2157,358 @@ namespace ACNHLab
             this.metroSetComboBox_Melody2.ThemeAuthor = "Narwin";
             this.metroSetComboBox_Melody2.ThemeName = "MetroDark";
             // 
-            // metroSetLabel_Melody2
+            // tabPage_Furniture
             // 
-            this.metroSetLabel_Melody2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetLabel_Melody2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.metroSetLabel_Melody2.IsDerivedStyle = true;
-            this.metroSetLabel_Melody2.Location = new System.Drawing.Point(3, 1160);
-            this.metroSetLabel_Melody2.Name = "metroSetLabel_Melody2";
-            this.metroSetLabel_Melody2.Size = new System.Drawing.Size(102, 40);
-            this.metroSetLabel_Melody2.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetLabel_Melody2.StyleManager = null;
-            this.metroSetLabel_Melody2.TabIndex = 92;
-            this.metroSetLabel_Melody2.Text = "Melody 2:";
-            this.metroSetLabel_Melody2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroSetLabel_Melody2.ThemeAuthor = "Narwin";
-            this.metroSetLabel_Melody2.ThemeName = "MetroDark";
+            this.tabPage_Furniture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.tabPage_Furniture.Controls.Add(this.panel_Scripting);
+            this.tabPage_Furniture.Location = new System.Drawing.Point(4, 42);
+            this.tabPage_Furniture.Name = "tabPage_Furniture";
+            this.tabPage_Furniture.Size = new System.Drawing.Size(644, 332);
+            this.tabPage_Furniture.TabIndex = 1;
+            this.tabPage_Furniture.Text = "Furniture";
+            // 
+            // panel_Scripting
+            // 
+            this.panel_Scripting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Scripting.Location = new System.Drawing.Point(0, 0);
+            this.panel_Scripting.Name = "panel_Scripting";
+            this.panel_Scripting.Size = new System.Drawing.Size(644, 332);
+            this.panel_Scripting.TabIndex = 3;
+            // 
+            // menuStrip_Main
+            // 
+            this.menuStrip_Main.AutoSize = false;
+            this.menuStrip_Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.menuStrip_Main.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip_Main.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.menuStrip_Main.Location = new System.Drawing.Point(2, 0);
+            this.menuStrip_Main.Name = "menuStrip_Main";
+            this.menuStrip_Main.Size = new System.Drawing.Size(938, 28);
+            this.menuStrip_Main.TabIndex = 2;
+            this.menuStrip_Main.Text = "menuStrip_Main";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newProjectToolStripMenuItem,
+            this.loadProjectToolStripMenuItem,
+            this.saveProjectToolStripMenuItem,
+            this.settingsToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.fileToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.disk;
+            this.fileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newProjectToolStripMenuItem
+            // 
+            this.newProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.newProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.asterisk_yellow;
+            this.newProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.newProjectToolStripMenuItem.Text = "New Project";
+            this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProject_Click);
+            // 
+            // loadProjectToolStripMenuItem
+            // 
+            this.loadProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.loadProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.loadProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.folder_page;
+            this.loadProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
+            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.loadProjectToolStripMenuItem.Text = "Load Project";
+            this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.LoadProject_Click);
+            // 
+            // saveProjectToolStripMenuItem
+            // 
+            this.saveProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.saveProjectToolStripMenuItem.Enabled = false;
+            this.saveProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.saveProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.disk_multiple;
+            this.saveProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.saveProjectToolStripMenuItem.Name = "saveProjectToolStripMenuItem";
+            this.saveProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.saveProjectToolStripMenuItem.Text = "Save Project As...";
+            this.saveProjectToolStripMenuItem.Click += new System.EventHandler(this.SaveProjectAs_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.settingsToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.table_gear;
+            this.settingsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // contextMenuStrip_Project
+            // 
+            this.contextMenuStrip_Project.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.contextMenuStrip_Project.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip_Project.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_New,
+            this.ToolStripMenuItem_Decompile,
+            this.ToolStripMenuItem_Compile,
+            this.ToolStripMenuItem_Unpack,
+            this.ToolStripMenuItem_RepackAs,
+            this.ToolStripMenuItem_Replace,
+            this.ToolStripMenuItem_Remove,
+            this.ToolStripMenuItem_OpenAt2,
+            this.ToolStripMenuItem_Copy,
+            this.ToolStripMenuItem_Rename,
+            this.ToolStripMenuItem_ExpandProj,
+            this.ToolStripMenuItem_CollapseProj});
+            this.contextMenuStrip_Project.Name = "contextMenuStrip_Game";
+            this.contextMenuStrip_Project.Size = new System.Drawing.Size(161, 364);
+            // 
+            // ToolStripMenuItem_New
+            // 
+            this.ToolStripMenuItem_New.AutoSize = false;
+            this.ToolStripMenuItem_New.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_New.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_NewFolder,
+            this.ToolStripMenuItem_NewFlow,
+            this.ToolStripMenuItem_NewMsg,
+            this.ToolStripMenuItem_NewTxt});
+            this.ToolStripMenuItem_New.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_New.Image = global::ACNHLab.Properties.Resources.asterisk_yellow;
+            this.ToolStripMenuItem_New.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_New.Name = "ToolStripMenuItem_New";
+            this.ToolStripMenuItem_New.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_New.Text = "New...";
+            // 
+            // ToolStripMenuItem_NewFolder
+            // 
+            this.ToolStripMenuItem_NewFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_NewFolder.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_NewFolder.Image = global::ACNHLab.Properties.Resources.folder_add;
+            this.ToolStripMenuItem_NewFolder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_NewFolder.Name = "ToolStripMenuItem_NewFolder";
+            this.ToolStripMenuItem_NewFolder.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewFolder.Text = "Folder";
+            // 
+            // ToolStripMenuItem_NewFlow
+            // 
+            this.ToolStripMenuItem_NewFlow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_NewFlow.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_NewFlow.Image = global::ACNHLab.Properties.Resources.script_add;
+            this.ToolStripMenuItem_NewFlow.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_NewFlow.Name = "ToolStripMenuItem_NewFlow";
+            this.ToolStripMenuItem_NewFlow.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewFlow.Text = "FlowScript";
+            // 
+            // ToolStripMenuItem_NewMsg
+            // 
+            this.ToolStripMenuItem_NewMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_NewMsg.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_NewMsg.Image = global::ACNHLab.Properties.Resources.page_add;
+            this.ToolStripMenuItem_NewMsg.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_NewMsg.Name = "ToolStripMenuItem_NewMsg";
+            this.ToolStripMenuItem_NewMsg.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewMsg.Text = "MessageScript";
+            // 
+            // ToolStripMenuItem_NewTxt
+            // 
+            this.ToolStripMenuItem_NewTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_NewTxt.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_NewTxt.Image = global::ACNHLab.Properties.Resources.page_white_add;
+            this.ToolStripMenuItem_NewTxt.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_NewTxt.Name = "ToolStripMenuItem_NewTxt";
+            this.ToolStripMenuItem_NewTxt.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewTxt.Text = "Text File";
+            // 
+            // ToolStripMenuItem_Decompile
+            // 
+            this.ToolStripMenuItem_Decompile.AutoSize = false;
+            this.ToolStripMenuItem_Decompile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_Decompile.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_Decompile.Image = global::ACNHLab.Properties.Resources.application_xp_terminal;
+            this.ToolStripMenuItem_Decompile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_Decompile.Name = "ToolStripMenuItem_Decompile";
+            this.ToolStripMenuItem_Decompile.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_Decompile.Text = "Decompile";
+            // 
+            // ToolStripMenuItem_Compile
+            // 
+            this.ToolStripMenuItem_Compile.AutoSize = false;
+            this.ToolStripMenuItem_Compile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_Compile.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_Compile.Image = global::ACNHLab.Properties.Resources.application_go;
+            this.ToolStripMenuItem_Compile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_Compile.Name = "ToolStripMenuItem_Compile";
+            this.ToolStripMenuItem_Compile.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_Compile.Text = "Compile";
+            // 
+            // ToolStripMenuItem_Unpack
+            // 
+            this.ToolStripMenuItem_Unpack.AutoSize = false;
+            this.ToolStripMenuItem_Unpack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_Unpack.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_Unpack.Image = global::ACNHLab.Properties.Resources.folder_go;
+            this.ToolStripMenuItem_Unpack.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_Unpack.Name = "ToolStripMenuItem_Unpack";
+            this.ToolStripMenuItem_Unpack.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_Unpack.Text = "Unpack";
+            // 
+            // ToolStripMenuItem_RepackAs
+            // 
+            this.ToolStripMenuItem_RepackAs.AutoSize = false;
+            this.ToolStripMenuItem_RepackAs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_RepackAs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_RepackPAC,
+            this.ToolStripMenuItem_RepackAFS,
+            this.ToolStripMenuItem_RepackAWB});
+            this.ToolStripMenuItem_RepackAs.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_RepackAs.Image = global::ACNHLab.Properties.Resources.package_go;
+            this.ToolStripMenuItem_RepackAs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_RepackAs.Name = "ToolStripMenuItem_RepackAs";
+            this.ToolStripMenuItem_RepackAs.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_RepackAs.Text = "Repack As...";
+            // 
+            // ToolStripMenuItem_RepackPAC
+            // 
+            this.ToolStripMenuItem_RepackPAC.AutoSize = false;
+            this.ToolStripMenuItem_RepackPAC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_RepackPAC.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_RepackPAC.Image = global::ACNHLab.Properties.Resources.package1;
+            this.ToolStripMenuItem_RepackPAC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_RepackPAC.Name = "ToolStripMenuItem_RepackPAC";
+            this.ToolStripMenuItem_RepackPAC.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_RepackPAC.Text = "PAC";
+            // 
+            // ToolStripMenuItem_RepackAFS
+            // 
+            this.ToolStripMenuItem_RepackAFS.AutoSize = false;
+            this.ToolStripMenuItem_RepackAFS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_RepackAFS.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_RepackAFS.Image = global::ACNHLab.Properties.Resources.music;
+            this.ToolStripMenuItem_RepackAFS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_RepackAFS.Name = "ToolStripMenuItem_RepackAFS";
+            this.ToolStripMenuItem_RepackAFS.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_RepackAFS.Text = "AFS";
+            // 
+            // ToolStripMenuItem_RepackAWB
+            // 
+            this.ToolStripMenuItem_RepackAWB.AutoSize = false;
+            this.ToolStripMenuItem_RepackAWB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_RepackAWB.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_RepackAWB.Image = global::ACNHLab.Properties.Resources.music;
+            this.ToolStripMenuItem_RepackAWB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_RepackAWB.Name = "ToolStripMenuItem_RepackAWB";
+            this.ToolStripMenuItem_RepackAWB.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_RepackAWB.Text = "AWB";
+            // 
+            // ToolStripMenuItem_Replace
+            // 
+            this.ToolStripMenuItem_Replace.AutoSize = false;
+            this.ToolStripMenuItem_Replace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_Replace.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_Replace.Image = global::ACNHLab.Properties.Resources.note_go;
+            this.ToolStripMenuItem_Replace.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_Replace.Name = "ToolStripMenuItem_Replace";
+            this.ToolStripMenuItem_Replace.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_Replace.Text = "Replace";
+            // 
+            // ToolStripMenuItem_Remove
+            // 
+            this.ToolStripMenuItem_Remove.AutoSize = false;
+            this.ToolStripMenuItem_Remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_Remove.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_Remove.Image = global::ACNHLab.Properties.Resources.delete;
+            this.ToolStripMenuItem_Remove.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_Remove.Name = "ToolStripMenuItem_Remove";
+            this.ToolStripMenuItem_Remove.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_Remove.Text = "Remove";
+            this.ToolStripMenuItem_Remove.Click += new System.EventHandler(this.RemoveFromProject_Click);
+            // 
+            // ToolStripMenuItem_OpenAt2
+            // 
+            this.ToolStripMenuItem_OpenAt2.AutoSize = false;
+            this.ToolStripMenuItem_OpenAt2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_OpenAt2.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_OpenAt2.Image = global::ACNHLab.Properties.Resources.folder_explore;
+            this.ToolStripMenuItem_OpenAt2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_OpenAt2.Name = "ToolStripMenuItem_OpenAt2";
+            this.ToolStripMenuItem_OpenAt2.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_OpenAt2.Text = "Show Folder";
+            this.ToolStripMenuItem_OpenAt2.Click += new System.EventHandler(this.OpenLocationProject_Click);
+            // 
+            // ToolStripMenuItem_Copy
+            // 
+            this.ToolStripMenuItem_Copy.AutoSize = false;
+            this.ToolStripMenuItem_Copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_Copy.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_Copy.Image = global::ACNHLab.Properties.Resources.page_copy;
+            this.ToolStripMenuItem_Copy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_Copy.Name = "ToolStripMenuItem_Copy";
+            this.ToolStripMenuItem_Copy.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_Copy.Text = "Copy";
+            this.ToolStripMenuItem_Copy.Click += new System.EventHandler(this.Copy_Click);
+            // 
+            // ToolStripMenuItem_Rename
+            // 
+            this.ToolStripMenuItem_Rename.AutoSize = false;
+            this.ToolStripMenuItem_Rename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_Rename.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_Rename.Image = global::ACNHLab.Properties.Resources.textfield_rename;
+            this.ToolStripMenuItem_Rename.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_Rename.Name = "ToolStripMenuItem_Rename";
+            this.ToolStripMenuItem_Rename.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_Rename.Text = "Rename";
+            this.ToolStripMenuItem_Rename.Click += new System.EventHandler(this.Rename_Click);
+            // 
+            // ToolStripMenuItem_ExpandProj
+            // 
+            this.ToolStripMenuItem_ExpandProj.AutoSize = false;
+            this.ToolStripMenuItem_ExpandProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_ExpandProj.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_ExpandProj.Image = global::ACNHLab.Properties.Resources.chart_organisation;
+            this.ToolStripMenuItem_ExpandProj.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_ExpandProj.Name = "ToolStripMenuItem_ExpandProj";
+            this.ToolStripMenuItem_ExpandProj.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_ExpandProj.Text = "Expand All";
+            // 
+            // ToolStripMenuItem_CollapseProj
+            // 
+            this.ToolStripMenuItem_CollapseProj.AutoSize = false;
+            this.ToolStripMenuItem_CollapseProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ToolStripMenuItem_CollapseProj.ForeColor = System.Drawing.Color.Silver;
+            this.ToolStripMenuItem_CollapseProj.Image = global::ACNHLab.Properties.Resources.arrow_join;
+            this.ToolStripMenuItem_CollapseProj.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuItem_CollapseProj.Name = "ToolStripMenuItem_CollapseProj";
+            this.ToolStripMenuItem_CollapseProj.Size = new System.Drawing.Size(160, 30);
+            this.ToolStripMenuItem_CollapseProj.Text = "Collapse All";
+            // 
+            // metroSetNumeric_NPCColor
+            // 
+            this.metroSetNumeric_NPCColor.BackColor = System.Drawing.Color.Transparent;
+            this.metroSetNumeric_NPCColor.BackgroundColor = System.Drawing.Color.Empty;
+            this.metroSetNumeric_NPCColor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.metroSetNumeric_NPCColor.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.metroSetNumeric_NPCColor.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetNumeric_NPCColor.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSetNumeric_NPCColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroSetNumeric_NPCColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetNumeric_NPCColor.IsDerivedStyle = true;
+            this.metroSetNumeric_NPCColor.Location = new System.Drawing.Point(111, 1203);
+            this.metroSetNumeric_NPCColor.Maximum = 999;
+            this.metroSetNumeric_NPCColor.Minimum = 0;
+            this.metroSetNumeric_NPCColor.Name = "metroSetNumeric_NPCColor";
+            this.metroSetNumeric_NPCColor.Size = new System.Drawing.Size(246, 26);
+            this.metroSetNumeric_NPCColor.Style = MetroSet_UI.Enums.Style.Dark;
+            this.metroSetNumeric_NPCColor.StyleManager = null;
+            this.metroSetNumeric_NPCColor.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.metroSetNumeric_NPCColor.TabIndex = 94;
+            this.metroSetNumeric_NPCColor.ThemeAuthor = "Narwin";
+            this.metroSetNumeric_NPCColor.ThemeName = "MetroDark";
+            this.metroSetNumeric_NPCColor.Value = 72;
             // 
             // ACNHLab
             // 
@@ -2491,9 +2538,6 @@ namespace ACNHLab
             this.tableLayoutPanel_Main.ResumeLayout(false);
             this.metroSetTabControl_GameProject.ResumeLayout(false);
             this.tabPage_Project.ResumeLayout(false);
-            this.menuStrip_Main.ResumeLayout(false);
-            this.menuStrip_Main.PerformLayout();
-            this.contextMenuStrip_Project.ResumeLayout(false);
             this.panel_Workspace.ResumeLayout(false);
             this.tableLayoutPanel_Workspace.ResumeLayout(false);
             this.panel_WorkspaceTabs.ResumeLayout(false);
@@ -2503,7 +2547,6 @@ namespace ACNHLab
             this.tableLayoutPanel_Villagers.PerformLayout();
             this.tableLayoutPanel_VillagerList.ResumeLayout(false);
             this.tableLayoutPanel_VillagerAddRemove.ResumeLayout(false);
-            this.tabPage_Furniture.ResumeLayout(false);
             this.panel_VillagerParams.ResumeLayout(false);
             this.panel_VillagerParams.PerformLayout();
             this.tableLayoutPanel_VillagerParams.ResumeLayout(false);
@@ -2511,6 +2554,10 @@ namespace ACNHLab
             this.tableLayoutPanel_Birthday.ResumeLayout(false);
             this.tableLayoutPanel_VillagerSpeciesAdd.ResumeLayout(false);
             this.tableLayoutPanel_VillagerGender.ResumeLayout(false);
+            this.tabPage_Furniture.ResumeLayout(false);
+            this.menuStrip_Main.ResumeLayout(false);
+            this.menuStrip_Main.PerformLayout();
+            this.contextMenuStrip_Project.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2622,7 +2669,7 @@ namespace ACNHLab
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_PhonePattern;
         private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_PhonePattern;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_ShirtID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric1;
+        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_ShirtID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_UmbrellaID;
         private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_UmbrellaID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_FaveColor;
@@ -2637,5 +2684,7 @@ namespace ACNHLab
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Melody;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Melody;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Melody2;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_NPCColor;
+        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_NPCColor;
     }
 }

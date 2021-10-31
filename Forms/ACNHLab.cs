@@ -36,6 +36,31 @@ namespace ACNHLab
                 metroSetComboBox_Personality.Items.Add(personality.Item2);
             foreach (var hobby in Villagers.Hobby)
                 metroSetComboBox_Hobby.Items.Add(hobby.Item2);
+            foreach (var clothesType in Villagers.PreferredClothes)
+                metroSetComboBox_ClothesType.Items.Add(clothesType.Item2);
+            foreach (var style in Villagers.PreferredStyle)
+            {
+                metroSetComboBox_Style.Items.Add(style.Item2);
+                metroSetComboBox_Style2.Items.Add(style.Item2);
+
+            }
+            foreach (var value in Villagers.Unknown1)
+                metroSetComboBox_Unknown1.Items.Add(value.Item2);
+            foreach (var socialType in Villagers.SocialType)
+                metroSetComboBox_SocialType.Items.Add(socialType.Item2);
+            foreach (var singPauseType in Villagers.SingPauseType)
+                metroSetComboBox_SingPause.Items.Add(singPauseType.Item2);
+            foreach (var singRhythmType in Villagers.SingRhythmType)
+                metroSetComboBox_SingRhythm.Items.Add(singRhythmType.Item2);
+            foreach (var color in Villagers.Color)
+            {
+                metroSetComboBox_FaveColor.Items.Add(color.Item2);
+                metroSetComboBox_FaveColor2.Items.Add(color.Item2);
+            }
+            foreach (var melodyType in Villagers.VillageMelody)
+                metroSetComboBox_Melody.Items.Add(melodyType.Item2);
+            foreach (var melodyType2 in Villagers.VillageMelody2)
+                metroSetComboBox_Melody2.Items.Add(melodyType2.Item2);
         }
 
         #region ToolstripOptions
@@ -444,6 +469,50 @@ namespace ACNHLab
             metroSetComboBox_Amiibo.SelectedIndex = metroSetComboBox_Amiibo.Items.IndexOf(Amiibos.First(x => x.Item1.Equals(amiiboHead)).Item3);*/
             // Catchphrase
             metroSetTextBox_Catchphrase.Text = villager.Catchphrase;
+            // Clothes Type
+            metroSetComboBox_ClothesType.SelectedIndex = metroSetComboBox_ClothesType.Items.IndexOf(villager.ClothesType);
+            // Style
+            metroSetComboBox_Style.SelectedIndex = metroSetComboBox_Style.Items.IndexOf(villager.Style);
+            // Style 2
+            metroSetComboBox_Style2.SelectedIndex = metroSetComboBox_Style2.Items.IndexOf(villager.Style2);
+            // Unknown
+            metroSetComboBox_Unknown1.SelectedIndex = metroSetComboBox_Unknown1.Items.IndexOf(villager.Unknown);
+            // Social Type
+            metroSetComboBox_SocialType.SelectedIndex = metroSetComboBox_SocialType.Items.IndexOf(villager.SocialType);
+            // Sing Pause Type
+            metroSetComboBox_SingPause.SelectedIndex = metroSetComboBox_SingPause.Items.IndexOf(villager.SingPauseType);
+            // Sing Rhythm Type
+            metroSetComboBox_SingRhythm.SelectedIndex = metroSetComboBox_SingRhythm.Items.IndexOf(villager.SingRhythmType);
+            // Photo Item ID
+            metroSetNumeric_PhotoID.Value = villager.PhotoItemID;
+            // Floor Type
+            metroSetNumeric_FloorType.Value = villager.FloorType;
+            // Poster Item ID
+            metroSetNumeric_PosterID.Value = villager.PosterItemID;
+            // Rain Hat Item ID
+            metroSetNumeric_RainHatID.Value = villager.RainHatItemID;
+            // Rain Wear Item ID
+            metroSetNumeric_RainWearID.Value = villager.RainWearItemID;
+            // Phone Pattern
+            metroSetNumeric_PhonePattern.Value = villager.PhonePattern;
+            // Shirt Item ID
+            metroSetNumeric_ShirtID.Value = villager.ShirtItemID;
+            // Umbrella Item ID
+            metroSetNumeric_UmbrellaID.Value = villager.UmbrellaItemID;
+            // Fave Color
+            metroSetComboBox_FaveColor.SelectedIndex = metroSetComboBox_FaveColor.Items.IndexOf(villager.FaveColor);
+            // Fave Color 2
+            metroSetComboBox_FaveColor2.SelectedIndex = metroSetComboBox_FaveColor2.Items.IndexOf(villager.FaveColor2);
+            // Remake ID
+            metroSetNumeric_RemakeID.Value = villager.RemakeID;
+            // Note Length
+            metroSetNumeric_NoteLength.Value = villager.NoteLength;
+            // Village Melody
+            metroSetComboBox_Melody.SelectedIndex = metroSetComboBox_Melody.Items.IndexOf(villager.VillageMelody);
+            // Village Melody 2
+            metroSetComboBox_Melody2.SelectedIndex = metroSetComboBox_Melody2.Items.IndexOf(villager.VillageMelody2);
+            // NPC Color
+            metroSetNumeric_NPCColor.Value = villager.NPCColor;
 
             Program.status.Update($"[INFO] Loaded Villager Data: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})");
 
