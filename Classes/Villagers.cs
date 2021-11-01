@@ -19,7 +19,6 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("00000004","Chinese"),
             new Tuple<string, string>("0000000A","Japanese")
         };
-        // Preferred Clothes 2
         public static List<Tuple<string, string>> PreferredStyle = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("00000001","1"),
@@ -29,7 +28,6 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("00000005","5"),
             new Tuple<string, string>("00000006","6")
         };
-        // Preferred Style 2
         public static List<Tuple<string, string>> Unknown1 = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("26296DD2","Normal"),
@@ -56,7 +54,6 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("A5CD9C84","Girl_normal"),
             new Tuple<string, string>("70706744","Girl_big_sis"),
         };
-        // Unknown 2 (Always 00000000)
         public static List<Tuple<string, string>> SocialType = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("51374B6B","High"),
@@ -74,20 +71,6 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("1197DFE3","Random"),
             new Tuple<string, string>("FC4360ED","Shuffle")
         };
-        // Accent Wall (Always 0)
-        // Photo Item ID
-        // Floor Type (0 - 54)
-        // Poster Item ID
-        // Rain Hat ID
-        // Rain Wear ID
-        // SmartphoneRemakeCommonPattern (Always 65535)
-        // SmartphoneRemakePattern (0 - 7)
-        // Default Shirt ID
-        // Default Umbrella ID
-        // Unique ID (incremental)
-        // Wall Type (Always 0)
-        // Birth Month
-        // Birth Day
         public static List<Tuple<string, string>> Color = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("0","None"),
@@ -106,22 +89,12 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("13","Black"),
             new Tuple<string, string>("14","Colorful"),
         };
-        // Favorite Color 2
-        // Havok Res Name (NpcNmlClothDog)
-        // Helper Bone Res Name (NpcNmlHelperBoneDog)
-        // Init Live - Always 1
-        // Init Remake Id (0 to 6)
-        // Label (dog69)
-        // NPC Color
         public static List<Tuple<string, string>> TalkType = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("0","Type 1"),
             new Tuple<string, string>("1","Type 2"),
         };
-        public static List<Tuple<int, string, string>> Species = new List<Tuple<int, string, string>>(); // Res Name (NpcNmlDog69)
-        // Special ELink (Always 0)
-        // Special SLink (Always 0)
-        // Village Melody Note Length (3 - 6)
+        public static List<Tuple<int, string, string>> Species = new List<Tuple<int, string, string>>();
         public static List<Tuple<string, string>> VillageMelody = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("1","1"),
@@ -171,148 +144,210 @@ namespace ACNHLab.Classes
             
             List<Tuple<int, string, string>> phrases = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt"));
             Program.status.Update("[INFO] Loaded villager catchphrases from \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
-            
+
             /*
              *  Get NPC data from BCSV
              */
+            Program.status.Update("[INFO] Loading villager data from BCSV files, please wait...");
             Bcsv.Read(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
+            int rowNumber = 0;
             foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
             {
-                VillagerData villager = new VillagerData();
-                for (int i = 0; i < row.Cells.Count - 1; i++)
+                rowNumber++;
+                if (rowNumber < Bcsv.dataGridView1.Rows.Count)
                 {
-                    switch (i)
+                    VillagerData villager = new VillagerData();
+                    for (int i = 0; i < row.Cells.Count - 1; i++)
                     {
-                        case 0: // Preferred Clothes
-                            if (row.Cells[i].Value != null && PreferredClothes.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.ClothesType = PreferredClothes.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 2: // Preferred Style 1
-                            if (row.Cells[i].Value != null && PreferredStyle.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.Style = PreferredStyle.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 3: // Preferred Style 2
-                            if (row.Cells[i].Value != null && PreferredStyle.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.Style2 = PreferredStyle.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 4: // Unknown
-                            if (row.Cells[i].Value != null && Unknown1.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.Unknown = Unknown1.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 5: // Hobby
-                            if (row.Cells[i].Value != null && Hobby.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.Hobby = Hobby.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 6: // Personality
-                            if (row.Cells[i].Value != null && Personality.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.Personality = Personality.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 8: // Social Type
-                            if (row.Cells[i].Value != null && SocialType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.SocialType = SocialType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 9: // Sing Pause Type
-                            if (row.Cells[i].Value != null && SingPauseType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.SingPauseType = SingPauseType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 10: // Sing Rhythm Type
-                            if (row.Cells[i].Value != null && SingRhythmType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.SingRhythmType = SingRhythmType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 12: // Photo Item ID
-                            if (row.Cells[i].Value != null)
-                                villager.PhotoItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 13: // Floor Type
-                            if (row.Cells[i].Value != null)
-                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 14: // Poster Item ID
-                            if (row.Cells[i].Value != null)
-                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 15: // Rain Hat
-                            if (row.Cells[i].Value != null)
-                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 16: // Rain Wear
-                            if (row.Cells[i].Value != null)
-                                villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 18: // Phone Pattern
-                            if (row.Cells[i].Value != null)
-                                villager.PhonePattern = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 19: // Default Shirt ID
-                            if (row.Cells[i].Value != null)
-                                villager.ShirtItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 20: // Umbrella ID
-                            if (row.Cells[i].Value != null)
-                                villager.UmbrellaItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 23: // Birth Day
-                            if (row.Cells[i].Value != null)
-                                villager.BirthDay = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 24: // Birth Month
-                            if (row.Cells[i].Value != null)
-                                villager.BirthMonth = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 25: // Fave Color
-                            if (row.Cells[i].Value != null && Color.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.FaveColor = Color.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 26: // Fave Color 2
-                            if (row.Cells[i].Value != null && Color.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.FaveColor2 = Color.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 30: // Remake ID
-                            if (row.Cells[i].Value != null)
-                                villager.RemakeID = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 31: // Species & ID (also used to add name/phrase)
-                            if (row.Cells[i].Value != null)
-                            {
-                                string name = Classes.Bcsv.Hex.FromHexToString(row.Cells[i].Value.ToString()).Substring(0, 5);
-                                string species = name.Substring(0, 3);
-                                string id = name.Substring(3, 2);
-                                villager.Species = Species.First(x => x.Item2.StartsWith(species)).Item3.Replace("\0","");
-                                villager.ID = Convert.ToInt32(id.Replace("\0", ""));
-                                villager.Name = names.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
-                                villager.Catchphrase = phrases.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
-                            }
-                            break;
-                        case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
-                            if (row.Cells[i].Value != null)
-                                villager.NPCColor = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 33: // Talk Type
-                            if (row.Cells[i].Value != null && TalkType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.TalkType = TalkType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 37: // Note Length
-                            if (row.Cells[i].Value != null)
-                                villager.NoteLength = Convert.ToInt32(row.Cells[i].Value.ToString());
-                            break;
-                        case 38: // Village Melody
-                            if (row.Cells[i].Value != null && VillageMelody.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.VillageMelody = VillageMelody.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        case 39: // Village Melody 2
-                            if (row.Cells[i].Value != null && VillageMelody2.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
-                                villager.VillageMelody2 = VillageMelody2.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
-                            break;
-                        default:
-                            break;
+                        switch (i)
+                        {
+                            case 0: // Preferred Clothes
+                                if (row.Cells[i].Value != null && PreferredClothes.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.ClothesType = PreferredClothes.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Preferred Clothes (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 2: // Preferred Style 1
+                                if (row.Cells[i].Value != null && PreferredStyle.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.Style = PreferredStyle.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Preferred Style (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 3: // Preferred Style 2
+                                if (row.Cells[i].Value != null && PreferredStyle.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.Style2 = PreferredStyle.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Preferred Style 2 (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 4: // Unknown
+                                if (row.Cells[i].Value != null && Unknown1.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.Unknown = Unknown1.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Unknown1 (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 5: // Hobby
+                                if (row.Cells[i].Value != null && Hobby.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.Hobby = Hobby.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Hobby (Row {rowNumber}, Column {i + 1})"); ;
+                                break;
+                            case 6: // Personality
+                                if (row.Cells[i].Value != null && Personality.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.Personality = Personality.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Personality (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 8: // Social Type
+                                if (row.Cells[i].Value != null && SocialType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.SocialType = SocialType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Social Type (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 9: // Sing Pause Type
+                                if (row.Cells[i].Value != null && SingPauseType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.SingPauseType = SingPauseType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Sing Pause Type (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 10: // Sing Rhythm Type
+                                if (row.Cells[i].Value != null && SingRhythmType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.SingRhythmType = SingRhythmType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Sing Rhythm (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 12: // Photo Item ID
+                                if (row.Cells[i].Value != null)
+                                    villager.PhotoItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Photo Item ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 13: // Floor Type
+                                if (row.Cells[i].Value != null)
+                                    villager.FloorType = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Floor Type (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 14: // Poster Item ID
+                                if (row.Cells[i].Value != null)
+                                    villager.PosterItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Poster Item ID (Row {rowNumber}, Column {i + 1})"); ;
+                                break;
+                            case 15: // Rain Hat
+                                if (row.Cells[i].Value != null)
+                                    villager.RainHatItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Rain Hat ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 16: // Rain Wear
+                                if (row.Cells[i].Value != null)
+                                    villager.RainWearItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Rain Wear ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 18: // Phone Pattern
+                                if (row.Cells[i].Value != null)
+                                    villager.PhonePattern = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Phone Pattern ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 19: // Default Shirt ID
+                                if (row.Cells[i].Value != null)
+                                    villager.ShirtItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Default Shirt ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 20: // Umbrella ID
+                                if (row.Cells[i].Value != null)
+                                    villager.UmbrellaItemID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Umbrella ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 23: // Birth Day
+                                if (row.Cells[i].Value != null)
+                                    villager.BirthDay = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Birth Day (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 24: // Birth Month
+                                if (row.Cells[i].Value != null)
+                                    villager.BirthMonth = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Birth Month (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 25: // Fave Color
+                                if (row.Cells[i].Value != null && Color.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.FaveColor = Color.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Fave Color (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 26: // Fave Color 2
+                                if (row.Cells[i].Value != null && Color.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.FaveColor2 = Color.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Fave Color 2 (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 30: // Remake ID
+                                if (row.Cells[i].Value != null)
+                                    villager.RemakeID = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Remake ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 31: // Species & ID (also used to add name/phrase)
+                                if (row.Cells[i].Value != null)
+                                {
+                                    string name = Classes.Bcsv.Hex.FromHexToString(row.Cells[i].Value.ToString()).Substring(0, 5);
+                                    string species = name.Substring(0, 3);
+                                    string id = name.Substring(3, 2);
+                                    villager.Species = Species.First(x => x.Item2.StartsWith(species)).Item3.Replace("\0", "");
+                                    villager.ID = Convert.ToInt32(id.Replace("\0", ""));
+                                    villager.Name = names.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
+                                    villager.Catchphrase = phrases.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
+                                }
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Species and ID (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
+                                if (row.Cells[i].Value != null)
+                                    villager.NPCColor = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) NPC Color (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 33: // Talk Type
+                                if (row.Cells[i].Value != null && TalkType.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.TalkType = TalkType.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Talk Type (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 37: // Note Length
+                                if (row.Cells[i].Value != null)
+                                    villager.NoteLength = Convert.ToInt32(row.Cells[i].Value.ToString());
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Note Length (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 38: // Village Melody
+                                if (row.Cells[i].Value != null && VillageMelody.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.VillageMelody = VillageMelody.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Village Melody (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            case 39: // Village Melody 2
+                                if (row.Cells[i].Value != null && VillageMelody2.Any(x => x.Item1.Equals(row.Cells[i].Value.ToString())))
+                                    villager.VillageMelody2 = VillageMelody2.First(x => x.Item1.Equals(row.Cells[i].Value.ToString())).Item2;
+                                else
+                                    Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Village Melody 2 (Row {rowNumber}, Column {i + 1})");
+                                break;
+                            default:
+                                break;
+                        }
                     }
+                    #if DEBUG
+                        Program.status.Update($"[DEBUG] Loaded {villager.Name} ({villager.Species}{villager.ID}) data (Row {rowNumber})");
+                    #endif
+                    List.Add(villager);
                 }
-                #if DEBUG
-                    Program.status.Update($"[DEBUG] Loaded {villager.Species}{villager.ID} data");
-                #endif
-                List.Add(villager);
             }
-            Program.status.Update("[INFO] Serialized villager data to object list.");
+            Program.status.Update("[INFO] Finished loading villager data.");
 
             /*
              *  Get amiibo data from BCSV
@@ -369,11 +404,9 @@ namespace ACNHLab.Classes
 
     public class Interior
     {
-        public int FloorType { get; set; } = 54; // 0 or 54
     }
 
     public class Exterior
     {
-
     }
 }

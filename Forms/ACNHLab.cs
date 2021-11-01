@@ -22,16 +22,13 @@ namespace ACNHLab
         public ACNHLab()
         {
             InitializeComponent();
+            File.AppendAllText("Log.txt", "\n\n\nProgram Start\n\n\n");
             Program.status = new Status(this.richTextBox_Status);
-            Program.status.Update("Create a new project or load an existing one to get started.");
             metroSetTabControl_Workspace.SelectedIndex = 0;
             ToolStripManager.Renderer = r;
             menuStrip_Main.Renderer = r;
             treeView_Project.ImageList = Treeview.treeViewImageList;
             collapsed = false;
-            #if DEBUG
-                metroSetTabControl_Workspace.Controls.Add(new TabPage(Text = "Debug"));
-            #endif
             foreach (var personality in Villagers.Personality)
                 metroSetComboBox_Personality.Items.Add(personality.Item2);
             foreach (var hobby in Villagers.Hobby)
@@ -327,11 +324,6 @@ namespace ACNHLab
             HideContextMenus();
         }
 
-        private void ProjectNode_DoubleClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-
-        }
-
         /* Open/close right click treeview node context menus */
         private void ProjectNode_MouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
@@ -377,7 +369,9 @@ namespace ACNHLab
                 contextMenuStrip_Project.Show(Cursor.Position);
             }
         }
+        #endregion
 
+        #region FormEvents
         /* Toggle file browser and log */
         private void ShowHide_Click(object sender, EventArgs e)
         {
@@ -402,35 +396,6 @@ namespace ACNHLab
         private void HideContextMenus()
         {
             contextMenuStrip_Project.Hide();
-        }
-        #endregion
-
-        #region Rendering
-        /* Improve menustrip rendering for dark theme */
-        ToolStripProfessionalRenderer r =
-            new ToolStripProfessionalRenderer(new MyColorTable(Color.FromArgb(255, 20, 20, 20)));
-        public class MyColorTable : ProfessionalColorTable
-        {
-            private Color menuItemSelectedColor;
-            public MyColorTable(Color color) : base()
-            {
-                menuItemSelectedColor = color;
-            }
-            public override Color MenuItemSelected
-            {
-                get { return menuItemSelectedColor; }
-            }
-        }
-        #endregion
-
-        private void Workspace_SelectedTabChanged(object sender, EventArgs e)
-        {
-            if (metroSetTabControl_Workspace.SelectedTab.Text.Equals("Debug"))
-            {
-                metroSetTabControl_Workspace.SelectedTab.Controls.Clear();
-                metroSetTabControl_Workspace.SelectedTab.Controls.Add(Classes.Bcsv.dataGridView1);
-            }
-                
         }
 
         private void AmiiboSeries_SelectedIndexChanged(object sender, EventArgs e)
@@ -514,11 +479,30 @@ namespace ACNHLab
             // NPC Color
             metroSetNumeric_NPCColor.Value = villager.NPCColor;
 
-            Program.status.Update($"[INFO] Loaded Villager Data: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})");
+            Program.status.Update($"[INFO] Showing Villager data in form: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})");
 
             // TODO: Show villager icon
             //UpdateIcon();
         }
+        #endregion
+
+        #region Rendering
+        /* Improve menustrip rendering for dark theme */
+        ToolStripProfessionalRenderer r =
+            new ToolStripProfessionalRenderer(new MyColorTable(Color.FromArgb(255, 20, 20, 20)));
+        public class MyColorTable : ProfessionalColorTable
+        {
+            private Color menuItemSelectedColor;
+            public MyColorTable(Color color) : base()
+            {
+                menuItemSelectedColor = color;
+            }
+            public override Color MenuItemSelected
+            {
+                get { return menuItemSelectedColor; }
+            }
+        }
+        #endregion
     }
 
     /* Append to Status Text from other classes and forms */
@@ -532,9 +516,11 @@ namespace ACNHLab
 
         public void Update(string msg)
         {
-            rtb.Text += "\n" + msg;
+            string newMessage = $"<{DateTime.Now.ToString("hh: mm")}> {msg}\n";
+            rtb.Text += newMessage;
             rtb.SelectionStart = rtb.Text.Length;
             rtb.ScrollToCaret();
+            File.AppendAllText("Log.txt", newMessage);
         }
     }
 
