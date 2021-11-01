@@ -114,10 +114,7 @@ namespace ACNHLab
                 // Load villager data from files
                 Classes.Villagers.Load();
                 // Update villager dropdown
-                metroSetComboBox_Villagers.Items.Clear();
-                foreach (var villager in Villagers.List .Where(n => !n.Name.Replace("\0","").Equals("")))
-                    metroSetComboBox_Villagers.Items.Add($"{Villagers.Species.First(s => s.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")} {villager.Name}");
-                Program.status.Update("[INFO] Refreshed Villagers dropdown.");
+                UpdateVillagerDropDown();
                 // Update species dropdown
                 metroSetComboBox_VillagerSpecies.Items.Clear();
                 foreach (var species in Villagers.Species)
@@ -140,7 +137,18 @@ namespace ACNHLab
 
                 // Show selected villager's data in form
                 metroSetComboBox_Villagers.SelectedIndex = 0;
+                // Enable villagers tab controls
+                tableLayoutPanel_Villagers.Enabled = true;
             }
+        }
+
+        private void UpdateVillagerDropDown(int selectIndex = 0)
+        {
+            metroSetComboBox_Villagers.Items.Clear();
+            foreach (var villager in Villagers.List.Where(n => !n.Name.Replace("\0", "").Equals("")))
+                metroSetComboBox_Villagers.Items.Add($"{Villagers.Species.First(s => s.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")} {villager.Name}");
+            Program.status.Update("[INFO] Refreshed Villagers dropdown.");
+            metroSetComboBox_Villagers.SelectedIndex = selectIndex;
         }
 
         private void UpdateIcon()
@@ -410,7 +418,7 @@ namespace ACNHLab
         {
             VillagerData villager = Villagers.List[metroSetComboBox_Villagers.SelectedIndex];
             // Name
-            metroSetTextBox_Name.Text = villager.Name;
+            textBox_Name.Text = villager.Name;
             // Species
             metroSetComboBox_VillagerSpecies.SelectedIndex = metroSetComboBox_VillagerSpecies.Items.IndexOf(villager.Species);
             // ID
@@ -433,7 +441,7 @@ namespace ACNHLab
             metroSetComboBox_AmiiboSeries.SelectedIndex = metroSetComboBox_AmiiboSeries.Items.IndexOf(Amiibos.First(x => x.Item1.Equals(amiiboHead)).Item2);
             metroSetComboBox_Amiibo.SelectedIndex = metroSetComboBox_Amiibo.Items.IndexOf(Amiibos.First(x => x.Item1.Equals(amiiboHead)).Item3);*/
             // Catchphrase
-            metroSetTextBox_Catchphrase.Text = villager.Catchphrase;
+            textBox_Phrase.Text = villager.Catchphrase;
             // Clothes Type
             metroSetComboBox_ClothesType.SelectedIndex = metroSetComboBox_ClothesType.Items.IndexOf(villager.ClothesType);
             // Style
@@ -483,6 +491,86 @@ namespace ACNHLab
 
             // TODO: Show villager icon
             //UpdateIcon();
+        }
+
+        private void SaveVillager_Click(object sender, EventArgs e)
+        {
+            VillagerData villager = Villagers.List[metroSetComboBox_Villagers.SelectedIndex];
+            // Name
+            villager.Name = textBox_Name.Text;
+            // Species
+            villager.Species = metroSetComboBox_VillagerSpecies.SelectedItem.ToString();
+            // ID
+            villager.ID = metroSetNumeric_VillagerID.Value;
+            // TalkType
+            if (metroSetRadioButton_TalkType1.Checked)
+                villager.TalkType = "Type 1";
+            else
+                villager.TalkType = "Type 2";
+            // Personality
+            villager.Personality = metroSetComboBox_Personality.SelectedItem.ToString();
+            // Hobby
+            villager.Hobby = metroSetComboBox_Hobby.SelectedItem.ToString();
+            // Birth Month
+            villager.BirthMonth = metroSetNumeric_Month.Value;
+            // Birth Day
+            villager.BirthDay = metroSetNumeric_Day.Value;
+            // TODO: Amiibo
+
+            // Catchphrase
+            villager.Catchphrase = textBox_Phrase.Text;
+            // Clothes Type
+            villager.ClothesType = metroSetComboBox_ClothesType.SelectedItem.ToString();
+            // Style
+            villager.Style = metroSetComboBox_Style.SelectedItem.ToString();
+            // Style 2
+            villager.Style2 = metroSetComboBox_Style2.SelectedItem.ToString();
+            // Unknown
+            villager.Unknown = metroSetComboBox_Unknown1.SelectedItem.ToString();
+            // Social Type
+            villager.SocialType = metroSetComboBox_SocialType.SelectedItem.ToString();
+            // Sing Pause Type
+            villager.SingPauseType = metroSetComboBox_SingPause.SelectedItem.ToString();
+            // Sing Rhythm Type
+            villager.SingRhythmType = metroSetComboBox_SingRhythm.SelectedItem.ToString();
+            // Photo Item ID
+            villager.PhotoItemID = metroSetNumeric_PhotoID.Value;
+            // Floor Type
+            villager.FloorType = metroSetNumeric_FloorType.Value;
+            // Poster Item ID
+            villager.PosterItemID = metroSetNumeric_PosterID.Value;
+            // Rain Hat Item ID
+            villager.RainHatItemID = metroSetNumeric_RainHatID.Value;
+            // Rain Wear Item ID
+            villager.RainWearItemID = metroSetNumeric_RainWearID.Value;
+            // Phone Pattern
+            villager.PhonePattern = metroSetNumeric_PhonePattern.Value;
+            // Shirt Item ID
+            villager.ShirtItemID = metroSetNumeric_ShirtID.Value;
+            // Umbrella Item ID
+            villager.UmbrellaItemID = metroSetNumeric_UmbrellaID.Value;
+            // Fave Color
+            villager.FaveColor = metroSetComboBox_FaveColor.SelectedItem.ToString();
+            // Fave Color 2
+            villager.FaveColor2 = metroSetComboBox_FaveColor2.SelectedItem.ToString();
+            // Remake ID
+            villager.RemakeID = metroSetNumeric_RemakeID.Value;
+            // Note Length
+            villager.NoteLength = metroSetNumeric_NoteLength.Value;
+            // Village Melody
+            villager.VillageMelody = metroSetComboBox_Melody.SelectedItem.ToString();
+            // Village Melody 2
+            villager.VillageMelody2 = metroSetComboBox_Melody2.SelectedItem.ToString();
+            // NPC Color
+            villager.NPCColor = metroSetNumeric_NPCColor.Value;
+
+            Villagers.List[metroSetComboBox_Villagers.SelectedIndex] = villager;
+            // Update BCSVs, MSBTs and SARCs
+            Villagers.Save();
+            string status = $"Saved changes to Villager: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})";
+            Program.status.Update($"[INFO] {status}");
+            MessageBox.Show(status, "Saved Villager Data");
+            UpdateVillagerDropDown(metroSetComboBox_Villagers.SelectedIndex);
         }
         #endregion
 

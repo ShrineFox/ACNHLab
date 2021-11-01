@@ -2275,6 +2275,9 @@
         WGGFFVZYYYUVVlhhhRVWOAP4/wOFXwtucw3LuQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="menuStrip_Villagers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>208, 71</value>
+  </metadata>
   <metadata name="contextMenuStrip_Project.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>241, 17</value>
   </metadata>

@@ -362,6 +362,178 @@ namespace ACNHLab.Classes
 
             // TODO: Get room/house data from BYML
         }
+        public static void Save()
+        {
+            string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
+
+            Program.status.Update("[INFO] Saving villager data to BCSV and MSBT files, please wait...");
+
+            // TODO: Update Race list
+            // TODO: Update Villager names
+            //List<Tuple<int, string, string>> names = MSBT.Serialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcName.msbt"));
+            Program.status.Update("[INFO] Saved villager names to \"Message\\String_USen\\Npc\\STR_NNpcName.msbt\".");
+
+            // TODO: Update Villager catchphrases
+            //List<Tuple<int, string, string>> phrases = MSBT.Serialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt"));
+            Program.status.Update("[INFO] Saved villager catchphrases to \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
+
+            // TODO: Update NPC Amiibo BCSV
+
+            /*
+             *  Update NPC params in BCSV
+             */
+            Bcsv.Read(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
+            //Bcsv.dataGridView1.Rows.Add(Bcsv.dataGridView1.Rows.Count - List.Count());
+            int rowNumber = 0;
+            foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
+            {
+                if ((string)Bcsv.dataGridView1.Rows[rowNumber].Cells[0].Value != ""
+                    && rowNumber < Bcsv.dataGridView1.Rows.Count - 2)
+                {
+                    VillagerData villager = List[rowNumber];
+                    for (int i = 0; i < row.Cells.Count - 1; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0: // Preferred Clothes
+                                row.Cells[i].Value = PreferredClothes.First(x => x.Item2.Equals(villager.ClothesType)).Item1;
+                                break;
+                            case 1: // Preferred Clothes 2
+                                row.Cells[i].Value = "00000009";
+                                break;
+                            case 2: // Preferred Style 1
+                                row.Cells[i].Value = PreferredStyle.First(x => x.Item2.Equals(villager.Style)).Item1;
+                                break;
+                            case 3: // Preferred Style 2
+                                row.Cells[i].Value = PreferredStyle.First(x => x.Item2.Equals(villager.Style2)).Item1;
+                                break;
+                            case 4: // Unknown
+                                row.Cells[i].Value = Unknown1.First(x => x.Item2.Equals(villager.Unknown)).Item1;
+                                break;
+                            case 5: // Hobby
+                                row.Cells[i].Value = Hobby.First(x => x.Item2.Equals(villager.Hobby)).Item1;
+                                break;
+                            case 6: // Personality
+                                row.Cells[i].Value = Personality.First(x => x.Item2.Equals(villager.Personality)).Item1;
+                                break;
+                            case 7: // Unknown, always 0
+                                row.Cells[i].Value = "00000000";
+                                break;
+                            case 8: // Social Type
+                                row.Cells[i].Value = SocialType.First(x => x.Item2.Equals(villager.SocialType)).Item1;
+                                break;
+                            case 9: // Sing Pause Type
+                                row.Cells[i].Value = SingPauseType.First(x => x.Item2.Equals(villager.SingPauseType)).Item1;
+                                break;
+                            case 10: // Sing Rhythm Type
+                                row.Cells[i].Value = SingRhythmType.First(x => x.Item2.Equals(villager.SingRhythmType)).Item1;
+                                break;
+                            case 11: // Wall Accent, Always 0
+                                row.Cells[i].Value = 0;
+                                break;
+                            case 12: // Photo Item ID
+                                row.Cells[i].Value = villager.PhotoItemID;
+                                break;
+                            case 13: // Floor Type
+                                row.Cells[i].Value = villager.FloorType;
+                                break;
+                            case 14: // Poster Item ID
+                                row.Cells[i].Value = villager.PosterItemID;
+                                break;
+                            case 15: // Rain Hat
+                                row.Cells[i].Value = villager.RainHatItemID;
+                                break;
+                            case 16: // Rain Wear
+                                row.Cells[i].Value = villager.RainWearItemID;
+                                break;
+                            case 17: //SmartphoneRemakeCommonPattern
+                                row.Cells[i].Value = 65535;
+                                break;
+                            case 18: // Phone Pattern
+                                row.Cells[i].Value = villager.PhonePattern;
+                                break;
+                            case 19: // Default Shirt ID
+                                row.Cells[i].Value = villager.ShirtItemID;
+                                break;
+                            case 20: // Umbrella ID
+                                row.Cells[i].Value = villager.UmbrellaItemID;
+                                break;
+                            case 21: // Incremental Unique ID
+                                row.Cells[i].Value = rowNumber;
+                                break;
+                            case 22: // Wall Type, always 0
+                                row.Cells[i].Value = 0;
+                                break;
+                            case 23: // Birth Day
+                                row.Cells[i].Value = villager.BirthDay;
+                                break;
+                            case 24: // Birth Month
+                                row.Cells[i].Value = villager.BirthMonth;
+                                break;
+                            case 25: // Fave Color
+                                row.Cells[i].Value = Color.First(x => x.Item2.Equals(villager.FaveColor)).Item1;
+                                break;
+                            case 26: // Fave Color 2
+                                row.Cells[i].Value = Color.First(x => x.Item2.Equals(villager.FaveColor2)).Item1;
+                                break;
+                            case 27: // Havok Res Name
+                                row.Cells[i].Value = "NpcNmlClothDog";
+                                break;
+                            case 28: // Helper Bone Res Name
+                                row.Cells[i].Value = "NpcNmlHelperBoneDog";
+                                break;
+                            case 29: // Init Live, always 1
+                                row.Cells[i].Value = 1;
+                                break;
+                            case 30: // Remake ID
+                                row.Cells[i].Value = villager.RemakeID;
+                                break;
+                            case 31: // Species & ID 
+                                row.Cells[i].Value = Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00");
+                                // TODO: Convert cell to string before saving!!!
+
+                                break;
+                            case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
+                                row.Cells[i].Value = villager.NPCColor;
+                                break;
+                            case 33: // Talk Type
+                                row.Cells[i].Value = TalkType.First(x => x.Item2.Equals(villager.TalkType)).Item1;
+                                break;
+                            case 34: // Res Name
+                                row.Cells[i].Value = $"NpcNml{Species.First(x => x.Item3.Equals(villager.Species)).Item2.FirstCharToUpper()}{villager.ID.ToString("00")}";
+                                break;
+                            case 35: // Special ELink, always 0
+                                row.Cells[i].Value = 0;
+                                break;
+                            case 36: // Special SLink, always 0
+                                row.Cells[i].Value = 0;
+                                break;
+                            case 37: // Note Length
+                                row.Cells[i].Value = villager.NoteLength;
+                                break;
+                            case 38: // Village Melody
+                                row.Cells[i].Value = VillageMelody.First(x => x.Item2.Equals(villager.VillageMelody)).Item1;
+                                break;
+                            case 39: // Village Melody 2
+                                row.Cells[i].Value = VillageMelody2.First(x => x.Item2.Equals(villager.VillageMelody2)).Item1;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    #if DEBUG
+                        Program.status.Update($"[DEBUG] Updated {villager.Name} ({Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID}) data (Row {rowNumber})");
+                    #endif
+                }
+                rowNumber++;
+            }
+            Bcsv.Write(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
+            Program.status.Update("[INFO] Finished saving villager params to \"Bcsv\\NmlNpcParam.bcsv\".");
+
+            // TODO: Repack SARCs
+
+            // TODO: Save room/house data to BYML
+        }
     }
 
     public class VillagerData
@@ -370,7 +542,7 @@ namespace ACNHLab.Classes
         public string Species { get; set; } = "";
         public int ID { get; set; } = 0;
         public string TalkType { get; set; } = "Type 1";
-        public string Personality { get; set; } = "Normal (Boy)";
+        public string Personality { get; set; } = "Boy_normal";
         public string Hobby { get; set; } = "Play";
         public int BirthMonth { get; set; } = 12;
         public int BirthDay { get; set; } = 31;
