@@ -1,5 +1,6 @@
 ﻿using ACNHLab.Classes;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Text.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,13 +12,14 @@ using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 using ZstdNet;
 using static ACNHLab.Classes.Amiibo;
+using System.Text.Json;
 
 namespace ACNHLab
 {
     public partial class ACNHLab : MetroSet_UI.Forms.MetroSetForm
     {
         AmiiboJson amiiboJson = new AmiiboJson();
-        List<Tuple<string, string, string>> Amiibos = new List<Tuple<string, string, string>>();
+        public static List<Tuple<string, string, string>> Amiibos = new List<Tuple<string, string, string>>();
         public static bool collapsed;
         public ACNHLab()
         {
@@ -29,6 +31,12 @@ namespace ACNHLab
             menuStrip_Main.Renderer = r;
             treeView_Project.ImageList = Treeview.treeViewImageList;
             collapsed = false;
+            SetupDropDowns();
+        }
+
+        private void SetupDropDowns()
+        {
+            // Villager Stuff
             foreach (var personality in Villagers.Personality)
                 metroSetComboBox_Personality.Items.Add(personality.Item2);
             foreach (var hobby in Villagers.Hobby)
@@ -39,7 +47,6 @@ namespace ACNHLab
             {
                 metroSetComboBox_Style.Items.Add(style.Item2);
                 metroSetComboBox_Style2.Items.Add(style.Item2);
-
             }
             foreach (var value in Villagers.Unknown1)
                 metroSetComboBox_Unknown1.Items.Add(value.Item2);
@@ -58,6 +65,22 @@ namespace ACNHLab
                 metroSetComboBox_Melody.Items.Add(melodyType.Item2);
             foreach (var melodyType2 in Villagers.VillageMelody2)
                 metroSetComboBox_Melody2.Items.Add(melodyType2.Item2);
+
+            // Amiibo Stuff
+            metroSetComboBox_Amiibo.Items.Clear();
+            metroSetComboBox_Amiibo.Items.Add("");
+            metroSetComboBox_AmiiboSeries.Items.Clear();
+            metroSetComboBox_AmiiboSeries.Items.Add("");
+            amiiboJson = JsonSerializer.Deserialize<AmiiboJson>(Properties.Resources.Amiibo);
+            foreach (var amiibo in amiiboJson.List)
+                Amiibos.Add(new Tuple<string, string, string>(amiibo.Head, amiibo.AmiiboSeries, amiibo.Character));
+            foreach (var amiibo in Amiibos)
+            {
+                if (!metroSetComboBox_AmiiboSeries.Items.Contains(amiibo.Item2))
+                    metroSetComboBox_AmiiboSeries.Items.Add(amiibo.Item2);
+            }
+            Program.status.Update("[INFO] Refreshed Amiibo and Amiibo Series dropdowns.");
+            metroSetComboBox_AmiiboSeries.SelectedIndex = 0;
         }
 
         #region ToolstripOptions
@@ -121,20 +144,6 @@ namespace ACNHLab
                     metroSetComboBox_VillagerSpecies.Items.Add(species.Item3);
                 metroSetComboBox_VillagerSpecies.SelectedIndex = 0;
                 Program.status.Update("[INFO] Refreshed Species dropdown.");
-                // Update amiibo (and series) dropdowns
-                /*metroSetComboBox_Amiibo.Items.Clear();
-                metroSetComboBox_AmiiboSeries.Items.Clear();
-                AmiiboJson amiiboJson = JsonConvert.DeserializeObject<AmiiboJson>(Properties.Resources.Amiibo);
-                foreach (var amiibo in amiiboJson.List)
-                    Amiibos.Add(new Tuple<string,string,string>(amiibo.Head, amiibo.AmiiboSeries, amiibo.Character));
-                foreach (var amiibo in Amiibos)
-                {
-                    if (!metroSetComboBox_AmiiboSeries.Items.Contains(amiibo.Item2))
-                        metroSetComboBox_AmiiboSeries.Items.Add(amiibo.Item2);
-                }
-                metroSetComboBox_AmiiboSeries.SelectedIndex = 0;
-                Program.status.Update("[INFO] Refreshed Amiibo and Amiibo Series dropdowns.");*/
-
                 // Show selected villager's data in form
                 metroSetComboBox_Villagers.SelectedIndex = 0;
                 // Enable villagers tab controls
@@ -409,6 +418,7 @@ namespace ACNHLab
         private void AmiiboSeries_SelectedIndexChanged(object sender, EventArgs e)
         {
             metroSetComboBox_Amiibo.Items.Clear();
+            metroSetComboBox_Amiibo.Items.Add("");
             foreach (var amiibo in Amiibos.Where(x => x.Item2.Equals(metroSetComboBox_AmiiboSeries.SelectedItem.ToString())))
                 metroSetComboBox_Amiibo.Items.Add(amiibo.Item3);
             metroSetComboBox_Amiibo.SelectedIndex = 0;
@@ -437,9 +447,14 @@ namespace ACNHLab
             // Birth Day
             metroSetNumeric_Day.Value = villager.BirthDay;
             // Amiibo
-            /*string amiiboHead = villager.Amiibo;
-            metroSetComboBox_AmiiboSeries.SelectedIndex = metroSetComboBox_AmiiboSeries.Items.IndexOf(Amiibos.First(x => x.Item1.Equals(amiiboHead)).Item2);
-            metroSetComboBox_Amiibo.SelectedIndex = metroSetComboBox_Amiibo.Items.IndexOf(Amiibos.First(x => x.Item1.Equals(amiiboHead)).Item3);*/
+            if (villager.AmiiboSeries != "" && villager.Amiibo != "")
+            {
+                var amiibo = Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(villager.Amiibo));
+                metroSetComboBox_AmiiboSeries.SelectedIndex = metroSetComboBox_AmiiboSeries.Items.IndexOf(amiibo.Item2);
+                metroSetComboBox_Amiibo.SelectedIndex = metroSetComboBox_Amiibo.Items.IndexOf(amiibo.Item3);
+            }
+            else
+                metroSetComboBox_AmiiboSeries.SelectedIndex = 0;
             // Catchphrase
             textBox_Phrase.Text = villager.Catchphrase;
             // Clothes Type
@@ -515,8 +530,10 @@ namespace ACNHLab
             villager.BirthMonth = metroSetNumeric_Month.Value;
             // Birth Day
             villager.BirthDay = metroSetNumeric_Day.Value;
-            // TODO: Amiibo
-
+            // Amiibo
+            var amiibo = Amiibos.First(x => x.Item2.Equals(metroSetComboBox_AmiiboSeries.SelectedItem.ToString()) && x.Item3.Equals(metroSetComboBox_Amiibo.SelectedItem.ToString()));
+            villager.AmiiboSeries = amiibo.Item2;
+            villager.Amiibo = amiibo.Item3;
             // Catchphrase
             villager.Catchphrase = textBox_Phrase.Text;
             // Clothes Type

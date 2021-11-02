@@ -357,11 +357,28 @@ namespace ACNHLab.Classes
              *  Get amiibo data from BCSV
              */
             Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
-            foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
-                if (row.Cells[4].Value != null)
-                    foreach (var villager in List)
-                        if (Classes.Bcsv.Hex.FromHexToString(row.Cells[4].Value.ToString()).Equals(villager.Name))
-                            villager.Amiibo = row.Cells[0].Value.ToString();
+            foreach (var villager in List)
+            {
+                string label = Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00");
+                foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
+                {
+                    if (row.Cells[4].Value != null) 
+                    {
+                        string name = row.Cells[4].Value.ToString();
+                        if (Regex.IsMatch(name, @"\A\b[0-9a-fA-F]+\b\Z"))
+                            name = Classes.Bcsv.Hex.FromHexToString(name);
+                        name = name.Substring(0, 5);
+
+                        if (name == label)
+                        {
+                            var amiiboHead = row.Cells[0].Value.ToString().Substring(2);
+                            var amiibo = ACNHLab.Amiibos.First(x => x.Item1.ToUpper().StartsWith(amiiboHead));
+                            villager.AmiiboSeries = amiibo.Item2;
+                            villager.Amiibo = amiibo.Item3;
+                        }
+                    }
+                }   
+            }
             Program.status.Update("[INFO] Added amiibo data to villager entries.");
 
             // TODO: Get room/house data from BYML
@@ -373,15 +390,14 @@ namespace ACNHLab.Classes
             Program.status.Update("[INFO] Saving villager data to BCSV and MSBT files, please wait...");
 
             // TODO: Update Race list
+
             // TODO: Update Villager names
             //List<Tuple<int, string, string>> names = MSBT.Serialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcName.msbt"));
-            Program.status.Update("[INFO] Saved villager names to \"Message\\String_USen\\Npc\\STR_NNpcName.msbt\".");
+            //Program.status.Update("[INFO] Saved villager names to \"Message\\String_USen\\Npc\\STR_NNpcName.msbt\".");
 
             // TODO: Update Villager catchphrases
             //List<Tuple<int, string, string>> phrases = MSBT.Serialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt"));
-            Program.status.Update("[INFO] Saved villager catchphrases to \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
-
-            // TODO: Update NPC Amiibo BCSV
+            //Program.status.Update("[INFO] Saved villager catchphrases to \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
 
             /*
              *  Update NPC params in BCSV
@@ -537,6 +553,20 @@ namespace ACNHLab.Classes
             Bcsv.Write(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
             Program.status.Update("[INFO] Finished saving villager params to \"Bcsv\\NmlNpcParam.bcsv\".");
 
+            // Update NPC Amiibo BCSV
+            Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
+            foreach (var villager in List)
+                foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
+                    if (row.Cells[4].Value != null && Classes.Bcsv.Hex.FromHexToString(row.Cells[4].Value.ToString()).Equals(Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00")))
+                    {
+                        var amiibo = ACNHLab.Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(villager.Amiibo));
+                        string amiiboHead = "00" + amiibo.Item1.Substring(0, 6);
+                        row.Cells[4].Value = 4;
+                        // TODO: Support additional entries
+                    }
+            Bcsv.Write(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
+            Program.status.Update("[INFO] Finished saving amiibo data to \"Bcsv\\AmiiboData.bcsv\".");
+
             // TODO: Repack SARCs
 
             // TODO: Save room/house data to BYML
@@ -553,6 +583,7 @@ namespace ACNHLab.Classes
         public string Hobby { get; set; } = "Play";
         public int BirthMonth { get; set; } = 12;
         public int BirthDay { get; set; } = 31;
+        public string AmiiboSeries { get; set; } = "";
         public string Amiibo { get; set; } = "";
         public string Catchphrase { get; set; } = "";
         public Interior Interior { get; set; } = new Interior();
