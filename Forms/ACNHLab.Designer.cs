@@ -157,6 +157,7 @@ namespace ACNHLab
             this.ToolStripMenuItem_Rename = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_ExpandProj = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_CollapseProj = new System.Windows.Forms.ToolStripMenuItem();
+            this.writeAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel_Container.SuspendLayout();
             this.tableLayoutPanel_Main.SuspendLayout();
             this.metroSetTabControl_GameProject.SuspendLayout();
@@ -386,7 +387,7 @@ namespace ACNHLab
             this.metroSetTabControl_Workspace.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.metroSetTabControl_Workspace.Controls.Add(this.tabPage_Villagers);
             this.metroSetTabControl_Workspace.Controls.Add(this.tabPage_Furniture);
-            this.metroSetTabControl_Workspace.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroSetTabControl_Workspace.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroSetTabControl_Workspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroSetTabControl_Workspace.HotTrack = true;
             this.metroSetTabControl_Workspace.IsDerivedStyle = true;
@@ -466,7 +467,7 @@ namespace ACNHLab
             this.saveToolStripMenuItem_SaveVillager});
             this.menuStrip_Villagers.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Villagers.Name = "menuStrip_Villagers";
-            this.menuStrip_Villagers.Size = new System.Drawing.Size(251, 30);
+            this.menuStrip_Villagers.Size = new System.Drawing.Size(251, 28);
             this.menuStrip_Villagers.TabIndex = 5;
             this.menuStrip_Villagers.Text = "menuStrip1";
             // 
@@ -2186,7 +2187,8 @@ namespace ACNHLab
             this.menuStrip_Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.menuStrip_Main.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.writeAllChangesToolStripMenuItem});
             this.menuStrip_Main.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip_Main.Location = new System.Drawing.Point(2, 0);
             this.menuStrip_Main.Name = "menuStrip_Main";
@@ -2491,6 +2493,15 @@ namespace ACNHLab
             this.ToolStripMenuItem_CollapseProj.Size = new System.Drawing.Size(160, 30);
             this.ToolStripMenuItem_CollapseProj.Text = "Collapse All";
             // 
+            // writeAllChangesToolStripMenuItem
+            // 
+            this.writeAllChangesToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.writeAllChangesToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.application_go;
+            this.writeAllChangesToolStripMenuItem.Name = "writeAllChangesToolStripMenuItem";
+            this.writeAllChangesToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
+            this.writeAllChangesToolStripMenuItem.Text = "Write All Changes";
+            this.writeAllChangesToolStripMenuItem.Click += new System.EventHandler(this.WriteAllChanges_Click);
+            // 
             // ACNHLab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
@@ -2672,5 +2683,6 @@ namespace ACNHLab
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem_SaveVillager;
         private System.Windows.Forms.TextBox textBox_Phrase;
         private System.Windows.Forms.TextBox textBox_Name;
+        private System.Windows.Forms.ToolStripMenuItem writeAllChangesToolStripMenuItem;
     }
 }

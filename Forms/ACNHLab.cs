@@ -565,12 +565,19 @@ namespace ACNHLab
             villager.NPCColor = metroSetNumeric_NPCColor.Value;
 
             Villagers.List[metroSetComboBox_Villagers.SelectedIndex] = villager;
-            // Update BCSVs, MSBTs and SARCs
-            Villagers.Save();
             string status = $"Saved changes to Villager: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})";
             Program.status.Update($"[INFO] {status}");
             MessageBox.Show(status, "Saved Villager Data");
             UpdateVillagerDropDown(metroSetComboBox_Villagers.SelectedIndex);
+        }
+
+        private void WriteAllChanges_Click(object sender, EventArgs e)
+        {
+            // Update BCSVs, MSBTs and SARCs
+            Villagers.Save();
+            string status = $"Overwrote all files with currently loaded data!";
+            Program.status.Update($"[INFO] {status}");
+            MessageBox.Show(status, "Done Writing Data");
         }
         #endregion
 
