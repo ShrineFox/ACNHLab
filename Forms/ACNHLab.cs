@@ -19,7 +19,7 @@ namespace ACNHLab
     public partial class ACNHLab : MetroSet_UI.Forms.MetroSetForm
     {
         AmiiboJson amiiboJson = new AmiiboJson();
-        public static List<Tuple<string, string, string>> Amiibos = new List<Tuple<string, string, string>>();
+        public static List<Tuple<string, string, string, string>> Amiibos = new List<Tuple<string, string, string, string>>();
         public static bool collapsed;
         public ACNHLab()
         {
@@ -73,7 +73,7 @@ namespace ACNHLab
             metroSetComboBox_AmiiboSeries.Items.Add("");
             amiiboJson = JsonSerializer.Deserialize<AmiiboJson>(Properties.Resources.Amiibo);
             foreach (var amiibo in amiiboJson.List)
-                Amiibos.Add(new Tuple<string, string, string>(amiibo.Head, amiibo.AmiiboSeries, amiibo.Character));
+                Amiibos.Add(new Tuple<string, string, string, string>(amiibo.Head, amiibo.AmiiboSeries, amiibo.Name, amiibo.Type));
             foreach (var amiibo in Amiibos)
             {
                 if (!metroSetComboBox_AmiiboSeries.Items.Contains(amiibo.Item2))
@@ -419,8 +419,13 @@ namespace ACNHLab
         {
             metroSetComboBox_Amiibo.Items.Clear();
             metroSetComboBox_Amiibo.Items.Add("");
-            foreach (var amiibo in Amiibos.Where(x => x.Item2.Equals(metroSetComboBox_AmiiboSeries.SelectedItem.ToString())))
-                metroSetComboBox_Amiibo.Items.Add(amiibo.Item3);
+
+            string selected = "Animal Crossing";
+            if (metroSetComboBox_AmiiboSeries.SelectedItem != null)
+                selected = metroSetComboBox_AmiiboSeries.SelectedItem.ToString();
+
+            foreach (var amiibo in Amiibos.Where(x => x.Item2.Equals(selected)))
+                metroSetComboBox_Amiibo.Items.Add(amiibo.Item3 + " (" + amiibo.Item4 + ")");
             metroSetComboBox_Amiibo.SelectedIndex = 0;
         }
 
@@ -449,9 +454,13 @@ namespace ACNHLab
             // Amiibo
             if (villager.AmiiboSeries != "" && villager.Amiibo != "")
             {
-                var amiibo = Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(villager.Amiibo));
+                string amiiboName = villager.Amiibo.Replace(")", "").Replace(" (", "*");
+                string amiiboType = amiiboName.Split('*')[1];
+                amiiboName = amiiboName.Split('*')[0];
+
+                var amiibo = Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(amiiboName) && x.Item4.Equals(amiiboType));
                 metroSetComboBox_AmiiboSeries.SelectedIndex = metroSetComboBox_AmiiboSeries.Items.IndexOf(amiibo.Item2);
-                metroSetComboBox_Amiibo.SelectedIndex = metroSetComboBox_Amiibo.Items.IndexOf(amiibo.Item3);
+                metroSetComboBox_Amiibo.SelectedIndex = metroSetComboBox_Amiibo.Items.IndexOf(amiibo.Item3 + " (" + amiibo.Item4 + ")");
             }
             else
                 metroSetComboBox_AmiiboSeries.SelectedIndex = 0;
@@ -531,9 +540,16 @@ namespace ACNHLab
             // Birth Day
             villager.BirthDay = metroSetNumeric_Day.Value;
             // Amiibo
-            var amiibo = Amiibos.First(x => x.Item2.Equals(metroSetComboBox_AmiiboSeries.SelectedItem.ToString()) && x.Item3.Equals(metroSetComboBox_Amiibo.SelectedItem.ToString()));
-            villager.AmiiboSeries = amiibo.Item2;
-            villager.Amiibo = amiibo.Item3;
+            if (metroSetComboBox_Amiibo.SelectedItem.ToString() != "")
+            {
+                string amiiboName = metroSetComboBox_Amiibo.SelectedItem.ToString().Replace(")", "").Replace(" (", "*");
+                string amiiboType = amiiboName.Split('*')[1];
+                amiiboName = amiiboName.Split('*')[0];
+
+                var amiibo = Amiibos.First(x => x.Item2.Equals(metroSetComboBox_AmiiboSeries.SelectedItem.ToString()) && x.Item3.Equals(amiiboName) && x.Item4.Equals(amiiboType));
+                villager.AmiiboSeries = amiibo.Item2;
+                villager.Amiibo = amiibo.Item3 + " (" + amiibo.Item4 + ")";
+            }
             // Catchphrase
             villager.Catchphrase = textBox_Phrase.Text;
             // Clothes Type

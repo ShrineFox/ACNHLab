@@ -374,7 +374,7 @@ namespace ACNHLab.Classes
                             var amiiboHead = row.Cells[0].Value.ToString().Substring(2);
                             var amiibo = ACNHLab.Amiibos.First(x => x.Item1.ToUpper().StartsWith(amiiboHead));
                             villager.AmiiboSeries = amiibo.Item2;
-                            villager.Amiibo = amiibo.Item3;
+                            villager.Amiibo = amiibo.Item3 + " (" + amiibo.Item4 + ")";
                         }
                     }
                 }   
@@ -554,16 +554,48 @@ namespace ACNHLab.Classes
             Program.status.Update("[INFO] Finished saving villager params to \"Bcsv\\NmlNpcParam.bcsv\".");
 
             // Update NPC Amiibo BCSV
-            Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
-            foreach (var villager in List)
-                foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
-                    if (row.Cells[4].Value != null && Classes.Bcsv.Hex.FromHexToString(row.Cells[4].Value.ToString()).Equals(Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00")))
+            Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv")); 
+            foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
+            {
+                if (row.Cells[4].Value != null)
+                {
+                    // Get species and ID where possible
+                    string rowChara = Classes.Bcsv.Hex.FromHexToString(row.Cells[4].Value.ToString()).Replace("\0", "");
+                    if (rowChara.Length >= 3)
                     {
-                        var amiibo = ACNHLab.Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(villager.Amiibo));
-                        string amiiboHead = "00" + amiibo.Item1.Substring(0, 6);
-                        row.Cells[4].Value = 4;
-                        // TODO: Support additional entries
+                        string species = rowChara.Substring(0, 3);
+                        string id = "";
+                        if (rowChara.Length == 5)
+                            id = rowChara.Substring(3, 2);
+
+                        // Set new string value before saving
+                        row.Cells[4].Value = rowChara;
+                        
+                        // Update amiibo head for each villager found
+                        if (rowChara.Length == 5)
+                        {
+                            // TODO: Support special NPCs?
+                            var villagers = List.Where(x => x.ID.Equals(Convert.ToInt32(id)) && x.Species.Equals(Species.First(y => y.Item2.StartsWith(species)).Item3));
+                            foreach (var villager in villagers)
+                            {
+                                Program.status.Update($"[INFO] Updating amiibo for {rowChara}");
+                                string amiiboName = villager.Amiibo.Replace(")", "").Replace(" (", "*");
+                                string amiiboType = amiiboName.Split('*')[1];
+                                amiiboName = amiiboName.Split('*')[0];
+
+                                var amiibo = ACNHLab.Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(amiiboName) && x.Item4.Equals(amiiboType));
+                                string amiiboHead = "00" + amiibo.Item1.Substring(0, 6);
+                                row.Cells[0].Value = amiiboHead;
+                            }
+                        }
+                        // TODO: In order to support additional entries, add amiibo head and label to list and add rows after iterating through existing rows
                     }
+                    else
+                        row.Cells[4].Value = "";
+
+                    // TODO: Support removal of entries (maybe go by which labels have ID numbers but are still hexadecimal?)
+                }
+            }
             Bcsv.Write(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
             Program.status.Update("[INFO] Finished saving amiibo data to \"Bcsv\\AmiiboData.bcsv\".");
 
