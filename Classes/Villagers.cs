@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zstandard;
@@ -296,7 +297,10 @@ namespace ACNHLab.Classes
                             case 31: // Species & ID (also used to add name/phrase)
                                 if (row.Cells[i].Value != null)
                                 {
-                                    string name = Classes.Bcsv.Hex.FromHexToString(row.Cells[i].Value.ToString()).Substring(0, 5);
+                                    string name = row.Cells[i].Value.ToString();
+                                    if (Regex.IsMatch(name, @"\A\b[0-9a-fA-F]+\b\Z"))
+                                        name = Classes.Bcsv.Hex.FromHexToString(name);
+                                    name = name.Substring(0, 5);
                                     string species = name.Substring(0, 3);
                                     string id = name.Substring(3, 2);
                                     villager.Species = Species.First(x => x.Item2.StartsWith(species)).Item3.Replace("\0", "");
@@ -388,7 +392,7 @@ namespace ACNHLab.Classes
             foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
             {
                 if ((string)Bcsv.dataGridView1.Rows[rowNumber].Cells[0].Value != ""
-                    && rowNumber < Bcsv.dataGridView1.Rows.Count - 2)
+                    && rowNumber < Bcsv.dataGridView1.Rows.Count - 1)
                 {
                     VillagerData villager = List[rowNumber];
                     for (int i = 0; i < row.Cells.Count - 1; i++)
@@ -488,10 +492,13 @@ namespace ACNHLab.Classes
                             case 30: // Remake ID
                                 row.Cells[i].Value = villager.RemakeID;
                                 break;
-                            case 31: // Species & ID 
-                                row.Cells[i].Value = Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00");
-                                // TODO: Convert cell to string before saving!!!
-
+                            case 31: // Species & ID
+                                string label = Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00");
+                                /* List<byte> bytes = new List<byte> { 0x00, 0x00, 0x00 };
+                                foreach (char c in label.Reverse())
+                                    bytes.Add(Convert.ToByte(c));
+                                label = BitConverter.ToString(bytes.ToArray()).Replace("-", string.Empty); */
+                                row.Cells[i].Value = label;
                                 break;
                             case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
                                 row.Cells[i].Value = villager.NPCColor;

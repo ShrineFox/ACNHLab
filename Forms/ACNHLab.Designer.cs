@@ -466,7 +466,7 @@ namespace ACNHLab
             this.saveToolStripMenuItem_SaveVillager});
             this.menuStrip_Villagers.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Villagers.Name = "menuStrip_Villagers";
-            this.menuStrip_Villagers.Size = new System.Drawing.Size(251, 28);
+            this.menuStrip_Villagers.Size = new System.Drawing.Size(251, 30);
             this.menuStrip_Villagers.TabIndex = 5;
             this.menuStrip_Villagers.Text = "menuStrip1";
             // 
