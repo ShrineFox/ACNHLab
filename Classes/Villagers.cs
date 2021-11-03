@@ -95,7 +95,7 @@ namespace ACNHLab.Classes
             new Tuple<string, string>("0","Type 1"),
             new Tuple<string, string>("1","Type 2"),
         };
-        public static List<Tuple<int, string, string>> Species = new List<Tuple<int, string, string>>();
+        public static List<Tuple<string, string>> Species = new List<Tuple<string, string>>();
         public static List<Tuple<string, string>> VillageMelody = new List<Tuple<string, string>>()
         {
             new Tuple<string, string>("1","1"),
@@ -133,17 +133,17 @@ namespace ACNHLab.Classes
             /*
              *  Get species list, names and catchphrases from MSBT
              */
-            List<Tuple<int, string, string>> speciesMSBT = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\STR_Race.msbt"), 12);
+            List<Tuple<string, string>> speciesMSBT = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\STR_Race.msbt"), 12);
             // Remove gender from species list
             foreach (var species in speciesMSBT)
-                if (!Species.Any(x => x.Item2.Substring(0, 3).Equals(species.Item2.Substring(0, 3))))
-                    Species.Add(new Tuple<int, string, string>(species.Item1, species.Item2.Substring(0, 3).Replace("\0", ""), species.Item3.Replace("\0", "")));
+                if (!Species.Any(x => x.Item1.Substring(0, 3).Equals(species.Item1.Substring(0, 3))))
+                    Species.Add(new Tuple<string, string>(species.Item1.Substring(0, 3).Replace("\0", ""), species.Item2.Replace("\0", "")));
             Program.status.Update("[INFO] Loaded villager species from \"Message\\String_USen\\STR_Race.msbt\".");
             
-            List<Tuple<int, string, string>> names = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcName.msbt"));
+            List<Tuple<string, string>> names = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcName.msbt"));
             Program.status.Update("[INFO] Loaded villager names from \"Message\\String_USen\\Npc\\STR_NNpcName.msbt\".");
             
-            List<Tuple<int, string, string>> phrases = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt"));
+            List<Tuple<string, string>> phrases = MSBT.Deserialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt"));
             Program.status.Update("[INFO] Loaded villager catchphrases from \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
 
             /*
@@ -303,10 +303,10 @@ namespace ACNHLab.Classes
                                     name = name.Substring(0, 5);
                                     string species = name.Substring(0, 3);
                                     string id = name.Substring(3, 2);
-                                    villager.Species = Species.First(x => x.Item2.StartsWith(species)).Item3.Replace("\0", "");
+                                    villager.Species = Species.First(x => x.Item1.StartsWith(species)).Item2.Replace("\0", "");
                                     villager.ID = Convert.ToInt32(id.Replace("\0", ""));
-                                    villager.Name = names.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
-                                    villager.Catchphrase = phrases.First(x => x.Item2.Equals(name)).Item3.Replace("\0", "");
+                                    villager.Name = names.First(x => x.Item1.Equals(name)).Item2.Replace("\0", "");
+                                    villager.Catchphrase = phrases.First(x => x.Item1.Equals(name)).Item2.Replace("\0", "");
                                 }
                                 else
                                     Program.status.Update($"[ERROR] Failed to load {villager.Name} ({villager.Species}{villager.ID}) Species and ID (Row {rowNumber}, Column {i + 1})");
@@ -359,7 +359,7 @@ namespace ACNHLab.Classes
             Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
             foreach (var villager in List)
             {
-                string label = Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00");
+                string label = Species.First(x => x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00");
                 foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
                 {
                     if (row.Cells[4].Value != null) 
@@ -386,18 +386,35 @@ namespace ACNHLab.Classes
         public static void Save()
         {
             string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
-
             Program.status.Update("[INFO] Saving villager data to BCSV and MSBT files, please wait...");
 
-            // TODO: Update Race list
+            // Update Race list
+            List<Tuple<string, string>> newRaces = new List<Tuple<string, string>>();
+            foreach (var race in Species)
+            {
+                newRaces.Add(new Tuple<string, string>($"{race.Item1}_F", $@"&#xE;2\0&#x4;Ā촃{race.Item2}"));
+                newRaces.Add(new Tuple<string, string>($"{race.Item1}_M", $@"&#xE;2\0&#x4;Ā촃{race.Item2}"));
+            }
+            MSBT.Overwrite(newRaces, "Message\\String_USen\\STR_Race.msbt");
+            Program.status.Update("[INFO] Overwrote \"Message\\String_USen\\STR_Race.msbt\".");
 
-            // TODO: Update Villager names
-            //List<Tuple<int, string, string>> names = MSBT.Serialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcName.msbt"));
-            //Program.status.Update("[INFO] Saved villager names to \"Message\\String_USen\\Npc\\STR_NNpcName.msbt\".");
+            // Update Villager names
+            List<Tuple<string, string>> newNames = new List<Tuple<string, string>>();
+            foreach (var villager in List)
+                newNames.Add(new Tuple<string, string>(Species.First(x => 
+                    x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00"),
+                    villager.Name));
+            MSBT.Overwrite(newNames, "Message\\String_USen\\Npc\\STR_NNpcName.msbt");
+            Program.status.Update("[INFO] Overwrote \"Message\\String_USen\\Npc\\STR_NNpcName.msbt\".");
 
-            // TODO: Update Villager catchphrases
-            //List<Tuple<int, string, string>> phrases = MSBT.Serialize(Path.Combine(dir, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt"));
-            //Program.status.Update("[INFO] Saved villager catchphrases to \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
+            // Update villager catchphrases
+            List<Tuple<string, string>> newPhrases = new List<Tuple<string, string>>();
+            foreach (var villager in List)
+                newPhrases.Add(new Tuple<string, string>(Species.First(x =>
+                    x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00"),
+                    villager.Catchphrase));
+            MSBT.Overwrite(newPhrases, "Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt");
+            Program.status.Update("[INFO] Overwrote \"Message\\String_USen\\Npc\\STR_NNpcPhrase.msbt\".");
 
             /*
              *  Update NPC params in BCSV
@@ -509,11 +526,7 @@ namespace ACNHLab.Classes
                                 row.Cells[i].Value = villager.RemakeID;
                                 break;
                             case 31: // Species & ID
-                                string label = Species.First(x => x.Item3.Equals(villager.Species)).Item2 + villager.ID.ToString("00");
-                                /* List<byte> bytes = new List<byte> { 0x00, 0x00, 0x00 };
-                                foreach (char c in label.Reverse())
-                                    bytes.Add(Convert.ToByte(c));
-                                label = BitConverter.ToString(bytes.ToArray()).Replace("-", string.Empty); */
+                                string label = Species.First(x => x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00");
                                 row.Cells[i].Value = label;
                                 break;
                             case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
@@ -523,7 +536,7 @@ namespace ACNHLab.Classes
                                 row.Cells[i].Value = TalkType.First(x => x.Item2.Equals(villager.TalkType)).Item1;
                                 break;
                             case 34: // Res Name
-                                row.Cells[i].Value = $"NpcNml{Species.First(x => x.Item3.Equals(villager.Species)).Item2.FirstCharToUpper()}{villager.ID.ToString("00")}";
+                                row.Cells[i].Value = $"NpcNml{Species.First(x => x.Item2.Equals(villager.Species)).Item1.FirstCharToUpper()}{villager.ID.ToString("00")}";
                                 break;
                             case 35: // Special ELink, always 0
                                 row.Cells[i].Value = 0;
@@ -545,7 +558,7 @@ namespace ACNHLab.Classes
                         }
                     }
                     #if DEBUG
-                        Program.status.Update($"[DEBUG] Updated {villager.Name} ({Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID}) data (Row {rowNumber})");
+                        Program.status.Update($"[DEBUG] Updated {villager.Name} ({Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID}) data (Row {rowNumber})");
                     #endif
                 }
                 rowNumber++;
@@ -554,7 +567,7 @@ namespace ACNHLab.Classes
             Program.status.Update("[INFO] Finished saving villager params to \"Bcsv\\NmlNpcParam.bcsv\".");
 
             // Update NPC Amiibo BCSV
-            Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv")); 
+            Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
             foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
             {
                 if (row.Cells[4].Value != null)
@@ -575,7 +588,7 @@ namespace ACNHLab.Classes
                         if (rowChara.Length == 5)
                         {
                             // TODO: Support special NPCs?
-                            var villagers = List.Where(x => x.ID.Equals(Convert.ToInt32(id)) && x.Species.Equals(Species.First(y => y.Item2.StartsWith(species)).Item3));
+                            var villagers = List.Where(x => x.ID.Equals(Convert.ToInt32(id)) && x.Species.Equals(Species.First(y => y.Item1.StartsWith(species)).Item2));
                             foreach (var villager in villagers)
                             {
                                 Program.status.Update($"[INFO] Updating amiibo for {rowChara}");
@@ -599,7 +612,11 @@ namespace ACNHLab.Classes
             Bcsv.Write(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
             Program.status.Update("[INFO] Finished saving amiibo data to \"Bcsv\\AmiiboData.bcsv\".");
 
-            // TODO: Repack SARCs
+            // Repack SARCs
+            SARC.Build(Path.Combine(dir, "Message\\String_USen"), Path.Combine(dir, "Message\\String_USen.sarc"));
+            Program.status.Update("[INFO] Finished saving data to new \"Message\\String_USen.sarc\".");
+            SARC.Compress(Path.Combine(dir, "Message\\String_USen.sarc"), Path.Combine(dir, "Message\\String_USen.sarc.zs"));
+            Program.status.Update("[INFO] Finished compressing \"Message\\String_USen.sarc.zs\".");
 
             // TODO: Save room/house data to BYML
         }

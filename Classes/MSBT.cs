@@ -198,6 +198,21 @@ namespace ACNHLab.Classes
 		public static UInt32 LabelMaxLength = 64;
 		public static string LabelFilter = @"^[a-zA-Z0-9_]+$";
 
+		public static void Overwrite(List<Tuple<string,string>> labels, string path)
+        {
+			string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
+
+			string xmsbt = "<?xml version=\"1.0\"?>\n<xmsbt>\n";
+			foreach (var label in labels)
+				xmsbt += $"\t<entry label=\"{label.Item1}\">\n\t\t<text>{label.Item2}</text>\n\t</entry>\n";
+			xmsbt += "</xmsbt>";
+			System.IO.File.WriteAllText(Path.Combine(dir, path.Replace(".msbt",".xmsbt")), xmsbt);
+			MSBT msbt = new MSBT(Path.Combine(dir, path));
+			msbt.ImportXMSBT(Path.Combine(dir, path.Replace(".msbt", ".xmsbt")), true);
+			msbt.Save();
+			System.IO.File.Delete(Path.Combine(dir, path.Replace(".msbt", ".xmsbt")));
+		}
+
 		public MSBT(string filename)
 		{
 			File = new FileInfo(filename);
@@ -1007,9 +1022,9 @@ namespace ACNHLab.Classes
 			return result;
 		}
 
-        internal static List<Tuple<int, string, string>> Deserialize(string path, int skip = 0)
+        internal static List<Tuple<string, string>> Deserialize(string path, int skip = 0)
         {
-			List<Tuple<int, string, string>> entries = new List<Tuple<int, string, string>>();
+			List<Tuple<string, string>> entries = new List<Tuple<string, string>>();
 			MSBT mstb = new MSBT(path);
 
 			if (mstb.HasLabels)
@@ -1018,7 +1033,7 @@ namespace ACNHLab.Classes
 					Label label = (Label)mstb.LBL1.Labels[i];
 					byte[] valueBytes = label.String.Value.Skip(skip).ToArray();
 					string value = Encoding.Unicode.GetString(valueBytes, 0, valueBytes.Length);
-					entries.Add(new Tuple<int, string, string>(Convert.ToInt32(label.Index), label.Name, value));
+					entries.Add(new Tuple<string, string>(label.Name, value));
 				}
 			entries.Sort((x, y) => y.Item1.CompareTo(x.Item1));
 			entries.Reverse();

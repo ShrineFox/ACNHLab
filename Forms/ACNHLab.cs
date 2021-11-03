@@ -141,7 +141,7 @@ namespace ACNHLab
                 // Update species dropdown
                 metroSetComboBox_VillagerSpecies.Items.Clear();
                 foreach (var species in Villagers.Species)
-                    metroSetComboBox_VillagerSpecies.Items.Add(species.Item3);
+                    metroSetComboBox_VillagerSpecies.Items.Add(species.Item2);
                 metroSetComboBox_VillagerSpecies.SelectedIndex = 0;
                 Program.status.Update("[INFO] Refreshed Species dropdown.");
                 // Show selected villager's data in form
@@ -155,7 +155,7 @@ namespace ACNHLab
         {
             metroSetComboBox_Villagers.Items.Clear();
             foreach (var villager in Villagers.List.Where(n => !n.Name.Replace("\0", "").Equals("")))
-                metroSetComboBox_Villagers.Items.Add($"{Villagers.Species.First(s => s.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")} {villager.Name}");
+                metroSetComboBox_Villagers.Items.Add($"{Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")} {villager.Name}");
             Program.status.Update("[INFO] Refreshed Villagers dropdown.");
             metroSetComboBox_Villagers.SelectedIndex = selectIndex;
         }
@@ -511,7 +511,7 @@ namespace ACNHLab
             // NPC Color
             metroSetNumeric_NPCColor.Value = villager.NPCColor;
 
-            Program.status.Update($"[INFO] Showing Villager data in form: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})");
+            Program.status.Update($"[INFO] Showing Villager data in form: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")})");
 
             // TODO: Show villager icon
             //UpdateIcon();
@@ -598,7 +598,7 @@ namespace ACNHLab
             villager.NPCColor = metroSetNumeric_NPCColor.Value;
 
             Villagers.List[metroSetComboBox_Villagers.SelectedIndex] = villager;
-            string status = $"Saved changes to Villager: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item3.Equals(villager.Species)).Item2}{villager.ID.ToString("00")})";
+            string status = $"Saved changes to Villager: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")})";
             Program.status.Update($"[INFO] {status}");
             MessageBox.Show(status, "Saved Villager Data");
             UpdateVillagerDropDown(metroSetComboBox_Villagers.SelectedIndex);
@@ -631,6 +631,28 @@ namespace ACNHLab
             }
         }
         #endregion
+
+        private void ExportMod_Click(object sender, EventArgs e)
+        {
+            // Move relevant files to output directory
+            string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
+
+            foreach (var file in new string[] { 
+                "Message\\String_USen.sarc.zs",
+                "Bcsv\\NmlNpcParam.bcsv",
+                "Bcsv\\AmiiboData.bcsv"})
+            {
+                if (File.Exists(Path.Combine(dir, file)))
+                {
+                    string modDir = SettingsForm.settings.OutputPath;
+                    Directory.CreateDirectory(Path.Combine(modDir, Path.GetDirectoryName(file)));
+                    File.Copy(Path.Combine(dir, file), Path.Combine(modDir, file));
+                    Program.status.Update($"[INFO] Exported \"{file}\" to Output Directory.");
+                }
+            }
+            Program.status.Update($"[INFO] Finished exporting mod.");
+            MessageBox.Show($"Finished exporting mod to:\n\n{SettingsForm.settings.OutputPath}", "Export Complete");
+        }
     }
 
     /* Append to Status Text from other classes and forms */

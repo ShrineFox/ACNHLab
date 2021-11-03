@@ -171,6 +171,9 @@
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Dependencies\Files\Blank.msbt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Dependencies\Json\Amiibo.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -1252,7 +1255,6 @@
     <None Include="Dependencies\Icons\package2.ico" />
     <None Include="Dependencies\Icons\music1.ico" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

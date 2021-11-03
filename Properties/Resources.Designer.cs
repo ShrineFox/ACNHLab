@@ -125,8 +125,7 @@ namespace ACNHLab.Properties {
         ///                            &quot;write&quot;: false
         ///                        }
         ///                    ],
-        ///                    &quot;gameID&quot;: [
-        ///      [rest of string was truncated]&quot;;.
+        ///                    &quot;ga [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Amiibo {
             get {
@@ -1021,6 +1020,16 @@ namespace ACNHLab.Properties {
             get {
                 object obj = ResourceManager.GetObject("bin_empty", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Blank {
+            get {
+                object obj = ResourceManager.GetObject("Blank", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

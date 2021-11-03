@@ -91,6 +91,19 @@ namespace ACNHLab.Classes
                 Program.status.Update($"[INFO] \"{Path.GetFileName(output)}\" already exists, skipping decompression.");
         }
 
+        internal static void Compress(string input, string output)
+        {
+            using (var ms = new MemoryStream(File.ReadAllBytes(input)))
+            using (var compressionStream = new ZstandardStream(ms, CompressionMode.Compress))
+            using (var temp = new MemoryStream())
+            {
+                compressionStream.CopyTo(temp);
+                byte[] outputBytes = temp.ToArray();
+                File.WriteAllBytes(output, outputBytes);
+            }
+            Program.status.Update($"[INFO] Compressed \"{Path.GetFileName(input)}\".");
+        }
+
         internal static void ExtractToDir(string input, string output)
         {
             using (Tools.WaitForFile(input, FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { };
