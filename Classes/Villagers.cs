@@ -695,9 +695,9 @@ namespace ACNHLab.Classes
 
     public class VillagerData
     {
-        public string Name { get; set; } = "";
-        public string Species { get; set; } = "";
-        public int ID { get; set; } = 0;
+        public string Name { get; set; } = "New Villager";
+        public string Species { get; set; } = "anteater";
+        public int ID { get; set; } = 20;
         public string TalkType { get; set; } = "Type 1";
         public string Personality { get; set; } = "Boy_normal";
         public string Hobby { get; set; } = "Play";
