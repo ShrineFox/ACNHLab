@@ -295,6 +295,7 @@ namespace ACNHLab.Classes
 
 		public static void Write(string FilePath)
 		{
+			//int rowCount = 0;
 			BinaryWriter binaryWriter = new BinaryWriter(File.OpenWrite(FilePath));
 			binaryWriter.BaseStream.Position = 0L;
 			binaryWriter.Write(dataGridView1.Rows.Count - 1);
@@ -324,6 +325,10 @@ namespace ACNHLab.Classes
 			}
 			foreach (object obj2 in ((IEnumerable)dataGridView1.Rows))
 			{
+				//rowCount++;
+				#if DEBUG
+					//Program.status.Update($"Row {rowCount}");
+				#endif
 				DataGridViewRow dataGridViewRow = (DataGridViewRow)obj2;
 				if (dataGridViewRow.Index >= dataGridView1.Rows.Count - 1)
 				{
@@ -332,8 +337,13 @@ namespace ACNHLab.Classes
 				int num3 = 0;
 				binaryWriter.BaseStream.Position = (long)num;
 				binaryWriter.Write(num);
+				//int cellCount = 0;
 				foreach (object obj3 in dataGridViewRow.Cells)
 				{
+					//cellCount++;
+					#if DEBUG
+						//Program.status.Update($"Writing Cell {cellCount}");
+					#endif
 					DataGridViewCell dataGridViewCell = (DataGridViewCell)obj3;
 					binaryWriter.BaseStream.Position = (long)(num + list_ColumnLength[num3]);
 					string text;

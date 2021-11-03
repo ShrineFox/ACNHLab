@@ -420,193 +420,264 @@ namespace ACNHLab.Classes
              *  Update NPC params in BCSV
              */
             Bcsv.Read(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
-            //Bcsv.dataGridView1.Rows.Add(Bcsv.dataGridView1.Rows.Count - List.Count());
-            int rowNumber = 0;
-            foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
+            // Clear existing rows
+            Bcsv.dataGridView1.Rows.Clear();
+            // Create blank rows to fill out for each villager
+            Bcsv.dataGridView1.Rows.Add(List.Count() - 1);
+            // For each villager's row...
+            for (int r = 0; r < List.Count(); r++)
             {
-                if ((string)Bcsv.dataGridView1.Rows[rowNumber].Cells[0].Value != ""
-                    && rowNumber < Bcsv.dataGridView1.Rows.Count - 1)
+                // Get villager data
+                VillagerData villager = List[r];
+                // For each cell in row...
+                for (int c = 0; c < Bcsv.dataGridView1.Rows[r].Cells.Count; c++)
                 {
-                    VillagerData villager = List[rowNumber];
-                    for (int i = 0; i < row.Cells.Count - 1; i++)
+                    switch (c)
                     {
-                        switch (i)
-                        {
-                            case 0: // Preferred Clothes
-                                row.Cells[i].Value = PreferredClothes.First(x => x.Item2.Equals(villager.ClothesType)).Item1;
-                                break;
-                            case 1: // Preferred Clothes 2
-                                row.Cells[i].Value = "00000009";
-                                break;
-                            case 2: // Preferred Style 1
-                                row.Cells[i].Value = PreferredStyle.First(x => x.Item2.Equals(villager.Style)).Item1;
-                                break;
-                            case 3: // Preferred Style 2
-                                row.Cells[i].Value = PreferredStyle.First(x => x.Item2.Equals(villager.Style2)).Item1;
-                                break;
-                            case 4: // Unknown
-                                row.Cells[i].Value = Unknown1.First(x => x.Item2.Equals(villager.Unknown)).Item1;
-                                break;
-                            case 5: // Hobby
-                                row.Cells[i].Value = Hobby.First(x => x.Item2.Equals(villager.Hobby)).Item1;
-                                break;
-                            case 6: // Personality
-                                row.Cells[i].Value = Personality.First(x => x.Item2.Equals(villager.Personality)).Item1;
-                                break;
-                            case 7: // Unknown, always 0
-                                row.Cells[i].Value = "00000000";
-                                break;
-                            case 8: // Social Type
-                                row.Cells[i].Value = SocialType.First(x => x.Item2.Equals(villager.SocialType)).Item1;
-                                break;
-                            case 9: // Sing Pause Type
-                                row.Cells[i].Value = SingPauseType.First(x => x.Item2.Equals(villager.SingPauseType)).Item1;
-                                break;
-                            case 10: // Sing Rhythm Type
-                                row.Cells[i].Value = SingRhythmType.First(x => x.Item2.Equals(villager.SingRhythmType)).Item1;
-                                break;
-                            case 11: // Wall Accent, Always 0
-                                row.Cells[i].Value = 0;
-                                break;
-                            case 12: // Photo Item ID
-                                row.Cells[i].Value = villager.PhotoItemID;
-                                break;
-                            case 13: // Floor Type
-                                row.Cells[i].Value = villager.FloorType;
-                                break;
-                            case 14: // Poster Item ID
-                                row.Cells[i].Value = villager.PosterItemID;
-                                break;
-                            case 15: // Rain Hat
-                                row.Cells[i].Value = villager.RainHatItemID;
-                                break;
-                            case 16: // Rain Wear
-                                row.Cells[i].Value = villager.RainWearItemID;
-                                break;
-                            case 17: //SmartphoneRemakeCommonPattern
-                                row.Cells[i].Value = 65535;
-                                break;
-                            case 18: // Phone Pattern
-                                row.Cells[i].Value = villager.PhonePattern;
-                                break;
-                            case 19: // Default Shirt ID
-                                row.Cells[i].Value = villager.ShirtItemID;
-                                break;
-                            case 20: // Umbrella ID
-                                row.Cells[i].Value = villager.UmbrellaItemID;
-                                break;
-                            case 21: // Incremental Unique ID
-                                row.Cells[i].Value = rowNumber;
-                                break;
-                            case 22: // Wall Type, always 0
-                                row.Cells[i].Value = 0;
-                                break;
-                            case 23: // Birth Day
-                                row.Cells[i].Value = villager.BirthDay;
-                                break;
-                            case 24: // Birth Month
-                                row.Cells[i].Value = villager.BirthMonth;
-                                break;
-                            case 25: // Fave Color
-                                row.Cells[i].Value = Color.First(x => x.Item2.Equals(villager.FaveColor)).Item1;
-                                break;
-                            case 26: // Fave Color 2
-                                row.Cells[i].Value = Color.First(x => x.Item2.Equals(villager.FaveColor2)).Item1;
-                                break;
-                            case 27: // Havok Res Name
-                                row.Cells[i].Value = "NpcNmlClothDog";
-                                break;
-                            case 28: // Helper Bone Res Name
-                                row.Cells[i].Value = "NpcNmlHelperBoneDog";
-                                break;
-                            case 29: // Init Live, always 1
-                                row.Cells[i].Value = 1;
-                                break;
-                            case 30: // Remake ID
-                                row.Cells[i].Value = villager.RemakeID;
-                                break;
-                            case 31: // Species & ID
-                                string label = Species.First(x => x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00");
-                                row.Cells[i].Value = label;
-                                break;
-                            case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
-                                row.Cells[i].Value = villager.NPCColor;
-                                break;
-                            case 33: // Talk Type
-                                row.Cells[i].Value = TalkType.First(x => x.Item2.Equals(villager.TalkType)).Item1;
-                                break;
-                            case 34: // Res Name
-                                row.Cells[i].Value = $"NpcNml{Species.First(x => x.Item2.Equals(villager.Species)).Item1.FirstCharToUpper()}{villager.ID.ToString("00")}";
-                                break;
-                            case 35: // Special ELink, always 0
-                                row.Cells[i].Value = 0;
-                                break;
-                            case 36: // Special SLink, always 0
-                                row.Cells[i].Value = 0;
-                                break;
-                            case 37: // Note Length
-                                row.Cells[i].Value = villager.NoteLength;
-                                break;
-                            case 38: // Village Melody
-                                row.Cells[i].Value = VillageMelody.First(x => x.Item2.Equals(villager.VillageMelody)).Item1;
-                                break;
-                            case 39: // Village Melody 2
-                                row.Cells[i].Value = VillageMelody2.First(x => x.Item2.Equals(villager.VillageMelody2)).Item1;
-                                break;
-                            default:
-                                break;
-                        }
+                        case 0: // Preferred Clothes
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = PreferredClothes.First(x => x.Item2.Equals(villager.ClothesType)).Item1;
+                            break;
+                        case 1: // Preferred Clothes 2
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000009";
+                            break;
+                        case 2: // Preferred Style 1
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = PreferredStyle.First(x => x.Item2.Equals(villager.Style)).Item1;
+                            break;
+                        case 3: // Preferred Style 2
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = PreferredStyle.First(x => x.Item2.Equals(villager.Style2)).Item1;
+                            break;
+                        case 4: // Unknown
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = Unknown1.First(x => x.Item2.Equals(villager.Unknown)).Item1;
+                            break;
+                        case 5: // Hobby
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = Hobby.First(x => x.Item2.Equals(villager.Hobby)).Item1;
+                            break;
+                        case 6: // Personality
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = Personality.First(x => x.Item2.Equals(villager.Personality)).Item1;
+                            break;
+                        case 7: // Unknown, always 0
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000000";
+                            break;
+                        case 8: // Social Type
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = SocialType.First(x => x.Item2.Equals(villager.SocialType)).Item1;
+                            break;
+                        case 9: // Sing Pause Type
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = SingPauseType.First(x => x.Item2.Equals(villager.SingPauseType)).Item1;
+                            break;
+                        case 10: // Sing Rhythm Type
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = SingRhythmType.First(x => x.Item2.Equals(villager.SingRhythmType)).Item1;
+                            break;
+                        case 11: // Wall Accent, Always 0
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = 0;
+                            break;
+                        case 12: // Photo Item ID
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.PhotoItemID;
+                            break;
+                        case 13: // Floor Type
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.FloorType;
+                            break;
+                        case 14: // Poster Item ID
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.PosterItemID;
+                            break;
+                        case 15: // Rain Hat
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.RainHatItemID;
+                            break;
+                        case 16: // Rain Wear
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.RainWearItemID;
+                            break;
+                        case 17: //SmartphoneRemakeCommonPattern
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = 65535;
+                            break;
+                        case 18: // Phone Pattern
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.PhonePattern;
+                            break;
+                        case 19: // Default Shirt ID
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.ShirtItemID;
+                            break;
+                        case 20: // Umbrella ID
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.UmbrellaItemID;
+                            break;
+                        case 21: // Incremental Unique ID
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = r;
+                            break;
+                        case 22: // Wall Type, always 0
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = 0;
+                            break;
+                        case 23: // Birth Day
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.BirthDay;
+                            break;
+                        case 24: // Birth Month
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.BirthMonth;
+                            break;
+                        case 25: // Fave Color
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = Color.First(x => x.Item2.Equals(villager.FaveColor)).Item1;
+                            break;
+                        case 26: // Fave Color 2
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = Color.First(x => x.Item2.Equals(villager.FaveColor2)).Item1;
+                            break;
+                        case 27: // Havok Res Name
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = "NpcNmlClothDog";
+                            break;
+                        case 28: // Helper Bone Res Name
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = "NpcNmlHelperBoneDog";
+                            break;
+                        case 29: // Init Live, always 1
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = 1;
+                            break;
+                        case 30: // Remake ID
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.RemakeID;
+                            break;
+                        case 31: // Species & ID
+                            string label = Species.First(x => x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00");
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = label;
+                            break;
+                        case 32: // NPC Color (index of the array in the NpcColor BYML in the Pack folder)
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.NPCColor;
+                            break;
+                        case 33: // Talk Type
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = TalkType.First(x => x.Item2.Equals(villager.TalkType)).Item1;
+                            break;
+                        case 34: // Res Name
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = $"NpcNml{Species.First(x => x.Item2.Equals(villager.Species)).Item1.FirstCharToUpper()}{villager.ID.ToString("00")}";
+                            break;
+                        case 35: // Special ELink, always 0
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = 0;
+                            break;
+                        case 36: // Special SLink, always 0
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = 0;
+                            break;
+                        case 37: // Note Length
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = villager.NoteLength;
+                            break;
+                        case 38: // Village Melody
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = VillageMelody.First(x => x.Item2.Equals(villager.VillageMelody)).Item1;
+                            break;
+                        case 39: // Village Melody 2
+                            Bcsv.dataGridView1.Rows[r].Cells[c].Value = VillageMelody2.First(x => x.Item2.Equals(villager.VillageMelody2)).Item1;
+                            break;
+                        default:
+                            break;
                     }
-                    #if DEBUG
-                        Program.status.Update($"[DEBUG] Updated {villager.Name} ({Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID}) data (Row {rowNumber})");
-                    #endif
                 }
-                rowNumber++;
+                #if DEBUG
+                    Program.status.Update($"[DEBUG] Updated NmlNpcParam data for {villager.Name} ({Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID})");
+                #endif
             }
             Bcsv.Write(Path.Combine(dir, "Bcsv\\NmlNpcParam.bcsv"));
             Program.status.Update("[INFO] Finished saving villager params to \"Bcsv\\NmlNpcParam.bcsv\".");
 
             // Update NPC Amiibo BCSV
             Bcsv.Read(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));
+            // Get list of Special NPC Amiibos
+            List<Tuple<string, string>> specialNPCAmiibos = new List<Tuple<string, string>>();
             foreach (DataGridViewRow row in Bcsv.dataGridView1.Rows)
             {
                 if (row.Cells[4].Value != null)
                 {
-                    // Get species and ID where possible
                     string rowChara = Classes.Bcsv.Hex.FromHexToString(row.Cells[4].Value.ToString()).Replace("\0", "");
-                    if (rowChara.Length >= 3)
+                    if (rowChara.Length != 5 && rowChara != "")
+                        specialNPCAmiibos.Add(new Tuple<string, string>(rowChara, row.Cells[0].Value.ToString()));
+                    // TODO: Use special/regular villager bool column for more accurate results
+                }
+            }
+            // Clear existing rows
+            Bcsv.dataGridView1.Rows.Clear();
+            // Create blank rows to fill out for each villager
+            Bcsv.dataGridView1.Rows.Add(List.Count() + specialNPCAmiibos.Count());
+            // For each villager's row...
+            for (int r = 0; r < List.Count() + specialNPCAmiibos.Count(); r++)
+            {
+                // Get special NPC data
+                if (r < specialNPCAmiibos.Count())
+                {
+                    for (int c = 0; c < Bcsv.dataGridView1.Rows[r].Cells.Count; c++)
                     {
-                        string species = rowChara.Substring(0, 3);
-                        string id = "";
-                        if (rowChara.Length == 5)
-                            id = rowChara.Substring(3, 2);
-
-                        // Set new string value before saving
-                        row.Cells[4].Value = rowChara;
-                        
-                        // Update amiibo head for each villager found
-                        if (rowChara.Length == 5)
+                        switch (c)
                         {
-                            // TODO: Support special NPCs?
-                            var villagers = List.Where(x => x.ID.Equals(Convert.ToInt32(id)) && x.Species.Equals(Species.First(y => y.Item1.StartsWith(species)).Item2));
-                            foreach (var villager in villagers)
-                            {
-                                Program.status.Update($"[INFO] Updating amiibo for {rowChara}");
-                                string amiiboName = villager.Amiibo.Replace(")", "").Replace(" (", "*");
-                                string amiiboType = amiiboName.Split('*')[1];
-                                amiiboName = amiiboName.Split('*')[0];
-
-                                var amiibo = ACNHLab.Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(amiiboName) && x.Item4.Equals(amiiboType));
-                                string amiiboHead = "00" + amiibo.Item1.Substring(0, 6);
-                                row.Cells[0].Value = amiiboHead;
-                            }
+                            case 0: // Amiibo head
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = specialNPCAmiibos[r].Item2;
+                                break;
+                            case 1: // Incremental ID
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = r;
+                                break;
+                            case 2: // Always 0?
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                                break;
+                            case 3: // Bool, whether can be spawned at photopia
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
+                                break;
+                            case 4: // Villager Label
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = specialNPCAmiibos[r].Item1;
+                                break;
+                            case 5: // 1 for special NPC, 0 for regular
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
+                                break;
+                            case 6: // Bool, whether can be spanwed at campsite
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                                break;
+                            case 7: // Always 5
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "5";
+                                break;
+                            case 8: // 0 for figure, 1 for card
+                                // TODO: Support figures
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000000";
+                                break;
                         }
-                        // TODO: In order to support additional entries, add amiibo head and label to list and add rows after iterating through existing rows
                     }
-                    else
-                        row.Cells[4].Value = "";
-
-                    // TODO: Support removal of entries (maybe go by which labels have ID numbers but are still hexadecimal?)
+                }
+                else
+                {
+                    // Get villager data
+                    VillagerData villager = List[r - specialNPCAmiibos.Count()];
+                    // For each cell in row...
+                    for (int c = 0; c < Bcsv.dataGridView1.Rows[r].Cells.Count; c++)
+                    {
+                        switch (c)
+                        {
+                            case 0: // Amiibo head
+                                if (villager.Amiibo != "")
+                                {
+                                    string amiiboName = villager.Amiibo.Replace(")", "").Replace(" (", "*");
+                                    string amiiboType = amiiboName.Split('*')[1];
+                                    amiiboName = amiiboName.Split('*')[0];
+                                    var amiibo = ACNHLab.Amiibos.First(x => x.Item2.Equals(villager.AmiiboSeries) && x.Item3.Equals(amiiboName) && x.Item4.Equals(amiiboType));
+                                    string amiiboHead = "00" + amiibo.Item1.Substring(0, 6);
+                                    Bcsv.dataGridView1.Rows[r].Cells[c].Value = amiiboHead;
+                                }
+                                else
+                                    Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000000";
+                                #if DEBUG
+                                    Program.status.Update($"[DEBUG] Updating AmiiboData for {villager.Name} ({Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID})");
+                                #endif
+                                break;
+                            case 1: // Incremental ID
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = r;
+                                break;
+                            case 2: // Always 0?
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                                break;
+                            case 3: // Bool, whether can be spanwed at photopia
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
+                                break;
+                            case 4: // Villager Label
+                                string label = Species.First(x => x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00");
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = label;
+                                break;
+                            case 5: // 1 for special NPC, 0 for regular
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                                break;
+                            case 6: // Bool, whether can be spanwed at campsite
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
+                                break;
+                            case 7: // Always 5
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "5";
+                                break;
+                            case 8: // 0 for figure, 1 for card
+                                // TODO: Support figures
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000000";
+                                break;
+                        }
+                    }
                 }
             }
             Bcsv.Write(Path.Combine(dir, "Bcsv\\AmiiboData.bcsv"));

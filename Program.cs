@@ -11,10 +11,6 @@ namespace ACNHLab
     static class Program
     {
         public static Status status;
-        public static List<string> processList = new List<string>()
-            {
-
-            };
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

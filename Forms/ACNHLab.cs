@@ -142,10 +142,9 @@ namespace ACNHLab
                 metroSetComboBox_VillagerSpecies.Items.Clear();
                 foreach (var species in Villagers.Species)
                     metroSetComboBox_VillagerSpecies.Items.Add(species.Item2);
-                metroSetComboBox_VillagerSpecies.SelectedIndex = 0;
                 Program.status.Update("[INFO] Refreshed Species dropdown.");
                 // Show selected villager's data in form
-                metroSetComboBox_Villagers.SelectedIndex = 0;
+                metroSetComboBox_VillagerSpecies.SelectedIndex = metroSetComboBox_VillagerSpecies.Items.IndexOf(Villagers.List[0].Species);
                 // Enable villagers tab controls
                 tableLayoutPanel_Villagers.Enabled = true;
             }
@@ -634,24 +633,68 @@ namespace ACNHLab
 
         private void ExportMod_Click(object sender, EventArgs e)
         {
-            // Move relevant files to output directory
-            string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
-
-            foreach (var file in new string[] { 
-                "Message\\String_USen.sarc.zs",
-                "Bcsv\\NmlNpcParam.bcsv",
-                "Bcsv\\AmiiboData.bcsv"})
+            if (SettingsForm.IsValid())
             {
-                if (File.Exists(Path.Combine(dir, file)))
+                // Move relevant files to output directory
+                string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
+
+                foreach (var file in new string[] {
+                    "Message\\String_USen.sarc.zs",
+                    "Bcsv\\NmlNpcParam.bcsv",
+                    "Bcsv\\AmiiboData.bcsv"})
                 {
-                    string modDir = SettingsForm.settings.OutputPath;
-                    Directory.CreateDirectory(Path.Combine(modDir, Path.GetDirectoryName(file)));
-                    File.Copy(Path.Combine(dir, file), Path.Combine(modDir, file));
-                    Program.status.Update($"[INFO] Exported \"{file}\" to Output Directory.");
+                    if (File.Exists(Path.Combine(dir, file)))
+                    {
+                        string modDir = SettingsForm.settings.OutputPath;
+                        Directory.CreateDirectory(Path.Combine(modDir, Path.GetDirectoryName(file)));
+                        File.Copy(Path.Combine(dir, file), Path.Combine(modDir, file), true);
+                        Program.status.Update($"[INFO] Exported \"{file}\" to Output Directory.");
+                    }
                 }
+                Program.status.Update($"[INFO] Finished exporting mod.");
+                MessageBox.Show($"Finished exporting mod to:\n\n{SettingsForm.settings.OutputPath}", "Export Complete");
             }
-            Program.status.Update($"[INFO] Finished exporting mod.");
-            MessageBox.Show($"Finished exporting mod to:\n\n{SettingsForm.settings.OutputPath}", "Export Complete");
+        }
+
+        private void AddSpecies_Click(object sender, EventArgs e)
+        {
+            SpeciesAddForm species = new SpeciesAddForm();
+            var result = species.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Classes.Villagers.Species.Add(new Tuple<string, string>(
+                    species.SpeciesAbbreviation,
+                    species.SpeciesName));
+                metroSetComboBox_VillagerSpecies.Items.Clear();
+                foreach (var race in Villagers.Species)
+                    metroSetComboBox_VillagerSpecies.Items.Add(race.Item2);
+                metroSetComboBox_VillagerSpecies.SelectedIndex = metroSetComboBox_VillagerSpecies.Items.IndexOf(species.SpeciesName);
+                Program.status.Update($"[INFO] Added species: {species.SpeciesName} ({species.SpeciesAbbreviation}).");
+            }
+        }
+
+        private void AddVillager_Click(object sender, EventArgs e)
+        {
+            VillagerData villager = new VillagerData();
+            while (Villagers.List.Any(x => x.ID.Equals(villager.ID) && x.Species.Equals(villager.Species)))
+            {
+                villager.ID += 1;
+                // TODO: Select another species if you hit the maximum (99)
+            }
+            Villagers.List.Add(villager);
+            UpdateVillagerDropDown(metroSetComboBox_Villagers.Items.IndexOf($"{Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")} {villager.Name}"));
+            Program.status.Update($"[INFO] Added Villager: {villager.Name} ({Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")}).");
+        }
+
+        private void RemoveVillager_Click(object sender, EventArgs e)
+        {
+            VillagerData villager = Villagers.List.First(x =>
+                x.Species.Equals(metroSetComboBox_VillagerSpecies.SelectedItem.ToString()) &&
+                x.ID.Equals(metroSetNumeric_VillagerID.Value));
+            Villagers.List.Remove(villager);
+            // TODO: Select index nearest to current possible
+            UpdateVillagerDropDown();
+            Program.status.Update($"[INFO] Removed Villager: {villager.Name} ({Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")}).");
         }
     }
 

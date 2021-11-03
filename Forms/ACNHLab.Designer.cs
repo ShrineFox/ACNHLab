@@ -137,6 +137,7 @@ namespace ACNHLab
             this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.writeAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Project = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_New = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,7 +159,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Rename = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_ExpandProj = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_CollapseProj = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel_Container.SuspendLayout();
             this.tableLayoutPanel_Main.SuspendLayout();
             this.metroSetTabControl_GameProject.SuspendLayout();
@@ -541,6 +541,7 @@ namespace ACNHLab
             // 
             this.button_VillagerHouse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.button_VillagerHouse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_VillagerHouse.Enabled = false;
             this.button_VillagerHouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_VillagerHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button_VillagerHouse.ForeColor = System.Drawing.Color.Silver;
@@ -570,6 +571,7 @@ namespace ACNHLab
             this.btn_RemoveVillager.Text = "Delete";
             this.btn_RemoveVillager.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_RemoveVillager.UseVisualStyleBackColor = false;
+            this.btn_RemoveVillager.Click += new System.EventHandler(this.RemoveVillager_Click);
             // 
             // btn_AddVillager
             // 
@@ -587,6 +589,7 @@ namespace ACNHLab
             this.btn_AddVillager.Text = "Add  ";
             this.btn_AddVillager.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_AddVillager.UseVisualStyleBackColor = false;
+            this.btn_AddVillager.Click += new System.EventHandler(this.AddVillager_Click);
             // 
             // panel_VillagerParams
             // 
@@ -1109,6 +1112,7 @@ namespace ACNHLab
             this.button_AddSpecies.Text = "Add";
             this.button_AddSpecies.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_AddSpecies.UseVisualStyleBackColor = false;
+            this.button_AddSpecies.Click += new System.EventHandler(this.AddSpecies_Click);
             // 
             // metroSetComboBox_VillagerSpecies
             // 
@@ -2214,7 +2218,6 @@ namespace ACNHLab
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.fileToolStripMenuItem.Text = "File";
-            this.fileToolStripMenuItem.Click += new System.EventHandler(this.ExportMod_Click);
             // 
             // newProjectToolStripMenuItem
             // 
@@ -2260,6 +2263,16 @@ namespace ACNHLab
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.exportToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.package_go;
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportToolStripMenuItem.Text = "Export Mod";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportMod_Click);
             // 
             // writeAllChangesToolStripMenuItem
             // 
@@ -2507,15 +2520,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_CollapseProj.Name = "ToolStripMenuItem_CollapseProj";
             this.ToolStripMenuItem_CollapseProj.Size = new System.Drawing.Size(160, 30);
             this.ToolStripMenuItem_CollapseProj.Text = "Collapse All";
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.exportToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.package_go;
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exportToolStripMenuItem.Text = "Export Mod";
             // 
             // ACNHLab
             // 
