@@ -436,7 +436,7 @@ namespace ACNHLab
             // Species
             metroSetComboBox_VillagerSpecies.SelectedIndex = metroSetComboBox_VillagerSpecies.Items.IndexOf(villager.Species);
             // ID
-            metroSetNumeric_VillagerID.Value = villager.ID;
+            numeric_VillagerID.Value = villager.ID;
             // TalkType
             if (villager.TalkType.Equals("Type 1"))
                 metroSetRadioButton_TalkType1.Checked = true;
@@ -447,9 +447,9 @@ namespace ACNHLab
             // Hobby
             metroSetComboBox_Hobby.SelectedIndex = metroSetComboBox_Hobby.Items.IndexOf(villager.Hobby);
             // Birth Month
-            metroSetNumeric_Month.Value = villager.BirthMonth;
+            numeric_Month.Value = villager.BirthMonth;
             // Birth Day
-            metroSetNumeric_Day.Value = villager.BirthDay;
+            numeric_Day.Value = villager.BirthDay;
             // Amiibo
             if (villager.AmiiboSeries != "" && villager.Amiibo != "")
             {
@@ -480,35 +480,35 @@ namespace ACNHLab
             // Sing Rhythm Type
             metroSetComboBox_SingRhythm.SelectedIndex = metroSetComboBox_SingRhythm.Items.IndexOf(villager.SingRhythmType);
             // Photo Item ID
-            metroSetNumeric_PhotoID.Value = villager.PhotoItemID;
+            numeric_PhotoID.Value = villager.PhotoItemID;
             // Floor Type
-            metroSetNumeric_FloorType.Value = villager.FloorType;
+            numeric_FloorType.Value = villager.FloorType;
             // Poster Item ID
-            metroSetNumeric_PosterID.Value = villager.PosterItemID;
+            numeric_PosterID.Value = villager.PosterItemID;
             // Rain Hat Item ID
-            metroSetNumeric_RainHatID.Value = villager.RainHatItemID;
+            numeric_RainHatID.Value = villager.RainHatItemID;
             // Rain Wear Item ID
-            metroSetNumeric_RainWearID.Value = villager.RainWearItemID;
+            numeric_RainWearID.Value = villager.RainWearItemID;
             // Phone Pattern
-            metroSetNumeric_PhonePattern.Value = villager.PhonePattern;
+            numeric_PhonePattern.Value = villager.PhonePattern;
             // Shirt Item ID
-            metroSetNumeric_ShirtID.Value = villager.ShirtItemID;
+            numeric_ShirtID.Value = villager.ShirtItemID;
             // Umbrella Item ID
-            metroSetNumeric_UmbrellaID.Value = villager.UmbrellaItemID;
+            numeric_UmbrellaID.Value = villager.UmbrellaItemID;
             // Fave Color
             metroSetComboBox_FaveColor.SelectedIndex = metroSetComboBox_FaveColor.Items.IndexOf(villager.FaveColor);
             // Fave Color 2
             metroSetComboBox_FaveColor2.SelectedIndex = metroSetComboBox_FaveColor2.Items.IndexOf(villager.FaveColor2);
             // Remake ID
-            metroSetNumeric_RemakeID.Value = villager.RemakeID;
+            numeric_RemakeID.Value = villager.RemakeID;
             // Note Length
-            metroSetNumeric_NoteLength.Value = villager.NoteLength;
+            numeric_NoteLength.Value = villager.NoteLength;
             // Village Melody
             metroSetComboBox_Melody.SelectedIndex = metroSetComboBox_Melody.Items.IndexOf(villager.VillageMelody);
             // Village Melody 2
             metroSetComboBox_Melody2.SelectedIndex = metroSetComboBox_Melody2.Items.IndexOf(villager.VillageMelody2);
             // NPC Color
-            metroSetNumeric_NPCColor.Value = villager.NPCColor;
+            numeric_NPCColor.Value = villager.NPCColor;
 
             Program.status.Update($"[INFO] Showing Villager data in form: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")})");
 
@@ -524,7 +524,7 @@ namespace ACNHLab
             // Species
             villager.Species = metroSetComboBox_VillagerSpecies.SelectedItem.ToString();
             // ID
-            villager.ID = metroSetNumeric_VillagerID.Value;
+            villager.ID = Convert.ToInt32(numeric_VillagerID.Value);
             // TalkType
             if (metroSetRadioButton_TalkType1.Checked)
                 villager.TalkType = "Type 1";
@@ -535,9 +535,9 @@ namespace ACNHLab
             // Hobby
             villager.Hobby = metroSetComboBox_Hobby.SelectedItem.ToString();
             // Birth Month
-            villager.BirthMonth = metroSetNumeric_Month.Value;
+            villager.BirthMonth = Convert.ToInt32(numeric_Month.Value);
             // Birth Day
-            villager.BirthDay = metroSetNumeric_Day.Value;
+            villager.BirthDay = Convert.ToInt32(numeric_Day.Value);
             // Amiibo
             if (metroSetComboBox_Amiibo.SelectedItem.ToString() != "")
             {
@@ -566,35 +566,35 @@ namespace ACNHLab
             // Sing Rhythm Type
             villager.SingRhythmType = metroSetComboBox_SingRhythm.SelectedItem.ToString();
             // Photo Item ID
-            villager.PhotoItemID = metroSetNumeric_PhotoID.Value;
+            villager.PhotoItemID = Convert.ToInt32(numeric_PhotoID.Value);
             // Floor Type
-            villager.FloorType = metroSetNumeric_FloorType.Value;
+            villager.FloorType = Convert.ToInt32(numeric_FloorType.Value);
             // Poster Item ID
-            villager.PosterItemID = metroSetNumeric_PosterID.Value;
+            villager.PosterItemID = Convert.ToInt32(numeric_PosterID.Value);
             // Rain Hat Item ID
-            villager.RainHatItemID = metroSetNumeric_RainHatID.Value;
+            villager.RainHatItemID = Convert.ToInt32(numeric_RainHatID.Value);
             // Rain Wear Item ID
-            villager.RainWearItemID = metroSetNumeric_RainWearID.Value;
+            villager.RainWearItemID = Convert.ToInt32(numeric_RainWearID.Value);
             // Phone Pattern
-            villager.PhonePattern = metroSetNumeric_PhonePattern.Value;
+            villager.PhonePattern = Convert.ToInt32(numeric_PhonePattern.Value);
             // Shirt Item ID
-            villager.ShirtItemID = metroSetNumeric_ShirtID.Value;
+            villager.ShirtItemID = Convert.ToInt32(numeric_ShirtID.Value);
             // Umbrella Item ID
-            villager.UmbrellaItemID = metroSetNumeric_UmbrellaID.Value;
+            villager.UmbrellaItemID = Convert.ToInt32(numeric_UmbrellaID.Value);
             // Fave Color
             villager.FaveColor = metroSetComboBox_FaveColor.SelectedItem.ToString();
             // Fave Color 2
             villager.FaveColor2 = metroSetComboBox_FaveColor2.SelectedItem.ToString();
             // Remake ID
-            villager.RemakeID = metroSetNumeric_RemakeID.Value;
+            villager.RemakeID = Convert.ToInt32(numeric_RemakeID.Value);
             // Note Length
-            villager.NoteLength = metroSetNumeric_NoteLength.Value;
+            villager.NoteLength = Convert.ToInt32(numeric_NoteLength.Value);
             // Village Melody
             villager.VillageMelody = metroSetComboBox_Melody.SelectedItem.ToString();
             // Village Melody 2
             villager.VillageMelody2 = metroSetComboBox_Melody2.SelectedItem.ToString();
             // NPC Color
-            villager.NPCColor = metroSetNumeric_NPCColor.Value;
+            villager.NPCColor = Convert.ToInt32(numeric_NPCColor.Value);
 
             Villagers.List[metroSetComboBox_Villagers.SelectedIndex] = villager;
             string status = $"Saved changes to Villager: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")})";
@@ -690,7 +690,7 @@ namespace ACNHLab
         {
             VillagerData villager = Villagers.List.First(x =>
                 x.Species.Equals(metroSetComboBox_VillagerSpecies.SelectedItem.ToString()) &&
-                x.ID.Equals(metroSetNumeric_VillagerID.Value));
+                x.ID.Equals(numeric_VillagerID.Value));
             Villagers.List.Remove(villager);
             // TODO: Select index nearest to current possible
             UpdateVillagerDropDown();

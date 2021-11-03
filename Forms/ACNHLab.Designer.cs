@@ -69,15 +69,15 @@ namespace ACNHLab
             this.metroSetLabel_Catchphrase = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_AmiiboSeries = new MetroSet_UI.Controls.MetroSetLabel();
             this.tableLayoutPanel_Birthday = new System.Windows.Forms.TableLayoutPanel();
-            this.metroSetNumeric_Day = new MetroSet_UI.Controls.MetroSetNumeric();
-            this.metroSetNumeric_Month = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_Day = new System.Windows.Forms.NumericUpDown();
+            this.numeric_Month = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_Birthday = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_Hobby = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_Hobby = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_VillagerSpecies = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_VillagerName = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_VillagerID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_VillagerID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_VillagerID = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel_VillagerSpeciesAdd = new System.Windows.Forms.TableLayoutPanel();
             this.button_AddSpecies = new System.Windows.Forms.Button();
             this.metroSetComboBox_VillagerSpecies = new MetroSet_UI.Controls.MetroSetComboBox();
@@ -101,32 +101,32 @@ namespace ACNHLab
             this.metroSetComboBox_SingRhythm = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_SingRhythm = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_PhotoID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_PhotoID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_PhotoID = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_FloorType = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_FloorType = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_FloorType = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_PosterID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_PosterID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_PosterID = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_RainHatID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_RainHatID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_RainHatID = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_RainWearID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_RainWearID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_RainWearID = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_PhonePattern = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_PhonePattern = new MetroSet_UI.Controls.MetroSetNumeric();
-            this.metroSetNumeric_ShirtID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_PhonePattern = new System.Windows.Forms.NumericUpDown();
+            this.numeric_ShirtID = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_UmbrellaID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_UmbrellaID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_UmbrellaID = new System.Windows.Forms.NumericUpDown();
             this.metroSetComboBox_FaveColor = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_FaveColor = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_FaveColor2 = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_FaveColor2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel_RemakeID = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_RemakeID = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_RemakeID = new System.Windows.Forms.NumericUpDown();
             this.metroSetLabel_NoteLength = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetNumeric_NoteLength = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_NoteLength = new System.Windows.Forms.NumericUpDown();
             this.metroSetComboBox_Melody = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel_Melody = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetComboBox_Melody2 = new MetroSet_UI.Controls.MetroSetComboBox();
-            this.metroSetNumeric_NPCColor = new MetroSet_UI.Controls.MetroSetNumeric();
+            this.numeric_NPCColor = new System.Windows.Forms.NumericUpDown();
             this.textBox_Name = new System.Windows.Forms.TextBox();
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.tabPage_Furniture = new System.Windows.Forms.TabPage();
@@ -175,8 +175,22 @@ namespace ACNHLab
             this.panel_VillagerParams.SuspendLayout();
             this.tableLayoutPanel_VillagerParams.SuspendLayout();
             this.tableLayoutPanel_Birthday.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_Day)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_Month)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_VillagerID)).BeginInit();
             this.tableLayoutPanel_VillagerSpeciesAdd.SuspendLayout();
             this.tableLayoutPanel_VillagerGender.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_PhotoID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_FloorType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_PosterID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_RainHatID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_RainWearID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_PhonePattern)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_ShirtID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_UmbrellaID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_RemakeID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_NoteLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_NPCColor)).BeginInit();
             this.tabPage_Furniture.SuspendLayout();
             this.menuStrip_Main.SuspendLayout();
             this.contextMenuStrip_Project.SuspendLayout();
@@ -624,7 +638,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_VillagerSpecies, 0, 1);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_VillagerName, 0, 0);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_VillagerID, 0, 2);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_VillagerID, 1, 2);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_VillagerID, 1, 2);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.tableLayoutPanel_VillagerSpeciesAdd, 1, 1);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_VillagerGender, 0, 3);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_Personality, 0, 4);
@@ -644,32 +658,32 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_SingRhythm, 1, 16);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_SingRhythm, 0, 16);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_PhotoID, 0, 17);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_PhotoID, 1, 17);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_PhotoID, 1, 17);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_FloorType, 0, 18);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_FloorType, 1, 18);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_FloorType, 1, 18);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_PosterID, 0, 19);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_PosterID, 1, 19);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_PosterID, 1, 19);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_RainHatID, 0, 20);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_RainHatID, 1, 20);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_RainHatID, 1, 20);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_RainWearID, 0, 21);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_RainWearID, 1, 21);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_RainWearID, 1, 21);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_PhonePattern, 0, 22);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_PhonePattern, 1, 22);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_ShirtID, 1, 23);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_PhonePattern, 1, 22);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_ShirtID, 1, 23);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_UmbrellaID, 0, 24);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_UmbrellaID, 1, 24);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_UmbrellaID, 1, 24);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_FaveColor, 1, 25);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_FaveColor, 0, 25);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_FaveColor2, 1, 26);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_FaveColor2, 0, 26);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_RemakeID, 0, 27);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_RemakeID, 1, 27);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_RemakeID, 1, 27);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_NoteLength, 0, 28);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_NoteLength, 1, 28);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_NoteLength, 1, 28);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_Melody, 1, 29);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel_Melody, 0, 29);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetComboBox_Melody2, 1, 30);
-            this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetNumeric_NPCColor, 1, 31);
+            this.tableLayoutPanel_VillagerParams.Controls.Add(this.numeric_NPCColor, 1, 31);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.textBox_Name, 1, 0);
             this.tableLayoutPanel_VillagerParams.Controls.Add(this.metroSetLabel2, 0, 8);
             this.tableLayoutPanel_VillagerParams.Dock = System.Windows.Forms.DockStyle.Top;
@@ -886,8 +900,8 @@ namespace ACNHLab
             this.tableLayoutPanel_Birthday.ColumnCount = 2;
             this.tableLayoutPanel_Birthday.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_Birthday.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_Birthday.Controls.Add(this.metroSetNumeric_Day, 0, 0);
-            this.tableLayoutPanel_Birthday.Controls.Add(this.metroSetNumeric_Month, 0, 0);
+            this.tableLayoutPanel_Birthday.Controls.Add(this.numeric_Day, 0, 0);
+            this.tableLayoutPanel_Birthday.Controls.Add(this.numeric_Month, 0, 0);
             this.tableLayoutPanel_Birthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_Birthday.Location = new System.Drawing.Point(111, 243);
             this.tableLayoutPanel_Birthday.Name = "tableLayoutPanel_Birthday";
@@ -896,53 +910,59 @@ namespace ACNHLab
             this.tableLayoutPanel_Birthday.Size = new System.Drawing.Size(246, 34);
             this.tableLayoutPanel_Birthday.TabIndex = 43;
             // 
-            // metroSetNumeric_Day
+            // numeric_Day
             // 
-            this.metroSetNumeric_Day.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_Day.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_Day.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_Day.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_Day.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_Day.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_Day.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_Day.IsDerivedStyle = true;
-            this.metroSetNumeric_Day.Location = new System.Drawing.Point(126, 3);
-            this.metroSetNumeric_Day.Maximum = 31;
-            this.metroSetNumeric_Day.Minimum = 1;
-            this.metroSetNumeric_Day.Name = "metroSetNumeric_Day";
-            this.metroSetNumeric_Day.Size = new System.Drawing.Size(117, 26);
-            this.metroSetNumeric_Day.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_Day.StyleManager = null;
-            this.metroSetNumeric_Day.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_Day.TabIndex = 30;
-            this.metroSetNumeric_Day.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_Day.ThemeName = "MetroDark";
-            this.metroSetNumeric_Day.Value = 31;
+            this.numeric_Day.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_Day.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeric_Day.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_Day.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_Day.Location = new System.Drawing.Point(126, 3);
+            this.numeric_Day.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.numeric_Day.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numeric_Day.Name = "numeric_Day";
+            this.numeric_Day.Size = new System.Drawing.Size(117, 26);
+            this.numeric_Day.TabIndex = 30;
+            this.numeric_Day.Value = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
             // 
-            // metroSetNumeric_Month
+            // numeric_Month
             // 
-            this.metroSetNumeric_Month.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_Month.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_Month.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_Month.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_Month.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_Month.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_Month.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_Month.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_Month.IsDerivedStyle = true;
-            this.metroSetNumeric_Month.Location = new System.Drawing.Point(3, 3);
-            this.metroSetNumeric_Month.Maximum = 12;
-            this.metroSetNumeric_Month.Minimum = 1;
-            this.metroSetNumeric_Month.Name = "metroSetNumeric_Month";
-            this.metroSetNumeric_Month.Size = new System.Drawing.Size(117, 26);
-            this.metroSetNumeric_Month.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_Month.StyleManager = null;
-            this.metroSetNumeric_Month.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_Month.TabIndex = 29;
-            this.metroSetNumeric_Month.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_Month.ThemeName = "MetroDark";
-            this.metroSetNumeric_Month.Value = 12;
+            this.numeric_Month.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_Month.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeric_Month.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_Month.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_Month.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_Month.Location = new System.Drawing.Point(3, 3);
+            this.numeric_Month.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.numeric_Month.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numeric_Month.Name = "numeric_Month";
+            this.numeric_Month.Size = new System.Drawing.Size(117, 26);
+            this.numeric_Month.TabIndex = 29;
+            this.numeric_Month.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             // 
             // metroSetLabel_Birthday
             // 
@@ -1058,28 +1078,21 @@ namespace ACNHLab
             this.metroSetLabel_VillagerID.ThemeAuthor = "Narwin";
             this.metroSetLabel_VillagerID.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_VillagerID
+            // numeric_VillagerID
             // 
-            this.metroSetNumeric_VillagerID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_VillagerID.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.metroSetNumeric_VillagerID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_VillagerID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_VillagerID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_VillagerID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_VillagerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_VillagerID.IsDerivedStyle = true;
-            this.metroSetNumeric_VillagerID.Location = new System.Drawing.Point(111, 83);
-            this.metroSetNumeric_VillagerID.Maximum = 99;
-            this.metroSetNumeric_VillagerID.Minimum = 0;
-            this.metroSetNumeric_VillagerID.Name = "metroSetNumeric_VillagerID";
-            this.metroSetNumeric_VillagerID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_VillagerID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_VillagerID.StyleManager = null;
-            this.metroSetNumeric_VillagerID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_VillagerID.TabIndex = 28;
-            this.metroSetNumeric_VillagerID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_VillagerID.ThemeName = "MetroDark";
-            this.metroSetNumeric_VillagerID.Value = 0;
+            this.numeric_VillagerID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_VillagerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeric_VillagerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_VillagerID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_VillagerID.Location = new System.Drawing.Point(111, 83);
+            this.numeric_VillagerID.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.numeric_VillagerID.Name = "numeric_VillagerID";
+            this.numeric_VillagerID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_VillagerID.TabIndex = 28;
             // 
             // tableLayoutPanel_VillagerSpeciesAdd
             // 
@@ -1587,29 +1600,22 @@ namespace ACNHLab
             this.metroSetLabel_PhotoID.ThemeAuthor = "Narwin";
             this.metroSetLabel_PhotoID.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_PhotoID
+            // numeric_PhotoID
             // 
-            this.metroSetNumeric_PhotoID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_PhotoID.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_PhotoID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_PhotoID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_PhotoID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_PhotoID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_PhotoID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_PhotoID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_PhotoID.IsDerivedStyle = true;
-            this.metroSetNumeric_PhotoID.Location = new System.Drawing.Point(111, 683);
-            this.metroSetNumeric_PhotoID.Maximum = 99999;
-            this.metroSetNumeric_PhotoID.Minimum = 0;
-            this.metroSetNumeric_PhotoID.Name = "metroSetNumeric_PhotoID";
-            this.metroSetNumeric_PhotoID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_PhotoID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_PhotoID.StyleManager = null;
-            this.metroSetNumeric_PhotoID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_PhotoID.TabIndex = 65;
-            this.metroSetNumeric_PhotoID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_PhotoID.ThemeName = "MetroDark";
-            this.metroSetNumeric_PhotoID.Value = 0;
+            this.numeric_PhotoID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_PhotoID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeric_PhotoID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_PhotoID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_PhotoID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_PhotoID.Location = new System.Drawing.Point(111, 683);
+            this.numeric_PhotoID.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numeric_PhotoID.Name = "numeric_PhotoID";
+            this.numeric_PhotoID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_PhotoID.TabIndex = 65;
             // 
             // metroSetLabel_FloorType
             // 
@@ -1627,29 +1633,21 @@ namespace ACNHLab
             this.metroSetLabel_FloorType.ThemeAuthor = "Narwin";
             this.metroSetLabel_FloorType.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_FloorType
+            // numeric_FloorType
             // 
-            this.metroSetNumeric_FloorType.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_FloorType.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_FloorType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_FloorType.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_FloorType.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_FloorType.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_FloorType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_FloorType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_FloorType.IsDerivedStyle = true;
-            this.metroSetNumeric_FloorType.Location = new System.Drawing.Point(111, 723);
-            this.metroSetNumeric_FloorType.Maximum = 54;
-            this.metroSetNumeric_FloorType.Minimum = 0;
-            this.metroSetNumeric_FloorType.Name = "metroSetNumeric_FloorType";
-            this.metroSetNumeric_FloorType.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_FloorType.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_FloorType.StyleManager = null;
-            this.metroSetNumeric_FloorType.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_FloorType.TabIndex = 68;
-            this.metroSetNumeric_FloorType.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_FloorType.ThemeName = "MetroDark";
-            this.metroSetNumeric_FloorType.Value = 0;
+            this.numeric_FloorType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_FloorType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_FloorType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_FloorType.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_FloorType.Location = new System.Drawing.Point(111, 723);
+            this.numeric_FloorType.Maximum = new decimal(new int[] {
+            54,
+            0,
+            0,
+            0});
+            this.numeric_FloorType.Name = "numeric_FloorType";
+            this.numeric_FloorType.Size = new System.Drawing.Size(246, 26);
+            this.numeric_FloorType.TabIndex = 68;
             // 
             // metroSetLabel_PosterID
             // 
@@ -1667,29 +1665,21 @@ namespace ACNHLab
             this.metroSetLabel_PosterID.ThemeAuthor = "Narwin";
             this.metroSetLabel_PosterID.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_PosterID
+            // numeric_PosterID
             // 
-            this.metroSetNumeric_PosterID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_PosterID.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_PosterID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_PosterID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_PosterID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_PosterID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_PosterID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_PosterID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_PosterID.IsDerivedStyle = true;
-            this.metroSetNumeric_PosterID.Location = new System.Drawing.Point(111, 763);
-            this.metroSetNumeric_PosterID.Maximum = 99999;
-            this.metroSetNumeric_PosterID.Minimum = 0;
-            this.metroSetNumeric_PosterID.Name = "metroSetNumeric_PosterID";
-            this.metroSetNumeric_PosterID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_PosterID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_PosterID.StyleManager = null;
-            this.metroSetNumeric_PosterID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_PosterID.TabIndex = 69;
-            this.metroSetNumeric_PosterID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_PosterID.ThemeName = "MetroDark";
-            this.metroSetNumeric_PosterID.Value = 0;
+            this.numeric_PosterID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_PosterID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_PosterID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_PosterID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_PosterID.Location = new System.Drawing.Point(111, 763);
+            this.numeric_PosterID.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numeric_PosterID.Name = "numeric_PosterID";
+            this.numeric_PosterID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_PosterID.TabIndex = 69;
             // 
             // metroSetLabel_RainHatID
             // 
@@ -1707,29 +1697,21 @@ namespace ACNHLab
             this.metroSetLabel_RainHatID.ThemeAuthor = "Narwin";
             this.metroSetLabel_RainHatID.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_RainHatID
+            // numeric_RainHatID
             // 
-            this.metroSetNumeric_RainHatID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_RainHatID.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_RainHatID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_RainHatID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_RainHatID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_RainHatID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_RainHatID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_RainHatID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_RainHatID.IsDerivedStyle = true;
-            this.metroSetNumeric_RainHatID.Location = new System.Drawing.Point(111, 803);
-            this.metroSetNumeric_RainHatID.Maximum = 99999;
-            this.metroSetNumeric_RainHatID.Minimum = 0;
-            this.metroSetNumeric_RainHatID.Name = "metroSetNumeric_RainHatID";
-            this.metroSetNumeric_RainHatID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_RainHatID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_RainHatID.StyleManager = null;
-            this.metroSetNumeric_RainHatID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_RainHatID.TabIndex = 72;
-            this.metroSetNumeric_RainHatID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_RainHatID.ThemeName = "MetroDark";
-            this.metroSetNumeric_RainHatID.Value = 0;
+            this.numeric_RainHatID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_RainHatID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_RainHatID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_RainHatID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_RainHatID.Location = new System.Drawing.Point(111, 803);
+            this.numeric_RainHatID.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numeric_RainHatID.Name = "numeric_RainHatID";
+            this.numeric_RainHatID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_RainHatID.TabIndex = 72;
             // 
             // metroSetLabel_RainWearID
             // 
@@ -1747,29 +1729,21 @@ namespace ACNHLab
             this.metroSetLabel_RainWearID.ThemeAuthor = "Narwin";
             this.metroSetLabel_RainWearID.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_RainWearID
+            // numeric_RainWearID
             // 
-            this.metroSetNumeric_RainWearID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_RainWearID.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_RainWearID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_RainWearID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_RainWearID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_RainWearID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_RainWearID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_RainWearID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_RainWearID.IsDerivedStyle = true;
-            this.metroSetNumeric_RainWearID.Location = new System.Drawing.Point(111, 843);
-            this.metroSetNumeric_RainWearID.Maximum = 99999;
-            this.metroSetNumeric_RainWearID.Minimum = 0;
-            this.metroSetNumeric_RainWearID.Name = "metroSetNumeric_RainWearID";
-            this.metroSetNumeric_RainWearID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_RainWearID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_RainWearID.StyleManager = null;
-            this.metroSetNumeric_RainWearID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_RainWearID.TabIndex = 74;
-            this.metroSetNumeric_RainWearID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_RainWearID.ThemeName = "MetroDark";
-            this.metroSetNumeric_RainWearID.Value = 0;
+            this.numeric_RainWearID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_RainWearID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_RainWearID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_RainWearID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_RainWearID.Location = new System.Drawing.Point(111, 843);
+            this.numeric_RainWearID.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numeric_RainWearID.Name = "numeric_RainWearID";
+            this.numeric_RainWearID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_RainWearID.TabIndex = 74;
             // 
             // metroSetLabel_PhonePattern
             // 
@@ -1787,53 +1761,37 @@ namespace ACNHLab
             this.metroSetLabel_PhonePattern.ThemeAuthor = "Narwin";
             this.metroSetLabel_PhonePattern.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_PhonePattern
+            // numeric_PhonePattern
             // 
-            this.metroSetNumeric_PhonePattern.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_PhonePattern.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_PhonePattern.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_PhonePattern.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_PhonePattern.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_PhonePattern.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_PhonePattern.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_PhonePattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_PhonePattern.IsDerivedStyle = true;
-            this.metroSetNumeric_PhonePattern.Location = new System.Drawing.Point(111, 883);
-            this.metroSetNumeric_PhonePattern.Maximum = 7;
-            this.metroSetNumeric_PhonePattern.Minimum = 0;
-            this.metroSetNumeric_PhonePattern.Name = "metroSetNumeric_PhonePattern";
-            this.metroSetNumeric_PhonePattern.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_PhonePattern.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_PhonePattern.StyleManager = null;
-            this.metroSetNumeric_PhonePattern.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_PhonePattern.TabIndex = 76;
-            this.metroSetNumeric_PhonePattern.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_PhonePattern.ThemeName = "MetroDark";
-            this.metroSetNumeric_PhonePattern.Value = 0;
+            this.numeric_PhonePattern.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_PhonePattern.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_PhonePattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_PhonePattern.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_PhonePattern.Location = new System.Drawing.Point(111, 883);
+            this.numeric_PhonePattern.Maximum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.numeric_PhonePattern.Name = "numeric_PhonePattern";
+            this.numeric_PhonePattern.Size = new System.Drawing.Size(246, 26);
+            this.numeric_PhonePattern.TabIndex = 76;
             // 
-            // metroSetNumeric_ShirtID
+            // numeric_ShirtID
             // 
-            this.metroSetNumeric_ShirtID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_ShirtID.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_ShirtID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_ShirtID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_ShirtID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_ShirtID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_ShirtID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_ShirtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_ShirtID.IsDerivedStyle = true;
-            this.metroSetNumeric_ShirtID.Location = new System.Drawing.Point(111, 923);
-            this.metroSetNumeric_ShirtID.Maximum = 99999;
-            this.metroSetNumeric_ShirtID.Minimum = 0;
-            this.metroSetNumeric_ShirtID.Name = "metroSetNumeric_ShirtID";
-            this.metroSetNumeric_ShirtID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_ShirtID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_ShirtID.StyleManager = null;
-            this.metroSetNumeric_ShirtID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_ShirtID.TabIndex = 78;
-            this.metroSetNumeric_ShirtID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_ShirtID.ThemeName = "MetroDark";
-            this.metroSetNumeric_ShirtID.Value = 0;
+            this.numeric_ShirtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_ShirtID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_ShirtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_ShirtID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_ShirtID.Location = new System.Drawing.Point(111, 923);
+            this.numeric_ShirtID.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numeric_ShirtID.Name = "numeric_ShirtID";
+            this.numeric_ShirtID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_ShirtID.TabIndex = 78;
             // 
             // metroSetLabel_UmbrellaID
             // 
@@ -1851,29 +1809,21 @@ namespace ACNHLab
             this.metroSetLabel_UmbrellaID.ThemeAuthor = "Narwin";
             this.metroSetLabel_UmbrellaID.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_UmbrellaID
+            // numeric_UmbrellaID
             // 
-            this.metroSetNumeric_UmbrellaID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_UmbrellaID.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_UmbrellaID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_UmbrellaID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_UmbrellaID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_UmbrellaID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_UmbrellaID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_UmbrellaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_UmbrellaID.IsDerivedStyle = true;
-            this.metroSetNumeric_UmbrellaID.Location = new System.Drawing.Point(111, 963);
-            this.metroSetNumeric_UmbrellaID.Maximum = 99999;
-            this.metroSetNumeric_UmbrellaID.Minimum = 0;
-            this.metroSetNumeric_UmbrellaID.Name = "metroSetNumeric_UmbrellaID";
-            this.metroSetNumeric_UmbrellaID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_UmbrellaID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_UmbrellaID.StyleManager = null;
-            this.metroSetNumeric_UmbrellaID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_UmbrellaID.TabIndex = 80;
-            this.metroSetNumeric_UmbrellaID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_UmbrellaID.ThemeName = "MetroDark";
-            this.metroSetNumeric_UmbrellaID.Value = 0;
+            this.numeric_UmbrellaID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_UmbrellaID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_UmbrellaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_UmbrellaID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_UmbrellaID.Location = new System.Drawing.Point(111, 963);
+            this.numeric_UmbrellaID.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.numeric_UmbrellaID.Name = "numeric_UmbrellaID";
+            this.numeric_UmbrellaID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_UmbrellaID.TabIndex = 80;
             // 
             // metroSetComboBox_FaveColor
             // 
@@ -1981,29 +1931,22 @@ namespace ACNHLab
             this.metroSetLabel_RemakeID.ThemeAuthor = "Narwin";
             this.metroSetLabel_RemakeID.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_RemakeID
+            // numeric_RemakeID
             // 
-            this.metroSetNumeric_RemakeID.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_RemakeID.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_RemakeID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_RemakeID.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_RemakeID.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_RemakeID.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_RemakeID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_RemakeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_RemakeID.IsDerivedStyle = true;
-            this.metroSetNumeric_RemakeID.Location = new System.Drawing.Point(111, 1083);
-            this.metroSetNumeric_RemakeID.Maximum = 6;
-            this.metroSetNumeric_RemakeID.Minimum = 0;
-            this.metroSetNumeric_RemakeID.Name = "metroSetNumeric_RemakeID";
-            this.metroSetNumeric_RemakeID.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_RemakeID.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_RemakeID.StyleManager = null;
-            this.metroSetNumeric_RemakeID.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_RemakeID.TabIndex = 86;
-            this.metroSetNumeric_RemakeID.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_RemakeID.ThemeName = "MetroDark";
-            this.metroSetNumeric_RemakeID.Value = 0;
+            this.numeric_RemakeID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_RemakeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeric_RemakeID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_RemakeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_RemakeID.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_RemakeID.Location = new System.Drawing.Point(111, 1083);
+            this.numeric_RemakeID.Maximum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.numeric_RemakeID.Name = "numeric_RemakeID";
+            this.numeric_RemakeID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_RemakeID.TabIndex = 86;
             // 
             // metroSetLabel_NoteLength
             // 
@@ -2021,29 +1964,27 @@ namespace ACNHLab
             this.metroSetLabel_NoteLength.ThemeAuthor = "Narwin";
             this.metroSetLabel_NoteLength.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_NoteLength
+            // numeric_NoteLength
             // 
-            this.metroSetNumeric_NoteLength.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_NoteLength.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_NoteLength.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_NoteLength.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_NoteLength.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_NoteLength.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_NoteLength.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_NoteLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_NoteLength.IsDerivedStyle = true;
-            this.metroSetNumeric_NoteLength.Location = new System.Drawing.Point(111, 1123);
-            this.metroSetNumeric_NoteLength.Maximum = 6;
-            this.metroSetNumeric_NoteLength.Minimum = 3;
-            this.metroSetNumeric_NoteLength.Name = "metroSetNumeric_NoteLength";
-            this.metroSetNumeric_NoteLength.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_NoteLength.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_NoteLength.StyleManager = null;
-            this.metroSetNumeric_NoteLength.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_NoteLength.TabIndex = 88;
-            this.metroSetNumeric_NoteLength.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_NoteLength.ThemeName = "MetroDark";
-            this.metroSetNumeric_NoteLength.Value = 3;
+            this.numeric_NoteLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_NoteLength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeric_NoteLength.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_NoteLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_NoteLength.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_NoteLength.Location = new System.Drawing.Point(111, 1123);
+            this.numeric_NoteLength.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.numeric_NoteLength.Name = "numeric_NoteLength";
+            this.numeric_NoteLength.Size = new System.Drawing.Size(246, 26);
+            this.numeric_NoteLength.TabIndex = 88;
+            this.numeric_NoteLength.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // metroSetComboBox_Melody
             // 
@@ -2119,29 +2060,27 @@ namespace ACNHLab
             this.metroSetComboBox_Melody2.ThemeAuthor = "Narwin";
             this.metroSetComboBox_Melody2.ThemeName = "MetroDark";
             // 
-            // metroSetNumeric_NPCColor
+            // numeric_NPCColor
             // 
-            this.metroSetNumeric_NPCColor.BackColor = System.Drawing.Color.Transparent;
-            this.metroSetNumeric_NPCColor.BackgroundColor = System.Drawing.Color.Empty;
-            this.metroSetNumeric_NPCColor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_NPCColor.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.metroSetNumeric_NPCColor.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_NPCColor.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroSetNumeric_NPCColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetNumeric_NPCColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.metroSetNumeric_NPCColor.IsDerivedStyle = true;
-            this.metroSetNumeric_NPCColor.Location = new System.Drawing.Point(111, 1243);
-            this.metroSetNumeric_NPCColor.Maximum = 999;
-            this.metroSetNumeric_NPCColor.Minimum = 0;
-            this.metroSetNumeric_NPCColor.Name = "metroSetNumeric_NPCColor";
-            this.metroSetNumeric_NPCColor.Size = new System.Drawing.Size(246, 26);
-            this.metroSetNumeric_NPCColor.Style = MetroSet_UI.Enums.Style.Dark;
-            this.metroSetNumeric_NPCColor.StyleManager = null;
-            this.metroSetNumeric_NPCColor.SymbolsColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.metroSetNumeric_NPCColor.TabIndex = 94;
-            this.metroSetNumeric_NPCColor.ThemeAuthor = "Narwin";
-            this.metroSetNumeric_NPCColor.ThemeName = "MetroDark";
-            this.metroSetNumeric_NPCColor.Value = 72;
+            this.numeric_NPCColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.numeric_NPCColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numeric_NPCColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numeric_NPCColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.numeric_NPCColor.ForeColor = System.Drawing.Color.Silver;
+            this.numeric_NPCColor.Location = new System.Drawing.Point(111, 1243);
+            this.numeric_NPCColor.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numeric_NPCColor.Name = "numeric_NPCColor";
+            this.numeric_NPCColor.Size = new System.Drawing.Size(246, 26);
+            this.numeric_NPCColor.TabIndex = 94;
+            this.numeric_NPCColor.Value = new decimal(new int[] {
+            72,
+            0,
+            0,
+            0});
             // 
             // textBox_Name
             // 
@@ -2226,7 +2165,7 @@ namespace ACNHLab
             this.newProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.asterisk_yellow;
             this.newProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.newProjectToolStripMenuItem.Text = "New Project";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProject_Click);
             // 
@@ -2237,7 +2176,7 @@ namespace ACNHLab
             this.loadProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.folder_page;
             this.loadProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
-            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.loadProjectToolStripMenuItem.Text = "Load Project";
             this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.LoadProject_Click);
             // 
@@ -2249,7 +2188,7 @@ namespace ACNHLab
             this.saveProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.disk_multiple;
             this.saveProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.saveProjectToolStripMenuItem.Name = "saveProjectToolStripMenuItem";
-            this.saveProjectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.saveProjectToolStripMenuItem.Text = "Save Project As...";
             this.saveProjectToolStripMenuItem.Click += new System.EventHandler(this.SaveProjectAs_Click);
             // 
@@ -2260,7 +2199,7 @@ namespace ACNHLab
             this.settingsToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.table_gear;
             this.settingsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.Settings_Click);
             // 
@@ -2270,7 +2209,7 @@ namespace ACNHLab
             this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.exportToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.package_go;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.exportToolStripMenuItem.Text = "Export Mod";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportMod_Click);
             // 
@@ -2566,8 +2505,22 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.ResumeLayout(false);
             this.tableLayoutPanel_VillagerParams.PerformLayout();
             this.tableLayoutPanel_Birthday.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_Day)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_Month)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_VillagerID)).EndInit();
             this.tableLayoutPanel_VillagerSpeciesAdd.ResumeLayout(false);
             this.tableLayoutPanel_VillagerGender.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_PhotoID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_FloorType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_PosterID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_RainHatID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_RainWearID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_PhonePattern)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_ShirtID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_UmbrellaID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_RemakeID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_NoteLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_NPCColor)).EndInit();
             this.tabPage_Furniture.ResumeLayout(false);
             this.menuStrip_Main.ResumeLayout(false);
             this.menuStrip_Main.PerformLayout();
@@ -2626,15 +2579,15 @@ namespace ACNHLab
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Amiibo;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_AmiiboSeries;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Birthday;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_Day;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_Month;
+        private System.Windows.Forms.NumericUpDown numeric_Day;
+        private System.Windows.Forms.NumericUpDown numeric_Month;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Birthday;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Hobby;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Hobby;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_VillagerSpecies;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_VillagerName;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_VillagerID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_VillagerID;
+        private System.Windows.Forms.NumericUpDown numeric_VillagerID;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_VillagerSpeciesAdd;
         private System.Windows.Forms.Button button_AddSpecies;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_VillagerSpecies;
@@ -2659,35 +2612,35 @@ namespace ACNHLab
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_SingRhythm;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_SingRhythm;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_PhotoID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_PhotoID;
+        private System.Windows.Forms.NumericUpDown numeric_PhotoID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_FloorType;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_FloorType;
+        private System.Windows.Forms.NumericUpDown numeric_FloorType;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_PosterID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_PosterID;
+        private System.Windows.Forms.NumericUpDown numeric_PosterID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_RainHatID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_RainHatID;
+        private System.Windows.Forms.NumericUpDown numeric_RainHatID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_RainWearID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_RainWearID;
+        private System.Windows.Forms.NumericUpDown numeric_RainWearID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_PhonePattern;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_PhonePattern;
+        private System.Windows.Forms.NumericUpDown numeric_PhonePattern;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_ShirtID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_ShirtID;
+        private System.Windows.Forms.NumericUpDown numeric_ShirtID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_UmbrellaID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_UmbrellaID;
+        private System.Windows.Forms.NumericUpDown numeric_UmbrellaID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_FaveColor;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_FaveColor;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_FaveColor2;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_FaveColor2;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_RemakeID;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_RemakeID;
+        private System.Windows.Forms.NumericUpDown numeric_RemakeID;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_NoteLength;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_NoteLength;
+        private System.Windows.Forms.NumericUpDown numeric_NoteLength;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Melody2;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Melody;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_Melody;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Melody2;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel_NPCColor;
-        private MetroSet_UI.Controls.MetroSetNumeric metroSetNumeric_NPCColor;
+        private System.Windows.Forms.NumericUpDown numeric_NPCColor;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_VillagerList;
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_Villagers;
         private System.Windows.Forms.Panel panel_VillagerImg;

@@ -423,7 +423,7 @@ namespace ACNHLab.Classes
             // Clear existing rows
             Bcsv.dataGridView1.Rows.Clear();
             // Create blank rows to fill out for each villager
-            Bcsv.dataGridView1.Rows.Add(List.Count() - 1);
+            Bcsv.dataGridView1.Rows.Add(List.Count());
             // For each villager's row...
             for (int r = 0; r < List.Count(); r++)
             {
@@ -613,7 +613,7 @@ namespace ACNHLab.Classes
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
                                 break;
                             case 6: // Bool, whether can be spanwed at campsite
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
                                 break;
                             case 7: // Always 5
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "5";
@@ -645,7 +645,7 @@ namespace ACNHLab.Classes
                                     Bcsv.dataGridView1.Rows[r].Cells[c].Value = amiiboHead;
                                 }
                                 else
-                                    Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000000";
+                                    Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000001";
                                 #if DEBUG
                                     Program.status.Update($"[DEBUG] Updating AmiiboData for {villager.Name} ({Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID})");
                                 #endif
@@ -674,7 +674,7 @@ namespace ACNHLab.Classes
                                 break;
                             case 8: // 0 for figure, 1 for card
                                 // TODO: Support figures
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000000";
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000001";
                                 break;
                         }
                     }

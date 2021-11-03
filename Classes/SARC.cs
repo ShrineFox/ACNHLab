@@ -93,16 +93,10 @@ namespace ACNHLab.Classes
 
         internal static void Compress(string input, string output)
         {
-            byte[] inputBytes = File.ReadAllBytes(input);
+            ZstdNet.Compressor compressor = new ZstdNet.Compressor();
+            var outputBytes = compressor.Wrap(File.ReadAllBytes(input));
+            File.WriteAllBytes(output, outputBytes);
 
-            using (var memoryStream = new MemoryStream())
-            using (var compressionStream = new ZstandardStream(memoryStream, CompressionMode.Compress))
-            {
-                compressionStream.Write(inputBytes, 0, inputBytes.Length);
-                compressionStream.Close();
-                byte[] outputBytes = memoryStream.ToArray();
-                File.WriteAllBytes(output, outputBytes);
-            }
             Program.status.Update($"[INFO] Compressed \"{Path.GetFileName(input)}\".");
         }
 
