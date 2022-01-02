@@ -139,6 +139,9 @@ namespace ACNHLab
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.writeAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nHSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Project = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_New = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_NewFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -2135,7 +2138,8 @@ namespace ACNHLab
             this.menuStrip_Main.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.writeAllChangesToolStripMenuItem});
+            this.writeAllChangesToolStripMenuItem,
+            this.toolsToolStripMenuItem});
             this.menuStrip_Main.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip_Main.Location = new System.Drawing.Point(2, 0);
             this.menuStrip_Main.Name = "menuStrip_Main";
@@ -2221,6 +2225,37 @@ namespace ACNHLab
             this.writeAllChangesToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.writeAllChangesToolStripMenuItem.Text = "Write All Changes";
             this.writeAllChangesToolStripMenuItem.Click += new System.EventHandler(this.WriteAllChanges_Click);
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eventEditorToolStripMenuItem,
+            this.nHSEToolStripMenuItem});
+            this.toolsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.toolsToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.application_xp_terminal;
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // eventEditorToolStripMenuItem
+            // 
+            this.eventEditorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.eventEditorToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.eventEditorToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.pitfall;
+            this.eventEditorToolStripMenuItem.Name = "eventEditorToolStripMenuItem";
+            this.eventEditorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.eventEditorToolStripMenuItem.Text = "Event Editor";
+            this.eventEditorToolStripMenuItem.Click += new System.EventHandler(this.EventEditor_Click);
+            // 
+            // nHSEToolStripMenuItem
+            // 
+            this.nHSEToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nHSEToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.nHSEToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.leaf;
+            this.nHSEToolStripMenuItem.Name = "nHSEToolStripMenuItem";
+            this.nHSEToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nHSEToolStripMenuItem.Text = "NHSE";
+            this.nHSEToolStripMenuItem.Click += new System.EventHandler(this.NHSE_Click);
             // 
             // contextMenuStrip_Project
             // 
@@ -2656,5 +2691,8 @@ namespace ACNHLab
         private MetroSet_UI.Controls.MetroSetComboBox metroSetComboBox_AmiiboSeries;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventEditorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nHSEToolStripMenuItem;
     }
 }

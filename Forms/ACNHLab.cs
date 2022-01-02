@@ -13,6 +13,8 @@ using YamlDotNet.Serialization.NamingConventions;
 using ZstdNet;
 using static ACNHLab.Classes.Amiibo;
 using System.Text.Json;
+using Microsoft.Win32;
+using System.Reflection;
 
 namespace ACNHLab
 {
@@ -226,6 +228,86 @@ namespace ACNHLab
                         Program.status.Update($"[ERROR] Failed to save project as \"{newName}\", directory already exists");
                 }
             }
+        }
+
+        private void ExportMod_Click(object sender, EventArgs e)
+        {
+            if (SettingsForm.IsValid())
+            {
+                // Move relevant files to output directory
+                string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
+
+                foreach (var file in new string[] {
+                    "Message\\String_USen.sarc.zs",
+                    "Bcsv\\NmlNpcParam.bcsv",
+                    "Bcsv\\AmiiboData.bcsv"})
+                {
+                    if (File.Exists(Path.Combine(dir, file)))
+                    {
+                        string modDir = SettingsForm.settings.OutputPath;
+                        Directory.CreateDirectory(Path.Combine(modDir, Path.GetDirectoryName(file)));
+                        File.Copy(Path.Combine(dir, file), Path.Combine(modDir, file), true);
+                        Program.status.Update($"[INFO] Exported \"{file}\" to Output Directory.");
+                    }
+                }
+                Program.status.Update($"[INFO] Finished exporting mod.");
+                MessageBox.Show($"Finished exporting mod to:\n\n{SettingsForm.settings.OutputPath}", "Export Complete");
+            }
+        }
+
+        private void WriteAllChanges_Click(object sender, EventArgs e)
+        {
+            // Update BCSVs, MSBTs and SARCs
+            Villagers.Save();
+            string status = $"Overwrote all files with currently loaded data!";
+            Program.status.Update($"[INFO] {status}");
+            MessageBox.Show(status, "Done Writing Data");
+        }
+
+        private void EventEditor_Click(object sender, EventArgs e)
+        {
+            OpenEventEditor();
+        }
+
+        private void OpenEventEditor(string bfevflPath = "")
+        {
+            // Check if python is installed, if so get python path
+            string pythonPath = Tools.GetPythonPath("3.6", "", "eventeditor.exe");
+            if (pythonPath != "")
+                Program.status.Update($"[INFO] Python install detected: \"{pythonPath}\"");
+            else
+            {
+                Program.status.Update($"[ERROR] Couldn't detect a 64-bit Python 3.6+ installation with \"eventeditor.exe\" installed!" +
+                    $"\nInstall Python 3.6+, run \"pip install PyQt5\", then run \"pip install eventeditor\".");
+                return;
+            }
+            // Check if eventeditor.exe is installed, if so run it
+            string eventEditorPath = Path.Combine(Path.GetDirectoryName(pythonPath), Path.Combine("Scripts", "eventeditor.exe"));
+            if (File.Exists(eventEditorPath))
+                Program.status.Update($"[INFO] Running Python script: \"eventeditor.exe\"");
+            else
+            {
+                Program.status.Update($"[ERROR] Couldn't find \"eventeditor.exe\"! Run \"pip install PyQt5\", then run \"pip install eventeditor\".");
+                return;
+            }
+
+            Tools.KillCMD("eventeditor");
+            Tools.CMD(eventEditorPath, bfevflPath);
+        }
+
+        private void NHSE_Click(object sender, EventArgs e)
+        {
+            // Launch NHSE if it exists
+            string nhsePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Path.Combine("Dependencies", Path.Combine("NHSE", "NHSE.exe")));
+            if (!File.Exists(nhsePath))
+            {
+                Program.status.Update($"[ERROR] Couldn't find \"\\Dependencies\\NHSE\\NHSE.exe\"! Download and extract it to that folder.");
+                return;
+            }
+            else
+                Program.status.Update($"[INFO] Running program: \"NHSE.exe\"");
+
+            Tools.CMD(nhsePath);
         }
         #endregion
 
@@ -603,59 +685,6 @@ namespace ACNHLab
             UpdateVillagerDropDown(metroSetComboBox_Villagers.SelectedIndex);
         }
 
-        private void WriteAllChanges_Click(object sender, EventArgs e)
-        {
-            // Update BCSVs, MSBTs and SARCs
-            Villagers.Save();
-            string status = $"Overwrote all files with currently loaded data!";
-            Program.status.Update($"[INFO] {status}");
-            MessageBox.Show(status, "Done Writing Data");
-        }
-        #endregion
-
-        #region Rendering
-        /* Improve menustrip rendering for dark theme */
-        ToolStripProfessionalRenderer r =
-            new ToolStripProfessionalRenderer(new MyColorTable(Color.FromArgb(255, 20, 20, 20)));
-        public class MyColorTable : ProfessionalColorTable
-        {
-            private Color menuItemSelectedColor;
-            public MyColorTable(Color color) : base()
-            {
-                menuItemSelectedColor = color;
-            }
-            public override Color MenuItemSelected
-            {
-                get { return menuItemSelectedColor; }
-            }
-        }
-        #endregion
-
-        private void ExportMod_Click(object sender, EventArgs e)
-        {
-            if (SettingsForm.IsValid())
-            {
-                // Move relevant files to output directory
-                string dir = Path.GetDirectoryName(SettingsForm.settings.ProjectPath);
-
-                foreach (var file in new string[] {
-                    "Message\\String_USen.sarc.zs",
-                    "Bcsv\\NmlNpcParam.bcsv",
-                    "Bcsv\\AmiiboData.bcsv"})
-                {
-                    if (File.Exists(Path.Combine(dir, file)))
-                    {
-                        string modDir = SettingsForm.settings.OutputPath;
-                        Directory.CreateDirectory(Path.Combine(modDir, Path.GetDirectoryName(file)));
-                        File.Copy(Path.Combine(dir, file), Path.Combine(modDir, file), true);
-                        Program.status.Update($"[INFO] Exported \"{file}\" to Output Directory.");
-                    }
-                }
-                Program.status.Update($"[INFO] Finished exporting mod.");
-                MessageBox.Show($"Finished exporting mod to:\n\n{SettingsForm.settings.OutputPath}", "Export Complete");
-            }
-        }
-
         private void AddSpecies_Click(object sender, EventArgs e)
         {
             SpeciesAddForm species = new SpeciesAddForm();
@@ -696,6 +725,25 @@ namespace ACNHLab
             UpdateVillagerDropDown();
             Program.status.Update($"[INFO] Removed Villager: {villager.Name} ({Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")}).");
         }
+        #endregion
+
+        #region Rendering
+        /* Improve menustrip rendering for dark theme */
+        ToolStripProfessionalRenderer r =
+            new ToolStripProfessionalRenderer(new MyColorTable(Color.FromArgb(255, 20, 20, 20)));
+        public class MyColorTable : ProfessionalColorTable
+        {
+            private Color menuItemSelectedColor;
+            public MyColorTable(Color color) : base()
+            {
+                menuItemSelectedColor = color;
+            }
+            public override Color MenuItemSelected
+            {
+                get { return menuItemSelectedColor; }
+            }
+        }
+        #endregion
     }
 
     /* Append to Status Text from other classes and forms */

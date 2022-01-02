@@ -125,7 +125,8 @@ namespace ACNHLab.Properties {
         ///                            &quot;write&quot;: false
         ///                        }
         ///                    ],
-        ///                    &quot;ga [rest of string was truncated]&quot;;.
+        ///                    &quot;gameID&quot;: [
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Amiibo {
             get {
@@ -5264,6 +5265,16 @@ namespace ACNHLab.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leaf {
+            get {
+                object obj = ResourceManager.GetObject("leaf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon lightbulb {
@@ -7310,6 +7321,16 @@ namespace ACNHLab.Properties {
             get {
                 object obj = ResourceManager.GetObject("pill_go", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pitfall {
+            get {
+                object obj = ResourceManager.GetObject("pitfall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

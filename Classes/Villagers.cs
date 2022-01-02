@@ -372,9 +372,12 @@ namespace ACNHLab.Classes
                         if (name == label)
                         {
                             var amiiboHead = row.Cells[0].Value.ToString().Substring(2);
-                            var amiibo = ACNHLab.Amiibos.First(x => x.Item1.ToUpper().StartsWith(amiiboHead));
-                            villager.AmiiboSeries = amiibo.Item2;
-                            villager.Amiibo = amiibo.Item3 + " (" + amiibo.Item4 + ")";
+                            if (ACNHLab.Amiibos.Any(x => x.Item1.ToUpper().StartsWith(amiiboHead)))
+                            {
+                                var amiibo = ACNHLab.Amiibos.First(x => x.Item1.ToUpper().StartsWith(amiiboHead));
+                                villager.AmiiboSeries = amiibo.Item2;
+                                villager.Amiibo = amiibo.Item3 + " (" + amiibo.Item4 + ")";
+                            }
                         }
                     }
                 }   
@@ -597,30 +600,32 @@ namespace ACNHLab.Classes
                             case 0: // Amiibo head
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = specialNPCAmiibos[r].Item2;
                                 break;
-                            case 1: // Incremental ID
+                            case 1: // NumberingId, incremental
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = r;
                                 break;
-                            case 2: // Always 0?
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                            case 2: // SpNpcCloth, usually -1 (65535)
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "65535";
                                 break;
-                            case 3: // Bool, whether can be spawned at photopia
+                            case 3: // NfpType, whether it's a card or not? 1 for card
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
                                 break;
-                            case 4: // Villager Label
+                            case 4: // NpcLabel
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = specialNPCAmiibos[r].Item1;
                                 break;
-                            case 5: // 1 for special NPC, 0 for regular
+                            case 5: // NpcType, 1 for special NPC, 0 for regular
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
                                 break;
-                            case 6: // Bool, whether can be spanwed at campsite
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
+                            case 6: // Reaction, always 0
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
                                 break;
-                            case 7: // Always 5
+                            case 7: // SeriesId, Always 5
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "5";
                                 break;
-                            case 8: // 0 for figure, 1 for card
-                                // TODO: Support figures
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000000";
+                            case 8: // Studio, always 0
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                                break;
+                            case 9: // string, always blank?
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "";
                                 break;
                         }
                     }
@@ -650,31 +655,33 @@ namespace ACNHLab.Classes
                                     Program.status.Update($"[DEBUG] Updating AmiiboData for {villager.Name} ({Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID})");
                                 #endif
                                 break;
-                            case 1: // Incremental ID
+                            case 1: // NumberingId, incremental
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = r;
                                 break;
-                            case 2: // Always 0?
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                            case 2: // SpNpcCloth, usually -1 (65535)
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "65535";
                                 break;
-                            case 3: // Bool, whether can be spanwed at photopia
+                            case 3: // NfpType, whether it's a card or not? 1 for card
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
                                 break;
-                            case 4: // Villager Label
+                            case 4: // NpcLabel
                                 string label = Species.First(x => x.Item2.Equals(villager.Species)).Item1 + villager.ID.ToString("00");
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = label;
                                 break;
-                            case 5: // 1 for special NPC, 0 for regular
+                            case 5: // NpcType, 1 for special NPC, 0 for regular
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
                                 break;
-                            case 6: // Bool, whether can be spanwed at campsite
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "1";
+                            case 6: // Reaction, always 0
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
                                 break;
-                            case 7: // Always 5
+                            case 7: // SeriesId, Always 5
                                 Bcsv.dataGridView1.Rows[r].Cells[c].Value = "5";
                                 break;
-                            case 8: // 0 for figure, 1 for card
-                                // TODO: Support figures
-                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "00000001";
+                            case 8: // Studio, always 0
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "0";
+                                break;
+                            case 9: // string, always blank?
+                                Bcsv.dataGridView1.Rows[r].Cells[c].Value = "";
                                 break;
                         }
                     }
