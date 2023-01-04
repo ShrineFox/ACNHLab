@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ACNHLab.Classes
 {
     //Decode based off of thakis's and shevious's python code, recoded in C#
-    //Encode was re-researched and programmed by myself (Shadsterwolf) 
+    //Encode was re-researched and programmed by Shadsterwolf
     public struct Yaz0
     {
 

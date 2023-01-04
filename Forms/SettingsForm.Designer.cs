@@ -403,9 +403,7 @@ namespace ACNHLab
             this.metroSetComboBox_Version.IsDerivedStyle = true;
             this.metroSetComboBox_Version.ItemHeight = 20;
             this.metroSetComboBox_Version.Items.AddRange(new object[] {
-            "Update 1.11.1",
-            "Update 2.0",
-            "Update 2.0.1"});
+            "2.0.6"});
             this.metroSetComboBox_Version.Location = new System.Drawing.Point(203, 10);
             this.metroSetComboBox_Version.Name = "metroSetComboBox_Version";
             this.metroSetComboBox_Version.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -522,7 +520,7 @@ namespace ACNHLab
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.BorderThickness = 0F;

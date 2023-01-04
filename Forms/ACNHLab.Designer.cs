@@ -479,21 +479,21 @@ namespace ACNHLab
             // menuStrip_Villagers
             // 
             this.menuStrip_Villagers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.menuStrip_Villagers.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip_Villagers.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip_Villagers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem_SaveVillager});
             this.menuStrip_Villagers.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Villagers.Name = "menuStrip_Villagers";
-            this.menuStrip_Villagers.Size = new System.Drawing.Size(251, 28);
+            this.menuStrip_Villagers.Size = new System.Drawing.Size(251, 33);
             this.menuStrip_Villagers.TabIndex = 5;
             this.menuStrip_Villagers.Text = "menuStrip1";
             // 
             // saveToolStripMenuItem_SaveVillager
             // 
             this.saveToolStripMenuItem_SaveVillager.ForeColor = System.Drawing.Color.Silver;
-            this.saveToolStripMenuItem_SaveVillager.Image = global::ACNHLab.Properties.Resources.disk;
             this.saveToolStripMenuItem_SaveVillager.Name = "saveToolStripMenuItem_SaveVillager";
-            this.saveToolStripMenuItem_SaveVillager.Size = new System.Drawing.Size(134, 24);
+            this.saveToolStripMenuItem_SaveVillager.Size = new System.Drawing.Size(138, 29);
             this.saveToolStripMenuItem_SaveVillager.Text = "Save Changes";
             this.saveToolStripMenuItem_SaveVillager.Click += new System.EventHandler(this.SaveVillager_Click);
             // 
@@ -562,7 +562,6 @@ namespace ACNHLab
             this.button_VillagerHouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_VillagerHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button_VillagerHouse.ForeColor = System.Drawing.Color.Silver;
-            this.button_VillagerHouse.Image = global::ACNHLab.Properties.Resources.house;
             this.button_VillagerHouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_VillagerHouse.Location = new System.Drawing.Point(84, 3);
             this.button_VillagerHouse.Name = "button_VillagerHouse";
@@ -579,7 +578,6 @@ namespace ACNHLab
             this.btn_RemoveVillager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_RemoveVillager.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btn_RemoveVillager.ForeColor = System.Drawing.Color.Silver;
-            this.btn_RemoveVillager.Image = global::ACNHLab.Properties.Resources.delete;
             this.btn_RemoveVillager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_RemoveVillager.Location = new System.Drawing.Point(165, 3);
             this.btn_RemoveVillager.Name = "btn_RemoveVillager";
@@ -597,7 +595,6 @@ namespace ACNHLab
             this.btn_AddVillager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AddVillager.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.btn_AddVillager.ForeColor = System.Drawing.Color.Silver;
-            this.btn_AddVillager.Image = global::ACNHLab.Properties.Resources.add;
             this.btn_AddVillager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_AddVillager.Location = new System.Drawing.Point(3, 3);
             this.btn_AddVillager.Name = "btn_AddVillager";
@@ -725,7 +722,7 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_VillagerParams.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel_VillagerParams.Size = new System.Drawing.Size(360, 1280);
+            this.tableLayoutPanel_VillagerParams.Size = new System.Drawing.Size(355, 1280);
             this.tableLayoutPanel_VillagerParams.TabIndex = 2;
             // 
             // metroSetComboBox_AmiiboSeries
@@ -746,11 +743,11 @@ namespace ACNHLab
             this.metroSetComboBox_AmiiboSeries.FormattingEnabled = true;
             this.metroSetComboBox_AmiiboSeries.IsDerivedStyle = true;
             this.metroSetComboBox_AmiiboSeries.ItemHeight = 20;
-            this.metroSetComboBox_AmiiboSeries.Location = new System.Drawing.Point(111, 283);
+            this.metroSetComboBox_AmiiboSeries.Location = new System.Drawing.Point(109, 283);
             this.metroSetComboBox_AmiiboSeries.Name = "metroSetComboBox_AmiiboSeries";
             this.metroSetComboBox_AmiiboSeries.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_AmiiboSeries.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_AmiiboSeries.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_AmiiboSeries.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_AmiiboSeries.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_AmiiboSeries.StyleManager = null;
             this.metroSetComboBox_AmiiboSeries.TabIndex = 98;
@@ -765,9 +762,9 @@ namespace ACNHLab
             this.textBox_Phrase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_Phrase.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.textBox_Phrase.ForeColor = System.Drawing.Color.Silver;
-            this.textBox_Phrase.Location = new System.Drawing.Point(111, 363);
+            this.textBox_Phrase.Location = new System.Drawing.Point(109, 363);
             this.textBox_Phrase.Name = "textBox_Phrase";
-            this.textBox_Phrase.Size = new System.Drawing.Size(246, 28);
+            this.textBox_Phrase.Size = new System.Drawing.Size(243, 32);
             this.textBox_Phrase.TabIndex = 96;
             // 
             // metroSetComboBox_Amiibo
@@ -788,11 +785,11 @@ namespace ACNHLab
             this.metroSetComboBox_Amiibo.FormattingEnabled = true;
             this.metroSetComboBox_Amiibo.IsDerivedStyle = true;
             this.metroSetComboBox_Amiibo.ItemHeight = 20;
-            this.metroSetComboBox_Amiibo.Location = new System.Drawing.Point(111, 323);
+            this.metroSetComboBox_Amiibo.Location = new System.Drawing.Point(109, 323);
             this.metroSetComboBox_Amiibo.Name = "metroSetComboBox_Amiibo";
             this.metroSetComboBox_Amiibo.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Amiibo.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Amiibo.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Amiibo.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Amiibo.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Amiibo.StyleManager = null;
             this.metroSetComboBox_Amiibo.TabIndex = 33;
@@ -806,7 +803,7 @@ namespace ACNHLab
             this.metroSetLabel_NPCColor.IsDerivedStyle = true;
             this.metroSetLabel_NPCColor.Location = new System.Drawing.Point(3, 1240);
             this.metroSetLabel_NPCColor.Name = "metroSetLabel_NPCColor";
-            this.metroSetLabel_NPCColor.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_NPCColor.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_NPCColor.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_NPCColor.StyleManager = null;
             this.metroSetLabel_NPCColor.TabIndex = 93;
@@ -822,7 +819,7 @@ namespace ACNHLab
             this.metroSetLabel_Melody2.IsDerivedStyle = true;
             this.metroSetLabel_Melody2.Location = new System.Drawing.Point(3, 1200);
             this.metroSetLabel_Melody2.Name = "metroSetLabel_Melody2";
-            this.metroSetLabel_Melody2.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Melody2.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Melody2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Melody2.StyleManager = null;
             this.metroSetLabel_Melody2.TabIndex = 92;
@@ -838,7 +835,7 @@ namespace ACNHLab
             this.metroSetLabel_ShirtID.IsDerivedStyle = true;
             this.metroSetLabel_ShirtID.Location = new System.Drawing.Point(3, 920);
             this.metroSetLabel_ShirtID.Name = "metroSetLabel_ShirtID";
-            this.metroSetLabel_ShirtID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_ShirtID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_ShirtID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_ShirtID.StyleManager = null;
             this.metroSetLabel_ShirtID.TabIndex = 77;
@@ -855,7 +852,7 @@ namespace ACNHLab
             this.metroSetLabel1.IsDerivedStyle = true;
             this.metroSetLabel1.Location = new System.Drawing.Point(3, 440);
             this.metroSetLabel1.Name = "metroSetLabel1";
-            this.metroSetLabel1.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel1.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel1.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel1.StyleManager = null;
             this.metroSetLabel1.TabIndex = 53;
@@ -872,7 +869,7 @@ namespace ACNHLab
             this.metroSetLabel_Catchphrase.IsDerivedStyle = true;
             this.metroSetLabel_Catchphrase.Location = new System.Drawing.Point(3, 360);
             this.metroSetLabel_Catchphrase.Name = "metroSetLabel_Catchphrase";
-            this.metroSetLabel_Catchphrase.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Catchphrase.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Catchphrase.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Catchphrase.StyleManager = null;
             this.metroSetLabel_Catchphrase.TabIndex = 46;
@@ -889,7 +886,7 @@ namespace ACNHLab
             this.metroSetLabel_AmiiboSeries.IsDerivedStyle = true;
             this.metroSetLabel_AmiiboSeries.Location = new System.Drawing.Point(3, 280);
             this.metroSetLabel_AmiiboSeries.Name = "metroSetLabel_AmiiboSeries";
-            this.metroSetLabel_AmiiboSeries.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_AmiiboSeries.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_AmiiboSeries.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_AmiiboSeries.StyleManager = null;
             this.metroSetLabel_AmiiboSeries.TabIndex = 44;
@@ -906,11 +903,11 @@ namespace ACNHLab
             this.tableLayoutPanel_Birthday.Controls.Add(this.numeric_Day, 0, 0);
             this.tableLayoutPanel_Birthday.Controls.Add(this.numeric_Month, 0, 0);
             this.tableLayoutPanel_Birthday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_Birthday.Location = new System.Drawing.Point(111, 243);
+            this.tableLayoutPanel_Birthday.Location = new System.Drawing.Point(109, 243);
             this.tableLayoutPanel_Birthday.Name = "tableLayoutPanel_Birthday";
             this.tableLayoutPanel_Birthday.RowCount = 1;
             this.tableLayoutPanel_Birthday.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_Birthday.Size = new System.Drawing.Size(246, 34);
+            this.tableLayoutPanel_Birthday.Size = new System.Drawing.Size(243, 34);
             this.tableLayoutPanel_Birthday.TabIndex = 43;
             // 
             // numeric_Day
@@ -920,7 +917,7 @@ namespace ACNHLab
             this.numeric_Day.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_Day.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_Day.Location = new System.Drawing.Point(126, 3);
+            this.numeric_Day.Location = new System.Drawing.Point(124, 3);
             this.numeric_Day.Maximum = new decimal(new int[] {
             31,
             0,
@@ -932,7 +929,7 @@ namespace ACNHLab
             0,
             0});
             this.numeric_Day.Name = "numeric_Day";
-            this.numeric_Day.Size = new System.Drawing.Size(117, 26);
+            this.numeric_Day.Size = new System.Drawing.Size(116, 30);
             this.numeric_Day.TabIndex = 30;
             this.numeric_Day.Value = new decimal(new int[] {
             31,
@@ -959,7 +956,7 @@ namespace ACNHLab
             0,
             0});
             this.numeric_Month.Name = "numeric_Month";
-            this.numeric_Month.Size = new System.Drawing.Size(117, 26);
+            this.numeric_Month.Size = new System.Drawing.Size(115, 30);
             this.numeric_Month.TabIndex = 29;
             this.numeric_Month.Value = new decimal(new int[] {
             12,
@@ -975,7 +972,7 @@ namespace ACNHLab
             this.metroSetLabel_Birthday.IsDerivedStyle = true;
             this.metroSetLabel_Birthday.Location = new System.Drawing.Point(3, 240);
             this.metroSetLabel_Birthday.Name = "metroSetLabel_Birthday";
-            this.metroSetLabel_Birthday.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Birthday.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Birthday.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Birthday.StyleManager = null;
             this.metroSetLabel_Birthday.TabIndex = 42;
@@ -1002,11 +999,11 @@ namespace ACNHLab
             this.metroSetComboBox_Hobby.FormattingEnabled = true;
             this.metroSetComboBox_Hobby.IsDerivedStyle = true;
             this.metroSetComboBox_Hobby.ItemHeight = 20;
-            this.metroSetComboBox_Hobby.Location = new System.Drawing.Point(111, 203);
+            this.metroSetComboBox_Hobby.Location = new System.Drawing.Point(109, 203);
             this.metroSetComboBox_Hobby.Name = "metroSetComboBox_Hobby";
             this.metroSetComboBox_Hobby.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Hobby.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Hobby.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Hobby.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Hobby.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Hobby.StyleManager = null;
             this.metroSetComboBox_Hobby.TabIndex = 41;
@@ -1021,7 +1018,7 @@ namespace ACNHLab
             this.metroSetLabel_Hobby.IsDerivedStyle = true;
             this.metroSetLabel_Hobby.Location = new System.Drawing.Point(3, 200);
             this.metroSetLabel_Hobby.Name = "metroSetLabel_Hobby";
-            this.metroSetLabel_Hobby.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Hobby.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Hobby.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Hobby.StyleManager = null;
             this.metroSetLabel_Hobby.TabIndex = 40;
@@ -1038,7 +1035,7 @@ namespace ACNHLab
             this.metroSetLabel_VillagerSpecies.IsDerivedStyle = true;
             this.metroSetLabel_VillagerSpecies.Location = new System.Drawing.Point(3, 40);
             this.metroSetLabel_VillagerSpecies.Name = "metroSetLabel_VillagerSpecies";
-            this.metroSetLabel_VillagerSpecies.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_VillagerSpecies.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_VillagerSpecies.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_VillagerSpecies.StyleManager = null;
             this.metroSetLabel_VillagerSpecies.TabIndex = 32;
@@ -1055,7 +1052,7 @@ namespace ACNHLab
             this.metroSetLabel_VillagerName.IsDerivedStyle = true;
             this.metroSetLabel_VillagerName.Location = new System.Drawing.Point(3, 0);
             this.metroSetLabel_VillagerName.Name = "metroSetLabel_VillagerName";
-            this.metroSetLabel_VillagerName.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_VillagerName.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_VillagerName.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_VillagerName.StyleManager = null;
             this.metroSetLabel_VillagerName.TabIndex = 26;
@@ -1072,7 +1069,7 @@ namespace ACNHLab
             this.metroSetLabel_VillagerID.IsDerivedStyle = true;
             this.metroSetLabel_VillagerID.Location = new System.Drawing.Point(3, 80);
             this.metroSetLabel_VillagerID.Name = "metroSetLabel_VillagerID";
-            this.metroSetLabel_VillagerID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_VillagerID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_VillagerID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_VillagerID.StyleManager = null;
             this.metroSetLabel_VillagerID.TabIndex = 31;
@@ -1087,14 +1084,14 @@ namespace ACNHLab
             this.numeric_VillagerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numeric_VillagerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_VillagerID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_VillagerID.Location = new System.Drawing.Point(111, 83);
+            this.numeric_VillagerID.Location = new System.Drawing.Point(109, 83);
             this.numeric_VillagerID.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.numeric_VillagerID.Name = "numeric_VillagerID";
-            this.numeric_VillagerID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_VillagerID.Size = new System.Drawing.Size(243, 30);
             this.numeric_VillagerID.TabIndex = 28;
             // 
             // tableLayoutPanel_VillagerSpeciesAdd
@@ -1105,11 +1102,11 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerSpeciesAdd.Controls.Add(this.button_AddSpecies, 1, 0);
             this.tableLayoutPanel_VillagerSpeciesAdd.Controls.Add(this.metroSetComboBox_VillagerSpecies, 0, 0);
             this.tableLayoutPanel_VillagerSpeciesAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_VillagerSpeciesAdd.Location = new System.Drawing.Point(111, 43);
+            this.tableLayoutPanel_VillagerSpeciesAdd.Location = new System.Drawing.Point(109, 43);
             this.tableLayoutPanel_VillagerSpeciesAdd.Name = "tableLayoutPanel_VillagerSpeciesAdd";
             this.tableLayoutPanel_VillagerSpeciesAdd.RowCount = 1;
             this.tableLayoutPanel_VillagerSpeciesAdd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_VillagerSpeciesAdd.Size = new System.Drawing.Size(246, 34);
+            this.tableLayoutPanel_VillagerSpeciesAdd.Size = new System.Drawing.Size(243, 34);
             this.tableLayoutPanel_VillagerSpeciesAdd.TabIndex = 34;
             // 
             // button_AddSpecies
@@ -1119,9 +1116,8 @@ namespace ACNHLab
             this.button_AddSpecies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_AddSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.button_AddSpecies.ForeColor = System.Drawing.Color.Silver;
-            this.button_AddSpecies.Image = global::ACNHLab.Properties.Resources.add;
             this.button_AddSpecies.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_AddSpecies.Location = new System.Drawing.Point(183, 3);
+            this.button_AddSpecies.Location = new System.Drawing.Point(180, 3);
             this.button_AddSpecies.Name = "button_AddSpecies";
             this.button_AddSpecies.Size = new System.Drawing.Size(60, 28);
             this.button_AddSpecies.TabIndex = 34;
@@ -1152,7 +1148,7 @@ namespace ACNHLab
             this.metroSetComboBox_VillagerSpecies.Name = "metroSetComboBox_VillagerSpecies";
             this.metroSetComboBox_VillagerSpecies.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_VillagerSpecies.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_VillagerSpecies.Size = new System.Drawing.Size(174, 26);
+            this.metroSetComboBox_VillagerSpecies.Size = new System.Drawing.Size(171, 26);
             this.metroSetComboBox_VillagerSpecies.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_VillagerSpecies.StyleManager = null;
             this.metroSetComboBox_VillagerSpecies.TabIndex = 33;
@@ -1167,7 +1163,7 @@ namespace ACNHLab
             this.metroSetLabel_VillagerGender.IsDerivedStyle = true;
             this.metroSetLabel_VillagerGender.Location = new System.Drawing.Point(3, 120);
             this.metroSetLabel_VillagerGender.Name = "metroSetLabel_VillagerGender";
-            this.metroSetLabel_VillagerGender.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_VillagerGender.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_VillagerGender.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_VillagerGender.StyleManager = null;
             this.metroSetLabel_VillagerGender.TabIndex = 35;
@@ -1184,7 +1180,7 @@ namespace ACNHLab
             this.metroSetLabel_Personality.IsDerivedStyle = true;
             this.metroSetLabel_Personality.Location = new System.Drawing.Point(3, 160);
             this.metroSetLabel_Personality.Name = "metroSetLabel_Personality";
-            this.metroSetLabel_Personality.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Personality.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Personality.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Personality.StyleManager = null;
             this.metroSetLabel_Personality.TabIndex = 37;
@@ -1211,11 +1207,11 @@ namespace ACNHLab
             this.metroSetComboBox_Personality.FormattingEnabled = true;
             this.metroSetComboBox_Personality.IsDerivedStyle = true;
             this.metroSetComboBox_Personality.ItemHeight = 20;
-            this.metroSetComboBox_Personality.Location = new System.Drawing.Point(111, 163);
+            this.metroSetComboBox_Personality.Location = new System.Drawing.Point(109, 163);
             this.metroSetComboBox_Personality.Name = "metroSetComboBox_Personality";
             this.metroSetComboBox_Personality.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Personality.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Personality.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Personality.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Personality.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Personality.StyleManager = null;
             this.metroSetComboBox_Personality.TabIndex = 38;
@@ -1230,12 +1226,12 @@ namespace ACNHLab
             this.tableLayoutPanel_VillagerGender.Controls.Add(this.metroSetRadioButton_TalkType2, 1, 0);
             this.tableLayoutPanel_VillagerGender.Controls.Add(this.metroSetRadioButton_TalkType1, 0, 0);
             this.tableLayoutPanel_VillagerGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_VillagerGender.Location = new System.Drawing.Point(111, 123);
+            this.tableLayoutPanel_VillagerGender.Location = new System.Drawing.Point(109, 123);
             this.tableLayoutPanel_VillagerGender.Name = "tableLayoutPanel_VillagerGender";
             this.tableLayoutPanel_VillagerGender.RowCount = 1;
             this.tableLayoutPanel_VillagerGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_VillagerGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel_VillagerGender.Size = new System.Drawing.Size(246, 34);
+            this.tableLayoutPanel_VillagerGender.Size = new System.Drawing.Size(243, 34);
             this.tableLayoutPanel_VillagerGender.TabIndex = 39;
             // 
             // metroSetRadioButton_TalkType2
@@ -1250,9 +1246,9 @@ namespace ACNHLab
             this.metroSetRadioButton_TalkType2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.metroSetRadioButton_TalkType2.Group = 0;
             this.metroSetRadioButton_TalkType2.IsDerivedStyle = true;
-            this.metroSetRadioButton_TalkType2.Location = new System.Drawing.Point(126, 3);
+            this.metroSetRadioButton_TalkType2.Location = new System.Drawing.Point(124, 3);
             this.metroSetRadioButton_TalkType2.Name = "metroSetRadioButton_TalkType2";
-            this.metroSetRadioButton_TalkType2.Size = new System.Drawing.Size(117, 17);
+            this.metroSetRadioButton_TalkType2.Size = new System.Drawing.Size(116, 17);
             this.metroSetRadioButton_TalkType2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetRadioButton_TalkType2.StyleManager = null;
             this.metroSetRadioButton_TalkType2.TabIndex = 1;
@@ -1274,7 +1270,7 @@ namespace ACNHLab
             this.metroSetRadioButton_TalkType1.IsDerivedStyle = true;
             this.metroSetRadioButton_TalkType1.Location = new System.Drawing.Point(3, 3);
             this.metroSetRadioButton_TalkType1.Name = "metroSetRadioButton_TalkType1";
-            this.metroSetRadioButton_TalkType1.Size = new System.Drawing.Size(117, 17);
+            this.metroSetRadioButton_TalkType1.Size = new System.Drawing.Size(115, 17);
             this.metroSetRadioButton_TalkType1.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetRadioButton_TalkType1.StyleManager = null;
             this.metroSetRadioButton_TalkType1.TabIndex = 0;
@@ -1290,7 +1286,7 @@ namespace ACNHLab
             this.metroSetLabel_ClothesType.IsDerivedStyle = true;
             this.metroSetLabel_ClothesType.Location = new System.Drawing.Point(3, 400);
             this.metroSetLabel_ClothesType.Name = "metroSetLabel_ClothesType";
-            this.metroSetLabel_ClothesType.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_ClothesType.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_ClothesType.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_ClothesType.StyleManager = null;
             this.metroSetLabel_ClothesType.TabIndex = 51;
@@ -1317,11 +1313,11 @@ namespace ACNHLab
             this.metroSetComboBox_ClothesType.FormattingEnabled = true;
             this.metroSetComboBox_ClothesType.IsDerivedStyle = true;
             this.metroSetComboBox_ClothesType.ItemHeight = 20;
-            this.metroSetComboBox_ClothesType.Location = new System.Drawing.Point(111, 403);
+            this.metroSetComboBox_ClothesType.Location = new System.Drawing.Point(109, 403);
             this.metroSetComboBox_ClothesType.Name = "metroSetComboBox_ClothesType";
             this.metroSetComboBox_ClothesType.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_ClothesType.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_ClothesType.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_ClothesType.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_ClothesType.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_ClothesType.StyleManager = null;
             this.metroSetComboBox_ClothesType.TabIndex = 52;
@@ -1346,11 +1342,11 @@ namespace ACNHLab
             this.metroSetComboBox_Style.FormattingEnabled = true;
             this.metroSetComboBox_Style.IsDerivedStyle = true;
             this.metroSetComboBox_Style.ItemHeight = 20;
-            this.metroSetComboBox_Style.Location = new System.Drawing.Point(111, 443);
+            this.metroSetComboBox_Style.Location = new System.Drawing.Point(109, 443);
             this.metroSetComboBox_Style.Name = "metroSetComboBox_Style";
             this.metroSetComboBox_Style.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Style.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Style.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Style.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Style.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Style.StyleManager = null;
             this.metroSetComboBox_Style.TabIndex = 54;
@@ -1365,7 +1361,7 @@ namespace ACNHLab
             this.metroSetLabel_Style2.IsDerivedStyle = true;
             this.metroSetLabel_Style2.Location = new System.Drawing.Point(3, 480);
             this.metroSetLabel_Style2.Name = "metroSetLabel_Style2";
-            this.metroSetLabel_Style2.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Style2.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Style2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Style2.StyleManager = null;
             this.metroSetLabel_Style2.TabIndex = 55;
@@ -1392,11 +1388,11 @@ namespace ACNHLab
             this.metroSetComboBox_Style2.FormattingEnabled = true;
             this.metroSetComboBox_Style2.IsDerivedStyle = true;
             this.metroSetComboBox_Style2.ItemHeight = 20;
-            this.metroSetComboBox_Style2.Location = new System.Drawing.Point(111, 483);
+            this.metroSetComboBox_Style2.Location = new System.Drawing.Point(109, 483);
             this.metroSetComboBox_Style2.Name = "metroSetComboBox_Style2";
             this.metroSetComboBox_Style2.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Style2.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Style2.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Style2.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Style2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Style2.StyleManager = null;
             this.metroSetComboBox_Style2.TabIndex = 56;
@@ -1411,7 +1407,7 @@ namespace ACNHLab
             this.metroSetLabel_Unknown1.IsDerivedStyle = true;
             this.metroSetLabel_Unknown1.Location = new System.Drawing.Point(3, 520);
             this.metroSetLabel_Unknown1.Name = "metroSetLabel_Unknown1";
-            this.metroSetLabel_Unknown1.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Unknown1.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Unknown1.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Unknown1.StyleManager = null;
             this.metroSetLabel_Unknown1.TabIndex = 57;
@@ -1438,11 +1434,11 @@ namespace ACNHLab
             this.metroSetComboBox_Unknown1.FormattingEnabled = true;
             this.metroSetComboBox_Unknown1.IsDerivedStyle = true;
             this.metroSetComboBox_Unknown1.ItemHeight = 20;
-            this.metroSetComboBox_Unknown1.Location = new System.Drawing.Point(111, 523);
+            this.metroSetComboBox_Unknown1.Location = new System.Drawing.Point(109, 523);
             this.metroSetComboBox_Unknown1.Name = "metroSetComboBox_Unknown1";
             this.metroSetComboBox_Unknown1.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Unknown1.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Unknown1.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Unknown1.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Unknown1.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Unknown1.StyleManager = null;
             this.metroSetComboBox_Unknown1.TabIndex = 58;
@@ -1457,7 +1453,7 @@ namespace ACNHLab
             this.metroSetLabel_SocialType.IsDerivedStyle = true;
             this.metroSetLabel_SocialType.Location = new System.Drawing.Point(3, 560);
             this.metroSetLabel_SocialType.Name = "metroSetLabel_SocialType";
-            this.metroSetLabel_SocialType.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_SocialType.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_SocialType.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_SocialType.StyleManager = null;
             this.metroSetLabel_SocialType.TabIndex = 59;
@@ -1484,11 +1480,11 @@ namespace ACNHLab
             this.metroSetComboBox_SocialType.FormattingEnabled = true;
             this.metroSetComboBox_SocialType.IsDerivedStyle = true;
             this.metroSetComboBox_SocialType.ItemHeight = 20;
-            this.metroSetComboBox_SocialType.Location = new System.Drawing.Point(111, 563);
+            this.metroSetComboBox_SocialType.Location = new System.Drawing.Point(109, 563);
             this.metroSetComboBox_SocialType.Name = "metroSetComboBox_SocialType";
             this.metroSetComboBox_SocialType.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_SocialType.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_SocialType.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_SocialType.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_SocialType.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_SocialType.StyleManager = null;
             this.metroSetComboBox_SocialType.TabIndex = 60;
@@ -1513,11 +1509,11 @@ namespace ACNHLab
             this.metroSetComboBox_SingPause.FormattingEnabled = true;
             this.metroSetComboBox_SingPause.IsDerivedStyle = true;
             this.metroSetComboBox_SingPause.ItemHeight = 20;
-            this.metroSetComboBox_SingPause.Location = new System.Drawing.Point(111, 603);
+            this.metroSetComboBox_SingPause.Location = new System.Drawing.Point(109, 603);
             this.metroSetComboBox_SingPause.Name = "metroSetComboBox_SingPause";
             this.metroSetComboBox_SingPause.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_SingPause.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_SingPause.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_SingPause.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_SingPause.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_SingPause.StyleManager = null;
             this.metroSetComboBox_SingPause.TabIndex = 62;
@@ -1532,7 +1528,7 @@ namespace ACNHLab
             this.metroSetLabel_SingPause.IsDerivedStyle = true;
             this.metroSetLabel_SingPause.Location = new System.Drawing.Point(3, 600);
             this.metroSetLabel_SingPause.Name = "metroSetLabel_SingPause";
-            this.metroSetLabel_SingPause.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_SingPause.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_SingPause.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_SingPause.StyleManager = null;
             this.metroSetLabel_SingPause.TabIndex = 61;
@@ -1559,11 +1555,11 @@ namespace ACNHLab
             this.metroSetComboBox_SingRhythm.FormattingEnabled = true;
             this.metroSetComboBox_SingRhythm.IsDerivedStyle = true;
             this.metroSetComboBox_SingRhythm.ItemHeight = 20;
-            this.metroSetComboBox_SingRhythm.Location = new System.Drawing.Point(111, 643);
+            this.metroSetComboBox_SingRhythm.Location = new System.Drawing.Point(109, 643);
             this.metroSetComboBox_SingRhythm.Name = "metroSetComboBox_SingRhythm";
             this.metroSetComboBox_SingRhythm.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_SingRhythm.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_SingRhythm.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_SingRhythm.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_SingRhythm.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_SingRhythm.StyleManager = null;
             this.metroSetComboBox_SingRhythm.TabIndex = 64;
@@ -1578,7 +1574,7 @@ namespace ACNHLab
             this.metroSetLabel_SingRhythm.IsDerivedStyle = true;
             this.metroSetLabel_SingRhythm.Location = new System.Drawing.Point(3, 640);
             this.metroSetLabel_SingRhythm.Name = "metroSetLabel_SingRhythm";
-            this.metroSetLabel_SingRhythm.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_SingRhythm.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_SingRhythm.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_SingRhythm.StyleManager = null;
             this.metroSetLabel_SingRhythm.TabIndex = 63;
@@ -1594,7 +1590,7 @@ namespace ACNHLab
             this.metroSetLabel_PhotoID.IsDerivedStyle = true;
             this.metroSetLabel_PhotoID.Location = new System.Drawing.Point(3, 680);
             this.metroSetLabel_PhotoID.Name = "metroSetLabel_PhotoID";
-            this.metroSetLabel_PhotoID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_PhotoID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_PhotoID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_PhotoID.StyleManager = null;
             this.metroSetLabel_PhotoID.TabIndex = 66;
@@ -1610,14 +1606,14 @@ namespace ACNHLab
             this.numeric_PhotoID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_PhotoID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_PhotoID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_PhotoID.Location = new System.Drawing.Point(111, 683);
+            this.numeric_PhotoID.Location = new System.Drawing.Point(109, 683);
             this.numeric_PhotoID.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.numeric_PhotoID.Name = "numeric_PhotoID";
-            this.numeric_PhotoID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_PhotoID.Size = new System.Drawing.Size(243, 30);
             this.numeric_PhotoID.TabIndex = 65;
             // 
             // metroSetLabel_FloorType
@@ -1627,7 +1623,7 @@ namespace ACNHLab
             this.metroSetLabel_FloorType.IsDerivedStyle = true;
             this.metroSetLabel_FloorType.Location = new System.Drawing.Point(3, 720);
             this.metroSetLabel_FloorType.Name = "metroSetLabel_FloorType";
-            this.metroSetLabel_FloorType.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_FloorType.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_FloorType.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_FloorType.StyleManager = null;
             this.metroSetLabel_FloorType.TabIndex = 67;
@@ -1642,14 +1638,14 @@ namespace ACNHLab
             this.numeric_FloorType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_FloorType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_FloorType.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_FloorType.Location = new System.Drawing.Point(111, 723);
+            this.numeric_FloorType.Location = new System.Drawing.Point(109, 723);
             this.numeric_FloorType.Maximum = new decimal(new int[] {
             54,
             0,
             0,
             0});
             this.numeric_FloorType.Name = "numeric_FloorType";
-            this.numeric_FloorType.Size = new System.Drawing.Size(246, 26);
+            this.numeric_FloorType.Size = new System.Drawing.Size(243, 30);
             this.numeric_FloorType.TabIndex = 68;
             // 
             // metroSetLabel_PosterID
@@ -1659,7 +1655,7 @@ namespace ACNHLab
             this.metroSetLabel_PosterID.IsDerivedStyle = true;
             this.metroSetLabel_PosterID.Location = new System.Drawing.Point(3, 760);
             this.metroSetLabel_PosterID.Name = "metroSetLabel_PosterID";
-            this.metroSetLabel_PosterID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_PosterID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_PosterID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_PosterID.StyleManager = null;
             this.metroSetLabel_PosterID.TabIndex = 70;
@@ -1674,14 +1670,14 @@ namespace ACNHLab
             this.numeric_PosterID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_PosterID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_PosterID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_PosterID.Location = new System.Drawing.Point(111, 763);
+            this.numeric_PosterID.Location = new System.Drawing.Point(109, 763);
             this.numeric_PosterID.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.numeric_PosterID.Name = "numeric_PosterID";
-            this.numeric_PosterID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_PosterID.Size = new System.Drawing.Size(243, 30);
             this.numeric_PosterID.TabIndex = 69;
             // 
             // metroSetLabel_RainHatID
@@ -1691,7 +1687,7 @@ namespace ACNHLab
             this.metroSetLabel_RainHatID.IsDerivedStyle = true;
             this.metroSetLabel_RainHatID.Location = new System.Drawing.Point(3, 800);
             this.metroSetLabel_RainHatID.Name = "metroSetLabel_RainHatID";
-            this.metroSetLabel_RainHatID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_RainHatID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_RainHatID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_RainHatID.StyleManager = null;
             this.metroSetLabel_RainHatID.TabIndex = 71;
@@ -1706,14 +1702,14 @@ namespace ACNHLab
             this.numeric_RainHatID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_RainHatID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_RainHatID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_RainHatID.Location = new System.Drawing.Point(111, 803);
+            this.numeric_RainHatID.Location = new System.Drawing.Point(109, 803);
             this.numeric_RainHatID.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.numeric_RainHatID.Name = "numeric_RainHatID";
-            this.numeric_RainHatID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_RainHatID.Size = new System.Drawing.Size(243, 30);
             this.numeric_RainHatID.TabIndex = 72;
             // 
             // metroSetLabel_RainWearID
@@ -1723,7 +1719,7 @@ namespace ACNHLab
             this.metroSetLabel_RainWearID.IsDerivedStyle = true;
             this.metroSetLabel_RainWearID.Location = new System.Drawing.Point(3, 840);
             this.metroSetLabel_RainWearID.Name = "metroSetLabel_RainWearID";
-            this.metroSetLabel_RainWearID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_RainWearID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_RainWearID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_RainWearID.StyleManager = null;
             this.metroSetLabel_RainWearID.TabIndex = 73;
@@ -1738,14 +1734,14 @@ namespace ACNHLab
             this.numeric_RainWearID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_RainWearID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_RainWearID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_RainWearID.Location = new System.Drawing.Point(111, 843);
+            this.numeric_RainWearID.Location = new System.Drawing.Point(109, 843);
             this.numeric_RainWearID.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.numeric_RainWearID.Name = "numeric_RainWearID";
-            this.numeric_RainWearID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_RainWearID.Size = new System.Drawing.Size(243, 30);
             this.numeric_RainWearID.TabIndex = 74;
             // 
             // metroSetLabel_PhonePattern
@@ -1755,7 +1751,7 @@ namespace ACNHLab
             this.metroSetLabel_PhonePattern.IsDerivedStyle = true;
             this.metroSetLabel_PhonePattern.Location = new System.Drawing.Point(3, 880);
             this.metroSetLabel_PhonePattern.Name = "metroSetLabel_PhonePattern";
-            this.metroSetLabel_PhonePattern.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_PhonePattern.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_PhonePattern.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_PhonePattern.StyleManager = null;
             this.metroSetLabel_PhonePattern.TabIndex = 75;
@@ -1770,14 +1766,14 @@ namespace ACNHLab
             this.numeric_PhonePattern.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_PhonePattern.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_PhonePattern.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_PhonePattern.Location = new System.Drawing.Point(111, 883);
+            this.numeric_PhonePattern.Location = new System.Drawing.Point(109, 883);
             this.numeric_PhonePattern.Maximum = new decimal(new int[] {
             7,
             0,
             0,
             0});
             this.numeric_PhonePattern.Name = "numeric_PhonePattern";
-            this.numeric_PhonePattern.Size = new System.Drawing.Size(246, 26);
+            this.numeric_PhonePattern.Size = new System.Drawing.Size(243, 30);
             this.numeric_PhonePattern.TabIndex = 76;
             // 
             // numeric_ShirtID
@@ -1786,14 +1782,14 @@ namespace ACNHLab
             this.numeric_ShirtID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_ShirtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_ShirtID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_ShirtID.Location = new System.Drawing.Point(111, 923);
+            this.numeric_ShirtID.Location = new System.Drawing.Point(109, 923);
             this.numeric_ShirtID.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.numeric_ShirtID.Name = "numeric_ShirtID";
-            this.numeric_ShirtID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_ShirtID.Size = new System.Drawing.Size(243, 30);
             this.numeric_ShirtID.TabIndex = 78;
             // 
             // metroSetLabel_UmbrellaID
@@ -1803,7 +1799,7 @@ namespace ACNHLab
             this.metroSetLabel_UmbrellaID.IsDerivedStyle = true;
             this.metroSetLabel_UmbrellaID.Location = new System.Drawing.Point(3, 960);
             this.metroSetLabel_UmbrellaID.Name = "metroSetLabel_UmbrellaID";
-            this.metroSetLabel_UmbrellaID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_UmbrellaID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_UmbrellaID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_UmbrellaID.StyleManager = null;
             this.metroSetLabel_UmbrellaID.TabIndex = 79;
@@ -1818,14 +1814,14 @@ namespace ACNHLab
             this.numeric_UmbrellaID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_UmbrellaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_UmbrellaID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_UmbrellaID.Location = new System.Drawing.Point(111, 963);
+            this.numeric_UmbrellaID.Location = new System.Drawing.Point(109, 963);
             this.numeric_UmbrellaID.Maximum = new decimal(new int[] {
             99999,
             0,
             0,
             0});
             this.numeric_UmbrellaID.Name = "numeric_UmbrellaID";
-            this.numeric_UmbrellaID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_UmbrellaID.Size = new System.Drawing.Size(243, 30);
             this.numeric_UmbrellaID.TabIndex = 80;
             // 
             // metroSetComboBox_FaveColor
@@ -1846,11 +1842,11 @@ namespace ACNHLab
             this.metroSetComboBox_FaveColor.FormattingEnabled = true;
             this.metroSetComboBox_FaveColor.IsDerivedStyle = true;
             this.metroSetComboBox_FaveColor.ItemHeight = 20;
-            this.metroSetComboBox_FaveColor.Location = new System.Drawing.Point(111, 1003);
+            this.metroSetComboBox_FaveColor.Location = new System.Drawing.Point(109, 1003);
             this.metroSetComboBox_FaveColor.Name = "metroSetComboBox_FaveColor";
             this.metroSetComboBox_FaveColor.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_FaveColor.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_FaveColor.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_FaveColor.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_FaveColor.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_FaveColor.StyleManager = null;
             this.metroSetComboBox_FaveColor.TabIndex = 82;
@@ -1864,7 +1860,7 @@ namespace ACNHLab
             this.metroSetLabel_FaveColor.IsDerivedStyle = true;
             this.metroSetLabel_FaveColor.Location = new System.Drawing.Point(3, 1000);
             this.metroSetLabel_FaveColor.Name = "metroSetLabel_FaveColor";
-            this.metroSetLabel_FaveColor.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_FaveColor.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_FaveColor.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_FaveColor.StyleManager = null;
             this.metroSetLabel_FaveColor.TabIndex = 81;
@@ -1891,11 +1887,11 @@ namespace ACNHLab
             this.metroSetComboBox_FaveColor2.FormattingEnabled = true;
             this.metroSetComboBox_FaveColor2.IsDerivedStyle = true;
             this.metroSetComboBox_FaveColor2.ItemHeight = 20;
-            this.metroSetComboBox_FaveColor2.Location = new System.Drawing.Point(111, 1043);
+            this.metroSetComboBox_FaveColor2.Location = new System.Drawing.Point(109, 1043);
             this.metroSetComboBox_FaveColor2.Name = "metroSetComboBox_FaveColor2";
             this.metroSetComboBox_FaveColor2.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_FaveColor2.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_FaveColor2.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_FaveColor2.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_FaveColor2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_FaveColor2.StyleManager = null;
             this.metroSetComboBox_FaveColor2.TabIndex = 84;
@@ -1909,7 +1905,7 @@ namespace ACNHLab
             this.metroSetLabel_FaveColor2.IsDerivedStyle = true;
             this.metroSetLabel_FaveColor2.Location = new System.Drawing.Point(3, 1040);
             this.metroSetLabel_FaveColor2.Name = "metroSetLabel_FaveColor2";
-            this.metroSetLabel_FaveColor2.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_FaveColor2.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_FaveColor2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_FaveColor2.StyleManager = null;
             this.metroSetLabel_FaveColor2.TabIndex = 83;
@@ -1925,7 +1921,7 @@ namespace ACNHLab
             this.metroSetLabel_RemakeID.IsDerivedStyle = true;
             this.metroSetLabel_RemakeID.Location = new System.Drawing.Point(3, 1080);
             this.metroSetLabel_RemakeID.Name = "metroSetLabel_RemakeID";
-            this.metroSetLabel_RemakeID.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_RemakeID.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_RemakeID.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_RemakeID.StyleManager = null;
             this.metroSetLabel_RemakeID.TabIndex = 85;
@@ -1941,14 +1937,14 @@ namespace ACNHLab
             this.numeric_RemakeID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_RemakeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_RemakeID.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_RemakeID.Location = new System.Drawing.Point(111, 1083);
+            this.numeric_RemakeID.Location = new System.Drawing.Point(109, 1083);
             this.numeric_RemakeID.Maximum = new decimal(new int[] {
             7,
             0,
             0,
             0});
             this.numeric_RemakeID.Name = "numeric_RemakeID";
-            this.numeric_RemakeID.Size = new System.Drawing.Size(246, 26);
+            this.numeric_RemakeID.Size = new System.Drawing.Size(243, 30);
             this.numeric_RemakeID.TabIndex = 86;
             // 
             // metroSetLabel_NoteLength
@@ -1958,7 +1954,7 @@ namespace ACNHLab
             this.metroSetLabel_NoteLength.IsDerivedStyle = true;
             this.metroSetLabel_NoteLength.Location = new System.Drawing.Point(3, 1120);
             this.metroSetLabel_NoteLength.Name = "metroSetLabel_NoteLength";
-            this.metroSetLabel_NoteLength.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_NoteLength.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_NoteLength.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_NoteLength.StyleManager = null;
             this.metroSetLabel_NoteLength.TabIndex = 87;
@@ -1974,14 +1970,14 @@ namespace ACNHLab
             this.numeric_NoteLength.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_NoteLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_NoteLength.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_NoteLength.Location = new System.Drawing.Point(111, 1123);
+            this.numeric_NoteLength.Location = new System.Drawing.Point(109, 1123);
             this.numeric_NoteLength.Maximum = new decimal(new int[] {
             6,
             0,
             0,
             0});
             this.numeric_NoteLength.Name = "numeric_NoteLength";
-            this.numeric_NoteLength.Size = new System.Drawing.Size(246, 26);
+            this.numeric_NoteLength.Size = new System.Drawing.Size(243, 30);
             this.numeric_NoteLength.TabIndex = 88;
             this.numeric_NoteLength.Value = new decimal(new int[] {
             3,
@@ -2007,11 +2003,11 @@ namespace ACNHLab
             this.metroSetComboBox_Melody.FormattingEnabled = true;
             this.metroSetComboBox_Melody.IsDerivedStyle = true;
             this.metroSetComboBox_Melody.ItemHeight = 20;
-            this.metroSetComboBox_Melody.Location = new System.Drawing.Point(111, 1163);
+            this.metroSetComboBox_Melody.Location = new System.Drawing.Point(109, 1163);
             this.metroSetComboBox_Melody.Name = "metroSetComboBox_Melody";
             this.metroSetComboBox_Melody.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Melody.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Melody.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Melody.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Melody.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Melody.StyleManager = null;
             this.metroSetComboBox_Melody.TabIndex = 90;
@@ -2025,7 +2021,7 @@ namespace ACNHLab
             this.metroSetLabel_Melody.IsDerivedStyle = true;
             this.metroSetLabel_Melody.Location = new System.Drawing.Point(3, 1160);
             this.metroSetLabel_Melody.Name = "metroSetLabel_Melody";
-            this.metroSetLabel_Melody.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel_Melody.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel_Melody.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel_Melody.StyleManager = null;
             this.metroSetLabel_Melody.TabIndex = 89;
@@ -2052,11 +2048,11 @@ namespace ACNHLab
             this.metroSetComboBox_Melody2.FormattingEnabled = true;
             this.metroSetComboBox_Melody2.IsDerivedStyle = true;
             this.metroSetComboBox_Melody2.ItemHeight = 20;
-            this.metroSetComboBox_Melody2.Location = new System.Drawing.Point(111, 1203);
+            this.metroSetComboBox_Melody2.Location = new System.Drawing.Point(109, 1203);
             this.metroSetComboBox_Melody2.Name = "metroSetComboBox_Melody2";
             this.metroSetComboBox_Melody2.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.metroSetComboBox_Melody2.SelectedItemForeColor = System.Drawing.Color.White;
-            this.metroSetComboBox_Melody2.Size = new System.Drawing.Size(246, 26);
+            this.metroSetComboBox_Melody2.Size = new System.Drawing.Size(243, 26);
             this.metroSetComboBox_Melody2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetComboBox_Melody2.StyleManager = null;
             this.metroSetComboBox_Melody2.TabIndex = 91;
@@ -2070,14 +2066,14 @@ namespace ACNHLab
             this.numeric_NPCColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numeric_NPCColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.numeric_NPCColor.ForeColor = System.Drawing.Color.Silver;
-            this.numeric_NPCColor.Location = new System.Drawing.Point(111, 1243);
+            this.numeric_NPCColor.Location = new System.Drawing.Point(109, 1243);
             this.numeric_NPCColor.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.numeric_NPCColor.Name = "numeric_NPCColor";
-            this.numeric_NPCColor.Size = new System.Drawing.Size(246, 26);
+            this.numeric_NPCColor.Size = new System.Drawing.Size(243, 30);
             this.numeric_NPCColor.TabIndex = 94;
             this.numeric_NPCColor.Value = new decimal(new int[] {
             72,
@@ -2092,9 +2088,9 @@ namespace ACNHLab
             this.textBox_Name.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.textBox_Name.ForeColor = System.Drawing.Color.Silver;
-            this.textBox_Name.Location = new System.Drawing.Point(111, 3);
+            this.textBox_Name.Location = new System.Drawing.Point(109, 3);
             this.textBox_Name.Name = "textBox_Name";
-            this.textBox_Name.Size = new System.Drawing.Size(246, 28);
+            this.textBox_Name.Size = new System.Drawing.Size(243, 32);
             this.textBox_Name.TabIndex = 95;
             // 
             // metroSetLabel2
@@ -2104,7 +2100,7 @@ namespace ACNHLab
             this.metroSetLabel2.IsDerivedStyle = true;
             this.metroSetLabel2.Location = new System.Drawing.Point(3, 320);
             this.metroSetLabel2.Name = "metroSetLabel2";
-            this.metroSetLabel2.Size = new System.Drawing.Size(102, 40);
+            this.metroSetLabel2.Size = new System.Drawing.Size(100, 40);
             this.metroSetLabel2.Style = MetroSet_UI.Enums.Style.Dark;
             this.metroSetLabel2.StyleManager = null;
             this.metroSetLabel2.TabIndex = 97;
@@ -2135,6 +2131,7 @@ namespace ACNHLab
             // 
             this.menuStrip_Main.AutoSize = false;
             this.menuStrip_Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.menuStrip_Main.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip_Main.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -2156,20 +2153,18 @@ namespace ACNHLab
             this.settingsToolStripMenuItem,
             this.exportToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.fileToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.disk;
             this.fileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.newProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.newProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.asterisk_yellow;
             this.newProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(247, 34);
             this.newProjectToolStripMenuItem.Text = "New Project";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.NewProject_Click);
             // 
@@ -2177,10 +2172,9 @@ namespace ACNHLab
             // 
             this.loadProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.loadProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.loadProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.folder_page;
             this.loadProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
-            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(247, 34);
             this.loadProjectToolStripMenuItem.Text = "Load Project";
             this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.LoadProject_Click);
             // 
@@ -2189,10 +2183,9 @@ namespace ACNHLab
             this.saveProjectToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.saveProjectToolStripMenuItem.Enabled = false;
             this.saveProjectToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.saveProjectToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.disk_multiple;
             this.saveProjectToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.saveProjectToolStripMenuItem.Name = "saveProjectToolStripMenuItem";
-            this.saveProjectToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.saveProjectToolStripMenuItem.Size = new System.Drawing.Size(247, 34);
             this.saveProjectToolStripMenuItem.Text = "Save Project As...";
             this.saveProjectToolStripMenuItem.Click += new System.EventHandler(this.SaveProjectAs_Click);
             // 
@@ -2200,10 +2193,9 @@ namespace ACNHLab
             // 
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.settingsToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.table_gear;
             this.settingsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(247, 34);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.Settings_Click);
             // 
@@ -2211,18 +2203,16 @@ namespace ACNHLab
             // 
             this.exportToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.exportToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.exportToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.package_go;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(247, 34);
             this.exportToolStripMenuItem.Text = "Export Mod";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportMod_Click);
             // 
             // writeAllChangesToolStripMenuItem
             // 
             this.writeAllChangesToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.writeAllChangesToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.application_go;
             this.writeAllChangesToolStripMenuItem.Name = "writeAllChangesToolStripMenuItem";
-            this.writeAllChangesToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
+            this.writeAllChangesToolStripMenuItem.Size = new System.Drawing.Size(168, 29);
             this.writeAllChangesToolStripMenuItem.Text = "Write All Changes";
             this.writeAllChangesToolStripMenuItem.Click += new System.EventHandler(this.WriteAllChanges_Click);
             // 
@@ -2232,18 +2222,16 @@ namespace ACNHLab
             this.eventEditorToolStripMenuItem,
             this.nHSEToolStripMenuItem});
             this.toolsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.toolsToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.application_xp_terminal;
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // eventEditorToolStripMenuItem
             // 
             this.eventEditorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.eventEditorToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.eventEditorToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.pitfall;
             this.eventEditorToolStripMenuItem.Name = "eventEditorToolStripMenuItem";
-            this.eventEditorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.eventEditorToolStripMenuItem.Size = new System.Drawing.Size(209, 34);
             this.eventEditorToolStripMenuItem.Text = "Event Editor";
             this.eventEditorToolStripMenuItem.Click += new System.EventHandler(this.EventEditor_Click);
             // 
@@ -2251,9 +2239,8 @@ namespace ACNHLab
             // 
             this.nHSEToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.nHSEToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.nHSEToolStripMenuItem.Image = global::ACNHLab.Properties.Resources.leaf;
             this.nHSEToolStripMenuItem.Name = "nHSEToolStripMenuItem";
-            this.nHSEToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nHSEToolStripMenuItem.Size = new System.Drawing.Size(209, 34);
             this.nHSEToolStripMenuItem.Text = "NHSE";
             this.nHSEToolStripMenuItem.Click += new System.EventHandler(this.NHSE_Click);
             // 
@@ -2275,7 +2262,7 @@ namespace ACNHLab
             this.ToolStripMenuItem_ExpandProj,
             this.ToolStripMenuItem_CollapseProj});
             this.contextMenuStrip_Project.Name = "contextMenuStrip_Game";
-            this.contextMenuStrip_Project.Size = new System.Drawing.Size(161, 364);
+            this.contextMenuStrip_Project.Size = new System.Drawing.Size(184, 364);
             // 
             // ToolStripMenuItem_New
             // 
@@ -2287,7 +2274,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_NewMsg,
             this.ToolStripMenuItem_NewTxt});
             this.ToolStripMenuItem_New.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_New.Image = global::ACNHLab.Properties.Resources.asterisk_yellow;
             this.ToolStripMenuItem_New.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_New.Name = "ToolStripMenuItem_New";
             this.ToolStripMenuItem_New.Size = new System.Drawing.Size(160, 30);
@@ -2297,40 +2283,36 @@ namespace ACNHLab
             // 
             this.ToolStripMenuItem_NewFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_NewFolder.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewFolder.Image = global::ACNHLab.Properties.Resources.folder_add;
             this.ToolStripMenuItem_NewFolder.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_NewFolder.Name = "ToolStripMenuItem_NewFolder";
-            this.ToolStripMenuItem_NewFolder.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewFolder.Size = new System.Drawing.Size(229, 34);
             this.ToolStripMenuItem_NewFolder.Text = "Folder";
             // 
             // ToolStripMenuItem_NewFlow
             // 
             this.ToolStripMenuItem_NewFlow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_NewFlow.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewFlow.Image = global::ACNHLab.Properties.Resources.script_add;
             this.ToolStripMenuItem_NewFlow.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_NewFlow.Name = "ToolStripMenuItem_NewFlow";
-            this.ToolStripMenuItem_NewFlow.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewFlow.Size = new System.Drawing.Size(229, 34);
             this.ToolStripMenuItem_NewFlow.Text = "FlowScript";
             // 
             // ToolStripMenuItem_NewMsg
             // 
             this.ToolStripMenuItem_NewMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_NewMsg.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewMsg.Image = global::ACNHLab.Properties.Resources.page_add;
             this.ToolStripMenuItem_NewMsg.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_NewMsg.Name = "ToolStripMenuItem_NewMsg";
-            this.ToolStripMenuItem_NewMsg.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewMsg.Size = new System.Drawing.Size(229, 34);
             this.ToolStripMenuItem_NewMsg.Text = "MessageScript";
             // 
             // ToolStripMenuItem_NewTxt
             // 
             this.ToolStripMenuItem_NewTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_NewTxt.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_NewTxt.Image = global::ACNHLab.Properties.Resources.page_white_add;
             this.ToolStripMenuItem_NewTxt.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_NewTxt.Name = "ToolStripMenuItem_NewTxt";
-            this.ToolStripMenuItem_NewTxt.Size = new System.Drawing.Size(188, 26);
+            this.ToolStripMenuItem_NewTxt.Size = new System.Drawing.Size(229, 34);
             this.ToolStripMenuItem_NewTxt.Text = "Text File";
             // 
             // ToolStripMenuItem_Decompile
@@ -2338,7 +2320,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Decompile.AutoSize = false;
             this.ToolStripMenuItem_Decompile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_Decompile.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Decompile.Image = global::ACNHLab.Properties.Resources.application_xp_terminal;
             this.ToolStripMenuItem_Decompile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_Decompile.Name = "ToolStripMenuItem_Decompile";
             this.ToolStripMenuItem_Decompile.Size = new System.Drawing.Size(160, 30);
@@ -2349,7 +2330,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Compile.AutoSize = false;
             this.ToolStripMenuItem_Compile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_Compile.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Compile.Image = global::ACNHLab.Properties.Resources.application_go;
             this.ToolStripMenuItem_Compile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_Compile.Name = "ToolStripMenuItem_Compile";
             this.ToolStripMenuItem_Compile.Size = new System.Drawing.Size(160, 30);
@@ -2360,7 +2340,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Unpack.AutoSize = false;
             this.ToolStripMenuItem_Unpack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_Unpack.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Unpack.Image = global::ACNHLab.Properties.Resources.folder_go;
             this.ToolStripMenuItem_Unpack.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_Unpack.Name = "ToolStripMenuItem_Unpack";
             this.ToolStripMenuItem_Unpack.Size = new System.Drawing.Size(160, 30);
@@ -2375,7 +2354,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_RepackAFS,
             this.ToolStripMenuItem_RepackAWB});
             this.ToolStripMenuItem_RepackAs.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackAs.Image = global::ACNHLab.Properties.Resources.package_go;
             this.ToolStripMenuItem_RepackAs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_RepackAs.Name = "ToolStripMenuItem_RepackAs";
             this.ToolStripMenuItem_RepackAs.Size = new System.Drawing.Size(160, 30);
@@ -2386,7 +2364,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_RepackPAC.AutoSize = false;
             this.ToolStripMenuItem_RepackPAC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_RepackPAC.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackPAC.Image = global::ACNHLab.Properties.Resources.package1;
             this.ToolStripMenuItem_RepackPAC.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_RepackPAC.Name = "ToolStripMenuItem_RepackPAC";
             this.ToolStripMenuItem_RepackPAC.Size = new System.Drawing.Size(160, 30);
@@ -2397,7 +2374,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_RepackAFS.AutoSize = false;
             this.ToolStripMenuItem_RepackAFS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_RepackAFS.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackAFS.Image = global::ACNHLab.Properties.Resources.music;
             this.ToolStripMenuItem_RepackAFS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_RepackAFS.Name = "ToolStripMenuItem_RepackAFS";
             this.ToolStripMenuItem_RepackAFS.Size = new System.Drawing.Size(160, 30);
@@ -2408,7 +2384,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_RepackAWB.AutoSize = false;
             this.ToolStripMenuItem_RepackAWB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_RepackAWB.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_RepackAWB.Image = global::ACNHLab.Properties.Resources.music;
             this.ToolStripMenuItem_RepackAWB.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_RepackAWB.Name = "ToolStripMenuItem_RepackAWB";
             this.ToolStripMenuItem_RepackAWB.Size = new System.Drawing.Size(160, 30);
@@ -2419,7 +2394,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Replace.AutoSize = false;
             this.ToolStripMenuItem_Replace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_Replace.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Replace.Image = global::ACNHLab.Properties.Resources.note_go;
             this.ToolStripMenuItem_Replace.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_Replace.Name = "ToolStripMenuItem_Replace";
             this.ToolStripMenuItem_Replace.Size = new System.Drawing.Size(160, 30);
@@ -2430,7 +2404,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Remove.AutoSize = false;
             this.ToolStripMenuItem_Remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_Remove.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Remove.Image = global::ACNHLab.Properties.Resources.delete;
             this.ToolStripMenuItem_Remove.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_Remove.Name = "ToolStripMenuItem_Remove";
             this.ToolStripMenuItem_Remove.Size = new System.Drawing.Size(160, 30);
@@ -2442,7 +2415,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_OpenAt2.AutoSize = false;
             this.ToolStripMenuItem_OpenAt2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_OpenAt2.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_OpenAt2.Image = global::ACNHLab.Properties.Resources.folder_explore;
             this.ToolStripMenuItem_OpenAt2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_OpenAt2.Name = "ToolStripMenuItem_OpenAt2";
             this.ToolStripMenuItem_OpenAt2.Size = new System.Drawing.Size(160, 30);
@@ -2454,7 +2426,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Copy.AutoSize = false;
             this.ToolStripMenuItem_Copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_Copy.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Copy.Image = global::ACNHLab.Properties.Resources.page_copy;
             this.ToolStripMenuItem_Copy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_Copy.Name = "ToolStripMenuItem_Copy";
             this.ToolStripMenuItem_Copy.Size = new System.Drawing.Size(160, 30);
@@ -2466,7 +2437,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_Rename.AutoSize = false;
             this.ToolStripMenuItem_Rename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_Rename.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_Rename.Image = global::ACNHLab.Properties.Resources.textfield_rename;
             this.ToolStripMenuItem_Rename.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_Rename.Name = "ToolStripMenuItem_Rename";
             this.ToolStripMenuItem_Rename.Size = new System.Drawing.Size(160, 30);
@@ -2478,7 +2448,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_ExpandProj.AutoSize = false;
             this.ToolStripMenuItem_ExpandProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_ExpandProj.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_ExpandProj.Image = global::ACNHLab.Properties.Resources.chart_organisation;
             this.ToolStripMenuItem_ExpandProj.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_ExpandProj.Name = "ToolStripMenuItem_ExpandProj";
             this.ToolStripMenuItem_ExpandProj.Size = new System.Drawing.Size(160, 30);
@@ -2489,7 +2458,6 @@ namespace ACNHLab
             this.ToolStripMenuItem_CollapseProj.AutoSize = false;
             this.ToolStripMenuItem_CollapseProj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ToolStripMenuItem_CollapseProj.ForeColor = System.Drawing.Color.Silver;
-            this.ToolStripMenuItem_CollapseProj.Image = global::ACNHLab.Properties.Resources.arrow_join;
             this.ToolStripMenuItem_CollapseProj.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripMenuItem_CollapseProj.Name = "ToolStripMenuItem_CollapseProj";
             this.ToolStripMenuItem_CollapseProj.Size = new System.Drawing.Size(160, 30);
@@ -2497,7 +2465,7 @@ namespace ACNHLab
             // 
             // ACNHLab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(942, 493);
@@ -2516,7 +2484,7 @@ namespace ACNHLab
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Style = MetroSet_UI.Enums.Style.Dark;
             this.StyleManager = this.styleManager;
-            this.Text = "ACNHLab v0.1";
+            this.Text = "ACNHLab";
             this.ThemeAuthor = "ShrineFox";
             this.ThemeName = "MetroDarkBlue";
             this.tableLayoutPanel_Container.ResumeLayout(false);

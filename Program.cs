@@ -10,7 +10,7 @@ namespace ACNHLab
 {
     static class Program
     {
-        public static Status status;
+        public const float version = 0.2f;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -21,19 +21,6 @@ namespace ACNHLab
             Application.SetCompatibleTextRenderingDefault(false);
             Treeview.SetupImageList();
             Application.Run(new ACNHLab());
-        }
-    }
-
-    public static class StringExtensions
-    {
-        public static string FirstCharToUpper(this string input)
-        {
-            switch (input)
-            {
-                case null: throw new ArgumentNullException(nameof(input));
-                case "": throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input));
-                default: return input[0].ToString().ToUpper() + input.Substring(1);
-            }
         }
     }
 }

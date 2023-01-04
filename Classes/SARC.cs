@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShrineFox.IO;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -85,10 +86,10 @@ namespace ACNHLab.Classes
                     byte[] outputBytes = temp.ToArray();
                     File.WriteAllBytes(output, outputBytes);
                 }
-                Program.status.Update($"[INFO] Decompressed \"{Path.GetFileName(input)}\".");
+                Output.Log($"[INFO] Decompressed \"{Path.GetFileName(input)}\".");
             }
             else
-                Program.status.Update($"[INFO] \"{Path.GetFileName(output)}\" already exists, skipping decompression.");
+                Output.Log($"[INFO] \"{Path.GetFileName(output)}\" already exists, skipping decompression.");
         }
 
         internal static void Compress(string input, string output)
@@ -97,7 +98,7 @@ namespace ACNHLab.Classes
             var outputBytes = compressor.Wrap(File.ReadAllBytes(input));
             File.WriteAllBytes(output, outputBytes);
 
-            Program.status.Update($"[INFO] Compressed \"{Path.GetFileName(input)}\".");
+            Output.Log($"[INFO] Compressed \"{Path.GetFileName(input)}\".");
         }
 
         internal static void ExtractToDir(string input, string output)
@@ -106,10 +107,10 @@ namespace ACNHLab.Classes
             if (!Directory.Exists(output))
             {
                 SARC.Extract(input, output, true, true);
-                Program.status.Update($"[INFO] Extracted files from \"{Path.GetFileName(input)}\".");
+                Output.Log($"[INFO] Extracted files from \"{Path.GetFileName(input)}\".");
             }
             else
-                Program.status.Update($"[INFO] \"{Path.GetFileName(output)}\" already extracted, skipping extraction.");
+                Output.Log($"[INFO] \"{Path.GetFileName(output)}\" already extracted, skipping extraction.");
         }
         #endregion
 

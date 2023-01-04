@@ -1,4 +1,5 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
+using ShrineFox.IO;
 using System;
 using System.IO;
 using System.Reflection;
@@ -143,21 +144,21 @@ namespace ACNHLab
         {
             if (!Directory.Exists(settings.ExtractedPath))
             {
-                Program.status.Update("[ERROR] Failed to load project: invalid Extracted Path");
+                Output.Log("[ERROR] Failed to load project: invalid Extracted Path");
                 return false;
             }
             if (settings.ProjectName == "" || !Regex.IsMatch(settings.ProjectName, "^[a-zA-Z0-9-_ .]*$"))
             {
-                Program.status.Update("[ERROR] Failed to load project: invalid Project Name");
+                Output.Log("[ERROR] Failed to load project: invalid Project Name");
                 return false;
             }
             if (!Directory.Exists(settings.OutputPath))
             {
-                Program.status.Update("[ERROR] Failed to load project: invalid Output Path");
+                Output.Log("[ERROR] Failed to load project: invalid Output Path");
                 return false;
             }
 
-            Program.status.Update($"[INFO] Successfully loaded project: \"{settings.ProjectName}\"");
+            Output.Log($"[INFO] Successfully loaded project: \"{settings.ProjectName}\"");
             return true;
         }
         #endregion

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShrineFox.IO;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -22,26 +23,10 @@ namespace ACNHLab
         public static void SetupImageList()
         {
             Color transparentColor = Color.FromArgb(60, 63, 65);
-            treeViewImageList.Images.Add(Properties.Resources.music);
-            treeViewImageList.Images.Add(Properties.Resources.script_code_red);
-            treeViewImageList.Images.Add(Properties.Resources.script_code);
-            treeViewImageList.Images.Add(Properties.Resources.script_edit);
-            treeViewImageList.Images.Add(Properties.Resources.page_white_text);
-            treeViewImageList.Images.Add(Properties.Resources.script_gear);
-            treeViewImageList.Images.Add(Properties.Resources.application_xp_terminal);
-            treeViewImageList.Images.Add(Properties.Resources.database);
-            treeViewImageList.Images.Add(Properties.Resources.table);
-            treeViewImageList.Images.Add(Properties.Resources.package_green);
-            treeViewImageList.Images.Add(Properties.Resources.world);
-            treeViewImageList.Images.Add(Properties.Resources.image);
-            treeViewImageList.Images.Add(Properties.Resources.picture);
-            treeViewImageList.Images.Add(Properties.Resources.font);
-            treeViewImageList.Images.Add(Properties.Resources.film);
-            treeViewImageList.Images.Add(Properties.Resources.vector);
-            treeViewImageList.Images.Add(Properties.Resources.cd);
-            treeViewImageList.Images.Add(Properties.Resources.chart_organisation);
-            treeViewImageList.Images.Add(Properties.Resources.folder);
-            treeViewImageList.Images.Add(Properties.Resources.page_white);
+            string iconPath = Path.Combine(Exe.Directory(), "Icons");
+
+            TreeViewBuilder.SetIcon(Path.Combine(iconPath, "page_white.png"), ".file");
+            TreeViewBuilder.SetIcon(Path.Combine(iconPath, "folder.png"), ".folder");
         }
 
         public static int GetIconIndex(string file)
@@ -146,7 +131,7 @@ namespace ACNHLab
                 Process.Start(info);
             }
             else
-                Program.status.Update($"[ERROR] Couldn't open path to \"{Path.GetFileName(file)}\".");
+                Output.Log($"[ERROR] Couldn't open path to \"{Path.GetFileName(file)}\".");
         }
     }
 

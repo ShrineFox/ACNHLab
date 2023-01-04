@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ACNHLab</RootNamespace>
     <AssemblyName>ACNHLab</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -40,39 +40,36 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>bob.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BfresLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Desktop\BfresLibrary-master\BfresLibrary\bin\Release\net45\BfresLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="MetroSet UI, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MetroSet_UI.2.0.0\lib\net45\MetroSet UI.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack.Core, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.7.0.1\lib\net472\Microsoft.WindowsAPICodePack.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.7.0.1\lib\net472\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.7.0.1\lib\net472\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.7.0.1\lib\net472\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\WindowsAPICodePack.1.1.2\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.7.0.1\lib\net472\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
@@ -80,26 +77,62 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
     </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.7.0.1\lib\net462\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -113,11 +146,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
-      <HintPath>packages\YamlDotNet.11.2.1\lib\net45\YamlDotNet.dll</HintPath>
+    <Reference Include="YamlDotNet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>packages\YamlDotNet.12.3.1\lib\net47\YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Zstandard.Net.1.1.7\lib\net45\Zstandard.Net.dll</HintPath>
@@ -166,34 +198,28 @@
     <EmbeddedResource Include="Forms\SpeciesAddForm.resx">
       <DependentUpon>SpeciesAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ACNHLab.resx">
       <DependentUpon>ACNHLab.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RenameForm.resx">
       <DependentUpon>RenameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Dependencies\Files\Blank.msbt">
+    <None Include="Dependencies\Blank.msbt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Dependencies\Json\Amiibo.json" />
+    <None Include="Dependencies\Amiibo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -204,1068 +230,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bob.ico" />
-    <None Include="Dependencies\Icons\pitfall.ico" />
-    <None Include="Dependencies\Icons\leaf.ico" />
-    <None Include="Dependencies\textfield_rename.bmp" />
-    <None Include="Dependencies\table_gear.bmp" />
-    <None Include="Dependencies\script_add.bmp" />
-    <None Include="Dependencies\folder_page.bmp" />
-    <None Include="Dependencies\add.bmp" />
-    <None Include="Dependencies\add1.bmp" />
-    <None Include="Dependencies\application_go.bmp" />
-    <None Include="Dependencies\application_xp_terminal.bmp" />
-    <None Include="Dependencies\arrow_divide.bmp" />
-    <None Include="Dependencies\arrow_down.bmp" />
-    <None Include="Dependencies\arrow_join.bmp" />
-    <None Include="Dependencies\asterisk_yellow.bmp" />
-    <None Include="Dependencies\chart_organisation.bmp" />
-    <None Include="Dependencies\cog.bmp" />
-    <None Include="Dependencies\delete.bmp" />
-    <None Include="Dependencies\disk.bmp" />
-    <None Include="Dependencies\disk_multiple.bmp" />
-    <None Include="Dependencies\folder_add.bmp" />
-    <None Include="Dependencies\folder_explore.bmp" />
-    <None Include="Dependencies\folder_go.bmp" />
-    <None Include="Dependencies\house.bmp" />
-    <None Include="Dependencies\music.bmp" />
-    <None Include="Dependencies\note_go.bmp" />
-    <None Include="Dependencies\package.bmp" />
-    <None Include="Dependencies\package_go.bmp" />
-    <None Include="Dependencies\package1.bmp" />
-    <None Include="Dependencies\page_add.bmp" />
-    <None Include="Dependencies\page_code.bmp" />
-    <None Include="Dependencies\page_copy.bmp" />
-    <None Include="Dependencies\page_white_add.bmp" />
-    <None Include="Dependencies\picture.bmp" />
-    <None Include="Dependencies\Icons\application_double.ico" />
-    <None Include="Dependencies\Icons\application_edit.ico" />
-    <None Include="Dependencies\Icons\application_error.ico" />
-    <None Include="Dependencies\Icons\application_form.ico" />
-    <None Include="Dependencies\Icons\application_form_add.ico" />
-    <None Include="Dependencies\Icons\application_form_delete.ico" />
-    <None Include="Dependencies\Icons\application_form_edit.ico" />
-    <None Include="Dependencies\Icons\application_form_magnify.ico" />
-    <None Include="Dependencies\Icons\application_get.ico" />
-    <None Include="Dependencies\Icons\application_go.ico" />
-    <None Include="Dependencies\Icons\application_home.ico" />
-    <None Include="Dependencies\Icons\application_key.ico" />
-    <None Include="Dependencies\Icons\application_lightning.ico" />
-    <None Include="Dependencies\Icons\application_link.ico" />
-    <None Include="Dependencies\Icons\application_osx.ico" />
-    <None Include="Dependencies\Icons\application_osx_terminal.ico" />
-    <None Include="Dependencies\Icons\application_put.ico" />
-    <None Include="Dependencies\Icons\application_side_boxes.ico" />
-    <None Include="Dependencies\Icons\application_side_contract.ico" />
-    <None Include="Dependencies\Icons\application_side_expand.ico" />
-    <None Include="Dependencies\Icons\application_side_list.ico" />
-    <None Include="Dependencies\Icons\application_side_tree.ico" />
-    <None Include="Dependencies\Icons\application_split.ico" />
-    <None Include="Dependencies\Icons\application_tile_horizontal.ico" />
-    <None Include="Dependencies\Icons\application_tile_vertical.ico" />
-    <None Include="Dependencies\Icons\application_view_columns.ico" />
-    <None Include="Dependencies\Icons\application_view_detail.ico" />
-    <None Include="Dependencies\Icons\application_view_gallery.ico" />
-    <None Include="Dependencies\Icons\application_view_icons.ico" />
-    <None Include="Dependencies\Icons\application_view_list.ico" />
-    <None Include="Dependencies\Icons\application_view_tile.ico" />
-    <None Include="Dependencies\Icons\application_xp.ico" />
-    <None Include="Dependencies\Icons\application_xp_terminal.ico" />
-    <None Include="Dependencies\Icons\arrow_branch.ico" />
-    <None Include="Dependencies\Icons\arrow_divide.ico" />
-    <None Include="Dependencies\Icons\arrow_down.ico" />
-    <None Include="Dependencies\Icons\arrow_in.ico" />
-    <None Include="Dependencies\Icons\arrow_inout.ico" />
-    <None Include="Dependencies\Icons\arrow_join.ico" />
-    <None Include="Dependencies\Icons\arrow_left.ico" />
-    <None Include="Dependencies\Icons\arrow_merge.ico" />
-    <None Include="Dependencies\Icons\arrow_out.ico" />
-    <None Include="Dependencies\Icons\arrow_redo.ico" />
-    <None Include="Dependencies\Icons\arrow_refresh.ico" />
-    <None Include="Dependencies\Icons\arrow_refresh_small.ico" />
-    <None Include="Dependencies\Icons\arrow_right.ico" />
-    <None Include="Dependencies\Icons\arrow_rotate_anticlockwise.ico" />
-    <None Include="Dependencies\Icons\arrow_rotate_clockwise.ico" />
-    <None Include="Dependencies\Icons\arrow_switch.ico" />
-    <None Include="Dependencies\Icons\arrow_turn_left.ico" />
-    <None Include="Dependencies\Icons\arrow_turn_right.ico" />
-    <None Include="Dependencies\Icons\arrow_undo.ico" />
-    <None Include="Dependencies\Icons\arrow_up.ico" />
-    <None Include="Dependencies\Icons\asterisk_orange.ico" />
-    <None Include="Dependencies\Icons\asterisk_yellow.ico" />
-    <None Include="Dependencies\Icons\attach.ico" />
-    <None Include="Dependencies\Icons\award_star_add.ico" />
-    <None Include="Dependencies\Icons\award_star_bronze_1.ico" />
-    <None Include="Dependencies\Icons\award_star_bronze_2.ico" />
-    <None Include="Dependencies\Icons\award_star_bronze_3.ico" />
-    <None Include="Dependencies\Icons\award_star_delete.ico" />
-    <None Include="Dependencies\Icons\award_star_gold_1.ico" />
-    <None Include="Dependencies\Icons\award_star_gold_2.ico" />
-    <None Include="Dependencies\Icons\award_star_gold_3.ico" />
-    <None Include="Dependencies\Icons\award_star_silver_1.ico" />
-    <None Include="Dependencies\Icons\award_star_silver_2.ico" />
-    <None Include="Dependencies\Icons\award_star_silver_3.ico" />
-    <None Include="Dependencies\Icons\basket.ico" />
-    <None Include="Dependencies\Icons\basket_add.ico" />
-    <None Include="Dependencies\Icons\basket_delete.ico" />
-    <None Include="Dependencies\Icons\basket_edit.ico" />
-    <None Include="Dependencies\Icons\basket_error.ico" />
-    <None Include="Dependencies\Icons\basket_go.ico" />
-    <None Include="Dependencies\Icons\basket_put.ico" />
-    <None Include="Dependencies\Icons\basket_remove.ico" />
-    <None Include="Dependencies\Icons\bell.ico" />
-    <None Include="Dependencies\Icons\bell_add.ico" />
-    <None Include="Dependencies\Icons\bell_delete.ico" />
-    <None Include="Dependencies\Icons\bell_error.ico" />
-    <None Include="Dependencies\Icons\bell_go.ico" />
-    <None Include="Dependencies\Icons\bell_link.ico" />
-    <None Include="Dependencies\Icons\bin.ico" />
-    <None Include="Dependencies\Icons\bin_closed.ico" />
-    <None Include="Dependencies\Icons\bin_empty.ico" />
-    <None Include="Dependencies\Icons\bomb.ico" />
-    <None Include="Dependencies\Icons\book.ico" />
-    <None Include="Dependencies\Icons\book_add.ico" />
-    <None Include="Dependencies\Icons\book_addresses.ico" />
-    <None Include="Dependencies\Icons\book_delete.ico" />
-    <None Include="Dependencies\Icons\book_edit.ico" />
-    <None Include="Dependencies\Icons\book_error.ico" />
-    <None Include="Dependencies\Icons\book_go.ico" />
-    <None Include="Dependencies\Icons\book_key.ico" />
-    <None Include="Dependencies\Icons\book_link.ico" />
-    <None Include="Dependencies\Icons\book_next.ico" />
-    <None Include="Dependencies\Icons\book_open.ico" />
-    <None Include="Dependencies\Icons\book_previous.ico" />
-    <None Include="Dependencies\Icons\box.ico" />
-    <None Include="Dependencies\Icons\brick.ico" />
-    <None Include="Dependencies\Icons\brick_add.ico" />
-    <None Include="Dependencies\Icons\brick_delete.ico" />
-    <None Include="Dependencies\Icons\brick_edit.ico" />
-    <None Include="Dependencies\Icons\brick_error.ico" />
-    <None Include="Dependencies\Icons\brick_go.ico" />
-    <None Include="Dependencies\Icons\brick_link.ico" />
-    <None Include="Dependencies\Icons\bricks.ico" />
-    <None Include="Dependencies\Icons\briefcase.ico" />
-    <None Include="Dependencies\Icons\bug.ico" />
-    <None Include="Dependencies\Icons\bug_add.ico" />
-    <None Include="Dependencies\Icons\bug_delete.ico" />
-    <None Include="Dependencies\Icons\bug_edit.ico" />
-    <None Include="Dependencies\Icons\bug_error.ico" />
-    <None Include="Dependencies\Icons\bug_go.ico" />
-    <None Include="Dependencies\Icons\bug_link.ico" />
-    <None Include="Dependencies\Icons\building.ico" />
-    <None Include="Dependencies\Icons\building_add.ico" />
-    <None Include="Dependencies\Icons\building_delete.ico" />
-    <None Include="Dependencies\Icons\building_edit.ico" />
-    <None Include="Dependencies\Icons\building_error.ico" />
-    <None Include="Dependencies\Icons\building_go.ico" />
-    <None Include="Dependencies\Icons\building_key.ico" />
-    <None Include="Dependencies\Icons\building_link.ico" />
-    <None Include="Dependencies\Icons\bullet_add.ico" />
-    <None Include="Dependencies\Icons\bullet_arrow_bottom.ico" />
-    <None Include="Dependencies\Icons\bullet_arrow_down.ico" />
-    <None Include="Dependencies\Icons\bullet_arrow_top.ico" />
-    <None Include="Dependencies\Icons\bullet_arrow_up.ico" />
-    <None Include="Dependencies\Icons\bullet_black.ico" />
-    <None Include="Dependencies\Icons\bullet_blue.ico" />
-    <None Include="Dependencies\Icons\bullet_delete.ico" />
-    <None Include="Dependencies\Icons\bullet_disk.ico" />
-    <None Include="Dependencies\Icons\bullet_error.ico" />
-    <None Include="Dependencies\Icons\bullet_feed.ico" />
-    <None Include="Dependencies\Icons\bullet_go.ico" />
-    <None Include="Dependencies\Icons\bullet_green.ico" />
-    <None Include="Dependencies\Icons\bullet_key.ico" />
-    <None Include="Dependencies\Icons\bullet_orange.ico" />
-    <None Include="Dependencies\Icons\bullet_picture.ico" />
-    <None Include="Dependencies\Icons\bullet_pink.ico" />
-    <None Include="Dependencies\Icons\bullet_purple.ico" />
-    <None Include="Dependencies\Icons\bullet_red.ico" />
-    <None Include="Dependencies\Icons\bullet_star.ico" />
-    <None Include="Dependencies\Icons\bullet_toggle_minus.ico" />
-    <None Include="Dependencies\Icons\bullet_toggle_plus.ico" />
-    <None Include="Dependencies\Icons\bullet_white.ico" />
-    <None Include="Dependencies\Icons\bullet_wrench.ico" />
-    <None Include="Dependencies\Icons\bullet_yellow.ico" />
-    <None Include="Dependencies\Icons\cake.ico" />
-    <None Include="Dependencies\Icons\calculator.ico" />
-    <None Include="Dependencies\Icons\calculator_add.ico" />
-    <None Include="Dependencies\Icons\calculator_delete.ico" />
-    <None Include="Dependencies\Icons\calculator_edit.ico" />
-    <None Include="Dependencies\Icons\calculator_error.ico" />
-    <None Include="Dependencies\Icons\calculator_link.ico" />
-    <None Include="Dependencies\Icons\calendar.ico" />
-    <None Include="Dependencies\Icons\calendar_add.ico" />
-    <None Include="Dependencies\Icons\calendar_delete.ico" />
-    <None Include="Dependencies\Icons\calendar_edit.ico" />
-    <None Include="Dependencies\Icons\calendar_link.ico" />
-    <None Include="Dependencies\Icons\calendar_view_day.ico" />
-    <None Include="Dependencies\Icons\calendar_view_month.ico" />
-    <None Include="Dependencies\Icons\calendar_view_week.ico" />
-    <None Include="Dependencies\Icons\camera.ico" />
-    <None Include="Dependencies\Icons\camera_add.ico" />
-    <None Include="Dependencies\Icons\camera_delete.ico" />
-    <None Include="Dependencies\Icons\camera_edit.ico" />
-    <None Include="Dependencies\Icons\camera_error.ico" />
-    <None Include="Dependencies\Icons\camera_go.ico" />
-    <None Include="Dependencies\Icons\camera_link.ico" />
-    <None Include="Dependencies\Icons\camera_small.ico" />
-    <None Include="Dependencies\Icons\cancel.ico" />
-    <None Include="Dependencies\Icons\car.ico" />
-    <None Include="Dependencies\Icons\car_add.ico" />
-    <None Include="Dependencies\Icons\car_delete.ico" />
-    <None Include="Dependencies\Icons\cart.ico" />
-    <None Include="Dependencies\Icons\cart_add.ico" />
-    <None Include="Dependencies\Icons\cart_delete.ico" />
-    <None Include="Dependencies\Icons\cart_edit.ico" />
-    <None Include="Dependencies\Icons\cart_error.ico" />
-    <None Include="Dependencies\Icons\cart_go.ico" />
-    <None Include="Dependencies\Icons\cart_put.ico" />
-    <None Include="Dependencies\Icons\cart_remove.ico" />
-    <None Include="Dependencies\Icons\cd.ico" />
-    <None Include="Dependencies\Icons\cd_add.ico" />
-    <None Include="Dependencies\Icons\cd_burn.ico" />
-    <None Include="Dependencies\Icons\cd_delete.ico" />
-    <None Include="Dependencies\Icons\cd_edit.ico" />
-    <None Include="Dependencies\Icons\cd_eject.ico" />
-    <None Include="Dependencies\Icons\cd_go.ico" />
-    <None Include="Dependencies\Icons\chart_bar.ico" />
-    <None Include="Dependencies\Icons\chart_bar_add.ico" />
-    <None Include="Dependencies\Icons\chart_bar_delete.ico" />
-    <None Include="Dependencies\Icons\chart_bar_edit.ico" />
-    <None Include="Dependencies\Icons\chart_bar_error.ico" />
-    <None Include="Dependencies\Icons\chart_bar_link.ico" />
-    <None Include="Dependencies\Icons\chart_curve.ico" />
-    <None Include="Dependencies\Icons\chart_curve_add.ico" />
-    <None Include="Dependencies\Icons\chart_curve_delete.ico" />
-    <None Include="Dependencies\Icons\chart_curve_edit.ico" />
-    <None Include="Dependencies\Icons\chart_curve_error.ico" />
-    <None Include="Dependencies\Icons\chart_curve_go.ico" />
-    <None Include="Dependencies\Icons\chart_curve_link.ico" />
-    <None Include="Dependencies\Icons\chart_line.ico" />
-    <None Include="Dependencies\Icons\chart_line_add.ico" />
-    <None Include="Dependencies\Icons\chart_line_delete.ico" />
-    <None Include="Dependencies\Icons\chart_line_edit.ico" />
-    <None Include="Dependencies\Icons\chart_line_error.ico" />
-    <None Include="Dependencies\Icons\chart_line_link.ico" />
-    <None Include="Dependencies\Icons\chart_organisation.ico" />
-    <None Include="Dependencies\Icons\chart_organisation_add.ico" />
-    <None Include="Dependencies\Icons\chart_organisation_delete.ico" />
-    <None Include="Dependencies\Icons\chart_pie.ico" />
-    <None Include="Dependencies\Icons\chart_pie_add.ico" />
-    <None Include="Dependencies\Icons\chart_pie_delete.ico" />
-    <None Include="Dependencies\Icons\chart_pie_edit.ico" />
-    <None Include="Dependencies\Icons\chart_pie_error.ico" />
-    <None Include="Dependencies\Icons\chart_pie_link.ico" />
-    <None Include="Dependencies\Icons\clock.ico" />
-    <None Include="Dependencies\Icons\clock_add.ico" />
-    <None Include="Dependencies\Icons\clock_delete.ico" />
-    <None Include="Dependencies\Icons\clock_edit.ico" />
-    <None Include="Dependencies\Icons\clock_error.ico" />
-    <None Include="Dependencies\Icons\clock_go.ico" />
-    <None Include="Dependencies\Icons\clock_link.ico" />
-    <None Include="Dependencies\Icons\clock_pause.ico" />
-    <None Include="Dependencies\Icons\clock_play.ico" />
-    <None Include="Dependencies\Icons\clock_red.ico" />
-    <None Include="Dependencies\Icons\clock_stop.ico" />
-    <None Include="Dependencies\Icons\cog.ico" />
-    <None Include="Dependencies\Icons\cog_add.ico" />
-    <None Include="Dependencies\Icons\cog_delete.ico" />
-    <None Include="Dependencies\Icons\cog_edit.ico" />
-    <None Include="Dependencies\Icons\cog_error.ico" />
-    <None Include="Dependencies\Icons\cog_go.ico" />
-    <None Include="Dependencies\Icons\coins.ico" />
-    <None Include="Dependencies\Icons\coins_add.ico" />
-    <None Include="Dependencies\Icons\coins_delete.ico" />
-    <None Include="Dependencies\Icons\color_swatch.ico" />
-    <None Include="Dependencies\Icons\color_wheel.ico" />
-    <None Include="Dependencies\Icons\comment.ico" />
-    <None Include="Dependencies\Icons\comment_add.ico" />
-    <None Include="Dependencies\Icons\comment_delete.ico" />
-    <None Include="Dependencies\Icons\comment_edit.ico" />
-    <None Include="Dependencies\Icons\comments.ico" />
-    <None Include="Dependencies\Icons\comments_add.ico" />
-    <None Include="Dependencies\Icons\comments_delete.ico" />
-    <None Include="Dependencies\Icons\compress.ico" />
-    <None Include="Dependencies\Icons\computer.ico" />
-    <None Include="Dependencies\Icons\computer_add.ico" />
-    <None Include="Dependencies\Icons\computer_delete.ico" />
-    <None Include="Dependencies\Icons\computer_edit.ico" />
-    <None Include="Dependencies\Icons\computer_error.ico" />
-    <None Include="Dependencies\Icons\computer_go.ico" />
-    <None Include="Dependencies\Icons\computer_key.ico" />
-    <None Include="Dependencies\Icons\computer_link.ico" />
-    <None Include="Dependencies\Icons\connect.ico" />
-    <None Include="Dependencies\Icons\contrast.ico" />
-    <None Include="Dependencies\Icons\contrast_decrease.ico" />
-    <None Include="Dependencies\Icons\contrast_high.ico" />
-    <None Include="Dependencies\Icons\contrast_increase.ico" />
-    <None Include="Dependencies\Icons\contrast_low.ico" />
-    <None Include="Dependencies\Icons\control_eject.ico" />
-    <None Include="Dependencies\Icons\control_eject_blue.ico" />
-    <None Include="Dependencies\Icons\control_end.ico" />
-    <None Include="Dependencies\Icons\control_end_blue.ico" />
-    <None Include="Dependencies\Icons\control_equalizer.ico" />
-    <None Include="Dependencies\Icons\control_equalizer_blue.ico" />
-    <None Include="Dependencies\Icons\control_fastforward.ico" />
-    <None Include="Dependencies\Icons\control_fastforward_blue.ico" />
-    <None Include="Dependencies\Icons\control_pause.ico" />
-    <None Include="Dependencies\Icons\control_pause_blue.ico" />
-    <None Include="Dependencies\Icons\control_play.ico" />
-    <None Include="Dependencies\Icons\control_play_blue.ico" />
-    <None Include="Dependencies\Icons\control_repeat.ico" />
-    <None Include="Dependencies\Icons\control_repeat_blue.ico" />
-    <None Include="Dependencies\Icons\control_rewind.ico" />
-    <None Include="Dependencies\Icons\control_rewind_blue.ico" />
-    <None Include="Dependencies\Icons\control_start.ico" />
-    <None Include="Dependencies\Icons\control_start_blue.ico" />
-    <None Include="Dependencies\Icons\control_stop.ico" />
-    <None Include="Dependencies\Icons\control_stop_blue.ico" />
-    <None Include="Dependencies\Icons\controller.ico" />
-    <None Include="Dependencies\Icons\controller_add.ico" />
-    <None Include="Dependencies\Icons\controller_delete.ico" />
-    <None Include="Dependencies\Icons\controller_error.ico" />
-    <None Include="Dependencies\Icons\creditcards.ico" />
-    <None Include="Dependencies\Icons\cross.ico" />
-    <None Include="Dependencies\Icons\css.ico" />
-    <None Include="Dependencies\Icons\css_add.ico" />
-    <None Include="Dependencies\Icons\css_delete.ico" />
-    <None Include="Dependencies\Icons\css_go.ico" />
-    <None Include="Dependencies\Icons\css_valid.ico" />
-    <None Include="Dependencies\Icons\cup.ico" />
-    <None Include="Dependencies\Icons\cup_add.ico" />
-    <None Include="Dependencies\Icons\cup_delete.ico" />
-    <None Include="Dependencies\Icons\cup_edit.ico" />
-    <None Include="Dependencies\Icons\cup_error.ico" />
-    <None Include="Dependencies\Icons\cup_go.ico" />
-    <None Include="Dependencies\Icons\cup_key.ico" />
-    <None Include="Dependencies\Icons\cup_link.ico" />
-    <None Include="Dependencies\Icons\cursor.ico" />
-    <None Include="Dependencies\Icons\cut.ico" />
-    <None Include="Dependencies\Icons\cut_red.ico" />
-    <None Include="Dependencies\Icons\database.ico" />
-    <None Include="Dependencies\Icons\database_add.ico" />
-    <None Include="Dependencies\Icons\database_connect.ico" />
-    <None Include="Dependencies\Icons\database_delete.ico" />
-    <None Include="Dependencies\Icons\database_edit.ico" />
-    <None Include="Dependencies\Icons\database_error.ico" />
-    <None Include="Dependencies\Icons\database_gear.ico" />
-    <None Include="Dependencies\Icons\database_go.ico" />
-    <None Include="Dependencies\Icons\database_key.ico" />
-    <None Include="Dependencies\Icons\database_lightning.ico" />
-    <None Include="Dependencies\Icons\database_link.ico" />
-    <None Include="Dependencies\Icons\database_refresh.ico" />
-    <None Include="Dependencies\Icons\database_save.ico" />
-    <None Include="Dependencies\Icons\database_table.ico" />
-    <None Include="Dependencies\Icons\date.ico" />
-    <None Include="Dependencies\Icons\date_add.ico" />
-    <None Include="Dependencies\Icons\date_delete.ico" />
-    <None Include="Dependencies\Icons\date_edit.ico" />
-    <None Include="Dependencies\Icons\date_error.ico" />
-    <None Include="Dependencies\Icons\date_go.ico" />
-    <None Include="Dependencies\Icons\date_link.ico" />
-    <None Include="Dependencies\Icons\date_magnify.ico" />
-    <None Include="Dependencies\Icons\date_next.ico" />
-    <None Include="Dependencies\Icons\date_previous.ico" />
-    <None Include="Dependencies\Icons\delete.ico" />
-    <None Include="Dependencies\Icons\disconnect.ico" />
-    <None Include="Dependencies\Icons\disk.ico" />
-    <None Include="Dependencies\Icons\disk_multiple.ico" />
-    <None Include="Dependencies\Icons\door.ico" />
-    <None Include="Dependencies\Icons\door_in.ico" />
-    <None Include="Dependencies\Icons\door_open.ico" />
-    <None Include="Dependencies\Icons\door_out.ico" />
-    <None Include="Dependencies\Icons\drink.ico" />
-    <None Include="Dependencies\Icons\drink_empty.ico" />
-    <None Include="Dependencies\Icons\drive.ico" />
-    <None Include="Dependencies\Icons\drive_add.ico" />
-    <None Include="Dependencies\Icons\drive_burn.ico" />
-    <None Include="Dependencies\Icons\drive_cd.ico" />
-    <None Include="Dependencies\Icons\drive_cd_empty.ico" />
-    <None Include="Dependencies\Icons\drive_delete.ico" />
-    <None Include="Dependencies\Icons\drive_disk.ico" />
-    <None Include="Dependencies\Icons\drive_edit.ico" />
-    <None Include="Dependencies\Icons\drive_error.ico" />
-    <None Include="Dependencies\Icons\drive_go.ico" />
-    <None Include="Dependencies\Icons\drive_key.ico" />
-    <None Include="Dependencies\Icons\drive_link.ico" />
-    <None Include="Dependencies\Icons\drive_magnify.ico" />
-    <None Include="Dependencies\Icons\drive_network.ico" />
-    <None Include="Dependencies\Icons\drive_rename.ico" />
-    <None Include="Dependencies\Icons\drive_user.ico" />
-    <None Include="Dependencies\Icons\drive_web.ico" />
-    <None Include="Dependencies\Icons\dvd.ico" />
-    <None Include="Dependencies\Icons\dvd_add.ico" />
-    <None Include="Dependencies\Icons\dvd_delete.ico" />
-    <None Include="Dependencies\Icons\dvd_edit.ico" />
-    <None Include="Dependencies\Icons\dvd_error.ico" />
-    <None Include="Dependencies\Icons\dvd_go.ico" />
-    <None Include="Dependencies\Icons\dvd_key.ico" />
-    <None Include="Dependencies\Icons\dvd_link.ico" />
-    <None Include="Dependencies\Icons\email.ico" />
-    <None Include="Dependencies\Icons\email_add.ico" />
-    <None Include="Dependencies\Icons\email_attach.ico" />
-    <None Include="Dependencies\Icons\email_delete.ico" />
-    <None Include="Dependencies\Icons\email_edit.ico" />
-    <None Include="Dependencies\Icons\email_error.ico" />
-    <None Include="Dependencies\Icons\email_go.ico" />
-    <None Include="Dependencies\Icons\email_link.ico" />
-    <None Include="Dependencies\Icons\email_open.ico" />
-    <None Include="Dependencies\Icons\email_open_image.ico" />
-    <None Include="Dependencies\Icons\emoticon_evilgrin.ico" />
-    <None Include="Dependencies\Icons\emoticon_grin.ico" />
-    <None Include="Dependencies\Icons\emoticon_happy.ico" />
-    <None Include="Dependencies\Icons\emoticon_smile.ico" />
-    <None Include="Dependencies\Icons\emoticon_surprised.ico" />
-    <None Include="Dependencies\Icons\emoticon_tongue.ico" />
-    <None Include="Dependencies\Icons\emoticon_unhappy.ico" />
-    <None Include="Dependencies\Icons\emoticon_waii.ico" />
-    <None Include="Dependencies\Icons\emoticon_wink.ico" />
-    <None Include="Dependencies\Icons\error.ico" />
-    <None Include="Dependencies\Icons\error_add.ico" />
-    <None Include="Dependencies\Icons\error_delete.ico" />
-    <None Include="Dependencies\Icons\error_go.ico" />
-    <None Include="Dependencies\Icons\exclamation.ico" />
-    <None Include="Dependencies\Icons\eye.ico" />
-    <None Include="Dependencies\Icons\feed.ico" />
-    <None Include="Dependencies\Icons\feed_add.ico" />
-    <None Include="Dependencies\Icons\feed_delete.ico" />
-    <None Include="Dependencies\Icons\feed_disk.ico" />
-    <None Include="Dependencies\Icons\feed_edit.ico" />
-    <None Include="Dependencies\Icons\feed_error.ico" />
-    <None Include="Dependencies\Icons\feed_go.ico" />
-    <None Include="Dependencies\Icons\feed_key.ico" />
-    <None Include="Dependencies\Icons\feed_link.ico" />
-    <None Include="Dependencies\Icons\feed_magnify.ico" />
-    <None Include="Dependencies\Icons\female.ico" />
-    <None Include="Dependencies\Icons\film.ico" />
-    <None Include="Dependencies\Icons\film_add.ico" />
-    <None Include="Dependencies\Icons\film_delete.ico" />
-    <None Include="Dependencies\Icons\film_edit.ico" />
-    <None Include="Dependencies\Icons\film_error.ico" />
-    <None Include="Dependencies\Icons\film_go.ico" />
-    <None Include="Dependencies\Icons\film_key.ico" />
-    <None Include="Dependencies\Icons\film_link.ico" />
-    <None Include="Dependencies\Icons\film_save.ico" />
-    <None Include="Dependencies\Icons\find.ico" />
-    <None Include="Dependencies\Icons\flag_blue.ico" />
-    <None Include="Dependencies\Icons\flag_green.ico" />
-    <None Include="Dependencies\Icons\flag_orange.ico" />
-    <None Include="Dependencies\Icons\flag_pink.ico" />
-    <None Include="Dependencies\Icons\flag_purple.ico" />
-    <None Include="Dependencies\Icons\flag_red.ico" />
-    <None Include="Dependencies\Icons\flag_yellow.ico" />
-    <None Include="Dependencies\Icons\folder.ico" />
-    <None Include="Dependencies\Icons\folder_add.ico" />
-    <None Include="Dependencies\Icons\folder_bell.ico" />
-    <None Include="Dependencies\Icons\folder_brick.ico" />
-    <None Include="Dependencies\Icons\folder_bug.ico" />
-    <None Include="Dependencies\Icons\folder_camera.ico" />
-    <None Include="Dependencies\Icons\folder_database.ico" />
-    <None Include="Dependencies\Icons\folder_delete.ico" />
-    <None Include="Dependencies\Icons\folder_edit.ico" />
-    <None Include="Dependencies\Icons\folder_error.ico" />
-    <None Include="Dependencies\Icons\folder_explore.ico" />
-    <None Include="Dependencies\Icons\folder_feed.ico" />
-    <None Include="Dependencies\Icons\folder_find.ico" />
-    <None Include="Dependencies\Icons\folder_go.ico" />
-    <None Include="Dependencies\Icons\folder_heart.ico" />
-    <None Include="Dependencies\Icons\folder_image.ico" />
-    <None Include="Dependencies\Icons\folder_key.ico" />
-    <None Include="Dependencies\Icons\folder_lightbulb.ico" />
-    <None Include="Dependencies\Icons\folder_link.ico" />
-    <None Include="Dependencies\Icons\folder_magnify.ico" />
-    <None Include="Dependencies\Icons\folder_page.ico" />
-    <None Include="Dependencies\Icons\folder_page_white.ico" />
-    <None Include="Dependencies\Icons\folder_palette.ico" />
-    <None Include="Dependencies\Icons\folder_picture.ico" />
-    <None Include="Dependencies\Icons\folder_star.ico" />
-    <None Include="Dependencies\Icons\folder_table.ico" />
-    <None Include="Dependencies\Icons\folder_user.ico" />
-    <None Include="Dependencies\Icons\folder_wrench.ico" />
-    <None Include="Dependencies\Icons\font.ico" />
-    <None Include="Dependencies\Icons\font_add.ico" />
-    <None Include="Dependencies\Icons\font_delete.ico" />
-    <None Include="Dependencies\Icons\font_go.ico" />
-    <None Include="Dependencies\Icons\group.ico" />
-    <None Include="Dependencies\Icons\group_add.ico" />
-    <None Include="Dependencies\Icons\group_delete.ico" />
-    <None Include="Dependencies\Icons\group_edit.ico" />
-    <None Include="Dependencies\Icons\group_error.ico" />
-    <None Include="Dependencies\Icons\group_gear.ico" />
-    <None Include="Dependencies\Icons\group_go.ico" />
-    <None Include="Dependencies\Icons\group_key.ico" />
-    <None Include="Dependencies\Icons\group_link.ico" />
-    <None Include="Dependencies\Icons\heart.ico" />
-    <None Include="Dependencies\Icons\heart_add.ico" />
-    <None Include="Dependencies\Icons\heart_delete.ico" />
-    <None Include="Dependencies\Icons\help.ico" />
-    <None Include="Dependencies\Icons\hourglass.ico" />
-    <None Include="Dependencies\Icons\hourglass_add.ico" />
-    <None Include="Dependencies\Icons\hourglass_delete.ico" />
-    <None Include="Dependencies\Icons\hourglass_go.ico" />
-    <None Include="Dependencies\Icons\hourglass_link.ico" />
-    <None Include="Dependencies\Icons\house.ico" />
-    <None Include="Dependencies\Icons\house_go.ico" />
-    <None Include="Dependencies\Icons\house_link.ico" />
-    <None Include="Dependencies\Icons\html.ico" />
-    <None Include="Dependencies\Icons\html_add.ico" />
-    <None Include="Dependencies\Icons\html_delete.ico" />
-    <None Include="Dependencies\Icons\html_go.ico" />
-    <None Include="Dependencies\Icons\html_valid.ico" />
-    <None Include="Dependencies\Icons\image.ico" />
-    <None Include="Dependencies\Icons\image_add.ico" />
-    <None Include="Dependencies\Icons\image_delete.ico" />
-    <None Include="Dependencies\Icons\image_edit.ico" />
-    <None Include="Dependencies\Icons\image_link.ico" />
-    <None Include="Dependencies\Icons\images.ico" />
-    <None Include="Dependencies\Icons\information.ico" />
-    <None Include="Dependencies\Icons\ipod.ico" />
-    <None Include="Dependencies\Icons\ipod_cast.ico" />
-    <None Include="Dependencies\Icons\ipod_cast_add.ico" />
-    <None Include="Dependencies\Icons\ipod_cast_delete.ico" />
-    <None Include="Dependencies\Icons\ipod_sound.ico" />
-    <None Include="Dependencies\Icons\joystick.ico" />
-    <None Include="Dependencies\Icons\joystick_add.ico" />
-    <None Include="Dependencies\Icons\joystick_delete.ico" />
-    <None Include="Dependencies\Icons\joystick_error.ico" />
-    <None Include="Dependencies\Icons\key.ico" />
-    <None Include="Dependencies\Icons\key_add.ico" />
-    <None Include="Dependencies\Icons\key_delete.ico" />
-    <None Include="Dependencies\Icons\key_go.ico" />
-    <None Include="Dependencies\Icons\keyboard.ico" />
-    <None Include="Dependencies\Icons\keyboard_add.ico" />
-    <None Include="Dependencies\Icons\keyboard_delete.ico" />
-    <None Include="Dependencies\Icons\keyboard_magnify.ico" />
-    <None Include="Dependencies\Icons\layers.ico" />
-    <None Include="Dependencies\Icons\layout.ico" />
-    <None Include="Dependencies\Icons\layout_add.ico" />
-    <None Include="Dependencies\Icons\layout_content.ico" />
-    <None Include="Dependencies\Icons\layout_delete.ico" />
-    <None Include="Dependencies\Icons\layout_edit.ico" />
-    <None Include="Dependencies\Icons\layout_error.ico" />
-    <None Include="Dependencies\Icons\layout_header.ico" />
-    <None Include="Dependencies\Icons\layout_link.ico" />
-    <None Include="Dependencies\Icons\layout_sidebar.ico" />
-    <None Include="Dependencies\Icons\lightbulb.ico" />
-    <None Include="Dependencies\Icons\lightbulb_add.ico" />
-    <None Include="Dependencies\Icons\lightbulb_delete.ico" />
-    <None Include="Dependencies\Icons\lightbulb_off.ico" />
-    <None Include="Dependencies\Icons\lightning.ico" />
-    <None Include="Dependencies\Icons\lightning_add.ico" />
-    <None Include="Dependencies\Icons\lightning_delete.ico" />
-    <None Include="Dependencies\Icons\lightning_go.ico" />
-    <None Include="Dependencies\Icons\link.ico" />
-    <None Include="Dependencies\Icons\link_add.ico" />
-    <None Include="Dependencies\Icons\link_break.ico" />
-    <None Include="Dependencies\Icons\link_delete.ico" />
-    <None Include="Dependencies\Icons\link_edit.ico" />
-    <None Include="Dependencies\Icons\link_error.ico" />
-    <None Include="Dependencies\Icons\link_go.ico" />
-    <None Include="Dependencies\Icons\lock.ico" />
-    <None Include="Dependencies\Icons\lock_add.ico" />
-    <None Include="Dependencies\Icons\lock_break.ico" />
-    <None Include="Dependencies\Icons\lock_delete.ico" />
-    <None Include="Dependencies\Icons\lock_edit.ico" />
-    <None Include="Dependencies\Icons\lock_go.ico" />
-    <None Include="Dependencies\Icons\lock_open.ico" />
-    <None Include="Dependencies\Icons\lorry.ico" />
-    <None Include="Dependencies\Icons\lorry_add.ico" />
-    <None Include="Dependencies\Icons\lorry_delete.ico" />
-    <None Include="Dependencies\Icons\lorry_error.ico" />
-    <None Include="Dependencies\Icons\lorry_flatbed.ico" />
-    <None Include="Dependencies\Icons\lorry_go.ico" />
-    <None Include="Dependencies\Icons\lorry_link.ico" />
-    <None Include="Dependencies\Icons\magifier_zoom_out.ico" />
-    <None Include="Dependencies\Icons\magnifier.ico" />
-    <None Include="Dependencies\Icons\magnifier_zoom_in.ico" />
-    <None Include="Dependencies\Icons\male.ico" />
-    <None Include="Dependencies\Icons\map.ico" />
-    <None Include="Dependencies\Icons\map_add.ico" />
-    <None Include="Dependencies\Icons\map_delete.ico" />
-    <None Include="Dependencies\Icons\map_edit.ico" />
-    <None Include="Dependencies\Icons\map_go.ico" />
-    <None Include="Dependencies\Icons\map_magnify.ico" />
-    <None Include="Dependencies\Icons\medal_bronze_1.ico" />
-    <None Include="Dependencies\Icons\medal_bronze_2.ico" />
-    <None Include="Dependencies\Icons\medal_bronze_3.ico" />
-    <None Include="Dependencies\Icons\medal_bronze_add.ico" />
-    <None Include="Dependencies\Icons\medal_bronze_delete.ico" />
-    <None Include="Dependencies\Icons\medal_gold_1.ico" />
-    <None Include="Dependencies\Icons\medal_gold_2.ico" />
-    <None Include="Dependencies\Icons\medal_gold_3.ico" />
-    <None Include="Dependencies\Icons\medal_gold_add.ico" />
-    <None Include="Dependencies\Icons\medal_gold_delete.ico" />
-    <None Include="Dependencies\Icons\medal_silver_1.ico" />
-    <None Include="Dependencies\Icons\medal_silver_2.ico" />
-    <None Include="Dependencies\Icons\medal_silver_3.ico" />
-    <None Include="Dependencies\Icons\medal_silver_add.ico" />
-    <None Include="Dependencies\Icons\medal_silver_delete.ico" />
-    <None Include="Dependencies\Icons\money.ico" />
-    <None Include="Dependencies\Icons\money_add.ico" />
-    <None Include="Dependencies\Icons\money_delete.ico" />
-    <None Include="Dependencies\Icons\money_dollar.ico" />
-    <None Include="Dependencies\Icons\money_euro.ico" />
-    <None Include="Dependencies\Icons\money_pound.ico" />
-    <None Include="Dependencies\Icons\money_yen.ico" />
-    <None Include="Dependencies\Icons\monitor.ico" />
-    <None Include="Dependencies\Icons\monitor_add.ico" />
-    <None Include="Dependencies\Icons\monitor_delete.ico" />
-    <None Include="Dependencies\Icons\monitor_edit.ico" />
-    <None Include="Dependencies\Icons\monitor_error.ico" />
-    <None Include="Dependencies\Icons\monitor_go.ico" />
-    <None Include="Dependencies\Icons\monitor_lightning.ico" />
-    <None Include="Dependencies\Icons\monitor_link.ico" />
-    <None Include="Dependencies\Icons\mouse.ico" />
-    <None Include="Dependencies\Icons\mouse_add.ico" />
-    <None Include="Dependencies\Icons\mouse_delete.ico" />
-    <None Include="Dependencies\Icons\mouse_error.ico" />
-    <None Include="Dependencies\Icons\music.ico" />
-    <None Include="Dependencies\Icons\new.ico" />
-    <None Include="Dependencies\Icons\newspaper.ico" />
-    <None Include="Dependencies\Icons\newspaper_add.ico" />
-    <None Include="Dependencies\Icons\newspaper_delete.ico" />
-    <None Include="Dependencies\Icons\newspaper_go.ico" />
-    <None Include="Dependencies\Icons\newspaper_link.ico" />
-    <None Include="Dependencies\Icons\note.ico" />
-    <None Include="Dependencies\Icons\note_add.ico" />
-    <None Include="Dependencies\Icons\note_delete.ico" />
-    <None Include="Dependencies\Icons\note_edit.ico" />
-    <None Include="Dependencies\Icons\note_error.ico" />
-    <None Include="Dependencies\Icons\note_go.ico" />
-    <None Include="Dependencies\Icons\overlays.ico" />
-    <None Include="Dependencies\Icons\package.ico" />
-    <None Include="Dependencies\Icons\package_add.ico" />
-    <None Include="Dependencies\Icons\package_delete.ico" />
-    <None Include="Dependencies\Icons\package_go.ico" />
-    <None Include="Dependencies\Icons\package_green.ico" />
-    <None Include="Dependencies\Icons\package_link.ico" />
-    <None Include="Dependencies\Icons\page.ico" />
-    <None Include="Dependencies\Icons\page_add.ico" />
-    <None Include="Dependencies\Icons\page_attach.ico" />
-    <None Include="Dependencies\Icons\page_code.ico" />
-    <None Include="Dependencies\Icons\page_copy.ico" />
-    <None Include="Dependencies\Icons\page_delete.ico" />
-    <None Include="Dependencies\Icons\page_edit.ico" />
-    <None Include="Dependencies\Icons\page_error.ico" />
-    <None Include="Dependencies\Icons\page_excel.ico" />
-    <None Include="Dependencies\Icons\page_find.ico" />
-    <None Include="Dependencies\Icons\page_gear.ico" />
-    <None Include="Dependencies\Icons\page_go.ico" />
-    <None Include="Dependencies\Icons\page_green.ico" />
-    <None Include="Dependencies\Icons\page_key.ico" />
-    <None Include="Dependencies\Icons\page_lightning.ico" />
-    <None Include="Dependencies\Icons\page_link.ico" />
-    <None Include="Dependencies\Icons\page_paintbrush.ico" />
-    <None Include="Dependencies\Icons\page_paste.ico" />
-    <None Include="Dependencies\Icons\page_red.ico" />
-    <None Include="Dependencies\Icons\page_refresh.ico" />
-    <None Include="Dependencies\Icons\page_save.ico" />
-    <None Include="Dependencies\Icons\page_white.ico" />
-    <None Include="Dependencies\Icons\page_white_acrobat.ico" />
-    <None Include="Dependencies\Icons\page_white_actionscript.ico" />
-    <None Include="Dependencies\Icons\page_white_add.ico" />
-    <None Include="Dependencies\Icons\page_white_c.ico" />
-    <None Include="Dependencies\Icons\page_white_camera.ico" />
-    <None Include="Dependencies\Icons\page_white_cd.ico" />
-    <None Include="Dependencies\Icons\page_white_code.ico" />
-    <None Include="Dependencies\Icons\page_white_code_red.ico" />
-    <None Include="Dependencies\Icons\page_white_coldfusion.ico" />
-    <None Include="Dependencies\Icons\page_white_compressed.ico" />
-    <None Include="Dependencies\Icons\page_white_copy.ico" />
-    <None Include="Dependencies\Icons\page_white_cplusplus.ico" />
-    <None Include="Dependencies\Icons\page_white_csharp.ico" />
-    <None Include="Dependencies\Icons\page_white_cup.ico" />
-    <None Include="Dependencies\Icons\page_white_database.ico" />
-    <None Include="Dependencies\Icons\page_white_delete.ico" />
-    <None Include="Dependencies\Icons\page_white_dvd.ico" />
-    <None Include="Dependencies\Icons\page_white_edit.ico" />
-    <None Include="Dependencies\Icons\page_white_error.ico" />
-    <None Include="Dependencies\Icons\page_white_excel.ico" />
-    <None Include="Dependencies\Icons\page_white_find.ico" />
-    <None Include="Dependencies\Icons\page_white_flash.ico" />
-    <None Include="Dependencies\Icons\page_white_freehand.ico" />
-    <None Include="Dependencies\Icons\page_white_gear.ico" />
-    <None Include="Dependencies\Icons\page_white_get.ico" />
-    <None Include="Dependencies\Icons\page_white_go.ico" />
-    <None Include="Dependencies\Icons\page_white_h.ico" />
-    <None Include="Dependencies\Icons\page_white_horizontal.ico" />
-    <None Include="Dependencies\Icons\page_white_key.ico" />
-    <None Include="Dependencies\Icons\page_white_lightning.ico" />
-    <None Include="Dependencies\Icons\page_white_link.ico" />
-    <None Include="Dependencies\Icons\page_white_magnify.ico" />
-    <None Include="Dependencies\Icons\page_white_medal.ico" />
-    <None Include="Dependencies\Icons\page_white_office.ico" />
-    <None Include="Dependencies\Icons\page_white_paint.ico" />
-    <None Include="Dependencies\Icons\page_white_paintbrush.ico" />
-    <None Include="Dependencies\Icons\page_white_paste.ico" />
-    <None Include="Dependencies\Icons\page_white_php.ico" />
-    <None Include="Dependencies\Icons\page_white_picture.ico" />
-    <None Include="Dependencies\Icons\page_white_powerpoint.ico" />
-    <None Include="Dependencies\Icons\page_white_put.ico" />
-    <None Include="Dependencies\Icons\page_white_ruby.ico" />
-    <None Include="Dependencies\Icons\page_white_stack.ico" />
-    <None Include="Dependencies\Icons\page_white_star.ico" />
-    <None Include="Dependencies\Icons\page_white_swoosh.ico" />
-    <None Include="Dependencies\Icons\page_white_text.ico" />
-    <None Include="Dependencies\Icons\page_white_text_width.ico" />
-    <None Include="Dependencies\Icons\page_white_tux.ico" />
-    <None Include="Dependencies\Icons\page_white_vector.ico" />
-    <None Include="Dependencies\Icons\page_white_visualstudio.ico" />
-    <None Include="Dependencies\Icons\page_white_width.ico" />
-    <None Include="Dependencies\Icons\page_white_word.ico" />
-    <None Include="Dependencies\Icons\page_white_world.ico" />
-    <None Include="Dependencies\Icons\page_white_wrench.ico" />
-    <None Include="Dependencies\Icons\page_white_zip.ico" />
-    <None Include="Dependencies\Icons\page_word.ico" />
-    <None Include="Dependencies\Icons\page_world.ico" />
-    <None Include="Dependencies\Icons\paintbrush.ico" />
-    <None Include="Dependencies\Icons\paintcan.ico" />
-    <None Include="Dependencies\Icons\palette.ico" />
-    <None Include="Dependencies\Icons\paste_plain.ico" />
-    <None Include="Dependencies\Icons\paste_word.ico" />
-    <None Include="Dependencies\Icons\pencil.ico" />
-    <None Include="Dependencies\Icons\pencil_add.ico" />
-    <None Include="Dependencies\Icons\pencil_delete.ico" />
-    <None Include="Dependencies\Icons\pencil_go.ico" />
-    <None Include="Dependencies\Icons\phone.ico" />
-    <None Include="Dependencies\Icons\phone_add.ico" />
-    <None Include="Dependencies\Icons\phone_delete.ico" />
-    <None Include="Dependencies\Icons\phone_sound.ico" />
-    <None Include="Dependencies\Icons\photo.ico" />
-    <None Include="Dependencies\Icons\photo_add.ico" />
-    <None Include="Dependencies\Icons\photo_delete.ico" />
-    <None Include="Dependencies\Icons\photo_link.ico" />
-    <None Include="Dependencies\Icons\photos.ico" />
-    <None Include="Dependencies\Icons\picture.ico" />
-    <None Include="Dependencies\Icons\picture_add.ico" />
-    <None Include="Dependencies\Icons\picture_delete.ico" />
-    <None Include="Dependencies\Icons\picture_edit.ico" />
-    <None Include="Dependencies\Icons\picture_empty.ico" />
-    <None Include="Dependencies\Icons\picture_error.ico" />
-    <None Include="Dependencies\Icons\picture_go.ico" />
-    <None Include="Dependencies\Icons\picture_key.ico" />
-    <None Include="Dependencies\Icons\picture_link.ico" />
-    <None Include="Dependencies\Icons\picture_save.ico" />
-    <None Include="Dependencies\Icons\pictures.ico" />
-    <None Include="Dependencies\Icons\pilcrow.ico" />
-    <None Include="Dependencies\Icons\pill.ico" />
-    <None Include="Dependencies\Icons\pill_add.ico" />
-    <None Include="Dependencies\Icons\pill_delete.ico" />
-    <None Include="Dependencies\Icons\pill_go.ico" />
-    <None Include="Dependencies\Icons\plugin.ico" />
-    <None Include="Dependencies\Icons\plugin_add.ico" />
-    <None Include="Dependencies\Icons\plugin_delete.ico" />
-    <None Include="Dependencies\Icons\plugin_disabled.ico" />
-    <None Include="Dependencies\Icons\plugin_edit.ico" />
-    <None Include="Dependencies\Icons\plugin_error.ico" />
-    <None Include="Dependencies\Icons\plugin_go.ico" />
-    <None Include="Dependencies\Icons\plugin_link.ico" />
-    <None Include="Dependencies\Icons\printer.ico" />
-    <None Include="Dependencies\Icons\printer_add.ico" />
-    <None Include="Dependencies\Icons\printer_delete.ico" />
-    <None Include="Dependencies\Icons\printer_empty.ico" />
-    <None Include="Dependencies\Icons\printer_error.ico" />
-    <None Include="Dependencies\Icons\rainbow.ico" />
-    <None Include="Dependencies\Icons\report.ico" />
-    <None Include="Dependencies\Icons\report_add.ico" />
-    <None Include="Dependencies\Icons\report_delete.ico" />
-    <None Include="Dependencies\Icons\report_disk.ico" />
-    <None Include="Dependencies\Icons\report_edit.ico" />
-    <None Include="Dependencies\Icons\report_go.ico" />
-    <None Include="Dependencies\Icons\report_key.ico" />
-    <None Include="Dependencies\Icons\report_link.ico" />
-    <None Include="Dependencies\Icons\report_magnify.ico" />
-    <None Include="Dependencies\Icons\report_picture.ico" />
-    <None Include="Dependencies\Icons\report_user.ico" />
-    <None Include="Dependencies\Icons\report_word.ico" />
-    <None Include="Dependencies\Icons\resultset_first.ico" />
-    <None Include="Dependencies\Icons\resultset_last.ico" />
-    <None Include="Dependencies\Icons\resultset_next.ico" />
-    <None Include="Dependencies\Icons\resultset_previous.ico" />
-    <None Include="Dependencies\Icons\rosette.ico" />
-    <None Include="Dependencies\Icons\rss.ico" />
-    <None Include="Dependencies\Icons\rss_add.ico" />
-    <None Include="Dependencies\Icons\rss_delete.ico" />
-    <None Include="Dependencies\Icons\rss_go.ico" />
-    <None Include="Dependencies\Icons\rss_valid.ico" />
-    <None Include="Dependencies\Icons\ruby.ico" />
-    <None Include="Dependencies\Icons\ruby_add.ico" />
-    <None Include="Dependencies\Icons\ruby_delete.ico" />
-    <None Include="Dependencies\Icons\ruby_gear.ico" />
-    <None Include="Dependencies\Icons\ruby_get.ico" />
-    <None Include="Dependencies\Icons\ruby_go.ico" />
-    <None Include="Dependencies\Icons\ruby_key.ico" />
-    <None Include="Dependencies\Icons\ruby_link.ico" />
-    <None Include="Dependencies\Icons\ruby_put.ico" />
-    <None Include="Dependencies\Icons\script.ico" />
-    <None Include="Dependencies\Icons\script_add.ico" />
-    <None Include="Dependencies\Icons\script_code.ico" />
-    <None Include="Dependencies\Icons\script_code_red.ico" />
-    <None Include="Dependencies\Icons\script_delete.ico" />
-    <None Include="Dependencies\Icons\script_edit.ico" />
-    <None Include="Dependencies\Icons\script_error.ico" />
-    <None Include="Dependencies\Icons\script_gear.ico" />
-    <None Include="Dependencies\Icons\script_go.ico" />
-    <None Include="Dependencies\Icons\script_key.ico" />
-    <None Include="Dependencies\Icons\script_lightning.ico" />
-    <None Include="Dependencies\Icons\script_link.ico" />
-    <None Include="Dependencies\Icons\script_palette.ico" />
-    <None Include="Dependencies\Icons\script_save.ico" />
-    <None Include="Dependencies\Icons\server.ico" />
-    <None Include="Dependencies\Icons\server_add.ico" />
-    <None Include="Dependencies\Icons\server_chart.ico" />
-    <None Include="Dependencies\Icons\server_compressed.ico" />
-    <None Include="Dependencies\Icons\server_connect.ico" />
-    <None Include="Dependencies\Icons\server_database.ico" />
-    <None Include="Dependencies\Icons\server_delete.ico" />
-    <None Include="Dependencies\Icons\server_edit.ico" />
-    <None Include="Dependencies\Icons\server_error.ico" />
-    <None Include="Dependencies\Icons\server_go.ico" />
-    <None Include="Dependencies\Icons\server_key.ico" />
-    <None Include="Dependencies\Icons\server_lightning.ico" />
-    <None Include="Dependencies\Icons\server_link.ico" />
-    <None Include="Dependencies\Icons\server_uncompressed.ico" />
-    <None Include="Dependencies\Icons\shading.ico" />
-    <None Include="Dependencies\Icons\shape_align_bottom.ico" />
-    <None Include="Dependencies\Icons\shape_align_center.ico" />
-    <None Include="Dependencies\Icons\shape_align_left.ico" />
-    <None Include="Dependencies\Icons\shape_align_middle.ico" />
-    <None Include="Dependencies\Icons\shape_align_right.ico" />
-    <None Include="Dependencies\Icons\shape_align_top.ico" />
-    <None Include="Dependencies\Icons\shape_flip_horizontal.ico" />
-    <None Include="Dependencies\Icons\shape_flip_vertical.ico" />
-    <None Include="Dependencies\Icons\shape_group.ico" />
-    <None Include="Dependencies\Icons\shape_handles.ico" />
-    <None Include="Dependencies\Icons\shape_move_back.ico" />
-    <None Include="Dependencies\Icons\shape_move_backwards.ico" />
-    <None Include="Dependencies\Icons\shape_move_forwards.ico" />
-    <None Include="Dependencies\Icons\shape_move_front.ico" />
-    <None Include="Dependencies\Icons\shape_rotate_anticlockwise.ico" />
-    <None Include="Dependencies\Icons\shape_rotate_clockwise.ico" />
-    <None Include="Dependencies\Icons\shape_square.ico" />
-    <None Include="Dependencies\Icons\shape_square_add.ico" />
-    <None Include="Dependencies\Icons\shape_square_delete.ico" />
-    <None Include="Dependencies\Icons\shape_square_edit.ico" />
-    <None Include="Dependencies\Icons\shape_square_error.ico" />
-    <None Include="Dependencies\Icons\shape_square_go.ico" />
-    <None Include="Dependencies\Icons\shape_square_key.ico" />
-    <None Include="Dependencies\Icons\shape_square_link.ico" />
-    <None Include="Dependencies\Icons\shape_ungroup.ico" />
-    <None Include="Dependencies\Icons\shield.ico" />
-    <None Include="Dependencies\Icons\shield_add.ico" />
-    <None Include="Dependencies\Icons\shield_delete.ico" />
-    <None Include="Dependencies\Icons\shield_go.ico" />
-    <None Include="Dependencies\Icons\sitemap.ico" />
-    <None Include="Dependencies\Icons\sitemap_color.ico" />
-    <None Include="Dependencies\Icons\sound.ico" />
-    <None Include="Dependencies\Icons\sound_add.ico" />
-    <None Include="Dependencies\Icons\sound_delete.ico" />
-    <None Include="Dependencies\Icons\sound_low.ico" />
-    <None Include="Dependencies\Icons\sound_mute.ico" />
-    <None Include="Dependencies\Icons\sound_none.ico" />
-    <None Include="Dependencies\Icons\spellcheck.ico" />
-    <None Include="Dependencies\Icons\sport_8ball.ico" />
-    <None Include="Dependencies\Icons\sport_basketball.ico" />
-    <None Include="Dependencies\Icons\sport_football.ico" />
-    <None Include="Dependencies\Icons\sport_golf.ico" />
-    <None Include="Dependencies\Icons\sport_raquet.ico" />
-    <None Include="Dependencies\Icons\sport_shuttlecock.ico" />
-    <None Include="Dependencies\Icons\sport_soccer.ico" />
-    <None Include="Dependencies\Icons\sport_tennis.ico" />
-    <None Include="Dependencies\Icons\star.ico" />
-    <None Include="Dependencies\Icons\status_away.ico" />
-    <None Include="Dependencies\Icons\status_busy.ico" />
-    <None Include="Dependencies\Icons\status_offline.ico" />
-    <None Include="Dependencies\Icons\status_online.ico" />
-    <None Include="Dependencies\Icons\stop.ico" />
-    <None Include="Dependencies\Icons\style.ico" />
-    <None Include="Dependencies\Icons\style_add.ico" />
-    <None Include="Dependencies\Icons\style_delete.ico" />
-    <None Include="Dependencies\Icons\style_edit.ico" />
-    <None Include="Dependencies\Icons\style_go.ico" />
-    <None Include="Dependencies\Icons\sum.ico" />
-    <None Include="Dependencies\Icons\tab.ico" />
-    <None Include="Dependencies\Icons\tab_add.ico" />
-    <None Include="Dependencies\Icons\tab_delete.ico" />
-    <None Include="Dependencies\Icons\tab_edit.ico" />
-    <None Include="Dependencies\Icons\tab_go.ico" />
-    <None Include="Dependencies\Icons\table.ico" />
-    <None Include="Dependencies\Icons\table_add.ico" />
-    <None Include="Dependencies\Icons\table_delete.ico" />
-    <None Include="Dependencies\Icons\table_edit.ico" />
-    <None Include="Dependencies\Icons\table_error.ico" />
-    <None Include="Dependencies\Icons\table_gear.ico" />
-    <None Include="Dependencies\Icons\table_go.ico" />
-    <None Include="Dependencies\Icons\table_key.ico" />
-    <None Include="Dependencies\Icons\table_lightning.ico" />
-    <None Include="Dependencies\Icons\table_link.ico" />
-    <None Include="Dependencies\Icons\table_multiple.ico" />
-    <None Include="Dependencies\Icons\table_refresh.ico" />
-    <None Include="Dependencies\Icons\table_relationship.ico" />
-    <None Include="Dependencies\Icons\table_row_delete.ico" />
-    <None Include="Dependencies\Icons\table_row_insert.ico" />
-    <None Include="Dependencies\Icons\table_save.ico" />
-    <None Include="Dependencies\Icons\table_sort.ico" />
-    <None Include="Dependencies\Icons\tag.ico" />
-    <None Include="Dependencies\Icons\tag_blue.ico" />
-    <None Include="Dependencies\Icons\tag_blue_add.ico" />
-    <None Include="Dependencies\Icons\tag_blue_delete.ico" />
-    <None Include="Dependencies\Icons\tag_blue_edit.ico" />
-    <None Include="Dependencies\Icons\tag_green.ico" />
-    <None Include="Dependencies\Icons\tag_orange.ico" />
-    <None Include="Dependencies\Icons\tag_pink.ico" />
-    <None Include="Dependencies\Icons\tag_purple.ico" />
-    <None Include="Dependencies\Icons\tag_red.ico" />
-    <None Include="Dependencies\Icons\tag_yellow.ico" />
-    <None Include="Dependencies\Icons\telephone.ico" />
-    <None Include="Dependencies\Icons\telephone_add.ico" />
-    <None Include="Dependencies\Icons\telephone_delete.ico" />
-    <None Include="Dependencies\Icons\telephone_edit.ico" />
-    <None Include="Dependencies\Icons\telephone_error.ico" />
-    <None Include="Dependencies\Icons\telephone_go.ico" />
-    <None Include="Dependencies\Icons\telephone_key.ico" />
-    <None Include="Dependencies\Icons\telephone_link.ico" />
-    <None Include="Dependencies\Icons\television.ico" />
-    <None Include="Dependencies\Icons\television_add.ico" />
-    <None Include="Dependencies\Icons\television_delete.ico" />
-    <None Include="Dependencies\Icons\text_align_center.ico" />
-    <None Include="Dependencies\Icons\text_align_justify.ico" />
-    <None Include="Dependencies\Icons\text_align_left.ico" />
-    <None Include="Dependencies\Icons\text_align_right.ico" />
-    <None Include="Dependencies\Icons\text_allcaps.ico" />
-    <None Include="Dependencies\Icons\text_bold.ico" />
-    <None Include="Dependencies\Icons\text_columns.ico" />
-    <None Include="Dependencies\Icons\text_dropcaps.ico" />
-    <None Include="Dependencies\Icons\text_heading_1.ico" />
-    <None Include="Dependencies\Icons\text_heading_2.ico" />
-    <None Include="Dependencies\Icons\text_heading_3.ico" />
-    <None Include="Dependencies\Icons\text_heading_4.ico" />
-    <None Include="Dependencies\Icons\text_heading_5.ico" />
-    <None Include="Dependencies\Icons\text_heading_6.ico" />
-    <None Include="Dependencies\Icons\text_horizontalrule.ico" />
-    <None Include="Dependencies\Icons\text_indent.ico" />
-    <None Include="Dependencies\Icons\text_indent_remove.ico" />
-    <None Include="Dependencies\Icons\text_italic.ico" />
-    <None Include="Dependencies\Icons\text_kerning.ico" />
-    <None Include="Dependencies\Icons\text_letter_omega.ico" />
-    <None Include="Dependencies\Icons\text_letterspacing.ico" />
-    <None Include="Dependencies\Icons\text_linespacing.ico" />
-    <None Include="Dependencies\Icons\text_list_bullets.ico" />
-    <None Include="Dependencies\Icons\text_list_numbers.ico" />
-    <None Include="Dependencies\Icons\text_lowercase.ico" />
-    <None Include="Dependencies\Icons\text_padding_bottom.ico" />
-    <None Include="Dependencies\Icons\text_padding_left.ico" />
-    <None Include="Dependencies\Icons\text_padding_right.ico" />
-    <None Include="Dependencies\Icons\text_padding_top.ico" />
-    <None Include="Dependencies\Icons\text_replace.ico" />
-    <None Include="Dependencies\Icons\text_signature.ico" />
-    <None Include="Dependencies\Icons\text_smallcaps.ico" />
-    <None Include="Dependencies\Icons\text_strikethrough.ico" />
-    <None Include="Dependencies\Icons\text_subscript.ico" />
-    <None Include="Dependencies\Icons\text_superscript.ico" />
-    <None Include="Dependencies\Icons\text_underline.ico" />
-    <None Include="Dependencies\Icons\text_uppercase.ico" />
-    <None Include="Dependencies\Icons\textfield.ico" />
-    <None Include="Dependencies\Icons\textfield_add.ico" />
-    <None Include="Dependencies\Icons\textfield_delete.ico" />
-    <None Include="Dependencies\Icons\textfield_key.ico" />
-    <None Include="Dependencies\Icons\textfield_rename.ico" />
-    <None Include="Dependencies\Icons\thumb_down.ico" />
-    <None Include="Dependencies\Icons\thumb_up.ico" />
-    <None Include="Dependencies\Icons\tick.ico" />
-    <None Include="Dependencies\Icons\time.ico" />
-    <None Include="Dependencies\Icons\time_add.ico" />
-    <None Include="Dependencies\Icons\time_delete.ico" />
-    <None Include="Dependencies\Icons\time_go.ico" />
-    <None Include="Dependencies\Icons\timeline_marker.ico" />
-    <None Include="Dependencies\Icons\transmit.ico" />
-    <None Include="Dependencies\Icons\transmit_add.ico" />
-    <None Include="Dependencies\Icons\transmit_blue.ico" />
-    <None Include="Dependencies\Icons\transmit_delete.ico" />
-    <None Include="Dependencies\Icons\transmit_edit.ico" />
-    <None Include="Dependencies\Icons\transmit_error.ico" />
-    <None Include="Dependencies\Icons\transmit_go.ico" />
-    <None Include="Dependencies\Icons\tux.ico" />
-    <None Include="Dependencies\Icons\user.ico" />
-    <None Include="Dependencies\Icons\user_add.ico" />
-    <None Include="Dependencies\Icons\user_comment.ico" />
-    <None Include="Dependencies\Icons\user_delete.ico" />
-    <None Include="Dependencies\Icons\user_edit.ico" />
-    <None Include="Dependencies\Icons\user_female.ico" />
-    <None Include="Dependencies\Icons\user_go.ico" />
-    <None Include="Dependencies\Icons\user_gray.ico" />
-    <None Include="Dependencies\Icons\user_green.ico" />
-    <None Include="Dependencies\Icons\user_orange.ico" />
-    <None Include="Dependencies\Icons\user_red.ico" />
-    <None Include="Dependencies\Icons\user_suit.ico" />
-    <None Include="Dependencies\Icons\vcard.ico" />
-    <None Include="Dependencies\Icons\vcard_add.ico" />
-    <None Include="Dependencies\Icons\vcard_delete.ico" />
-    <None Include="Dependencies\Icons\vcard_edit.ico" />
-    <None Include="Dependencies\Icons\vector.ico" />
-    <None Include="Dependencies\Icons\vector_add.ico" />
-    <None Include="Dependencies\Icons\vector_delete.ico" />
-    <None Include="Dependencies\Icons\wand.ico" />
-    <None Include="Dependencies\Icons\weather_clouds.ico" />
-    <None Include="Dependencies\Icons\weather_cloudy.ico" />
-    <None Include="Dependencies\Icons\weather_lightning.ico" />
-    <None Include="Dependencies\Icons\weather_rain.ico" />
-    <None Include="Dependencies\Icons\weather_snow.ico" />
-    <None Include="Dependencies\Icons\weather_sun.ico" />
-    <None Include="Dependencies\Icons\webcam.ico" />
-    <None Include="Dependencies\Icons\webcam_add.ico" />
-    <None Include="Dependencies\Icons\webcam_delete.ico" />
-    <None Include="Dependencies\Icons\webcam_error.ico" />
-    <None Include="Dependencies\Icons\world.ico" />
-    <None Include="Dependencies\Icons\world_add.ico" />
-    <None Include="Dependencies\Icons\world_delete.ico" />
-    <None Include="Dependencies\Icons\world_edit.ico" />
-    <None Include="Dependencies\Icons\world_go.ico" />
-    <None Include="Dependencies\Icons\world_link.ico" />
-    <None Include="Dependencies\Icons\wrench.ico" />
-    <None Include="Dependencies\Icons\wrench_orange.ico" />
-    <None Include="Dependencies\Icons\xhtml.ico" />
-    <None Include="Dependencies\Icons\xhtml_add.ico" />
-    <None Include="Dependencies\Icons\xhtml_delete.ico" />
-    <None Include="Dependencies\Icons\xhtml_go.ico" />
-    <None Include="Dependencies\Icons\xhtml_valid.ico" />
-    <None Include="Dependencies\Icons\zoom.ico" />
-    <None Include="Dependencies\Icons\zoom_in.ico" />
-    <None Include="Dependencies\Icons\zoom_out.ico" />
-    <None Include="Dependencies\Icons\accept.ico" />
-    <None Include="Dependencies\Icons\add.ico" />
-    <None Include="Dependencies\Icons\anchor.ico" />
-    <None Include="Dependencies\Icons\application.ico" />
-    <None Include="Dependencies\Icons\application_add.ico" />
-    <None Include="Dependencies\Icons\application_cascade.ico" />
-    <None Include="Dependencies\Icons\application_delete.ico" />
-    <None Include="Dependencies\Icons\disk1.ico" />
-    <None Include="Dependencies\Icons\add1.ico" />
-    <None Include="Dependencies\Icons\folder_page1.ico" />
-    <None Include="Dependencies\Icons\table_gear1.ico" />
-    <None Include="Dependencies\Icons\add2.ico" />
-    <None Include="Dependencies\Icons\folder_explore1.ico" />
-    <None Include="Dependencies\Icons\delete1.ico" />
-    <None Include="Dependencies\Icons\textfield_rename1.ico" />
-    <None Include="Dependencies\Icons\page_copy1.ico" />
-    <None Include="Dependencies\Icons\disk_multiple1.ico" />
-    <None Include="Dependencies\Icons\application_go1.ico" />
-    <None Include="Dependencies\Icons\application_xp_terminal1.ico" />
-    <None Include="Dependencies\Icons\folder_go1.ico" />
-    <None Include="Dependencies\Icons\package1.ico" />
-    <None Include="Dependencies\Icons\package_go1.ico" />
-    <None Include="Dependencies\Icons\arrow_divide1.ico" />
-    <None Include="Dependencies\Icons\arrow_join1.ico" />
-    <None Include="Dependencies\Icons\chart_organisation1.ico" />
-    <None Include="Dependencies\Icons\asterisk_yellow1.ico" />
-    <None Include="Dependencies\Icons\folder_add1.ico" />
-    <None Include="Dependencies\Icons\page_add1.ico" />
-    <None Include="Dependencies\Icons\script_add1.ico" />
-    <None Include="Dependencies\Icons\page_white_add1.ico" />
-    <None Include="Dependencies\Icons\note_go1.ico" />
-    <None Include="Dependencies\Icons\arrow_down1.ico" />
-    <None Include="Dependencies\Icons\package2.ico" />
-    <None Include="Dependencies\Icons\music1.ico" />
+    <Content Include="Dependencies\2.0.6.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\bob.ico" />
+    <Content Include="Icons\leaf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\pitfall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dependencies\Syroot.NintenTools.NSW.Bntx.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShrineFox.IO\ShrineFox.IO.csproj">
+      <Project>{7640412a-7372-4925-b20c-0178d8818a8f}</Project>
+      <Name>ShrineFox.IO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

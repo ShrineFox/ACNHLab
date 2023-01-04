@@ -15,6 +15,7 @@ using static ACNHLab.Classes.Amiibo;
 using System.Text.Json;
 using Microsoft.Win32;
 using System.Reflection;
+using ShrineFox.IO;
 
 namespace ACNHLab
 {
@@ -26,14 +27,56 @@ namespace ACNHLab
         public ACNHLab()
         {
             InitializeComponent();
-            File.AppendAllText("Log.txt", "\n\n\nProgram Start\n\n\n");
-            Program.status = new Status(this.richTextBox_Status);
+            this.Text = $"ACNHLab v{Program.version}";
             metroSetTabControl_Workspace.SelectedIndex = 0;
             ToolStripManager.Renderer = r;
             menuStrip_Main.Renderer = r;
             treeView_Project.ImageList = Treeview.treeViewImageList;
             collapsed = false;
+            Output.LogControl = richTextBox_Status;
+            Output.Logging = true;
+            Output.LogPath = "Log.txt";
+            Output.LogToFile = true;
             SetupDropDowns();
+            SetToolStripImages();
+        }
+
+        private void SetToolStripImages()
+        {
+            ToolStripMenuItem_Compile.Image = Image.FromFile("Icons\\application_go.png");
+            ToolStripMenuItem_Unpack.Image = Image.FromFile("Icons\\folder_go.png");
+            ToolStripMenuItem_RepackPAC.Image = Image.FromFile("Icons\\package.png");
+            ToolStripMenuItem_RepackAs.Image = Image.FromFile("Icons\\package_go.png");
+            ToolStripMenuItem_Decompile.Image = Image.FromFile("Icons\\application_xp_terminal.png");
+            ToolStripMenuItem_Remove.Image = Image.FromFile("Icons\\delete.png");
+            button_AddSpecies.Image = Image.FromFile("Icons\\add.png");
+            btn_AddVillager.Image = Image.FromFile("Icons\\add.png");
+            btn_RemoveVillager.Image = Image.FromFile("Icons\\delete.png");
+            button_VillagerHouse.Image = Image.FromFile("Icons\\house.png");
+            saveToolStripMenuItem_SaveVillager.Image = Image.FromFile("Icons\\disk.png");
+            ToolStripMenuItem_CollapseProj.Image = Image.FromFile("Icons\\arrow_join.png");
+            ToolStripMenuItem_ExpandProj.Image = Image.FromFile("Icons\\chart_organisation.png");
+            ToolStripMenuItem_Rename.Image = Image.FromFile("Icons\\textfield_rename.png");
+            ToolStripMenuItem_Copy.Image = Image.FromFile("Icons\\page_copy.png");
+            ToolStripMenuItem_OpenAt2.Image = Image.FromFile("Icons\\folder_explore.png");
+            ToolStripMenuItem_Replace.Image = Image.FromFile("Icons\\note_go.png");
+            ToolStripMenuItem_RepackAWB.Image = Image.FromFile("Icons\\music.png");
+            ToolStripMenuItem_RepackAFS.Image = Image.FromFile("Icons\\music.png");
+            fileToolStripMenuItem.Image = Image.FromFile("Icons\\disk.png");
+            newProjectToolStripMenuItem.Image = Image.FromFile("Icons\\asterisk_yellow.png");
+            loadProjectToolStripMenuItem.Image = Image.FromFile("Icons\\folder_page.png");
+            saveProjectToolStripMenuItem.Image = Image.FromFile("Icons\\disk_multiple.png");
+            settingsToolStripMenuItem.Image = Image.FromFile("Icons\\table_gear.png");
+            exportToolStripMenuItem.Image = Image.FromFile("Icons\\package_go.png");
+            writeAllChangesToolStripMenuItem.Image = Image.FromFile("Icons\\application_go.png");
+            toolsToolStripMenuItem.Image = Image.FromFile("Icons\\application_xp_terminal.png");
+            eventEditorToolStripMenuItem.Image = Image.FromFile("Icons\\pitfall.png");
+            nHSEToolStripMenuItem.Image = Image.FromFile("Icons\\leaf.png");
+            ToolStripMenuItem_New.Image = Image.FromFile("Icons\\asterisk_yellow.png");
+            ToolStripMenuItem_NewFolder.Image = Image.FromFile("Icons\\folder_add.png");
+            ToolStripMenuItem_NewFlow.Image = Image.FromFile("Icons\\script_add.png");
+            ToolStripMenuItem_NewMsg.Image = Image.FromFile("Icons\\page_add.png");
+            ToolStripMenuItem_NewTxt.Image = Image.FromFile("Icons\\page_white_add.png");
         }
 
         private void SetupDropDowns()
@@ -73,23 +116,28 @@ namespace ACNHLab
             metroSetComboBox_Amiibo.Items.Add("");
             metroSetComboBox_AmiiboSeries.Items.Clear();
             metroSetComboBox_AmiiboSeries.Items.Add("");
-            amiiboJson = JsonSerializer.Deserialize<AmiiboJson>(Properties.Resources.Amiibo);
-            foreach (var amiibo in amiiboJson.List)
-                Amiibos.Add(new Tuple<string, string, string, string>(amiibo.Head, amiibo.AmiiboSeries, amiibo.Name, amiibo.Type));
-            foreach (var amiibo in Amiibos)
+            if (File.Exists(".//Dependencies//Amiibo.json"))
             {
-                if (!metroSetComboBox_AmiiboSeries.Items.Contains(amiibo.Item2))
-                    metroSetComboBox_AmiiboSeries.Items.Add(amiibo.Item2);
+                amiiboJson = JsonSerializer.Deserialize<AmiiboJson>(File.ReadAllText(".//Dependencies//Amiibo.json"));
+                foreach (var amiibo in amiiboJson.List)
+                    Amiibos.Add(new Tuple<string, string, string, string>(amiibo.Head, amiibo.AmiiboSeries, amiibo.Name, amiibo.Type));
+                foreach (var amiibo in Amiibos)
+                {
+                    if (!metroSetComboBox_AmiiboSeries.Items.Contains(amiibo.Item2))
+                        metroSetComboBox_AmiiboSeries.Items.Add(amiibo.Item2);
+                }
+                Output.Log("[INFO] Refreshed Amiibo and Amiibo Series dropdowns.");
+                metroSetComboBox_AmiiboSeries.SelectedIndex = 0;
             }
-            Program.status.Update("[INFO] Refreshed Amiibo and Amiibo Series dropdowns.");
-            metroSetComboBox_AmiiboSeries.SelectedIndex = 0;
+            else
+                Output.Log("[ERROR] Could not locate file: ./Dependencies/Amiibo.json", ConsoleColor.Red);
         }
 
         #region ToolstripOptions
         /* Toolstrip Options*/
         private void NewProject_Click(object sender, EventArgs e)
         {
-            this.Text = $"ACNHLab v0.1";
+            this.Text = $"ACNHLab v{Program.version}";
             saveProjectToolStripMenuItem.Enabled = false;
             SettingsForm.settings = new SettingsForm.Settings();
             OpenSettingsForm();
@@ -133,7 +181,7 @@ namespace ACNHLab
         {
             if (SettingsForm.IsValid())
             {
-                this.Text = $"ACNHLab v0.1 - {SettingsForm.settings.ProjectName}";
+                this.Text = $"ACNHLab v{Program.version} - {SettingsForm.settings.ProjectName}";
                 Treeview_Project();
                 saveProjectToolStripMenuItem.Enabled = true;
                 // Load villager data from files
@@ -144,7 +192,7 @@ namespace ACNHLab
                 metroSetComboBox_VillagerSpecies.Items.Clear();
                 foreach (var species in Villagers.Species)
                     metroSetComboBox_VillagerSpecies.Items.Add(species.Item2);
-                Program.status.Update("[INFO] Refreshed Species dropdown.");
+                Output.Log("[INFO] Refreshed Species dropdown.");
                 // Show selected villager's data in form
                 metroSetComboBox_VillagerSpecies.SelectedIndex = metroSetComboBox_VillagerSpecies.Items.IndexOf(Villagers.List[0].Species);
                 // Enable villagers tab controls
@@ -157,7 +205,7 @@ namespace ACNHLab
             metroSetComboBox_Villagers.Items.Clear();
             foreach (var villager in Villagers.List.Where(n => !n.Name.Replace("\0", "").Equals("")))
                 metroSetComboBox_Villagers.Items.Add($"{Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")} {villager.Name}");
-            Program.status.Update("[INFO] Refreshed Villagers dropdown.");
+            Output.Log("[INFO] Refreshed Villagers dropdown.");
             metroSetComboBox_Villagers.SelectedIndex = selectIndex;
         }
 
@@ -215,7 +263,7 @@ namespace ACNHLab
                     {
                         SettingsForm.settings.ProjectName = newName;
                         SettingsForm.settings.ProjectPath = newProj;
-                        Program.status.Update($"[INFO] Copying project files from \"{Path.GetFileNameWithoutExtension(originalProj)}\" to \"{Path.GetFileNameWithoutExtension(newProj)}\"");
+                        Output.Log($"[INFO] Copying project files from \"{Path.GetFileNameWithoutExtension(originalProj)}\" to \"{Path.GetFileNameWithoutExtension(newProj)}\"");
                         // Copy all project files to new directory
                         Unpacker.CopyEntireDirectory(new DirectoryInfo(projDir), new DirectoryInfo(Path.GetDirectoryName(newProj)), true);
                         // Delete original project file copied with other project stuff
@@ -225,7 +273,7 @@ namespace ACNHLab
                         LoadProject();
                     }
                     else
-                        Program.status.Update($"[ERROR] Failed to save project as \"{newName}\", directory already exists");
+                        Output.Log($"[ERROR] Failed to save project as \"{newName}\", directory already exists");
                 }
             }
         }
@@ -247,10 +295,10 @@ namespace ACNHLab
                         string modDir = SettingsForm.settings.OutputPath;
                         Directory.CreateDirectory(Path.Combine(modDir, Path.GetDirectoryName(file)));
                         File.Copy(Path.Combine(dir, file), Path.Combine(modDir, file), true);
-                        Program.status.Update($"[INFO] Exported \"{file}\" to Output Directory.");
+                        Output.Log($"[INFO] Exported \"{file}\" to Output Directory.");
                     }
                 }
-                Program.status.Update($"[INFO] Finished exporting mod.");
+                Output.Log($"[INFO] Finished exporting mod.");
                 MessageBox.Show($"Finished exporting mod to:\n\n{SettingsForm.settings.OutputPath}", "Export Complete");
             }
         }
@@ -260,7 +308,7 @@ namespace ACNHLab
             // Update BCSVs, MSBTs and SARCs
             Villagers.Save();
             string status = $"Overwrote all files with currently loaded data!";
-            Program.status.Update($"[INFO] {status}");
+            Output.Log($"[INFO] {status}");
             MessageBox.Show(status, "Done Writing Data");
         }
 
@@ -274,20 +322,20 @@ namespace ACNHLab
             // Check if python is installed, if so get python path
             string pythonPath = Tools.GetPythonPath("3.6", "", "eventeditor.exe");
             if (pythonPath != "")
-                Program.status.Update($"[INFO] Python install detected: \"{pythonPath}\"");
+                Output.Log($"[INFO] Python install detected: \"{pythonPath}\"");
             else
             {
-                Program.status.Update($"[ERROR] Couldn't detect a 64-bit Python 3.6+ installation with \"eventeditor.exe\" installed!" +
+                Output.Log($"[ERROR] Couldn't detect a 64-bit Python 3.6+ installation with \"eventeditor.exe\" installed!" +
                     $"\nInstall Python 3.6+, run \"pip install PyQt5\", then run \"pip install eventeditor\".");
                 return;
             }
             // Check if eventeditor.exe is installed, if so run it
             string eventEditorPath = Path.Combine(Path.GetDirectoryName(pythonPath), Path.Combine("Scripts", "eventeditor.exe"));
             if (File.Exists(eventEditorPath))
-                Program.status.Update($"[INFO] Running Python script: \"eventeditor.exe\"");
+                Output.Log($"[INFO] Running Python script: \"eventeditor.exe\"");
             else
             {
-                Program.status.Update($"[ERROR] Couldn't find \"eventeditor.exe\"! Run \"pip install PyQt5\", then run \"pip install eventeditor\".");
+                Output.Log($"[ERROR] Couldn't find \"eventeditor.exe\"! Run \"pip install PyQt5\", then run \"pip install eventeditor\".");
                 return;
             }
 
@@ -301,11 +349,11 @@ namespace ACNHLab
             string nhsePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Path.Combine("Dependencies", Path.Combine("NHSE", "NHSE.exe")));
             if (!File.Exists(nhsePath))
             {
-                Program.status.Update($"[ERROR] Couldn't find \"\\Dependencies\\NHSE\\NHSE.exe\"! Download and extract it to that folder.");
+                Output.Log($"[ERROR] Couldn't find \"\\Dependencies\\NHSE\\NHSE.exe\"! Download and extract it to that folder.");
                 return;
             }
             else
-                Program.status.Update($"[INFO] Running program: \"NHSE.exe\"");
+                Output.Log($"[INFO] Running program: \"NHSE.exe\"");
 
             Tools.CMD(nhsePath);
         }
@@ -351,20 +399,20 @@ namespace ACNHLab
                         if (File.Exists(originalName) && !File.Exists(newName))
                         {
                             File.Copy(originalName, newName);
-                            Program.status.Update($"[INFO] Copied \"{Path.GetFileName(originalName)}\" as \"{Path.GetFileName(newName)}\"");
+                            Output.Log($"[INFO] Copied \"{Path.GetFileName(originalName)}\" as \"{Path.GetFileName(newName)}\"");
                         }
                         else if (Directory.Exists(originalName) && !Directory.Exists(newName))
                         {
                             Unpacker.CopyEntireDirectory(new DirectoryInfo(originalName), new DirectoryInfo(newName));
-                            Program.status.Update($"[INFO] Copied \"{Path.GetFileName(originalName)}\" as \"{Path.GetFileName(newName)}\"");
+                            Output.Log($"[INFO] Copied \"{Path.GetFileName(originalName)}\" as \"{Path.GetFileName(newName)}\"");
                         }
                         else
-                            Program.status.Update($"[ERROR] Failed to copy \"{Path.GetFileName(originalName)}\" as \"{Path.GetFileName(newName)}\", file already exists");
+                            Output.Log($"[ERROR] Failed to copy \"{Path.GetFileName(originalName)}\" as \"{Path.GetFileName(newName)}\", file already exists");
                     }
                     Treeview_Project();
                 }
                 else
-                    Program.status.Update($"[ERROR] Failed to copy \"{Path.GetFileName(originalName)}\", file or folder does not exist");
+                    Output.Log($"[ERROR] Failed to copy \"{Path.GetFileName(originalName)}\", file or folder does not exist");
             }
         }
 
@@ -383,15 +431,15 @@ namespace ACNHLab
                     if (File.Exists(originalName) && !File.Exists(newName))
                     {
                         File.Move(originalName, newName);
-                        Program.status.Update($"[INFO] Renamed \"{Path.GetFileName(originalName)}\" to \"{Path.GetFileName(newName)}\"");
+                        Output.Log($"[INFO] Renamed \"{Path.GetFileName(originalName)}\" to \"{Path.GetFileName(newName)}\"");
                     }
                     else if (Directory.Exists(originalName) && !Directory.Exists(newName))
                     {
                         Directory.Move(treeView_Project.SelectedNode.Name, newName);
-                        Program.status.Update($"[INFO] Renamed \"{Path.GetFileName(originalName)}\" to \"{Path.GetFileName(newName)}\"");
+                        Output.Log($"[INFO] Renamed \"{Path.GetFileName(originalName)}\" to \"{Path.GetFileName(newName)}\"");
                     }
                     else
-                        Program.status.Update($"[ERROR] Failed to rename \"{Path.GetFileName(originalName)}\" to \"{Path.GetFileName(newName)}\", file already exists");
+                        Output.Log($"[ERROR] Failed to rename \"{Path.GetFileName(originalName)}\" to \"{Path.GetFileName(newName)}\", file already exists");
                     Treeview_Project();
                 }
             }
@@ -405,16 +453,16 @@ namespace ACNHLab
                 if (Directory.Exists(file))
                 {
                     Directory.Delete(file, true);
-                    Program.status.Update($"[INFO] Deleted directory and contents: {Path.GetFileName(file)}.");
+                    Output.Log($"[INFO] Deleted directory and contents: {Path.GetFileName(file)}.");
                 }
                 else if (File.Exists(file))
                 {
                     File.Delete(file);
-                    Program.status.Update($"[INFO] Deleted file: {Path.GetFileName(file)}.");
+                    Output.Log($"[INFO] Deleted file: {Path.GetFileName(file)}.");
                 }
                 else
                 {
-                    Program.status.Update($"[ERROR] Couldn't find file to delete: {Path.GetFileName(file)}.");
+                    Output.Log($"[ERROR] Couldn't find file to delete: {Path.GetFileName(file)}.");
                     return;
                 }
                 Treeview_Project();
@@ -592,7 +640,7 @@ namespace ACNHLab
             // NPC Color
             numeric_NPCColor.Value = villager.NPCColor;
 
-            Program.status.Update($"[INFO] Showing Villager data in form: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")})");
+            Output.Log($"[INFO] Showing Villager data in form: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")})");
 
             // TODO: Show villager icon
             //UpdateIcon();
@@ -680,7 +728,7 @@ namespace ACNHLab
 
             Villagers.List[metroSetComboBox_Villagers.SelectedIndex] = villager;
             string status = $"Saved changes to Villager: \"{villager.Name}\" ({Villagers.Species.First(x => x.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")})";
-            Program.status.Update($"[INFO] {status}");
+            Output.Log($"[INFO] {status}");
             MessageBox.Show(status, "Saved Villager Data");
             UpdateVillagerDropDown(metroSetComboBox_Villagers.SelectedIndex);
         }
@@ -698,7 +746,7 @@ namespace ACNHLab
                 foreach (var race in Villagers.Species)
                     metroSetComboBox_VillagerSpecies.Items.Add(race.Item2);
                 metroSetComboBox_VillagerSpecies.SelectedIndex = metroSetComboBox_VillagerSpecies.Items.IndexOf(species.SpeciesName);
-                Program.status.Update($"[INFO] Added species: {species.SpeciesName} ({species.SpeciesAbbreviation}).");
+                Output.Log($"[INFO] Added species: {species.SpeciesName} ({species.SpeciesAbbreviation}).");
             }
         }
 
@@ -712,7 +760,7 @@ namespace ACNHLab
             }
             Villagers.List.Add(villager);
             UpdateVillagerDropDown(metroSetComboBox_Villagers.Items.IndexOf($"{Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")} {villager.Name}"));
-            Program.status.Update($"[INFO] Added Villager: {villager.Name} ({Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")}).");
+            Output.Log($"[INFO] Added Villager: {villager.Name} ({Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")}).");
         }
 
         private void RemoveVillager_Click(object sender, EventArgs e)
@@ -723,7 +771,7 @@ namespace ACNHLab
             Villagers.List.Remove(villager);
             // TODO: Select index nearest to current possible
             UpdateVillagerDropDown();
-            Program.status.Update($"[INFO] Removed Villager: {villager.Name} ({Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")}).");
+            Output.Log($"[INFO] Removed Villager: {villager.Name} ({Villagers.Species.First(s => s.Item2.Equals(villager.Species)).Item1}{villager.ID.ToString("00")}).");
         }
         #endregion
 
@@ -744,25 +792,6 @@ namespace ACNHLab
             }
         }
         #endregion
-    }
-
-    /* Append to Status Text from other classes and forms */
-    public class Status
-    {
-        RichTextBox rtb;
-        public Status(RichTextBox rtb)
-        {
-            this.rtb = rtb;
-        }
-
-        public void Update(string msg)
-        {
-            string newMessage = $"<{DateTime.Now.ToString("hh: mm")}> {msg}\n";
-            rtb.Text += newMessage;
-            rtb.SelectionStart = rtb.Text.Length;
-            rtb.ScrollToCaret();
-            File.AppendAllText("Log.txt", newMessage);
-        }
     }
 
     /* Toggle TableLayoutPanel rows/columns that are set to autosize */

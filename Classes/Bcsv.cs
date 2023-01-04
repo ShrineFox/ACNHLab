@@ -327,7 +327,7 @@ namespace ACNHLab.Classes
 			{
 				//rowCount++;
 				#if DEBUG
-					//Program.status.Update($"Row {rowCount}");
+					//Output.Log($"Row {rowCount}");
 				#endif
 				DataGridViewRow dataGridViewRow = (DataGridViewRow)obj2;
 				if (dataGridViewRow.Index >= dataGridView1.Rows.Count - 1)
@@ -342,7 +342,7 @@ namespace ACNHLab.Classes
 				{
 					//cellCount++;
 					#if DEBUG
-						//Program.status.Update($"Writing Cell {cellCount}");
+						//Output.Log($"Writing Cell {cellCount}");
 					#endif
 					DataGridViewCell dataGridViewCell = (DataGridViewCell)obj3;
 					binaryWriter.BaseStream.Position = (long)(num + list_ColumnLength[num3]);
